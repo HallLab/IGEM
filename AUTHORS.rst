@@ -5,7 +5,7 @@ Credits
 Maintainer
 ----------
 
-* John McGuigan <john.mcguigan@psu.edu>
+* Andre Rico <alr6366@psu.edu>
 
 Contributors
 ------------
