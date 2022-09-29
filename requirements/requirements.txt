@@ -1,0 +1,9 @@
+click>=7
+pandas>=1.1
+scipy>=1.5
+seaborn>=0.9
+statsmodels>=0.10
+matplotlib
+numpy
+rpy2
+tzlocal  # needed for R
