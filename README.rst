@@ -34,7 +34,6 @@ The IGEM system can use any database supported by Django. You will need to set t
 To initialize the database, type in the /src/src folder:
     > python manage.py migration
 
-<<<<<<< HEAD
 To start the sytem on web, type in the /src/src folder:
     > python manage.py runserver
 =======
