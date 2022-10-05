@@ -3,6 +3,10 @@
 /docs/notebooks/.ipynb_checkpoints
 /docs/source/modules
 
+# Annotations of project
+importante.txt
+
+
 poetry.lock
 
 # Byte-compiled / optimized / DLL files
