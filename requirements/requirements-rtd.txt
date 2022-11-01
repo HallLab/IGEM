@@ -1,2 +1,2 @@
 sphinx
-# These are dependencies of various sphinx extensions for documentation.ß
+# These are dependencies of various sphinx extensions for documentation.
