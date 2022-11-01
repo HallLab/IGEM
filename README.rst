@@ -14,13 +14,13 @@ Examples
 --------
 **Main screen for master data registration:**
 
-.. image:: docs/web_add.png
+.. image:: docs/_static/example/web_add.png
 
 |
 
 **The query for links between terms found while ingesting an external dataset:**
 
-.. image:: docs/web_key.png
+.. image:: docs/_static/example/web_key.png
 
 
 Installation
