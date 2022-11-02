@@ -40,9 +40,9 @@ DATABASE Web Interface
 ^^^^^^^^^^^^^^^^^^^^^^
 Descrever como realizar a atualizazao via web interface
 
-.. image:: docs/source/_static/example/web_add.png
-
-
+.. image:: /_static/example/web_add.png
+  :width: 400
+  :alt: Alternative text
 
 DATASET
 -------

@@ -44,3 +44,6 @@ feel free to open an `Issue <https://github.com/HallLab/igem/issues>`_.
 
 Citing IGEM
 --------------
+
+
+https://igem.readthedocs.io/en/latest/
