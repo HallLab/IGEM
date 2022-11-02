@@ -15,11 +15,8 @@ IGEM: Integrative Genome-Exposome Method
 
    Hall Lab Homepage <https://www.hall-lab.org>
    IGEM Github Repo <https://github.com/HallLab/igem>
-   motivation
-   installation
-   citation
-   usage
-   example
+   master_data
+
 
 
 Indices and tables

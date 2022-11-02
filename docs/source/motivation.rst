@@ -1,5 +1,0 @@
-==========
-Motivation
-==========
-
-Desc the motivation
