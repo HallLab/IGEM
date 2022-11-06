@@ -1,25 +1,4 @@
-=========================
-Master Data Customization
-=========================
-
-The master data have a primordial function for the system's functioning, being responsible for directing the origin of the data and for filtering and linking the words to the knowledge base.
-
-Before starting the data collection, it will be necessary to parameterize the Master Data, which can be done via batch or individually in a web interface.
-
-Master data will configure in the following order:
-    * DATABASE
-    * KEYGE-PREFIX
-    * DATASET
-    * KEYGE-GROUP
-    * KEYGE-CATEGORY
-    * KEYGE
-    * KEYGE-WORD
-
-Next, we will detail each master data.
-
-
-
-DATABASE
+Database
 --------
 
 DATABASE master data refers to an external data source and groups DATASET over the same domain. The connection between IGEM and external data sources will be established by DATASET.
@@ -50,7 +29,7 @@ $ python manage.py db --show database
 
 To download the DATABASE already registered, type the command line::
     
-$ python manage.py db --download --path {path/filename}.csv
+$ python manage.py db --download database --path {path/filename}.csv
 
 
 To delete a specific DATABASE, type the command line::
@@ -96,7 +75,6 @@ On the Database screen, we will have options to consult, modify, add and elimina
   :alt: Alternative text
 
 
-On the Database screen, we will have options to query, modify, add and eliminate DATABASES.
 
 On the first screen, we have a view of all available DATABASES. To consult, click a desired DATABASE.
 
@@ -139,30 +117,3 @@ For the DATABASE, we will have two filter locations:
 
 .. image:: /_static/pictures/md_database_08.png
   :alt: Alternative text
-
-
-
-
-
-
-DATASET
--------
-
-DATASET Web Interface
-^^^^^^^^^^^^^^^^^^^^^
-
-
-
-KEYGE-PREFIX
-------------
-
-KEYGE-PREFIX Web Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-
-KEYGE-GROUP
-------------
-
-KEYGE-GROUP Web Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^

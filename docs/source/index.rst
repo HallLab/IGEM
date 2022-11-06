@@ -9,14 +9,22 @@ IGEM documentation
 
 IGEM: Integrative Genome-Exposome Method
 
+The IGEM system was developed as a platform to host different APPs sharing common resources and interacting with each other through a single database.
+The first APP created was GE (Gene x Exposome) to collect external data sets, identify words, and build a knowledge base available for dynamic and exploratory queries.
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    Hall Lab Homepage <https://www.hall-lab.org>
    IGEM Github Repo <https://github.com/HallLab/igem>
-   master_data
-
+   introduction
+   install
+   md/index
+   etl/index
+   reports/index
+   ncbi/index
 
 Indices and tables
 ==================
