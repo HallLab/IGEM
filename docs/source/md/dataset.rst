@@ -85,8 +85,8 @@ On the Dataset screen, we will have options to consult, modify, add and eliminat
   :alt: Alternative text
 
 
-Filter DATASET
-++++++++++++++
+**Filter DATASET**
+
 
 For the DATABASE, we will have two filter locations:
     * First located at the top of the DATABASE List screen where we can search broadly.
@@ -101,8 +101,7 @@ To consult, click a desired DATASET.
   :alt: Alternative text
 
 
-Add DATASET
-+++++++++++
+**Add DATASET**
 
 To add new DATABASE, we will have three different ways:
     * by the :code:`+ Add` button on the left sidebar.
@@ -116,8 +115,8 @@ To add new DATABASE, we will have three different ways:
 
 The DATASET interface is divided into three parts with each one performing a different activity in the ETL (Extraction, Transformation and Load) process of external data to IGEM.
 
-PART 1
-++++++
+**PART 1**
+
 
 It has fields for identifying the DATASET, among them we will have which DATABASE the DATASET belongs to, an abbreviation that will identify the DATASET in processes and queries, a description and a flag for activating or not the DATASET.
 
@@ -126,8 +125,8 @@ If the Activate FLAG is not selected, the DATASET will not perform new extractio
 .. image:: /_static/pictures/md_dataset_02.png
   :alt: Alternative text
 
-PART 2
-++++++
+**PART 2**
+
 
 The second part will be composed of the attributes to make the connection with external sources and format of the extracted data.
 
@@ -136,8 +135,8 @@ Each field has already been detailed at the beginning of this session.
 .. image:: /_static/pictures/md_dataset_04.png
   :alt: Alternative text
 
-PART 3
-++++++
+**PART 3**
+
 
 The third part stores the transformation rules that the IGEM system needs to interpret the input data and how to handle each column.
 
@@ -169,8 +168,8 @@ The SINGLE WORD option field has the function of informing the ETL process if th
   :alt: Alternative text
 
 
-Save DATASET
-++++++++++++
+**Save DATASET**
+
 
 On the next screen, we have all the DATASET fields open for modifications. To modify, change the desired information and select one of the three button options:
     * :code:`Save and add another`: Will save the changes and open a blank DATASET screen to add a new DATASET record.
@@ -179,8 +178,8 @@ On the next screen, we have all the DATASET fields open for modifications. To mo
 
 
 
-Delete DATASET
-++++++++++++++
+**Delete DATASET**
+
 
 The :code:`DELETE` button will permanently delete the DATABASE record.
 
@@ -195,8 +194,7 @@ Be careful, this elimination operation will be definitive for the DATABASEs and 
 
 
 
-History Change
-++++++++++++++
+**History Change**
 
 In the History button, we can consult all the modifications carried out in the DATABASE, this function will be important to track modifications and audit the process.
 
