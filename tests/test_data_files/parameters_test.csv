@@ -1,0 +1,15 @@
+index,parameter,value
+filter,datasource,
+filter,datasource,
+filter,connector,
+filter,term_group,
+filter,term_category,
+filter,term,gene:246126
+filter,word,
+output,datasource,
+output,connector,
+output,term_group,
+output,term_category,
+output,term,
+output,word,
+path,path,

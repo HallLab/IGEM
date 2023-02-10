@@ -1,0 +1,55 @@
+﻿datasource,description,website,category
+HMDB,Human Metabolome Database,https://hmdb.ca/,Genomics
+CTD,Comparative Toxicogenomics Database,http://ctdbase.org/,Genomics
+DigChem,DigChem,http://gcancer.org/digchem,Genomics
+DigSee,DigSee,http://gcancer.org/digsee,Genomics
+BioSNAP,BioSNAP Datasets: Stanford Biomedical Network Dataset Collection,http://snap.stanford.edu/biodata/,Genomics
+KEGG,KEGG: Kyoto Encyclopedia of Genes and Genomes,https://www.genome.jp/kegg/,Genomics
+PharmGKB,Pharmacogenomics Knowledge Base,https://www.pharmgkb.org/downloads,Genomics
+CardioGxE,CardioGxE catalog,https://pubmed.ncbi.nlm.nih.gov/25368670/,Genomics
+HGNC,HUGO Gene Nomenclature Committee,http://www.genenames.org/cgi-bin/statistics,Genomics
+GeneOntology,Gene Ontology Consortium,http://geneontology.org/page/download-go-annotations,Genomics
+STRING,STRING,http://string-db.org/cgi/download.pl,Genomics
+DrugBank,DrugBank,http://www.drugbank.ca/,Genomics
+DiseaseOntology,DiseaseOntology,http://disease-ontology.org/,Genomics
+OMIM,Online Mendelian Inheritance in Man,http://www.omim.org/,Genomics
+ENSEMBL,ENSEMBL,http://www.ensembl.org/biomart/martview,Genomics
+RxNorm,RxNorm,https://bioportal.bioontology.org/,Genomics
+FooDB,FooDB,https://foodb.ca/,Genomics
+T3DB,Toxin and Toxin Target Database,http://www.t3db.ca/,Genomics
+SMPDB,Small Molecule Pathway Database,https://smpdb.ca/,Genomics
+CSF Metabolome,CSF Metabolome Database,https://csfmetabolome.ca/,Genomics
+Serum Metabolome,Serum Metabolome Database,https://serummetabolome.ca/,Genomics
+ECMDB,E. coli Metabolome Database,https://ecmdb.ca/,Genomics
+MarkerDB,MarkerDB,https://markerdb.ca/,Genomics
+AFCDB,Alberta Food Composition Database,http://afcdb.ca/,Genomics
+Exposome-Explorer,Exposome-Explorer,http://exposome-explorer.iarc.fr/,Genomics
+Phenol-Explorer,Phenol-Explorer,http://phenol-explorer.eu/,Genomics
+RefDB,Re-referenced Protein Chemical shift Database,http://refdb.wishartlab.com/,Genomics
+Fecal Metabolome,Fecal Metabolome Database ,https://fecalmetabolome.ca/,Genomics
+Saliva Metabolome,Saliva Metabolome Database ,https://salivametabolome.ca/,Genomics
+Urine Metabolome,Urine Metabolome Database ,https://urinemetabolome.ca/,Genomics
+NP-MRD,Natural Product Magnetic Resonance Database,https://np-mrd.org/,Genomics
+BMRB,Biological Magnetic Resonance Data Bank,https://bmrb.io/,Genomics
+GeneCards,GeneCards,https://www.genecards.org/Guide/Datasets,Genomics
+GeneCaRNA,GeneCaRNA,https://www.genecards.org/Guide/Datasets,Genomics
+MalaCards,MalaCards,https://www.genecards.org/Guide/Datasets,Genomics
+PathCards,PathCards,https://www.genecards.org/Guide/Datasets,Genomics
+GeneLoc,GeneLoc,https://www.genecards.org/Guide/Datasets,Genomics
+DisGeNET,DisGeNET,https://www.disgenet.org/downloads,Genomics
+RCSB PDB,RCSB PDB,https://www.rcsb.org/,Genomics
+MoNA,MassBank of North America,https://massbank.us,Genomics
+NIST,National Institutes for Standards and Technology,https://www.sisweb.com/software/ms/nist.htm,Genomics
+BMRB,Biological Magnetic Resonance Data Bank,https://bmrb.io,Genomics
+Metabolomics,NIH Metabolomics Workbench,https://www.metabolomicsworkbench.org,Genomics
+EBI,MetaboLights,https://www.ebi.ac.uk/metabolights/,Genomics
+Chemnetbase,Dictionary of Natural Products ,https://dnp.chemnetbase.com/faces/chemical/ChemicalSearch.xhtml,Genomics
+PubChem,PubChem,https://pubchem.ncbi.nlm.nih.gov,Genomics
+ChemSpider,ChemSpider,https://www.chemspider.com,Genomics
+ChEBI,Chemical Entities of Biological Matter,https://www.ebi.ac.uk/chebi/,Genomics
+MeSH,Medical Subject Headings,https://www.ncbi.nlm.nih.gov/mesh,Genomics
+DataMed,Omics Discovery Index,https://datamed.org/,Genomics
+YMDB,Yeast Metabolome Database,http://www.ymdb.ca/,Genomics
+BovineDB,Bovine Metabolome Database,https://bovinedb.ca/,Genomics
+ECMDB,E. coli Metabolome Database,https://ecmdb.ca/,Genomics
+BacMap,BacMap,http://bacmap.wishartlab.com/,Genomics

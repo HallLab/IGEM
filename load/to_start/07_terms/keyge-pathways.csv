@@ -1,0 +1,2568 @@
+keyge,group,category,description
+path:hsa_M00001,genomic,pathway,"Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate"
+path:hsa_M00002,genomic,pathway,"Glycolysis, core module involving three-carbon compounds"
+path:hsa_M00003,genomic,pathway,"Gluconeogenesis, oxaloacetate => fructose-6P"
+path:hsa_M00004,genomic,pathway,Pentose phosphate pathway (Pentose phosphate cycle)
+path:hsa_M00005,genomic,pathway,"PRPP biosynthesis, ribose 5P => PRPP"
+path:hsa_M00006,genomic,pathway,"Pentose phosphate pathway, oxidative phase, glucose 6P => ribulose 5P"
+path:hsa_M00007,genomic,pathway,"Pentose phosphate pathway, non-oxidative phase, fructose 6P => ribose 5P"
+path:hsa_M00009,genomic,pathway,"Citrate cycle (TCA cycle, Krebs cycle)"
+path:hsa_M00010,genomic,pathway,"Citrate cycle, first carbon oxidation, oxaloacetate => 2-oxoglutarate"
+path:hsa_M00011,genomic,pathway,"Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate"
+path:hsa_M00013,genomic,pathway,"Malonate semialdehyde pathway, propanoyl-CoA => acetyl-CoA"
+path:hsa_M00014,genomic,pathway,Glucuronate pathway (uronate pathway)
+path:hsa_M00015,genomic,pathway,"Proline biosynthesis, glutamate => proline"
+path:hsa_M00020,genomic,pathway,"Serine biosynthesis, glycerate-3P => serine"
+path:hsa_M00027,genomic,pathway,GABA (gamma-Aminobutyrate) shunt
+path:hsa_M00029,genomic,pathway,Urea cycle
+path:hsa_M00032,genomic,pathway,"Lysine degradation, lysine => saccharopine => acetoacetyl-CoA"
+path:hsa_M00034,genomic,pathway,Methionine salvage pathway
+path:hsa_M00035,genomic,pathway,Methionine degradation
+path:hsa_M00036,genomic,pathway,"Leucine degradation, leucine => acetoacetate + acetyl-CoA"
+path:hsa_M00037,genomic,pathway,"Melatonin biosynthesis, tryptophan => serotonin => melatonin"
+path:hsa_M00042,genomic,pathway,"Catecholamine biosynthesis, tyrosine => dopamine => noradrenaline => adrenaline"
+path:hsa_M00043,genomic,pathway,"Thyroid hormone biosynthesis, tyrosine => triiodothyronine/thyroxine"
+path:hsa_M00044,genomic,pathway,"Tyrosine degradation, tyrosine => homogentisate"
+path:hsa_M00046,genomic,pathway,"Pyrimidine degradation, uracil => beta-alanine, thymine => 3-aminoisobutanoate"
+path:hsa_M00047,genomic,pathway,Creatine pathway
+path:hsa_M00048,genomic,pathway,"Inosine monophosphate biosynthesis, PRPP + glutamine => IMP"
+path:hsa_M00049,genomic,pathway,"Adenine ribonucleotide biosynthesis, IMP => ADP,ATP"
+path:hsa_M00050,genomic,pathway,"Guanine ribonucleotide biosynthesis IMP => GDP,GTP"
+path:hsa_M00051,genomic,pathway,"Uridine monophosphate biosynthesis, glutamine (+ PRPP) => UMP"
+path:hsa_M00052,genomic,pathway,"Pyrimidine ribonucleotide biosynthesis, UMP => UDP/UTP,CDP/CTP"
+path:hsa_M00055,genomic,pathway,N-glycan precursor biosynthesis
+path:hsa_M00056,genomic,pathway,"O-glycan biosynthesis, mucin type core"
+path:hsa_M00057,genomic,pathway,"Glycosaminoglycan biosynthesis, linkage tetrasaccharide"
+path:hsa_M00058,genomic,pathway,"Glycosaminoglycan biosynthesis, chondroitin sulfate backbone"
+path:hsa_M00059,genomic,pathway,"Glycosaminoglycan biosynthesis, heparan sulfate backbone"
+path:hsa_M00065,genomic,pathway,"GPI-anchor biosynthesis, core oligosaccharide"
+path:hsa_M00066,genomic,pathway,Lactosylceramide biosynthesis
+path:hsa_M00067,genomic,pathway,"Sulfoglycolipids biosynthesis, ceramide/1-alkyl-2-acylglycerol => sulfatide/seminolipid"
+path:hsa_M00068,genomic,pathway,"Glycosphingolipid biosynthesis, globo-series, LacCer => Gb4Cer"
+path:hsa_M00069,genomic,pathway,"Glycosphingolipid biosynthesis, ganglio series, LacCer => GT3"
+path:hsa_M00070,genomic,pathway,"Glycosphingolipid biosynthesis, lacto-series, LacCer => Lc4Cer"
+path:hsa_M00071,genomic,pathway,"Glycosphingolipid biosynthesis, neolacto-series, LacCer => nLc4Cer"
+path:hsa_M00072,genomic,pathway,N-glycosylation by oligosaccharyltransferase
+path:hsa_M00073,genomic,pathway,N-glycan precursor trimming
+path:hsa_M00075,genomic,pathway,"N-glycan biosynthesis, complex type"
+path:hsa_M00076,genomic,pathway,Dermatan sulfate degradation
+path:hsa_M00077,genomic,pathway,Chondroitin sulfate degradation
+path:hsa_M00078,genomic,pathway,Heparan sulfate degradation
+path:hsa_M00079,genomic,pathway,Keratan sulfate degradation
+path:hsa_M00082,genomic,pathway,"Fatty acid biosynthesis, initiation"
+path:hsa_M00083,genomic,pathway,"Fatty acid biosynthesis, elongation"
+path:hsa_M00085,genomic,pathway,"Fatty acid biosynthesis, elongation, mitochondria"
+path:hsa_M00086,genomic,pathway,"beta-Oxidation, acyl-CoA synthesis"
+path:hsa_M00087,genomic,pathway,beta-Oxidation
+path:hsa_M00089,genomic,pathway,Triacylglycerol biosynthesis
+path:hsa_M00090,genomic,pathway,"Phosphatidylcholine (PC) biosynthesis, choline => PC"
+path:hsa_M00091,genomic,pathway,"Phosphatidylcholine (PC) biosynthesis, PE => PC"
+path:hsa_M00092,genomic,pathway,"Phosphatidylethanolamine (PE) biosynthesis, ethanolamine => PE"
+path:hsa_M00094,genomic,pathway,Ceramide biosynthesis
+path:hsa_M00095,genomic,pathway,"C5 isoprenoid biosynthesis, mevalonate pathway"
+path:hsa_M00098,genomic,pathway,Acylglycerol degradation
+path:hsa_M00099,genomic,pathway,Sphingosine biosynthesis
+path:hsa_M00100,genomic,pathway,Sphingosine degradation
+path:hsa_M00101,genomic,pathway,"Cholesterol biosynthesis, squalene 2,3-epoxide => cholesterol"
+path:hsa_M00103,genomic,pathway,Cholecalciferol biosynthesis
+path:hsa_M00104,genomic,pathway,"Bile acid biosynthesis, cholesterol => cholate/chenodeoxycholate"
+path:hsa_M00106,genomic,pathway,"Conjugated bile acid biosynthesis, cholate => taurocholate/glycocholate"
+path:hsa_M00107,genomic,pathway,"Steroid hormone biosynthesis, cholesterol => prognenolone => progesterone"
+path:hsa_M00108,genomic,pathway,"C21-Steroid hormone biosynthesis, progesterone => corticosterone/aldosterone"
+path:hsa_M00109,genomic,pathway,"C21-Steroid hormone biosynthesis, progesterone => cortisol/cortisone"
+path:hsa_M00110,genomic,pathway,"C19/C18-Steroid hormone biosynthesis, pregnenolone => androstenedione => estrone"
+path:hsa_M00118,genomic,pathway,"Glutathione biosynthesis, glutamate => glutathione"
+path:hsa_M00120,genomic,pathway,"Coenzyme A biosynthesis, pantothenate => CoA"
+path:hsa_M00128,genomic,pathway,"Ubiquinone biosynthesis, eukaryotes, 4-hydroxybenzoate => ubiquinone"
+path:hsa_M00130,genomic,pathway,"Inositol phosphate metabolism, PI=> PIP2 => Ins(1,4,5)P3 => Ins(1,3,4,5)P4"
+path:hsa_M00131,genomic,pathway,"Inositol phosphate metabolism, Ins(1,3,4,5)P4 => Ins(1,3,4)P3 => myo-inositol"
+path:hsa_M00132,genomic,pathway,"Inositol phosphate metabolism, Ins(1,3,4)P3 => phytate"
+path:hsa_M00133,genomic,pathway,"Polyamine biosynthesis, arginine => agmatine => putrescine => spermidine"
+path:hsa_M00134,genomic,pathway,"Polyamine biosynthesis, arginine => ornithine => putrescine"
+path:hsa_M00135,genomic,pathway,"GABA biosynthesis, eukaryotes, putrescine => GABA"
+path:hsa_M00141,genomic,pathway,"C1-unit interconversion, eukaryotes"
+path:hsa_M00142,genomic,pathway,"NADH:ubiquinone oxidoreductase, mitochondria"
+path:hsa_M00143,genomic,pathway,"NADH dehydrogenase (ubiquinone) Fe-S protein/flavoprotein complex, mitochondria"
+path:hsa_M00146,genomic,pathway,NADH dehydrogenase (ubiquinone) 1 alpha subcomplex
+path:hsa_M00147,genomic,pathway,NADH dehydrogenase (ubiquinone) 1 beta subcomplex
+path:hsa_M00148,genomic,pathway,Succinate dehydrogenase (ubiquinone)
+path:hsa_M00151,genomic,pathway,Cytochrome bc1 complex respiratory unit
+path:hsa_M00152,genomic,pathway,Cytochrome bc1 complex
+path:hsa_M00154,genomic,pathway,Cytochrome c oxidase
+path:hsa_M00158,genomic,pathway,"F-type ATPase, eukaryotes"
+path:hsa_M00160,genomic,pathway,"V-type ATPase, eukaryotes"
+path:hsa_M00177,genomic,pathway,"Ribosome, eukaryotes"
+path:hsa_M00180,genomic,pathway,"RNA polymerase II, eukaryotes"
+path:hsa_M00181,genomic,pathway,"RNA polymerase III, eukaryotes"
+path:hsa_M00182,genomic,pathway,"RNA polymerase I, eukaryotes"
+path:hsa_M00261,genomic,pathway,DNA polymerase alpha / primase complex
+path:hsa_M00262,genomic,pathway,DNA polymerase delta complex
+path:hsa_M00263,genomic,pathway,DNA polymerase epsilon complex
+path:hsa_M00284,genomic,pathway,Origin recognition complex
+path:hsa_M00285,genomic,pathway,MCM complex
+path:hsa_M00286,genomic,pathway,GINS complex
+path:hsa_M00288,genomic,pathway,RPA complex
+path:hsa_M00289,genomic,pathway,RF-C complex
+path:hsa_M00290,genomic,pathway,Holo-TFIIH complex
+path:hsa_M00291,genomic,pathway,MRN complex
+path:hsa_M00293,genomic,pathway,DNA polymerase zeta  complex
+path:hsa_M00294,genomic,pathway,DNA polymerase gamma complex
+path:hsa_M00295,genomic,pathway,BRCA1-associated genome surveillance complex (BASC)
+path:hsa_M00296,genomic,pathway,BER complex
+path:hsa_M00297,genomic,pathway,DNA-PK complex
+path:hsa_M00307,genomic,pathway,"Pyruvate oxidation, pyruvate => acetyl-CoA"
+path:hsa_M00337,genomic,pathway,Immunoproteasome
+path:hsa_M00338,genomic,pathway,"Cysteine biosynthesis, homocysteine + serine => cysteine"
+path:hsa_M00340,genomic,pathway,"Proteasome, 20S core particle"
+path:hsa_M00341,genomic,pathway,"Proteasome, 19S regulatory particle (PA700)"
+path:hsa_M00351,genomic,pathway,"Spliceosome, U1-snRNP"
+path:hsa_M00352,genomic,pathway,"Spliceosome, U2-snRNP"
+path:hsa_M00353,genomic,pathway,"Spliceosome, Prp19/CDC5L complex"
+path:hsa_M00354,genomic,pathway,"Spliceosome, U4/U6.U5 tri-snRNP"
+path:hsa_M00355,genomic,pathway,"Spliceosome, 35S U5-snRNP"
+path:hsa_M00359,genomic,pathway,"Aminoacyl-tRNA biosynthesis, eukaryotes"
+path:hsa_M00361,genomic,pathway,"Nucleotide sugar biosynthesis, eukaryotes"
+path:hsa_M00380,genomic,pathway,SCF-BTRC complex
+path:hsa_M00381,genomic,pathway,SCF-SKP2 complex
+path:hsa_M00382,genomic,pathway,SCF-FBS complex
+path:hsa_M00383,genomic,pathway,ECV complex
+path:hsa_M00384,genomic,pathway,Cul3-SPOP complex
+path:hsa_M00385,genomic,pathway,Cul4-DDB1-DDB2 complex
+path:hsa_M00386,genomic,pathway,Cul4-DDB1-CSA complex
+path:hsa_M00387,genomic,pathway,SCF-FBW7 complex
+path:hsa_M00388,genomic,pathway,ECS complex
+path:hsa_M00389,genomic,pathway,APC/C complex
+path:hsa_M00390,genomic,pathway,"Exosome, archaea"
+path:hsa_M00391,genomic,pathway,"Exosome, eukaryotes"
+path:hsa_M00392,genomic,pathway,Ski complex
+path:hsa_M00393,genomic,pathway,TRAMP complex
+path:hsa_M00395,genomic,pathway,Decapping complex
+path:hsa_M00396,genomic,pathway,Lsm 2-8 complex
+path:hsa_M00397,genomic,pathway,Lsm 1-7 complex
+path:hsa_M00398,genomic,pathway,Sm core complex
+path:hsa_M00399,genomic,pathway,Cap binding complex
+path:hsa_M00400,genomic,pathway,p97-Ufd1-Npl4 complex
+path:hsa_M00401,genomic,pathway,Sec61 complex
+path:hsa_M00402,genomic,pathway,Translocon-associated protein (TRAP) complex
+path:hsa_M00403,genomic,pathway,HRD1/SEL1 ERAD complex
+path:hsa_M00404,genomic,pathway,COPII complex
+path:hsa_M00405,genomic,pathway,THC complex
+path:hsa_M00406,genomic,pathway,TREX complex
+path:hsa_M00408,genomic,pathway,ESCRT-0 complex
+path:hsa_M00409,genomic,pathway,ESCRT-I complex
+path:hsa_M00410,genomic,pathway,ESCRT-II complex
+path:hsa_M00412,genomic,pathway,ESCRT-III complex
+path:hsa_M00413,genomic,pathway,FA core complex
+path:hsa_M00414,genomic,pathway,Bloom's syndrome complex
+path:hsa_M00415,genomic,pathway,"Fatty acid biosynthesis, elongation, endoplasmic reticulum"
+path:hsa_M00424,genomic,pathway,Shelterin complex
+path:hsa_M00425,genomic,pathway,H/ACA ribonucleoprotein complex
+path:hsa_M00426,genomic,pathway,Survival motor neuron (SMN) complex
+path:hsa_M00427,genomic,pathway,Nuclear pore complex
+path:hsa_M00428,genomic,pathway,eIF4F complex
+path:hsa_M00430,genomic,pathway,Exon junction complex (EJC)
+path:hsa_M00549,genomic,pathway,"Nucleotide sugar biosynthesis, glucose => UDP-glucose"
+path:hsa_M00554,genomic,pathway,"Nucleotide sugar biosynthesis, galactose => UDP-galactose"
+path:hsa_M00632,genomic,pathway,"Galactose degradation, Leloir pathway, galactose => alpha-D-glucose-1P"
+path:hsa_M00676,genomic,pathway,PI3K-Akt signaling
+path:hsa_M00677,genomic,pathway,Wnt signaling
+path:hsa_M00678,genomic,pathway,Hedgehog signaling
+path:hsa_M00679,genomic,pathway,BMP signaling
+path:hsa_M00680,genomic,pathway,TGF-beta signaling
+path:hsa_M00681,genomic,pathway,Activin signaling
+path:hsa_M00682,genomic,pathway,Notch signaling
+path:hsa_M00683,genomic,pathway,Hippo signaling
+path:hsa_M00684,genomic,pathway,JAK-STAT signaling
+path:hsa_M00685,genomic,pathway,Apoptotic machinery
+path:hsa_M00686,genomic,pathway,Toll-like receptor signaling
+path:hsa_M00687,genomic,pathway,MAPK (ERK1/2) signaling
+path:hsa_M00688,genomic,pathway,MAPK (JNK) signaling
+path:hsa_M00689,genomic,pathway,MAPK (p38) signaling
+path:hsa_M00690,genomic,pathway,MAPK (ERK5) signaling
+path:hsa_M00691,genomic,pathway,DNA damage-induced cell cycle checkpoints
+path:hsa_M00692,genomic,pathway,Cell cycle - G1/S transition
+path:hsa_M00693,genomic,pathway,Cell cycle - G2/M transition
+path:hsa_M00694,genomic,pathway,cGMP signaling
+path:hsa_M00695,genomic,pathway,cAMP signaling
+path:hsa_M00741,genomic,pathway,"Propanoyl-CoA metabolism, propanoyl-CoA => succinyl-CoA"
+path:hsa00010,genomic,pathway,Glycolysis / Gluconeogenesis
+path:hsa00020,genomic,pathway,Citrate cycle (TCA cycle)
+path:hsa00030,genomic,pathway,Pentose phosphate pathway
+path:hsa00040,genomic,pathway,Pentose and glucuronate interconversions
+path:hsa00051,genomic,pathway,Fructose and mannose metabolism
+path:hsa00052,genomic,pathway,Galactose metabolism
+path:hsa00053,genomic,pathway,Ascorbate and aldarate metabolism
+path:hsa00061,genomic,pathway,Fatty acid biosynthesis
+path:hsa00062,genomic,pathway,Fatty acid elongation
+path:hsa00071,genomic,pathway,Fatty acid degradation
+path:hsa00072,genomic,pathway,Synthesis and degradation of ketone bodies
+path:hsa00100,genomic,pathway,Steroid biosynthesis
+path:hsa00120,genomic,pathway,Primary bile acid biosynthesis
+path:hsa00130,genomic,pathway,Ubiquinone and other terpenoid-quinone biosynthesis
+path:hsa00140,genomic,pathway,Steroid hormone biosynthesis
+path:hsa00190,genomic,pathway,Oxidative phosphorylation
+path:hsa00220,genomic,pathway,Arginine biosynthesis
+path:hsa00230,genomic,pathway,Purine metabolism
+path:hsa00232,genomic,pathway,Caffeine metabolism
+path:hsa00240,genomic,pathway,Pyrimidine metabolism
+path:hsa00250,genomic,pathway,"Alanine, aspartate and glutamate metabolism"
+path:hsa00260,genomic,pathway,"Glycine, serine and threonine metabolism"
+path:hsa00270,genomic,pathway,Cysteine and methionine metabolism
+path:hsa00280,genomic,pathway,"Valine, leucine and isoleucine degradation"
+path:hsa00290,genomic,pathway,"Valine, leucine and isoleucine biosynthesis"
+path:hsa00300,genomic,pathway,Lysine biosynthesis
+path:hsa00310,genomic,pathway,Lysine degradation
+path:hsa00330,genomic,pathway,Arginine and proline metabolism
+path:hsa00340,genomic,pathway,Histidine metabolism
+path:hsa00350,genomic,pathway,Tyrosine metabolism
+path:hsa00360,genomic,pathway,Phenylalanine metabolism
+path:hsa00380,genomic,pathway,Tryptophan metabolism
+path:hsa00400,genomic,pathway,"Phenylalanine, tyrosine and tryptophan biosynthesis"
+path:hsa00410,genomic,pathway,beta-Alanine metabolism
+path:hsa00430,genomic,pathway,Taurine and hypotaurine metabolism
+path:hsa00440,genomic,pathway,Phosphonate and phosphinate metabolism
+path:hsa00450,genomic,pathway,Selenocompound metabolism
+path:hsa00471,genomic,pathway,D-Glutamine and D-glutamate metabolism
+path:hsa00472,genomic,pathway,D-Arginine and D-ornithine metabolism
+path:hsa00480,genomic,pathway,Glutathione metabolism
+path:hsa00500,genomic,pathway,Starch and sucrose metabolism
+path:hsa00510,genomic,pathway,N-Glycan biosynthesis
+path:hsa00511,genomic,pathway,Other glycan degradation
+path:hsa00512,genomic,pathway,Mucin type O-glycan biosynthesis
+path:hsa00514,genomic,pathway,Other types of O-glycan biosynthesis
+path:hsa00515,genomic,pathway,Mannose type O-glycan biosynthesis
+path:hsa00520,genomic,pathway,Amino sugar and nucleotide sugar metabolism
+path:hsa00524,genomic,pathway,"Neomycin, kanamycin and gentamicin biosynthesis"
+path:hsa00531,genomic,pathway,Glycosaminoglycan degradation
+path:hsa00532,genomic,pathway,Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate
+path:hsa00533,genomic,pathway,Glycosaminoglycan biosynthesis - keratan sulfate
+path:hsa00534,genomic,pathway,Glycosaminoglycan biosynthesis - heparan sulfate / heparin
+path:hsa00561,genomic,pathway,Glycerolipid metabolism
+path:hsa00562,genomic,pathway,Inositol phosphate metabolism
+path:hsa00563,genomic,pathway,Glycosylphosphatidylinositol (GPI)-anchor biosynthesis
+path:hsa00564,genomic,pathway,Glycerophospholipid metabolism
+path:hsa00565,genomic,pathway,Ether lipid metabolism
+path:hsa00590,genomic,pathway,Arachidonic acid metabolism
+path:hsa00591,genomic,pathway,Linoleic acid metabolism
+path:hsa00592,genomic,pathway,alpha-Linolenic acid metabolism
+path:hsa00600,genomic,pathway,Sphingolipid metabolism
+path:hsa00601,genomic,pathway,Glycosphingolipid biosynthesis - lacto and neolacto series
+path:hsa00603,genomic,pathway,Glycosphingolipid biosynthesis - globo and isoglobo series
+path:hsa00604,genomic,pathway,Glycosphingolipid biosynthesis - ganglio series
+path:hsa00620,genomic,pathway,Pyruvate metabolism
+path:hsa00630,genomic,pathway,Glyoxylate and dicarboxylate metabolism
+path:hsa00640,genomic,pathway,Propanoate metabolism
+path:hsa00650,genomic,pathway,Butanoate metabolism
+path:hsa00670,genomic,pathway,One carbon pool by folate
+path:hsa00730,genomic,pathway,Thiamine metabolism
+path:hsa00740,genomic,pathway,Riboflavin metabolism
+path:hsa00750,genomic,pathway,Vitamin B6 metabolism
+path:hsa00760,genomic,pathway,Nicotinate and nicotinamide metabolism
+path:hsa00770,genomic,pathway,Pantothenate and CoA biosynthesis
+path:hsa00780,genomic,pathway,Biotin metabolism
+path:hsa00785,genomic,pathway,Lipoic acid metabolism
+path:hsa00790,genomic,pathway,Folate biosynthesis
+path:hsa00830,genomic,pathway,Retinol metabolism
+path:hsa00860,genomic,pathway,Porphyrin and chlorophyll metabolism
+path:hsa00900,genomic,pathway,Terpenoid backbone biosynthesis
+path:hsa00910,genomic,pathway,Nitrogen metabolism
+path:hsa00920,genomic,pathway,Sulfur metabolism
+path:hsa00970,genomic,pathway,Aminoacyl-tRNA biosynthesis
+path:hsa00980,genomic,pathway,Metabolism of xenobiotics by cytochrome P450
+path:hsa00982,genomic,pathway,Drug metabolism - cytochrome P450
+path:hsa00983,genomic,pathway,Drug metabolism - other enzymes
+path:hsa01040,genomic,pathway,Biosynthesis of unsaturated fatty acids
+path:hsa01100,genomic,pathway,Metabolic pathways
+path:hsa01200,genomic,pathway,Carbon metabolism
+path:hsa01210,genomic,pathway,2-Oxocarboxylic acid metabolism
+path:hsa01212,genomic,pathway,Fatty acid metabolism
+path:hsa01230,genomic,pathway,Biosynthesis of amino acids
+path:hsa01521,genomic,pathway,EGFR tyrosine kinase inhibitor resistance
+path:hsa01522,genomic,pathway,Endocrine resistance
+path:hsa01523,genomic,pathway,Antifolate resistance
+path:hsa01524,genomic,pathway,Platinum drug resistance
+path:hsa02010,genomic,pathway,ABC transporters
+path:hsa03008,genomic,pathway,Ribosome biogenesis in eukaryotes
+path:hsa03010,genomic,pathway,Ribosome
+path:hsa03013,genomic,pathway,RNA transport
+path:hsa03015,genomic,pathway,mRNA surveillance pathway
+path:hsa03018,genomic,pathway,RNA degradation
+path:hsa03020,genomic,pathway,RNA polymerase
+path:hsa03022,genomic,pathway,Basal transcription factors
+path:hsa03030,genomic,pathway,DNA replication
+path:hsa03040,genomic,pathway,Spliceosome
+path:hsa03050,genomic,pathway,Proteasome
+path:hsa03060,genomic,pathway,Protein export
+path:hsa03320,genomic,pathway,PPAR signaling pathway
+path:hsa03410,genomic,pathway,Base excision repair
+path:hsa03420,genomic,pathway,Nucleotide excision repair
+path:hsa03430,genomic,pathway,Mismatch repair
+path:hsa03440,genomic,pathway,Homologous recombination
+path:hsa03450,genomic,pathway,Non-homologous end-joining
+path:hsa03460,genomic,pathway,Fanconi anemia pathway
+path:hsa04010,genomic,pathway,MAPK signaling pathway
+path:hsa04012,genomic,pathway,ErbB signaling pathway
+path:hsa04014,genomic,pathway,Ras signaling pathway
+path:hsa04015,genomic,pathway,Rap1 signaling pathway
+path:hsa04020,genomic,pathway,Calcium signaling pathway
+path:hsa04022,genomic,pathway,cGMP-PKG signaling pathway
+path:hsa04024,genomic,pathway,cAMP signaling pathway
+path:hsa04060,genomic,pathway,Cytokine-cytokine receptor interaction
+path:hsa04062,genomic,pathway,Chemokine signaling pathway
+path:hsa04064,genomic,pathway,NF-kappa B signaling pathway
+path:hsa04066,genomic,pathway,HIF-1 signaling pathway
+path:hsa04068,genomic,pathway,FoxO signaling pathway
+path:hsa04070,genomic,pathway,Phosphatidylinositol signaling system
+path:hsa04071,genomic,pathway,Sphingolipid signaling pathway
+path:hsa04072,genomic,pathway,Phospholipase D signaling pathway
+path:hsa04080,genomic,pathway,Neuroactive ligand-receptor interaction
+path:hsa04110,genomic,pathway,Cell cycle
+path:hsa04114,genomic,pathway,Oocyte meiosis
+path:hsa04115,genomic,pathway,p53 signaling pathway
+path:hsa04120,genomic,pathway,Ubiquitin mediated proteolysis
+path:hsa04122,genomic,pathway,Sulfur relay system
+path:hsa04130,genomic,pathway,SNARE interactions in vesicular transport
+path:hsa04136,genomic,pathway,Autophagy - other
+path:hsa04137,genomic,pathway,Mitophagy - animal
+path:hsa04140,genomic,pathway,Autophagy - animal
+path:hsa04141,genomic,pathway,Protein processing in endoplasmic reticulum
+path:hsa04142,genomic,pathway,Lysosome
+path:hsa04144,genomic,pathway,Endocytosis
+path:hsa04145,genomic,pathway,Phagosome
+path:hsa04146,genomic,pathway,Peroxisome
+path:hsa04150,genomic,pathway,mTOR signaling pathway
+path:hsa04151,genomic,pathway,PI3K-Akt signaling pathway
+path:hsa04152,genomic,pathway,AMPK signaling pathway
+path:hsa04210,genomic,pathway,Apoptosis
+path:hsa04211,genomic,pathway,Longevity regulating pathway
+path:hsa04213,genomic,pathway,Longevity regulating pathway - multiple species
+path:hsa04215,genomic,pathway,Apoptosis - multiple species
+path:hsa04216,genomic,pathway,Ferroptosis
+path:hsa04260,genomic,pathway,Cardiac muscle contraction
+path:hsa04261,genomic,pathway,Adrenergic signaling in cardiomyocytes
+path:hsa04270,genomic,pathway,Vascular smooth muscle contraction
+path:hsa04310,genomic,pathway,Wnt signaling pathway
+path:hsa04320,genomic,pathway,Dorso-ventral axis formation
+path:hsa04330,genomic,pathway,Notch signaling pathway
+path:hsa04340,genomic,pathway,Hedgehog signaling pathway
+path:hsa04350,genomic,pathway,TGF-beta signaling pathway
+path:hsa04360,genomic,pathway,Axon guidance
+path:hsa04370,genomic,pathway,VEGF signaling pathway
+path:hsa04371,genomic,pathway,Apelin signaling pathway
+path:hsa04380,genomic,pathway,Osteoclast differentiation
+path:hsa04390,genomic,pathway,Hippo signaling pathway
+path:hsa04392,genomic,pathway,Hippo signaling pathway -multiple species
+path:hsa04510,genomic,pathway,Focal adhesion
+path:hsa04512,genomic,pathway,ECM-receptor interaction
+path:hsa04514,genomic,pathway,Cell adhesion molecules (CAMs)
+path:hsa04520,genomic,pathway,Adherens junction
+path:hsa04530,genomic,pathway,Tight junction
+path:hsa04540,genomic,pathway,Gap junction
+path:hsa04550,genomic,pathway,Signaling pathways regulating pluripotency of stem cells
+path:hsa04610,genomic,pathway,Complement and coagulation cascades
+path:hsa04611,genomic,pathway,Platelet activation
+path:hsa04612,genomic,pathway,Antigen processing and presentation
+path:hsa04614,genomic,pathway,Renin-angiotensin system
+path:hsa04620,genomic,pathway,Toll-like receptor signaling pathway
+path:hsa04621,genomic,pathway,NOD-like receptor signaling pathway
+path:hsa04622,genomic,pathway,RIG-I-like receptor signaling pathway
+path:hsa04623,genomic,pathway,Cytosolic DNA-sensing pathway
+path:hsa04630,genomic,pathway,Jak-STAT signaling pathway
+path:hsa04640,genomic,pathway,Hematopoietic cell lineage
+path:hsa04650,genomic,pathway,Natural killer cell mediated cytotoxicity
+path:hsa04657,genomic,pathway,IL-17 signaling pathway
+path:hsa04658,genomic,pathway,Th1 and Th2 cell differentiation
+path:hsa04659,genomic,pathway,Th17 cell differentiation
+path:hsa04660,genomic,pathway,T cell receptor signaling pathway
+path:hsa04662,genomic,pathway,B cell receptor signaling pathway
+path:hsa04664,genomic,pathway,Fc epsilon RI signaling pathway
+path:hsa04666,genomic,pathway,Fc gamma R-mediated phagocytosis
+path:hsa04668,genomic,pathway,TNF signaling pathway
+path:hsa04670,genomic,pathway,Leukocyte transendothelial migration
+path:hsa04672,genomic,pathway,Intestinal immune network for IgA production
+path:hsa04710,genomic,pathway,Circadian rhythm
+path:hsa04713,genomic,pathway,Circadian entrainment
+path:hsa04720,genomic,pathway,Long-term potentiation
+path:hsa04721,genomic,pathway,Synaptic vesicle cycle
+path:hsa04722,genomic,pathway,Neurotrophin signaling pathway
+path:hsa04723,genomic,pathway,Retrograde endocannabinoid signaling
+path:hsa04724,genomic,pathway,Glutamatergic synapse
+path:hsa04725,genomic,pathway,Cholinergic synapse
+path:hsa04726,genomic,pathway,Serotonergic synapse
+path:hsa04727,genomic,pathway,GABAergic synapse
+path:hsa04728,genomic,pathway,Dopaminergic synapse
+path:hsa04730,genomic,pathway,Long-term depression
+path:hsa04740,genomic,pathway,Olfactory transduction
+path:hsa04742,genomic,pathway,Taste transduction
+path:hsa04744,genomic,pathway,Phototransduction
+path:hsa04750,genomic,pathway,Inflammatory mediator regulation of TRP channels
+path:hsa04810,genomic,pathway,Regulation of actin cytoskeleton
+path:hsa04910,genomic,pathway,Insulin signaling pathway
+path:hsa04911,genomic,pathway,Insulin secretion
+path:hsa04912,genomic,pathway,GnRH signaling pathway
+path:hsa04913,genomic,pathway,Ovarian steroidogenesis
+path:hsa04914,genomic,pathway,Progesterone-mediated oocyte maturation
+path:hsa04915,genomic,pathway,Estrogen signaling pathway
+path:hsa04916,genomic,pathway,Melanogenesis
+path:hsa04917,genomic,pathway,Prolactin signaling pathway
+path:hsa04918,genomic,pathway,Thyroid hormone synthesis
+path:hsa04919,genomic,pathway,Thyroid hormone signaling pathway
+path:hsa04920,genomic,pathway,Adipocytokine signaling pathway
+path:hsa04921,genomic,pathway,Oxytocin signaling pathway
+path:hsa04922,genomic,pathway,Glucagon signaling pathway
+path:hsa04923,genomic,pathway,Regulation of lipolysis in adipocytes
+path:hsa04924,genomic,pathway,Renin secretion
+path:hsa04925,genomic,pathway,Aldosterone synthesis and secretion
+path:hsa04930,genomic,pathway,Type II diabetes mellitus
+path:hsa04931,genomic,pathway,Insulin resistance
+path:hsa04932,genomic,pathway,Non-alcoholic fatty liver disease (NAFLD)
+path:hsa04933,genomic,pathway,AGE-RAGE signaling pathway in diabetic complications
+path:hsa04940,genomic,pathway,Type I diabetes mellitus
+path:hsa04950,genomic,pathway,Maturity onset diabetes of the young
+path:hsa04960,genomic,pathway,Aldosterone-regulated sodium reabsorption
+path:hsa04961,genomic,pathway,Endocrine and other factor-regulated calcium reabsorption
+path:hsa04962,genomic,pathway,Vasopressin-regulated water reabsorption
+path:hsa04964,genomic,pathway,Proximal tubule bicarbonate reclamation
+path:hsa04966,genomic,pathway,Collecting duct acid secretion
+path:hsa04970,genomic,pathway,Salivary secretion
+path:hsa04971,genomic,pathway,Gastric acid secretion
+path:hsa04972,genomic,pathway,Pancreatic secretion
+path:hsa04973,genomic,pathway,Carbohydrate digestion and absorption
+path:hsa04974,genomic,pathway,Protein digestion and absorption
+path:hsa04975,genomic,pathway,Fat digestion and absorption
+path:hsa04976,genomic,pathway,Bile secretion
+path:hsa04977,genomic,pathway,Vitamin digestion and absorption
+path:hsa04978,genomic,pathway,Mineral absorption
+path:hsa05010,genomic,pathway,Alzheimer's disease
+path:hsa05012,genomic,pathway,Parkinson's disease
+path:hsa05014,genomic,pathway,Amyotrophic lateral sclerosis (ALS)
+path:hsa05016,genomic,pathway,Huntington's disease
+path:hsa05020,genomic,pathway,Prion diseases
+path:hsa05030,genomic,pathway,Cocaine addiction
+path:hsa05031,genomic,pathway,Amphetamine addiction
+path:hsa05032,genomic,pathway,Morphine addiction
+path:hsa05033,genomic,pathway,Nicotine addiction
+path:hsa05034,genomic,pathway,Alcoholism
+path:hsa05100,genomic,pathway,Bacterial invasion of epithelial cells
+path:hsa05110,genomic,pathway,Vibrio cholerae infection
+path:hsa05120,genomic,pathway,Epithelial cell signaling in Helicobacter pylori infection
+path:hsa05130,genomic,pathway,Pathogenic Escherichia coli infection
+path:hsa05131,genomic,pathway,Shigellosis
+path:hsa05132,genomic,pathway,Salmonella infection
+path:hsa05133,genomic,pathway,Pertussis
+path:hsa05134,genomic,pathway,Legionellosis
+path:hsa05140,genomic,pathway,Leishmaniasis
+path:hsa05142,genomic,pathway,Chagas disease (American trypanosomiasis)
+path:hsa05143,genomic,pathway,African trypanosomiasis
+path:hsa05144,genomic,pathway,Malaria
+path:hsa05145,genomic,pathway,Toxoplasmosis
+path:hsa05146,genomic,pathway,Amoebiasis
+path:hsa05150,genomic,pathway,Staphylococcus aureus infection
+path:hsa05152,genomic,pathway,Tuberculosis
+path:hsa05160,genomic,pathway,Hepatitis C
+path:hsa05161,genomic,pathway,Hepatitis B
+path:hsa05162,genomic,pathway,Measles
+path:hsa05164,genomic,pathway,Influenza A
+path:hsa05166,genomic,pathway,HTLV-I infection
+path:hsa05168,genomic,pathway,Herpes simplex infection
+path:hsa05169,genomic,pathway,Epstein-Barr virus infection
+path:hsa05200,genomic,pathway,Pathways in cancer
+path:hsa05202,genomic,pathway,Transcriptional misregulation in cancer
+path:hsa05203,genomic,pathway,Viral carcinogenesis
+path:hsa05204,genomic,pathway,Chemical carcinogenesis
+path:hsa05205,genomic,pathway,Proteoglycans in cancer
+path:hsa05206,genomic,pathway,MicroRNAs in cancer
+path:hsa05210,genomic,pathway,Colorectal cancer
+path:hsa05211,genomic,pathway,Renal cell carcinoma
+path:hsa05212,genomic,pathway,Pancreatic cancer
+path:hsa05213,genomic,pathway,Endometrial cancer
+path:hsa05214,genomic,pathway,Glioma
+path:hsa05215,genomic,pathway,Prostate cancer
+path:hsa05216,genomic,pathway,Thyroid cancer
+path:hsa05217,genomic,pathway,Basal cell carcinoma
+path:hsa05218,genomic,pathway,Melanoma
+path:hsa05219,genomic,pathway,Bladder cancer
+path:hsa05220,genomic,pathway,Chronic myeloid leukemia
+path:hsa05221,genomic,pathway,Acute myeloid leukemia
+path:hsa05222,genomic,pathway,Small cell lung cancer
+path:hsa05223,genomic,pathway,Non-small cell lung cancer
+path:hsa05224,genomic,pathway,Breast cancer
+path:hsa05230,genomic,pathway,Central carbon metabolism in cancer
+path:hsa05231,genomic,pathway,Choline metabolism in cancer
+path:hsa05310,genomic,pathway,Asthma
+path:hsa05320,genomic,pathway,Autoimmune thyroid disease
+path:hsa05321,genomic,pathway,Inflammatory bowel disease (IBD)
+path:hsa05322,genomic,pathway,Systemic lupus erythematosus
+path:hsa05323,genomic,pathway,Rheumatoid arthritis
+path:hsa05330,genomic,pathway,Allograft rejection
+path:hsa05332,genomic,pathway,Graft-versus-host disease
+path:hsa05340,genomic,pathway,Primary immunodeficiency
+path:hsa05410,genomic,pathway,Hypertrophic cardiomyopathy (HCM)
+path:hsa05412,genomic,pathway,Arrhythmogenic right ventricular cardiomyopathy (ARVC)
+path:hsa05414,genomic,pathway,Dilated cardiomyopathy
+path:hsa05416,genomic,pathway,Viral myocarditis
+path:hsa05418,genomic,pathway,Fluid shear stress and atherosclerosis
+path:R-HSA-1059683,genomic,pathway,Interleukin-6 signaling
+path:R-HSA-109581,genomic,pathway,Apoptosis
+path:R-HSA-109582,genomic,pathway,Hemostasis
+path:R-HSA-109606,genomic,pathway,Intrinsic Pathway for Apoptosis
+path:R-HSA-109688,genomic,pathway,Cleavage of Growing Transcript in the Termination Region
+path:R-HSA-109703,genomic,pathway,PKB-mediated events
+path:R-HSA-109704,genomic,pathway,PI3K Cascade
+path:R-HSA-110056,genomic,pathway,MAPK3 (ERK1) activation
+path:R-HSA-110312,genomic,pathway,Translesion synthesis by REV1
+path:R-HSA-110313,genomic,pathway,Translesion synthesis by Y family DNA polymerases bypasses lesions on DNA template
+path:R-HSA-110314,genomic,pathway,Recognition of DNA damage by PCNA-containing replication complex
+path:R-HSA-110320,genomic,pathway,Translesion Synthesis by POLH
+path:R-HSA-110328,genomic,pathway,Recognition and association of DNA glycosylase with site containing an affected pyrimidine
+path:R-HSA-110329,genomic,pathway,Cleavage of the damaged pyrimidine
+path:R-HSA-110330,genomic,pathway,Recognition and association of DNA glycosylase with site containing an affected purine
+path:R-HSA-110331,genomic,pathway,Cleavage of the damaged purine
+path:R-HSA-110357,genomic,pathway,Displacement of DNA glycosylase by APEX1
+path:R-HSA-110362,genomic,pathway,POLB-Dependent Long Patch Base Excision Repair
+path:R-HSA-110373,genomic,pathway,Resolution of AP sites via the multiple-nucleotide patch replacement pathway
+path:R-HSA-110381,genomic,pathway,Resolution of AP sites via the single-nucleotide replacement pathway
+path:R-HSA-111367,genomic,pathway,SLBP independent Processing of Histone Pre-mRNAs
+path:R-HSA-111446,genomic,pathway,Activation of BIM and translocation to mitochondria
+path:R-HSA-111447,genomic,pathway,Activation of BAD and translocation to mitochondria
+path:R-HSA-111448,genomic,pathway,Activation of NOXA and translocation to mitochondria
+path:R-HSA-111452,genomic,pathway,Activation and oligomerization of BAK protein
+path:R-HSA-111453,genomic,pathway,BH3-only proteins associate with and inactivate anti-apoptotic BCL-2 members
+path:R-HSA-111457,genomic,pathway,Release of apoptotic factors from the mitochondria
+path:R-HSA-111458,genomic,pathway,Formation of apoptosome
+path:R-HSA-111459,genomic,pathway,Activation of caspases through apoptosome-mediated cleavage
+path:R-HSA-111461,genomic,pathway,Cytochrome c-mediated apoptotic response
+path:R-HSA-111463,genomic,pathway,SMAC binds to IAPs
+path:R-HSA-111464,genomic,pathway,SMAC-mediated dissociation of IAP:caspase complexes
+path:R-HSA-111465,genomic,pathway,Apoptotic cleavage of cellular proteins
+path:R-HSA-111469,genomic,pathway,SMAC-mediated apoptotic response
+path:R-HSA-111471,genomic,pathway,Apoptotic factor-mediated response
+path:R-HSA-111885,genomic,pathway,Opioid Signalling
+path:R-HSA-111931,genomic,pathway,PKA-mediated phosphorylation of CREB
+path:R-HSA-111932,genomic,pathway,CaMK IV-mediated phosphorylation of CREB
+path:R-HSA-111933,genomic,pathway,Calmodulin induced events
+path:R-HSA-111957,genomic,pathway,Cam-PDE 1 activation
+path:R-HSA-111995,genomic,pathway,phospho-PLA2 pathway
+path:R-HSA-111996,genomic,pathway,Ca-dependent events
+path:R-HSA-111997,genomic,pathway,CaM pathway
+path:R-HSA-112040,genomic,pathway,G-protein mediated events
+path:R-HSA-112043,genomic,pathway,PLC beta mediated events
+path:R-HSA-112122,genomic,pathway,ALKBH2 mediated reversal of alkylation damage
+path:R-HSA-112126,genomic,pathway,ALKBH3 mediated reversal of alkylation damage
+path:R-HSA-112303,genomic,pathway,Electric Transmission Across Gap Junctions
+path:R-HSA-112307,genomic,pathway,Transmission across Electrical Synapses
+path:R-HSA-112308,genomic,pathway,Depolarization of the Presynaptic Terminal Triggers the Opening of Calcium Channels
+path:R-HSA-112310,genomic,pathway,Neurotransmitter Release Cycle
+path:R-HSA-112311,genomic,pathway,Neurotransmitter Clearance In The Synaptic Cleft
+path:R-HSA-112313,genomic,pathway,Neurotransmitter uptake and Metabolism In Glial Cells
+path:R-HSA-112314,genomic,pathway,Neurotransmitter Receptor Binding And Downstream Transmission In The  Postsynaptic Cell
+path:R-HSA-112315,genomic,pathway,Transmission across Chemical Synapses
+path:R-HSA-112316,genomic,pathway,Neuronal System
+path:R-HSA-112382,genomic,pathway,Formation of RNA Pol II elongation complex
+path:R-HSA-112399,genomic,pathway,IRS-mediated signalling
+path:R-HSA-112409,genomic,pathway,RAF-independent MAPK1/3 activation
+path:R-HSA-112411,genomic,pathway,MAPK1 (ERK2) activation
+path:R-HSA-112412,genomic,pathway,SOS-mediated signalling
+path:R-HSA-113418,genomic,pathway,Formation of the Early Elongation Complex
+path:R-HSA-113501,genomic,pathway,Inhibition of replication initiation of damaged DNA by RB1/E2F1
+path:R-HSA-113507,genomic,pathway,E2F-enabled inhibition of pre-replication complex formation
+path:R-HSA-113510,genomic,pathway,E2F mediated regulation of DNA replication
+path:R-HSA-114294,genomic,pathway,"Activation, translocation and oligomerization of BAX"
+path:R-HSA-114452,genomic,pathway,Activation of BH3-only proteins
+path:R-HSA-114508,genomic,pathway,Effects of PIP2 hydrolysis
+path:R-HSA-114516,genomic,pathway,Disinhibition of SNARE formation
+path:R-HSA-114604,genomic,pathway,GPVI-mediated activation cascade
+path:R-HSA-114608,genomic,pathway,Platelet degranulation
+path:R-HSA-1168372,genomic,pathway,Downstream signaling events of B Cell Receptor (BCR)
+path:R-HSA-1169091,genomic,pathway,Activation of NF-kappaB in B cells
+path:R-HSA-1169092,genomic,pathway,Activation of RAS in B cells
+path:R-HSA-1169408,genomic,pathway,ISG15 antiviral mechanism
+path:R-HSA-1169410,genomic,pathway,Antiviral mechanism by IFN-stimulated genes
+path:R-HSA-1170546,genomic,pathway,Prolactin receptor signaling
+path:R-HSA-1181150,genomic,pathway,Signaling by NODAL
+path:R-HSA-1187000,genomic,pathway,Fertilization
+path:R-HSA-1221632,genomic,pathway,Meiotic synapsis
+path:R-HSA-1222352,genomic,pathway,Latent infection of Homo sapiens with Mycobacterium tuberculosis
+path:R-HSA-1222387,genomic,pathway,Tolerance of reactive oxygen produced by macrophages
+path:R-HSA-1222449,genomic,pathway,Mtb iron assimilation by chelation
+path:R-HSA-1222499,genomic,pathway,Response of Mtb to phagocytosis
+path:R-HSA-1222538,genomic,pathway,Tolerance by Mtb to nitric oxide produced by macrophages
+path:R-HSA-1222541,genomic,pathway,Cell redox homeostasis
+path:R-HSA-1222556,genomic,pathway,"ROS, RNS production in phagocytes"
+path:R-HSA-1226099,genomic,pathway,Signaling by FGFR in disease
+path:R-HSA-1227986,genomic,pathway,Signaling by ERBB2
+path:R-HSA-1234158,genomic,pathway,Regulation of gene expression by Hypoxia-inducible Factor
+path:R-HSA-1234162,genomic,pathway,Oxygen-dependent asparagine hydroxylation of Hypoxia-inducible Factor Alpha
+path:R-HSA-1234174,genomic,pathway,Regulation of Hypoxia-inducible Factor (HIF) by oxygen
+path:R-HSA-1234176,genomic,pathway,Oxygen-dependent proline hydroxylation of Hypoxia-inducible Factor Alpha
+path:R-HSA-1236382,genomic,pathway,Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants
+path:R-HSA-1236394,genomic,pathway,Signaling by ERBB4
+path:R-HSA-1236973,genomic,pathway,Cross-presentation of particulate exogenous antigens (phagosomes)
+path:R-HSA-1236974,genomic,pathway,ER-Phagosome pathway
+path:R-HSA-1236975,genomic,pathway,Antigen processing-Cross presentation
+path:R-HSA-1236977,genomic,pathway,Endosomal/Vacuolar pathway
+path:R-HSA-1236978,genomic,pathway,Cross-presentation of soluble exogenous antigens (endosomes)
+path:R-HSA-1237044,genomic,pathway,Erythrocytes take up carbon dioxide and release oxygen
+path:R-HSA-1237112,genomic,pathway,Methionine salvage pathway
+path:R-HSA-1247673,genomic,pathway,Erythrocytes take up oxygen and release carbon dioxide
+path:R-HSA-1250196,genomic,pathway,SHC1 events in ERBB2 signaling
+path:R-HSA-1250342,genomic,pathway,PI3K events in ERBB4 signaling
+path:R-HSA-1250347,genomic,pathway,SHC1 events in ERBB4 signaling
+path:R-HSA-1251932,genomic,pathway,PLCG1 events in ERBB2 signaling
+path:R-HSA-1251985,genomic,pathway,Nuclear signaling by ERBB4
+path:R-HSA-1253288,genomic,pathway,Downregulation of ERBB4 signaling
+path:R-HSA-1257604,genomic,pathway,PIP3 activates AKT signaling
+path:R-HSA-1266695,genomic,pathway,Interleukin-7 signaling
+path:R-HSA-1266738,genomic,pathway,Developmental Biology
+path:R-HSA-1268020,genomic,pathway,Mitochondrial protein import
+path:R-HSA-1280215,genomic,pathway,Cytokine Signaling in Immune system
+path:R-HSA-1280218,genomic,pathway,Adaptive Immune System
+path:R-HSA-1295596,genomic,pathway,Spry regulation of FGF signaling
+path:R-HSA-1296025,genomic,pathway,ATP sensitive Potassium channels
+path:R-HSA-1296041,genomic,pathway,Activation of G protein gated Potassium channels
+path:R-HSA-1296052,genomic,pathway,Ca2+ activated K+ channels
+path:R-HSA-1296053,genomic,pathway,Classical Kir channels
+path:R-HSA-1296059,genomic,pathway,G protein gated Potassium channels
+path:R-HSA-1296061,genomic,pathway,HCN channels
+path:R-HSA-1296065,genomic,pathway,Inwardly rectifying K+ channels
+path:R-HSA-1296067,genomic,pathway,Potassium transport channels
+path:R-HSA-1296071,genomic,pathway,Potassium Channels
+path:R-HSA-1296072,genomic,pathway,Voltage gated Potassium channels
+path:R-HSA-1296346,genomic,pathway,Tandem pore domain potassium channels
+path:R-HSA-1299287,genomic,pathway,Tandem pore domain halothane-inhibited K+ channel (THIK)
+path:R-HSA-1299308,genomic,pathway,Tandem of pore domain in a weak inwardly rectifying K+ channels (TWIK)
+path:R-HSA-1299316,genomic,pathway,TWIK-releated acid-sensitive K+ channel (TASK)
+path:R-HSA-1299344,genomic,pathway,TWIK-related spinal cord K+ channel (TRESK)
+path:R-HSA-1299361,genomic,pathway,TWIK-related alkaline pH activated K+ channel (TALK)
+path:R-HSA-1299503,genomic,pathway,TWIK related potassium channel (TREK)
+path:R-HSA-1300642,genomic,pathway,Sperm Motility And Taxes
+path:R-HSA-1300644,genomic,pathway,Interaction With The Zona Pellucida
+path:R-HSA-1300645,genomic,pathway,Acrosome Reaction
+path:R-HSA-1300652,genomic,pathway,Sperm:Oocyte Membrane Binding
+path:R-HSA-1306955,genomic,pathway,GRB7 events in ERBB2 signaling
+path:R-HSA-1307965,genomic,pathway,betaKlotho-mediated ligand binding
+path:R-HSA-1358803,genomic,pathway,Downregulation of ERBB2:ERBB3 signaling
+path:R-HSA-1362409,genomic,pathway,Mitochondrial iron-sulfur cluster biogenesis
+path:R-HSA-1368071,genomic,pathway,NR1D1 (REV-ERBA) represses gene expression
+path:R-HSA-1368082,genomic,pathway,RORA activates gene expression
+path:R-HSA-1368108,genomic,pathway,"BMAL1:CLOCK,NPAS2 activates circadian gene expression"
+path:R-HSA-1369007,genomic,pathway,Mitochondrial ABC transporters
+path:R-HSA-1369062,genomic,pathway,ABC transporters in lipid homeostasis
+path:R-HSA-139853,genomic,pathway,Elevation of cytosolic Ca2+ levels
+path:R-HSA-139910,genomic,pathway,Activation of BMF and translocation to mitochondria
+path:R-HSA-139915,genomic,pathway,Activation of PUMA and translocation to mitochondria
+path:R-HSA-140179,genomic,pathway,Amine Oxidase reactions
+path:R-HSA-140180,genomic,pathway,COX reactions
+path:R-HSA-140342,genomic,pathway,Apoptosis induced DNA fragmentation
+path:R-HSA-140534,genomic,pathway,Ligand-dependent caspase activation
+path:R-HSA-140834,genomic,pathway,Extrinsic Pathway of Fibrin Clot Formation
+path:R-HSA-140837,genomic,pathway,Intrinsic Pathway of Fibrin Clot Formation
+path:R-HSA-140875,genomic,pathway,Common Pathway of Fibrin Clot Formation
+path:R-HSA-140877,genomic,pathway,Formation of Fibrin Clot (Clotting Cascade)
+path:R-HSA-141333,genomic,pathway,Biogenic amines are oxidatively deaminated to aldehydes by MAOA and MAOB
+path:R-HSA-141334,genomic,pathway,PAOs oxidise polyamines to amines
+path:R-HSA-141405,genomic,pathway,Inhibition of the proteolytic activity of APC/C required for the onset of anaphase by mitotic spindle checkpoint components
+path:R-HSA-141424,genomic,pathway,Amplification of signal from the kinetochores
+path:R-HSA-141430,genomic,pathway,Inactivation of APC/C via direct inhibition of the APC/C complex
+path:R-HSA-141444,genomic,pathway,Amplification  of signal from unattached  kinetochores via a MAD2  inhibitory signal
+path:R-HSA-1428517,genomic,pathway,The citric acid (TCA) cycle and respiratory electron transport
+path:R-HSA-1430728,genomic,pathway,Metabolism
+path:R-HSA-1433557,genomic,pathway,Signaling by SCF-KIT
+path:R-HSA-1433559,genomic,pathway,Regulation of KIT signaling
+path:R-HSA-1433617,genomic,pathway,Regulation of signaling by NODAL
+path:R-HSA-1442490,genomic,pathway,Collagen degradation
+path:R-HSA-1445148,genomic,pathway,Translocation of GLUT4 to the plasma membrane
+path:R-HSA-1461957,genomic,pathway,Beta defensins
+path:R-HSA-1461973,genomic,pathway,Defensins
+path:R-HSA-1462054,genomic,pathway,Alpha-defensins
+path:R-HSA-1474151,genomic,pathway,"Tetrahydrobiopterin (BH4) synthesis, recycling, salvage and regulation"
+path:R-HSA-1474165,genomic,pathway,Reproduction
+path:R-HSA-1474228,genomic,pathway,Degradation of the extracellular matrix
+path:R-HSA-1474244,genomic,pathway,Extracellular matrix organization
+path:R-HSA-1474290,genomic,pathway,Collagen formation
+path:R-HSA-1475029,genomic,pathway,Reversible hydration of carbon dioxide
+path:R-HSA-1480926,genomic,pathway,O2/CO2 exchange in erythrocytes
+path:R-HSA-1482788,genomic,pathway,Acyl chain remodelling of PC
+path:R-HSA-1482798,genomic,pathway,Acyl chain remodeling of CL
+path:R-HSA-1482801,genomic,pathway,Acyl chain remodelling of PS
+path:R-HSA-1482839,genomic,pathway,Acyl chain remodelling of PE
+path:R-HSA-1482883,genomic,pathway,Acyl chain remodeling of DAG and TAG
+path:R-HSA-1482922,genomic,pathway,Acyl chain remodelling of PI
+path:R-HSA-1482925,genomic,pathway,Acyl chain remodelling of PG
+path:R-HSA-1483076,genomic,pathway,Synthesis of CL
+path:R-HSA-1483101,genomic,pathway,Synthesis of PS
+path:R-HSA-1483115,genomic,pathway,Hydrolysis of LPC
+path:R-HSA-1483148,genomic,pathway,Synthesis of PG
+path:R-HSA-1483152,genomic,pathway,Hydrolysis of LPE
+path:R-HSA-1483166,genomic,pathway,Synthesis of PA
+path:R-HSA-1483171,genomic,pathway,Synthesis of BMP
+path:R-HSA-1483191,genomic,pathway,Synthesis of PC
+path:R-HSA-1483196,genomic,pathway,PI and PC transport between ER and Golgi membranes
+path:R-HSA-1483206,genomic,pathway,Glycerophospholipid biosynthesis
+path:R-HSA-1483213,genomic,pathway,Synthesis of PE
+path:R-HSA-1483226,genomic,pathway,Synthesis of PI
+path:R-HSA-1483248,genomic,pathway,Synthesis of PIPs at the ER membrane
+path:R-HSA-1483249,genomic,pathway,Inositol phosphate metabolism
+path:R-HSA-1483255,genomic,pathway,PI Metabolism
+path:R-HSA-1483257,genomic,pathway,Phospholipid metabolism
+path:R-HSA-1489509,genomic,pathway,DAG and IP3 signaling
+path:R-HSA-1500620,genomic,pathway,Meiosis
+path:R-HSA-1500931,genomic,pathway,Cell-Cell communication
+path:R-HSA-1502540,genomic,pathway,Signaling by Activin
+path:R-HSA-1538133,genomic,pathway,G0 and Early G1
+path:R-HSA-156580,genomic,pathway,Phase II conjugation
+path:R-HSA-156581,genomic,pathway,Methylation
+path:R-HSA-156582,genomic,pathway,Acetylation
+path:R-HSA-156584,genomic,pathway,Cytosolic sulfonation of small molecules
+path:R-HSA-156587,genomic,pathway,Amino Acid conjugation
+path:R-HSA-156588,genomic,pathway,Glucuronidation
+path:R-HSA-156590,genomic,pathway,Glutathione conjugation
+path:R-HSA-1566948,genomic,pathway,Elastic fibre formation
+path:R-HSA-1566977,genomic,pathway,Fibronectin matrix formation
+path:R-HSA-156711,genomic,pathway,Polo-like kinase mediated events
+path:R-HSA-156827,genomic,pathway,L13a-mediated translational silencing of Ceruloplasmin expression
+path:R-HSA-156842,genomic,pathway,Eukaryotic Translation Elongation
+path:R-HSA-156902,genomic,pathway,Peptide chain elongation
+path:R-HSA-157118,genomic,pathway,Signaling by NOTCH
+path:R-HSA-157579,genomic,pathway,Telomere Maintenance
+path:R-HSA-157858,genomic,pathway,Gap junction trafficking and regulation
+path:R-HSA-157881,genomic,pathway,Cyclin B2 mediated events
+path:R-HSA-15869,genomic,pathway,Metabolism of nucleotides
+path:R-HSA-1592230,genomic,pathway,Mitochondrial biogenesis
+path:R-HSA-159227,genomic,pathway,Transport of the SLBP independent Mature mRNA
+path:R-HSA-159230,genomic,pathway,Transport of the SLBP Dependant Mature mRNA
+path:R-HSA-159231,genomic,pathway,Transport of Mature mRNA Derived from an Intronless Transcript
+path:R-HSA-159234,genomic,pathway,Transport of Mature mRNAs Derived from Intronless Transcripts
+path:R-HSA-159236,genomic,pathway,Transport of Mature mRNA derived from an Intron-Containing Transcript
+path:R-HSA-1592389,genomic,pathway,Activation of Matrix Metalloproteinases
+path:R-HSA-159418,genomic,pathway,Recycling of bile acids and salts
+path:R-HSA-159424,genomic,pathway,Conjugation of carboxylic acids
+path:R-HSA-159740,genomic,pathway,Gamma-carboxylation of protein precursors
+path:R-HSA-159763,genomic,pathway,Transport of gamma-carboxylated protein precursors from the endoplasmic reticulum to the Golgi apparatus
+path:R-HSA-159782,genomic,pathway,Removal of aminoterminal propeptides from gamma-carboxylated proteins
+path:R-HSA-159854,genomic,pathway,"Gamma-carboxylation, transport, and amino-terminal cleavage of proteins"
+path:R-HSA-1606322,genomic,pathway,ZBP1(DAI) mediated induction of type I IFNs
+path:R-HSA-1606341,genomic,pathway,IRF3 mediated activation of type 1 IFN
+path:R-HSA-1614517,genomic,pathway,Sulfide oxidation to sulfate
+path:R-HSA-1614558,genomic,pathway,Degradation of cysteine and homocysteine
+path:R-HSA-1614603,genomic,pathway,Cysteine formation from homocysteine
+path:R-HSA-1614635,genomic,pathway,Sulfur amino acid metabolism
+path:R-HSA-162582,genomic,pathway,Signal Transduction
+path:R-HSA-162585,genomic,pathway,Uncoating of the HIV Virion
+path:R-HSA-162587,genomic,pathway,HIV Life Cycle
+path:R-HSA-162588,genomic,pathway,Budding and maturation of HIV virion
+path:R-HSA-162589,genomic,pathway,Reverse Transcription of HIV RNA
+path:R-HSA-162592,genomic,pathway,Integration of provirus
+path:R-HSA-162594,genomic,pathway,Early Phase of HIV Life Cycle
+path:R-HSA-162599,genomic,pathway,Late Phase of HIV Life Cycle
+path:R-HSA-162658,genomic,pathway,Golgi Cisternae Pericentriolar Stack Reorganization
+path:R-HSA-162699,genomic,pathway,Synthesis of dolichyl-phosphate mannose
+path:R-HSA-162710,genomic,pathway,Synthesis of glycosylphosphatidylinositol (GPI)
+path:R-HSA-162791,genomic,pathway,Attachment of GPI anchor to uPAR
+path:R-HSA-162906,genomic,pathway,HIV Infection
+path:R-HSA-162909,genomic,pathway,Host Interactions of HIV factors
+path:R-HSA-1630316,genomic,pathway,Glycosaminoglycan metabolism
+path:R-HSA-163125,genomic,pathway,Post-translational modification: synthesis of GPI-anchored proteins
+path:R-HSA-163200,genomic,pathway,"Respiratory electron transport, ATP synthesis by chemiosmotic coupling, and heat production by uncoupling proteins."
+path:R-HSA-163210,genomic,pathway,Formation of ATP by chemiosmotic coupling
+path:R-HSA-163282,genomic,pathway,Mitochondrial transcription initiation
+path:R-HSA-1632852,genomic,pathway,Macroautophagy
+path:R-HSA-163316,genomic,pathway,Mitochondrial transcription termination
+path:R-HSA-163358,genomic,pathway,PKA-mediated phosphorylation of key metabolic factors
+path:R-HSA-163359,genomic,pathway,Glucagon signaling in metabolic regulation
+path:R-HSA-163560,genomic,pathway,Hormone-sensitive lipase (HSL)-mediated triacylglycerol hydrolysis
+path:R-HSA-163615,genomic,pathway,PKA activation
+path:R-HSA-163680,genomic,pathway,AMPK inhibits chREBP transcriptional activation activity
+path:R-HSA-163685,genomic,pathway,Integration of energy metabolism
+path:R-HSA-163754,genomic,pathway,Insulin effects increased synthesis of Xylulose-5-Phosphate
+path:R-HSA-163765,genomic,pathway,ChREBP activates metabolic gene expression
+path:R-HSA-163767,genomic,pathway,PP2A-mediated dephosphorylation of key metabolic factors
+path:R-HSA-1638074,genomic,pathway,Keratan sulfate/keratin metabolism
+path:R-HSA-1638091,genomic,pathway,Heparan sulfate/heparin (HS-GAG) metabolism
+path:R-HSA-163841,genomic,pathway,"Gamma carboxylation, hypusine formation and arylsulfatase activation"
+path:R-HSA-1640170,genomic,pathway,Cell Cycle
+path:R-HSA-1643685,genomic,pathway,Disease
+path:R-HSA-1643713,genomic,pathway,Signaling by EGFR in Cancer
+path:R-HSA-164378,genomic,pathway,PKA activation in glucagon signalling
+path:R-HSA-164516,genomic,pathway,Minus-strand DNA synthesis
+path:R-HSA-164525,genomic,pathway,Plus-strand DNA synthesis
+path:R-HSA-164843,genomic,pathway,2-LTR circle formation
+path:R-HSA-164938,genomic,pathway,Nef-mediates down modulation of cell surface receptors by recruiting them to clathrin adapters
+path:R-HSA-164939,genomic,pathway,Nef mediated downregulation of CD28 cell surface expression
+path:R-HSA-164940,genomic,pathway,Nef mediated downregulation of MHC class I complex cell surface expression
+path:R-HSA-164944,genomic,pathway,Nef and signal transduction
+path:R-HSA-164952,genomic,pathway,The role of Nef in HIV-1 replication and disease pathogenesis
+path:R-HSA-165054,genomic,pathway,Rev-mediated nuclear export of HIV RNA
+path:R-HSA-1650814,genomic,pathway,Collagen biosynthesis and modifying enzymes
+path:R-HSA-165158,genomic,pathway,Activation of AKT2
+path:R-HSA-165159,genomic,pathway,mTOR signalling
+path:R-HSA-165160,genomic,pathway,PDE3B signalling
+path:R-HSA-165181,genomic,pathway,Inhibition of TSC complex formation by PKB
+path:R-HSA-1655829,genomic,pathway,Regulation of cholesterol biosynthesis by SREBP (SREBF)
+path:R-HSA-166016,genomic,pathway,Toll Like Receptor 4 (TLR4) Cascade
+path:R-HSA-166020,genomic,pathway,Transfer of LPS from LBP carrier to CD14
+path:R-HSA-1660499,genomic,pathway,Synthesis of PIPs at the plasma membrane
+path:R-HSA-1660502,genomic,pathway,PIPs transport between early and late endosome membranes
+path:R-HSA-1660508,genomic,pathway,PIPs transport between late endosome and Golgi membranes
+path:R-HSA-1660510,genomic,pathway,PIPs transport between Golgi and plasma membranes
+path:R-HSA-1660514,genomic,pathway,Synthesis of PIPs at the Golgi membrane
+path:R-HSA-1660516,genomic,pathway,Synthesis of PIPs at the early endosome membrane
+path:R-HSA-1660517,genomic,pathway,Synthesis of PIPs at the late endosome membrane
+path:R-HSA-1660524,genomic,pathway,PIPs transport between plasma and early endosome membranes
+path:R-HSA-1660537,genomic,pathway,PIPs transport between early endosome and Golgi membranes
+path:R-HSA-166054,genomic,pathway,Activated TLR4 signalling
+path:R-HSA-166058,genomic,pathway,MyD88:Mal cascade initiated on plasma membrane
+path:R-HSA-1660661,genomic,pathway,Sphingolipid de novo biosynthesis
+path:R-HSA-1660662,genomic,pathway,Glycosphingolipid metabolism
+path:R-HSA-166166,genomic,pathway,MyD88-independent TLR3/TLR4 cascade
+path:R-HSA-166187,genomic,pathway,Mitochondrial Uncoupling Proteins
+path:R-HSA-166208,genomic,pathway,mTORC1-mediated signalling
+path:R-HSA-1663150,genomic,pathway,The activation of arylsulfatases
+path:R-HSA-166520,genomic,pathway,Signalling by NGF
+path:R-HSA-166658,genomic,pathway,Complement cascade
+path:R-HSA-166662,genomic,pathway,Lectin pathway of complement activation
+path:R-HSA-166663,genomic,pathway,Initial triggering of complement
+path:R-HSA-166665,genomic,pathway,Terminal pathway of complement
+path:R-HSA-166786,genomic,pathway,Creation of C4 and C2 activators
+path:R-HSA-167021,genomic,pathway,PLC-gamma1 signalling
+path:R-HSA-167044,genomic,pathway,Signalling to RAS
+path:R-HSA-167060,genomic,pathway,NGF processing
+path:R-HSA-167152,genomic,pathway,Formation of HIV elongation complex in the absence of HIV Tat
+path:R-HSA-167158,genomic,pathway,Formation of the HIV-1 Early Elongation Complex
+path:R-HSA-167160,genomic,pathway,RNA Pol II CTD phosphorylation and interaction with CE during HIV infection
+path:R-HSA-167161,genomic,pathway,HIV Transcription Initiation
+path:R-HSA-167162,genomic,pathway,RNA Polymerase II HIV Promoter Escape
+path:R-HSA-167169,genomic,pathway,HIV Transcription Elongation
+path:R-HSA-167172,genomic,pathway,Transcription of the HIV genome
+path:R-HSA-167200,genomic,pathway,Formation of HIV-1 elongation complex containing HIV-1 Tat
+path:R-HSA-167238,genomic,pathway,Pausing and recovery of Tat-mediated HIV elongation
+path:R-HSA-167242,genomic,pathway,Abortive elongation of HIV-1 transcript in the absence of Tat
+path:R-HSA-167243,genomic,pathway,Tat-mediated HIV elongation arrest and recovery
+path:R-HSA-167246,genomic,pathway,Tat-mediated elongation of the HIV-1 transcript
+path:R-HSA-167287,genomic,pathway,HIV elongation arrest and recovery
+path:R-HSA-167290,genomic,pathway,Pausing and recovery of HIV elongation
+path:R-HSA-167590,genomic,pathway,Nef Mediated CD4 Down-regulation
+path:R-HSA-167826,genomic,pathway,The fatty acid cycling model
+path:R-HSA-167827,genomic,pathway,The proton buffering model
+path:R-HSA-1679131,genomic,pathway,Trafficking and processing of endosomal TLR
+path:R-HSA-168138,genomic,pathway,Toll Like Receptor 9 (TLR9) Cascade
+path:R-HSA-168142,genomic,pathway,Toll Like Receptor 10 (TLR10) Cascade
+path:R-HSA-168164,genomic,pathway,Toll Like Receptor 3 (TLR3) Cascade
+path:R-HSA-168176,genomic,pathway,Toll Like Receptor 5 (TLR5) Cascade
+path:R-HSA-168179,genomic,pathway,Toll Like Receptor TLR1:TLR2 Cascade
+path:R-HSA-168181,genomic,pathway,Toll Like Receptor 7/8 (TLR7/8) Cascade
+path:R-HSA-168188,genomic,pathway,Toll Like Receptor TLR6:TLR2 Cascade
+path:R-HSA-168249,genomic,pathway,Innate Immune System
+path:R-HSA-168253,genomic,pathway,Host Interactions with Influenza Factors
+path:R-HSA-168254,genomic,pathway,Influenza Infection
+path:R-HSA-168255,genomic,pathway,Influenza Life Cycle
+path:R-HSA-168256,genomic,pathway,Immune System
+path:R-HSA-168268,genomic,pathway,Virus Assembly and Release
+path:R-HSA-168270,genomic,pathway,Fusion and Uncoating of the Influenza Virion
+path:R-HSA-168271,genomic,pathway,Transport of Ribonucleoproteins into the Host Nucleus
+path:R-HSA-168273,genomic,pathway,Influenza Viral RNA Transcription and Replication
+path:R-HSA-168274,genomic,pathway,Export of Viral Ribonucleoproteins from Nucleus
+path:R-HSA-168275,genomic,pathway,Entry of Influenza Virion into Host Cell via Endocytosis
+path:R-HSA-168276,genomic,pathway,NS1 Mediated Effects on Host Pathways
+path:R-HSA-168277,genomic,pathway,Influenza Virus Induced Apoptosis
+path:R-HSA-168288,genomic,pathway,Fusion of the Influenza Virion to the Host Cell Endosome
+path:R-HSA-168298,genomic,pathway,Release
+path:R-HSA-168302,genomic,pathway,Budding
+path:R-HSA-168303,genomic,pathway,Packaging of Eight RNA Segments
+path:R-HSA-168305,genomic,pathway,Inhibition of Interferon Synthesis
+path:R-HSA-168315,genomic,pathway,Inhibition of Host mRNA Processing and RNA Silencing
+path:R-HSA-168316,genomic,pathway,Assembly of Viral Components at the Budding Site
+path:R-HSA-168325,genomic,pathway,Viral Messenger RNA Synthesis
+path:R-HSA-168330,genomic,pathway,Viral RNP Complexes in the Host Cell Nucleus
+path:R-HSA-168333,genomic,pathway,NEP/NS2 Interacts with the Cellular Export Machinery
+path:R-HSA-168336,genomic,pathway,Uncoating of the Influenza Virion
+path:R-HSA-168638,genomic,pathway,NOD1/2 Signaling Pathway
+path:R-HSA-168643,genomic,pathway,"Nucleotide-binding domain, leucine rich repeat containing receptor (NLR) signaling pathways"
+path:R-HSA-168799,genomic,pathway,Neurotoxicity of clostridium toxins
+path:R-HSA-168874,genomic,pathway,"Transport of HA trimer, NA tetramer and M2 tetramer from the endoplasmic reticulum to the Golgi Apparatus"
+path:R-HSA-168888,genomic,pathway,Inhibition of IFN-beta
+path:R-HSA-168898,genomic,pathway,Toll-Like Receptors Cascades
+path:R-HSA-168928,genomic,pathway,RIG-I/MDA5 mediated induction of IFN-alpha/beta pathways
+path:R-HSA-169131,genomic,pathway,Inhibition of PKR
+path:R-HSA-169893,genomic,pathway,Prolonged ERK activation events
+path:R-HSA-169911,genomic,pathway,Regulation of Apoptosis
+path:R-HSA-170145,genomic,pathway,Phosphorylation of proteins involved in the G2/M transition by Cyclin A:Cdc2 complexes
+path:R-HSA-170660,genomic,pathway,Adenylate cyclase activating pathway
+path:R-HSA-170670,genomic,pathway,Adenylate cyclase inhibitory pathway
+path:R-HSA-170822,genomic,pathway,Regulation of Glucokinase by Glucokinase Regulatory Protein
+path:R-HSA-170834,genomic,pathway,Signaling by TGF-beta Receptor Complex
+path:R-HSA-170968,genomic,pathway,Frs2-mediated activation
+path:R-HSA-170984,genomic,pathway,ARMS-mediated activation
+path:R-HSA-171007,genomic,pathway,p38MAPK events
+path:R-HSA-171052,genomic,pathway,LDL-mediated lipid transport
+path:R-HSA-171286,genomic,pathway,Synthesis and processing of ENV and VPU
+path:R-HSA-171306,genomic,pathway,Packaging Of Telomere Ends
+path:R-HSA-171319,genomic,pathway,Telomere Extension By Telomerase
+path:R-HSA-173107,genomic,pathway,Binding and entry of HIV virion
+path:R-HSA-173599,genomic,pathway,"Formation of the active cofactor, UDP-glucuronate"
+path:R-HSA-173623,genomic,pathway,Classical antibody-mediated complement activation
+path:R-HSA-173736,genomic,pathway,Alternative complement activation
+path:R-HSA-174048,genomic,pathway,APC/C:Cdc20 mediated degradation of Cyclin B
+path:R-HSA-174084,genomic,pathway,Autodegradation of Cdh1 by Cdh1:APC/C
+path:R-HSA-174113,genomic,pathway,SCF-beta-TrCP mediated degradation of Emi1
+path:R-HSA-174143,genomic,pathway,APC/C-mediated degradation of cell cycle proteins
+path:R-HSA-174154,genomic,pathway,APC/C:Cdc20 mediated degradation of Securin
+path:R-HSA-174178,genomic,pathway,APC/C:Cdh1 mediated degradation of Cdc20 and other APC/C:Cdh1 targeted proteins in late mitosis/early G1
+path:R-HSA-174184,genomic,pathway,Cdc20:Phospho-APC/C mediated degradation of Cyclin A
+path:R-HSA-174362,genomic,pathway,Transport and synthesis of PAPS
+path:R-HSA-174403,genomic,pathway,Glutathione synthesis and recycling
+path:R-HSA-174411,genomic,pathway,Polymerase switching on the C-strand of the telomere
+path:R-HSA-174414,genomic,pathway,Processive synthesis on the C-strand of the telomere
+path:R-HSA-174417,genomic,pathway,Telomere C-strand (Lagging Strand) Synthesis
+path:R-HSA-174430,genomic,pathway,Telomere C-strand synthesis initiation
+path:R-HSA-174437,genomic,pathway,Removal of the Flap Intermediate from the C-strand
+path:R-HSA-174490,genomic,pathway,Membrane binding and targetting of GAG proteins
+path:R-HSA-174495,genomic,pathway,"Synthesis And Processing Of GAG, GAGPOL Polyproteins"
+path:R-HSA-174577,genomic,pathway,Activation of C3 and C5
+path:R-HSA-174800,genomic,pathway,Chylomicron-mediated lipid transport
+path:R-HSA-174824,genomic,pathway,Lipoprotein metabolism
+path:R-HSA-175474,genomic,pathway,Assembly Of The HIV Virion
+path:R-HSA-175567,genomic,pathway,Integration of viral DNA into host genomic DNA
+path:R-HSA-176033,genomic,pathway,Interactions of Vpr with host cellular proteins
+path:R-HSA-176034,genomic,pathway,Interactions of Tat with host cellular proteins
+path:R-HSA-176187,genomic,pathway,Activation of ATR in response to replication stress
+path:R-HSA-176407,genomic,pathway,Conversion from APC/C:Cdc20 to APC/C:Cdh1 in late anaphase
+path:R-HSA-176408,genomic,pathway,Regulation of APC/C activators between G1/S and early anaphase
+path:R-HSA-176409,genomic,pathway,APC/C:Cdc20 mediated degradation of mitotic proteins
+path:R-HSA-176412,genomic,pathway,Phosphorylation of the APC/C
+path:R-HSA-176417,genomic,pathway,Phosphorylation of Emi1
+path:R-HSA-176814,genomic,pathway,Activation of APC/C and APC/C:Cdc20 mediated degradation of mitotic proteins
+path:R-HSA-176974,genomic,pathway,Unwinding of DNA
+path:R-HSA-177128,genomic,pathway,Conjugation of salicylate with glycine
+path:R-HSA-177135,genomic,pathway,Conjugation of benzoate with glycine
+path:R-HSA-177162,genomic,pathway,Conjugation of phenylacetate with glutamine
+path:R-HSA-177243,genomic,pathway,Interactions of Rev with host cellular proteins
+path:R-HSA-177504,genomic,pathway,Retrograde neurotrophin signalling
+path:R-HSA-177539,genomic,pathway,Autointegration results in viral DNA circles
+path:R-HSA-177929,genomic,pathway,Signaling by EGFR
+path:R-HSA-1793185,genomic,pathway,Chondroitin sulfate/dermatan sulfate metabolism
+path:R-HSA-179409,genomic,pathway,APC-Cdc20 mediated degradation of Nek2A
+path:R-HSA-179419,genomic,pathway,APC:Cdc20 mediated degradation of cell cycle proteins prior to satisfation of the cell cycle checkpoint
+path:R-HSA-179812,genomic,pathway,GRB2 events in EGFR signaling
+path:R-HSA-1799339,genomic,pathway,SRP-dependent cotranslational protein targeting to membrane
+path:R-HSA-180024,genomic,pathway,DARPP-32 events
+path:R-HSA-180292,genomic,pathway,GAB1 signalosome
+path:R-HSA-180336,genomic,pathway,SHC1 events in EGFR signaling
+path:R-HSA-180534,genomic,pathway,Vpu mediated degradation of CD4
+path:R-HSA-180585,genomic,pathway,Vif-mediated degradation of APOBEC3G
+path:R-HSA-180689,genomic,pathway,APOBEC3G mediated resistance to HIV-1 infection
+path:R-HSA-180746,genomic,pathway,Nuclear import of Rev protein
+path:R-HSA-180786,genomic,pathway,Extension of Telomeres
+path:R-HSA-180897,genomic,pathway,Vpr-mediated induction of apoptosis by mitochondrial outer membrane permeabilization
+path:R-HSA-180910,genomic,pathway,Vpr-mediated nuclear import of PICs
+path:R-HSA-1810476,genomic,pathway,RIP-mediated NFkB activation via ZBP1
+path:R-HSA-181429,genomic,pathway,Serotonin Neurotransmitter Release Cycle
+path:R-HSA-181430,genomic,pathway,Norepinephrine Neurotransmitter Release Cycle
+path:R-HSA-181431,genomic,pathway,Acetylcholine Binding And Downstream Events
+path:R-HSA-181438,genomic,pathway,Toll Like Receptor 2 (TLR2) Cascade
+path:R-HSA-182218,genomic,pathway,Nef Mediated CD8 Down-regulation
+path:R-HSA-182971,genomic,pathway,EGFR downregulation
+path:R-HSA-1834941,genomic,pathway,STING mediated induction of host immune responses
+path:R-HSA-1834949,genomic,pathway,Cytosolic sensors of pathogen-associated DNA
+path:R-HSA-1839117,genomic,pathway,Signaling by cytosolic FGFR1 fusion mutants
+path:R-HSA-1839120,genomic,pathway,Signaling by FGFR1 amplification mutants
+path:R-HSA-1839122,genomic,pathway,Signaling by activated point mutants of FGFR1
+path:R-HSA-1839124,genomic,pathway,FGFR1 mutant receptor activation
+path:R-HSA-1839126,genomic,pathway,FGFR2 mutant receptor activation
+path:R-HSA-1839128,genomic,pathway,FGFR4 mutant receptor activation
+path:R-HSA-1839130,genomic,pathway,Signaling by activated point mutants of FGFR3
+path:R-HSA-1852241,genomic,pathway,Organelle biogenesis and maintenance
+path:R-HSA-1855156,genomic,pathway,IPs transport between ER lumen and nucleus
+path:R-HSA-1855167,genomic,pathway,Synthesis of pyrophosphates in the cytosol
+path:R-HSA-1855170,genomic,pathway,IPs transport between nucleus and cytosol
+path:R-HSA-1855183,genomic,pathway,"Synthesis of IP2, IP, and Ins in the cytosol"
+path:R-HSA-1855184,genomic,pathway,IPs transport between cytosol and ER lumen
+path:R-HSA-1855191,genomic,pathway,Synthesis of IPs in the nucleus
+path:R-HSA-1855192,genomic,pathway,IPs transport between nucleus and ER lumen
+path:R-HSA-1855196,genomic,pathway,IP3 and IP4 transport between cytosol and nucleus
+path:R-HSA-1855204,genomic,pathway,Synthesis of IP3 and IP4 in the cytosol
+path:R-HSA-1855215,genomic,pathway,IPs transport between ER lumen and cytosol
+path:R-HSA-1855229,genomic,pathway,IP6 and IP7 transport between cytosol and nucleus
+path:R-HSA-1855231,genomic,pathway,Synthesis of IPs in the ER lumen
+path:R-HSA-186712,genomic,pathway,Regulation of beta-cell development
+path:R-HSA-186763,genomic,pathway,Downstream signal transduction
+path:R-HSA-186797,genomic,pathway,Signaling by PDGF
+path:R-HSA-187015,genomic,pathway,Activation of TRKA receptors
+path:R-HSA-187024,genomic,pathway,NGF-independant TRKA activation
+path:R-HSA-187037,genomic,pathway,NGF signalling via TRKA from the plasma membrane
+path:R-HSA-187042,genomic,pathway,TRKA activation by NGF
+path:R-HSA-187577,genomic,pathway,SCF(Skp2)-mediated degradation of p27/p21
+path:R-HSA-187687,genomic,pathway,Signalling to ERKs
+path:R-HSA-187706,genomic,pathway,Signalling to p38 via RIT and RIN
+path:R-HSA-189085,genomic,pathway,Digestion of dietary carbohydrate
+path:R-HSA-189200,genomic,pathway,Hexose transport
+path:R-HSA-189445,genomic,pathway,Metabolism of porphyrins
+path:R-HSA-189451,genomic,pathway,Heme biosynthesis
+path:R-HSA-189483,genomic,pathway,Heme degradation
+path:R-HSA-190236,genomic,pathway,Signaling by FGFR
+path:R-HSA-190239,genomic,pathway,FGFR3 ligand binding and activation
+path:R-HSA-190241,genomic,pathway,FGFR2 ligand binding and activation
+path:R-HSA-190242,genomic,pathway,FGFR1 ligand binding and activation
+path:R-HSA-190322,genomic,pathway,FGFR4 ligand binding and activation
+path:R-HSA-190370,genomic,pathway,FGFR1b ligand binding and activation
+path:R-HSA-190371,genomic,pathway,FGFR3b ligand binding and activation
+path:R-HSA-190372,genomic,pathway,FGFR3c ligand binding and activation
+path:R-HSA-190373,genomic,pathway,FGFR1c ligand binding and activation
+path:R-HSA-190374,genomic,pathway,FGFR1c and Klotho ligand binding and activation
+path:R-HSA-190375,genomic,pathway,FGFR2c ligand binding and activation
+path:R-HSA-190377,genomic,pathway,FGFR2b ligand binding and activation
+path:R-HSA-190704,genomic,pathway,Oligomerization of connexins into connexons
+path:R-HSA-190827,genomic,pathway,Transport of connexins along the secretory pathway
+path:R-HSA-190828,genomic,pathway,Gap junction trafficking
+path:R-HSA-190840,genomic,pathway,Microtubule-dependent trafficking of connexons from Golgi to the plasma membrane
+path:R-HSA-190861,genomic,pathway,Gap junction assembly
+path:R-HSA-190872,genomic,pathway,Transport of connexons to the plasma membrane
+path:R-HSA-190873,genomic,pathway,Gap junction degradation
+path:R-HSA-1912399,genomic,pathway,Pre-NOTCH Processing in the Endoplasmic Reticulum
+path:R-HSA-1912408,genomic,pathway,Pre-NOTCH Transcription and Translation
+path:R-HSA-1912420,genomic,pathway,Pre-NOTCH Processing in Golgi
+path:R-HSA-1912422,genomic,pathway,Pre-NOTCH Expression and Processing
+path:R-HSA-191273,genomic,pathway,Cholesterol biosynthesis
+path:R-HSA-191647,genomic,pathway,c-src mediated regulation of Cx43 function and closure of gap junctions
+path:R-HSA-191650,genomic,pathway,Regulation of gap junction activity
+path:R-HSA-191859,genomic,pathway,snRNP Assembly
+path:R-HSA-192105,genomic,pathway,Synthesis of bile acids and bile salts
+path:R-HSA-192456,genomic,pathway,Digestion of dietary lipid
+path:R-HSA-192814,genomic,pathway,vRNA Synthesis
+path:R-HSA-192823,genomic,pathway,Viral mRNA Translation
+path:R-HSA-192869,genomic,pathway,cRNA Synthesis
+path:R-HSA-192905,genomic,pathway,vRNP Assembly
+path:R-HSA-193048,genomic,pathway,Androgen biosynthesis
+path:R-HSA-193144,genomic,pathway,Estrogen biosynthesis
+path:R-HSA-193368,genomic,pathway,Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol
+path:R-HSA-193634,genomic,pathway,Axonal growth inhibition (RHOA activation)
+path:R-HSA-193639,genomic,pathway,p75NTR signals via NF-kB
+path:R-HSA-193648,genomic,pathway,NRAGE signals death through JNK
+path:R-HSA-193670,genomic,pathway,p75NTR negatively regulates cell cycle via SC1
+path:R-HSA-193681,genomic,pathway,Ceramide signalling
+path:R-HSA-193692,genomic,pathway,Regulated proteolysis of p75NTR
+path:R-HSA-193697,genomic,pathway,p75NTR regulates axonogenesis
+path:R-HSA-193704,genomic,pathway,p75 NTR receptor-mediated signalling
+path:R-HSA-193775,genomic,pathway,Synthesis of bile acids and bile salts via 24-hydroxycholesterol
+path:R-HSA-193807,genomic,pathway,Synthesis of bile acids and bile salts via 27-hydroxycholesterol
+path:R-HSA-193993,genomic,pathway,Mineralocorticoid biosynthesis
+path:R-HSA-194002,genomic,pathway,Glucocorticoid biosynthesis
+path:R-HSA-194068,genomic,pathway,Bile acid and bile salt metabolism
+path:R-HSA-194138,genomic,pathway,Signaling by VEGF
+path:R-HSA-194223,genomic,pathway,HDL-mediated lipid transport
+path:R-HSA-194306,genomic,pathway,Neurophilin interactions with VEGF and VEGFR
+path:R-HSA-194313,genomic,pathway,VEGF ligand-receptor interactions
+path:R-HSA-194315,genomic,pathway,Signaling by Rho GTPases
+path:R-HSA-194441,genomic,pathway,Metabolism of non-coding RNA
+path:R-HSA-194840,genomic,pathway,Rho GTPase cycle
+path:R-HSA-195253,genomic,pathway,Degradation of beta-catenin by the destruction complex
+path:R-HSA-195258,genomic,pathway,RHO GTPase Effectors
+path:R-HSA-195399,genomic,pathway,VEGF binds to VEGFR leading to receptor dimerization
+path:R-HSA-195721,genomic,pathway,Signaling by Wnt
+path:R-HSA-196025,genomic,pathway,Formation of annular gap junctions
+path:R-HSA-196071,genomic,pathway,Metabolism of steroid hormones
+path:R-HSA-196108,genomic,pathway,Pregnenolone biosynthesis
+path:R-HSA-196299,genomic,pathway,Beta-catenin phosphorylation cascade
+path:R-HSA-1963640,genomic,pathway,GRB2 events in ERBB2 signaling
+path:R-HSA-1963642,genomic,pathway,PI3K events in ERBB2 signaling
+path:R-HSA-196741,genomic,pathway,"Cobalamin (Cbl, vitamin B12) transport and metabolism"
+path:R-HSA-196757,genomic,pathway,Metabolism of folate and pterines
+path:R-HSA-196780,genomic,pathway,Biotin transport and metabolism
+path:R-HSA-196783,genomic,pathway,Coenzyme A biosynthesis
+path:R-HSA-196791,genomic,pathway,Vitamin D (calciferol) metabolism
+path:R-HSA-196807,genomic,pathway,Nicotinate metabolism
+path:R-HSA-196819,genomic,pathway,Vitamin B1 (thiamin) metabolism
+path:R-HSA-196836,genomic,pathway,Vitamin C (ascorbate) metabolism
+path:R-HSA-196843,genomic,pathway,Vitamin B2 (riboflavin) metabolism
+path:R-HSA-196849,genomic,pathway,Metabolism of water-soluble vitamins and cofactors
+path:R-HSA-196854,genomic,pathway,Metabolism of vitamins and cofactors
+path:R-HSA-1971475,genomic,pathway,A tetrasaccharide linker sequence is required for GAG synthesis
+path:R-HSA-197264,genomic,pathway,Nicotinamide salvaging
+path:R-HSA-1980143,genomic,pathway,Signaling by NOTCH1
+path:R-HSA-1980145,genomic,pathway,Signaling by NOTCH2
+path:R-HSA-1980148,genomic,pathway,Signaling by NOTCH3
+path:R-HSA-1980150,genomic,pathway,Signaling by NOTCH4
+path:R-HSA-198203,genomic,pathway,PI3K/AKT activation
+path:R-HSA-198323,genomic,pathway,AKT phosphorylates targets in the cytosol
+path:R-HSA-198693,genomic,pathway,AKT phosphorylates targets in the nucleus
+path:R-HSA-198725,genomic,pathway,Nuclear Events (kinase and transcription factor activation)
+path:R-HSA-198745,genomic,pathway,Signalling to STAT3
+path:R-HSA-198753,genomic,pathway,ERK/MAPK targets
+path:R-HSA-198765,genomic,pathway,Signalling to ERK5
+path:R-HSA-198933,genomic,pathway,Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell
+path:R-HSA-1989781,genomic,pathway,PPARA activates gene expression
+path:R-HSA-199220,genomic,pathway,Vitamin B5 (pantothenate) metabolism
+path:R-HSA-199418,genomic,pathway,Negative regulation of the PI3K/AKT network
+path:R-HSA-199920,genomic,pathway,CREB phosphorylation
+path:R-HSA-199977,genomic,pathway,ER to Golgi Anterograde Transport
+path:R-HSA-199991,genomic,pathway,Membrane Trafficking
+path:R-HSA-199992,genomic,pathway,trans-Golgi Network Vesicle Budding
+path:R-HSA-200425,genomic,pathway,Import of palmitoyl-CoA into the mitochondrial matrix
+path:R-HSA-201451,genomic,pathway,Signaling by BMP
+path:R-HSA-201681,genomic,pathway,TCF dependent signaling in response to WNT
+path:R-HSA-201688,genomic,pathway,WNT mediated activation of DVL
+path:R-HSA-201722,genomic,pathway,Formation of the beta-catenin:TCF transactivating complex
+path:R-HSA-202040,genomic,pathway,G-protein activation
+path:R-HSA-202131,genomic,pathway,Metabolism of nitric oxide
+path:R-HSA-2022090,genomic,pathway,Assembly of collagen fibrils and other multimeric structures
+path:R-HSA-2022377,genomic,pathway,Metabolism of Angiotensinogen to Angiotensins
+path:R-HSA-2022854,genomic,pathway,Keratan sulfate biosynthesis
+path:R-HSA-2022857,genomic,pathway,Keratan sulfate degradation
+path:R-HSA-2022870,genomic,pathway,Chondroitin sulfate biosynthesis
+path:R-HSA-2022923,genomic,pathway,Dermatan sulfate biosynthesis
+path:R-HSA-2022928,genomic,pathway,HS-GAG biosynthesis
+path:R-HSA-2023837,genomic,pathway,Signaling by FGFR2 amplification mutants
+path:R-HSA-202403,genomic,pathway,TCR signaling
+path:R-HSA-2024096,genomic,pathway,HS-GAG degradation
+path:R-HSA-2024101,genomic,pathway,CS/DS degradation
+path:R-HSA-202424,genomic,pathway,Downstream TCR signaling
+path:R-HSA-202427,genomic,pathway,Phosphorylation of CD3 and TCR zeta chains
+path:R-HSA-202430,genomic,pathway,Translocation of ZAP-70 to Immunological synapse
+path:R-HSA-202433,genomic,pathway,Generation of second messenger molecules
+path:R-HSA-202670,genomic,pathway,ERKs are inactivated
+path:R-HSA-202733,genomic,pathway,Cell surface interactions at the vascular wall
+path:R-HSA-2028269,genomic,pathway,Signaling by Hippo
+path:R-HSA-2029480,genomic,pathway,Fcgamma receptor (FCGR) dependent phagocytosis
+path:R-HSA-2029481,genomic,pathway,FCGR activation
+path:R-HSA-2029482,genomic,pathway,Regulation of actin dynamics for phagocytic cup formation
+path:R-HSA-2029485,genomic,pathway,Role of phospholipids in phagocytosis
+path:R-HSA-2032785,genomic,pathway,YAP1- and WWTR1 (TAZ)-stimulated gene expression
+path:R-HSA-2033514,genomic,pathway,FGFR3 mutant receptor activation
+path:R-HSA-2033515,genomic,pathway,t(4;14) translocations of FGFR3
+path:R-HSA-2033519,genomic,pathway,Activated point mutants of FGFR2
+path:R-HSA-203615,genomic,pathway,eNOS activation
+path:R-HSA-203641,genomic,pathway,NOSTRIN mediated eNOS trafficking
+path:R-HSA-203754,genomic,pathway,NOSIP mediated eNOS trafficking
+path:R-HSA-203765,genomic,pathway,eNOS activation and regulation
+path:R-HSA-203927,genomic,pathway,MicroRNA (miRNA) biogenesis
+path:R-HSA-204005,genomic,pathway,COPII (Coat Protein 2) Mediated Vesicle Transport
+path:R-HSA-204174,genomic,pathway,Regulation of pyruvate dehydrogenase (PDH) complex
+path:R-HSA-2046104,genomic,pathway,alpha-linolenic (omega3) and linoleic (omega6) acid metabolism
+path:R-HSA-2046105,genomic,pathway,Linoleic acid (LA) metabolism
+path:R-HSA-2046106,genomic,pathway,alpha-linolenic acid (ALA) metabolism
+path:R-HSA-204626,genomic,pathway,Hypusine synthesis from eIF5A-lysine
+path:R-HSA-204998,genomic,pathway,"Cell death signalling via NRAGE, NRIF and NADE"
+path:R-HSA-205017,genomic,pathway,NFG and proNGF binds to p75NTR
+path:R-HSA-205025,genomic,pathway,NADE modulates death signalling
+path:R-HSA-205043,genomic,pathway,NRIF signals cell death from the nucleus
+path:R-HSA-209543,genomic,pathway,p75NTR recruits signalling complexes
+path:R-HSA-209560,genomic,pathway,NF-kB is activated and signals survival
+path:R-HSA-209563,genomic,pathway,Axonal growth stimulation
+path:R-HSA-209776,genomic,pathway,Amine-derived hormones
+path:R-HSA-209822,genomic,pathway,Glycoprotein hormones
+path:R-HSA-209905,genomic,pathway,Catecholamine biosynthesis
+path:R-HSA-209931,genomic,pathway,Serotonin and melatonin biosynthesis
+path:R-HSA-209952,genomic,pathway,Peptide hormone biosynthesis
+path:R-HSA-209968,genomic,pathway,Thyroxine biosynthesis
+path:R-HSA-210455,genomic,pathway,Astrocytic Glutamate-Glutamine Uptake And Metabolism
+path:R-HSA-210500,genomic,pathway,Glutamate Neurotransmitter Release Cycle
+path:R-HSA-210744,genomic,pathway,Regulation of gene expression in late stage (branching morphogenesis) pancreatic bud precursor cells
+path:R-HSA-210745,genomic,pathway,Regulation of gene expression in beta cells
+path:R-HSA-210746,genomic,pathway,Regulation of gene expression in endocrine-committed (NEUROG3+) progenitor cells
+path:R-HSA-210747,genomic,pathway,Regulation of gene expression in early pancreatic precursor cells
+path:R-HSA-210990,genomic,pathway,PECAM1 interactions
+path:R-HSA-210991,genomic,pathway,Basigin interactions
+path:R-HSA-210993,genomic,pathway,Tie2 Signaling
+path:R-HSA-211000,genomic,pathway,Gene Silencing by RNA
+path:R-HSA-211163,genomic,pathway,AKT-mediated inactivation of FOXO1A
+path:R-HSA-211227,genomic,pathway,Activation of DNA fragmentation factor
+path:R-HSA-211728,genomic,pathway,Regulation of PAK-2p34 activity by PS-GAP/RHG10
+path:R-HSA-211733,genomic,pathway,Regulation of activated PAK-2p34 by proteasome mediated degradation
+path:R-HSA-211736,genomic,pathway,Stimulation of the cell death response by PAK-2p34
+path:R-HSA-211859,genomic,pathway,Biological oxidations
+path:R-HSA-211897,genomic,pathway,Cytochrome P450 - arranged by substrate type
+path:R-HSA-211916,genomic,pathway,Vitamins
+path:R-HSA-211935,genomic,pathway,Fatty acids
+path:R-HSA-211945,genomic,pathway,Phase 1 - Functionalization of compounds
+path:R-HSA-211957,genomic,pathway,Aromatic amines can be N-hydroxylated or N-dealkylated by CYP1A2
+path:R-HSA-211958,genomic,pathway,Miscellaneous substrates
+path:R-HSA-211976,genomic,pathway,Endogenous sterols
+path:R-HSA-211979,genomic,pathway,Eicosanoids
+path:R-HSA-211981,genomic,pathway,Xenobiotics
+path:R-HSA-211994,genomic,pathway,Sterols are 12-hydroxylated by CYP8B1
+path:R-HSA-211999,genomic,pathway,CYP2E1 reactions
+path:R-HSA-212165,genomic,pathway,Epigenetic regulation of gene expression
+path:R-HSA-2122947,genomic,pathway,NOTCH1 Intracellular Domain Regulates Transcription
+path:R-HSA-2122948,genomic,pathway,Activated NOTCH1 Transmits Signal to the Nucleus
+path:R-HSA-212300,genomic,pathway,PRC2 methylates histones and DNA
+path:R-HSA-212436,genomic,pathway,Generic Transcription Pathway
+path:R-HSA-212676,genomic,pathway,Dopamine Neurotransmitter Release Cycle
+path:R-HSA-212718,genomic,pathway,EGFR interacts with phospholipase C-gamma
+path:R-HSA-2129379,genomic,pathway,Molecules associated with elastic fibres
+path:R-HSA-2132295,genomic,pathway,MHC class II antigen presentation
+path:R-HSA-2142670,genomic,pathway,Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET)
+path:R-HSA-2142688,genomic,pathway,Synthesis of 5-eicosatetraenoic acids
+path:R-HSA-2142691,genomic,pathway,Synthesis of Leukotrienes (LT) and Eoxins (EX)
+path:R-HSA-2142696,genomic,pathway,Synthesis of Hepoxilins (HX) and Trioxilins (TrX)
+path:R-HSA-2142700,genomic,pathway,Synthesis of Lipoxins (LX)
+path:R-HSA-2142712,genomic,pathway,Synthesis of 12-eicosatetraenoic acid derivatives
+path:R-HSA-2142753,genomic,pathway,Arachidonic acid metabolism
+path:R-HSA-2142770,genomic,pathway,Synthesis of 15-eicosatetraenoic acid derivatives
+path:R-HSA-2142789,genomic,pathway,Ubiquinol biosynthesis
+path:R-HSA-2142816,genomic,pathway,Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE)
+path:R-HSA-2142845,genomic,pathway,Hyaluronan metabolism
+path:R-HSA-2142850,genomic,pathway,Hyaluronan biosynthesis and export
+path:R-HSA-2151201,genomic,pathway,Transcriptional activation of mitochondrial biogenesis
+path:R-HSA-2151209,genomic,pathway,Activation of PPARGC1A (PGC-1alpha) by phosphorylation
+path:R-HSA-2160456,genomic,pathway,Phenylketonuria
+path:R-HSA-216083,genomic,pathway,Integrin cell surface interactions
+path:R-HSA-2160916,genomic,pathway,Hyaluronan uptake and degradation
+path:R-HSA-2161517,genomic,pathway,Abacavir transmembrane transport
+path:R-HSA-2161522,genomic,pathway,Abacavir transport and metabolism
+path:R-HSA-2161541,genomic,pathway,Abacavir metabolism
+path:R-HSA-2162123,genomic,pathway,Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+path:R-HSA-2168880,genomic,pathway,Scavenging of heme from plasma
+path:R-HSA-2172127,genomic,pathway,DAP12 interactions
+path:R-HSA-217271,genomic,pathway,FMO oxidises nucleophiles
+path:R-HSA-2173782,genomic,pathway,Binding and Uptake of Ligands by Scavenger Receptors
+path:R-HSA-2173788,genomic,pathway,Downregulation of TGF-beta receptor signaling
+path:R-HSA-2173789,genomic,pathway,TGF-beta receptor signaling activates SMADs
+path:R-HSA-2173791,genomic,pathway,TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition)
+path:R-HSA-2173793,genomic,pathway,Transcriptional activity of SMAD2/SMAD3:SMAD4 heterotrimer
+path:R-HSA-2173795,genomic,pathway,Downregulation of SMAD2/3:SMAD4 transcriptional activity
+path:R-HSA-2173796,genomic,pathway,SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription
+path:R-HSA-2179392,genomic,pathway,EGFR Transactivation by Gastrin
+path:R-HSA-2187335,genomic,pathway,The retinoid cycle in cones (daylight vision)
+path:R-HSA-2187338,genomic,pathway,Visual phototransduction
+path:R-HSA-2197563,genomic,pathway,NOTCH2 intracellular domain regulates transcription
+path:R-HSA-2206280,genomic,pathway,MPS IX - Natowicz syndrome
+path:R-HSA-2206281,genomic,pathway,Mucopolysaccharidoses
+path:R-HSA-2206282,genomic,pathway,MPS IIIB - Sanfilippo syndrome B
+path:R-HSA-2206285,genomic,pathway,MPS VI - Maroteaux-Lamy syndrome
+path:R-HSA-2206290,genomic,pathway,MPS IV - Morquio syndrome A
+path:R-HSA-2206291,genomic,pathway,MPS IIIC - Sanfilippo syndrome C
+path:R-HSA-2206292,genomic,pathway,MPS VII - Sly syndrome
+path:R-HSA-2206296,genomic,pathway,MPS II - Hunter syndrome
+path:R-HSA-2206302,genomic,pathway,MPS I - Hurler syndrome
+path:R-HSA-2206305,genomic,pathway,MPS IIID - Sanfilippo syndrome D
+path:R-HSA-2206307,genomic,pathway,MPS IIIA - Sanfilippo syndrome A
+path:R-HSA-2206308,genomic,pathway,MPS IV - Morquio syndrome B
+path:R-HSA-2214320,genomic,pathway,Anchoring fibril formation
+path:R-HSA-2219528,genomic,pathway,PI3K/AKT Signaling in Cancer
+path:R-HSA-2219530,genomic,pathway,Constitutive Signaling by Aberrant PI3K in Cancer
+path:R-HSA-2243919,genomic,pathway,Crosslinking of collagen fibrils
+path:R-HSA-2262749,genomic,pathway,Cellular response to hypoxia
+path:R-HSA-2262752,genomic,pathway,Cellular responses to stress
+path:R-HSA-2299718,genomic,pathway,Condensation of Prophase Chromosomes
+path:R-HSA-2393930,genomic,pathway,Phosphate bond hydrolysis by NUDT proteins
+path:R-HSA-2395516,genomic,pathway,Electron transport from NADPH to Ferredoxin
+path:R-HSA-2404192,genomic,pathway,Signaling by Type 1 Insulin-like Growth Factor 1 Receptor (IGF1R)
+path:R-HSA-2408499,genomic,pathway,Formation of selenosugars for excretion
+path:R-HSA-2408508,genomic,pathway,"Metabolism of ingested SeMet, Sec, MeSec into H2Se"
+path:R-HSA-2408517,genomic,pathway,SeMet incorporation into proteins
+path:R-HSA-2408522,genomic,pathway,Selenoamino acid metabolism
+path:R-HSA-2408550,genomic,pathway,Metabolism of ingested H2SeO4 and H2SeO3 into H2Se
+path:R-HSA-2408552,genomic,pathway,Methylation of MeSeH for excretion
+path:R-HSA-2408557,genomic,pathway,Selenocysteine synthesis
+path:R-HSA-2424491,genomic,pathway,DAP12 signaling
+path:R-HSA-2426168,genomic,pathway,Activation of gene expression by SREBF (SREBP)
+path:R-HSA-2428924,genomic,pathway,IGF1R signaling cascade
+path:R-HSA-2428928,genomic,pathway,IRS-related events triggered by IGF1R
+path:R-HSA-2428933,genomic,pathway,SHC-related events triggered by IGF1R
+path:R-HSA-2453864,genomic,pathway,Retinoid cycle disease events
+path:R-HSA-2453902,genomic,pathway,The canonical retinoid cycle in rods (twilight vision)
+path:R-HSA-2454202,genomic,pathway,Fc epsilon receptor (FCERI) signaling
+path:R-HSA-2465910,genomic,pathway,MASTL Facilitates Mitotic Progression
+path:R-HSA-2466712,genomic,pathway,"Biosynthesis of A2E, implicated in retinal degradation"
+path:R-HSA-2467813,genomic,pathway,Separation of Sister Chromatids
+path:R-HSA-2468052,genomic,pathway,Establishment of Sister Chromatid Cohesion
+path:R-HSA-2470946,genomic,pathway,Cohesin Loading onto Chromatin
+path:R-HSA-2473224,genomic,pathway,Antagonism of Activin by Follistatin
+path:R-HSA-2474795,genomic,pathway,Diseases associated with visual transduction
+path:R-HSA-2485179,genomic,pathway,Activation of the phototransduction cascade
+path:R-HSA-2500257,genomic,pathway,Resolution of Sister Chromatid Cohesion
+path:R-HSA-2514853,genomic,pathway,Condensation of Prometaphase Chromosomes
+path:R-HSA-2514856,genomic,pathway,The phototransduction cascade
+path:R-HSA-2514859,genomic,pathway,"Inactivation, recovery and regulation of the phototransduction cascade"
+path:R-HSA-2534343,genomic,pathway,Interaction With Cumulus Cells
+path:R-HSA-2555396,genomic,pathway,Mitotic Metaphase and Anaphase
+path:R-HSA-2559580,genomic,pathway,Oxidative Stress Induced Senescence
+path:R-HSA-2559582,genomic,pathway,Senescence-Associated Secretory Phenotype (SASP)
+path:R-HSA-2559583,genomic,pathway,Cellular Senescence
+path:R-HSA-2559584,genomic,pathway,Formation of Senescence-Associated Heterochromatin Foci (SAHF)
+path:R-HSA-2559585,genomic,pathway,Oncogene Induced Senescence
+path:R-HSA-2559586,genomic,pathway,DNA Damage/Telomere Stress Induced Senescence
+path:R-HSA-2562578,genomic,pathway,TRIF-mediated programmed cell death
+path:R-HSA-2564830,genomic,pathway,Cytosolic iron-sulfur cluster assembly
+path:R-HSA-2565942,genomic,pathway,Regulation of PLK1 Activity at G2/M Transition
+path:R-HSA-2586552,genomic,pathway,Signaling by Leptin
+path:R-HSA-2644602,genomic,pathway,Signaling by NOTCH1 PEST Domain Mutants in Cancer
+path:R-HSA-2644603,genomic,pathway,Signaling by NOTCH1 in Cancer
+path:R-HSA-2644605,genomic,pathway,FBXW7 Mutants and NOTCH1 in Cancer
+path:R-HSA-2644606,genomic,pathway,Constitutive Signaling by NOTCH1 PEST Domain Mutants
+path:R-HSA-2644607,genomic,pathway,Loss of Function of FBXW7 in Cancer and NOTCH1 Signaling
+path:R-HSA-264642,genomic,pathway,Acetylcholine Neurotransmitter Release Cycle
+path:R-HSA-264870,genomic,pathway,Caspase-mediated cleavage of cytoskeletal proteins
+path:R-HSA-264876,genomic,pathway,Insulin processing
+path:R-HSA-265473,genomic,pathway,Trafficking of dietary sterols
+path:R-HSA-2660825,genomic,pathway,Signaling by NOTCH1 t(7;9)(NOTCH1:M1580_K2555) Translocation Mutant
+path:R-HSA-2660826,genomic,pathway,Constitutive Signaling by NOTCH1 t(7;9)(NOTCH1:M1580_K2555) Translocation Mutant
+path:R-HSA-2672351,genomic,pathway,Stimuli-sensing channels
+path:R-HSA-2682334,genomic,pathway,EPH-Ephrin signaling
+path:R-HSA-2691230,genomic,pathway,Signaling by NOTCH1 HD Domain Mutants in Cancer
+path:R-HSA-2691232,genomic,pathway,Constitutive Signaling by NOTCH1 HD Domain Mutants
+path:R-HSA-2730905,genomic,pathway,Role of LAT2/NTAL/LAB on calcium mobilization
+path:R-HSA-2855086,genomic,pathway,Ficolins bind to repetitive carbohydrate structures on the target cell surface
+path:R-HSA-2871796,genomic,pathway,FCERI mediated MAPK activation
+path:R-HSA-2871809,genomic,pathway,FCERI mediated Ca+2 mobilization
+path:R-HSA-2871837,genomic,pathway,FCERI mediated NF-kB activation
+path:R-HSA-2892245,genomic,pathway,"POU5F1 (OCT4), SOX2, NANOG repress genes related to differentiation"
+path:R-HSA-2892247,genomic,pathway,"POU5F1 (OCT4), SOX2, NANOG activate genes related to proliferation"
+path:R-HSA-2894858,genomic,pathway,Signaling by NOTCH1 HD+PEST Domain Mutants in Cancer
+path:R-HSA-2894862,genomic,pathway,Constitutive Signaling by NOTCH1 HD+PEST Domain Mutants
+path:R-HSA-2978092,genomic,pathway,Abnormal conversion of 2-oxoglutarate to 2-hydroxyglutarate
+path:R-HSA-2979096,genomic,pathway,NOTCH2 Activation and Transmission of Signal to the Nucleus
+path:R-HSA-2980736,genomic,pathway,Peptide hormone metabolism
+path:R-HSA-2980766,genomic,pathway,Nuclear Envelope Breakdown
+path:R-HSA-2980767,genomic,pathway,"Activation of NIMA Kinases NEK9, NEK6, NEK7"
+path:R-HSA-2990846,genomic,pathway,SUMOylation
+path:R-HSA-2993913,genomic,pathway,Clearance of Nuclear Envelope Membranes from Chromatin
+path:R-HSA-2995383,genomic,pathway,Initiation of Nuclear Envelope Reformation
+path:R-HSA-2995410,genomic,pathway,Nuclear Envelope Reassembly
+path:R-HSA-3000157,genomic,pathway,Laminin interactions
+path:R-HSA-3000170,genomic,pathway,Syndecan interactions
+path:R-HSA-3000171,genomic,pathway,Non-integrin membrane-ECM interactions
+path:R-HSA-3000178,genomic,pathway,ECM proteoglycans
+path:R-HSA-3000471,genomic,pathway,Scavenging by Class B Receptors
+path:R-HSA-3000480,genomic,pathway,Scavenging by Class A Receptors
+path:R-HSA-3000484,genomic,pathway,Scavenging by Class F Receptors
+path:R-HSA-3000497,genomic,pathway,Scavenging by Class H Receptors
+path:R-HSA-3065676,genomic,pathway,SUMO is conjugated to E1 (UBA2:SAE1)
+path:R-HSA-3065678,genomic,pathway,"SUMO is transferred from E1 to E2 (UBE2I, UBC9)"
+path:R-HSA-3065679,genomic,pathway,SUMO is proteolytically processed
+path:R-HSA-3108214,genomic,pathway,SUMOylation of DNA damage response and repair proteins
+path:R-HSA-3108232,genomic,pathway,SUMO E3 ligases SUMOylate target proteins
+path:R-HSA-3134963,genomic,pathway,DEx/H-box helicases activate type I IFN and inflammatory cytokines production
+path:R-HSA-3134973,genomic,pathway,LRR FLII-interacting protein 1 (LRRFIP1) activates type I IFN production
+path:R-HSA-3134975,genomic,pathway,Regulation of innate immune responses to cytosolic DNA
+path:R-HSA-3214815,genomic,pathway,HDACs deacetylate histones
+path:R-HSA-3214841,genomic,pathway,PKMTs methylate histone lysines
+path:R-HSA-3214842,genomic,pathway,HDMs demethylate histones
+path:R-HSA-3214847,genomic,pathway,HATs acetylate histones
+path:R-HSA-3214858,genomic,pathway,RMTs methylate histone arginines
+path:R-HSA-3215018,genomic,pathway,Processing and activation of SUMO
+path:R-HSA-3229121,genomic,pathway,Glycogen storage diseases
+path:R-HSA-3229133,genomic,pathway,Glycogen storage disease type Ib (SLC37A4)
+path:R-HSA-3232118,genomic,pathway,SUMOylation of transcription factors
+path:R-HSA-3238698,genomic,pathway,WNT ligand biogenesis and trafficking
+path:R-HSA-3247509,genomic,pathway,Chromatin modifying enzymes
+path:R-HSA-3248023,genomic,pathway,Regulation by TREX1
+path:R-HSA-3249367,genomic,pathway,STAT6-mediated induction of chemokines
+path:R-HSA-3270619,genomic,pathway,IRF3-mediated induction of type I IFN
+path:R-HSA-3274531,genomic,pathway,Glycogen storage disease type Ia (G6PC)
+path:R-HSA-3282872,genomic,pathway,Severe congenital neutropenia type 4 (G6PC3)
+path:R-HSA-3295583,genomic,pathway,TRP channels
+path:R-HSA-3296197,genomic,pathway,Hydroxycarboxylic acid-binding receptors
+path:R-HSA-3296469,genomic,pathway,Defects in cobalamin (B12) metabolism
+path:R-HSA-3296482,genomic,pathway,Defects in vitamin and cofactor metabolism
+path:R-HSA-3299685,genomic,pathway,Detoxification of Reactive Oxygen Species
+path:R-HSA-3301854,genomic,pathway,Nuclear Pore Complex (NPC) Disassembly
+path:R-HSA-3304347,genomic,pathway,Loss of Function of SMAD4 in Cancer
+path:R-HSA-3304349,genomic,pathway,Loss of Function of SMAD2/3 in Cancer
+path:R-HSA-3304351,genomic,pathway,Signaling by TGF-beta Receptor Complex in Cancer
+path:R-HSA-3304356,genomic,pathway,SMAD2/3 Phosphorylation Motif Mutants in Cancer
+path:R-HSA-3311021,genomic,pathway,SMAD4 MH2 Domain Mutants in Cancer
+path:R-HSA-3315487,genomic,pathway,SMAD2/3 MH2 Domain Mutants in Cancer
+path:R-HSA-3322077,genomic,pathway,Glycogen synthesis
+path:R-HSA-3323169,genomic,pathway,Defects in biotin (Btn) metabolism
+path:R-HSA-3359454,genomic,pathway,Defective TCN2 causes hereditary megaloblastic anemia
+path:R-HSA-3359457,genomic,pathway,Defective GIF causes intrinsic factor deficiency
+path:R-HSA-3359458,genomic,pathway,Defective LMBRD1 causes methylmalonic aciduria and homocystinuria type cblF
+path:R-HSA-3359462,genomic,pathway,Defective AMN causes hereditary megaloblastic anemia 1
+path:R-HSA-3359463,genomic,pathway,Defective CUBN causes hereditary megaloblastic anemia 1
+path:R-HSA-3359467,genomic,pathway,Defective MTRR causes methylmalonic aciduria and homocystinuria type cblE
+path:R-HSA-3359469,genomic,pathway,Defective MTR causes methylmalonic aciduria and homocystinuria type cblG
+path:R-HSA-3359471,genomic,pathway,Defective MMAB causes methylmalonic aciduria type cblB
+path:R-HSA-3359473,genomic,pathway,Defective MMADHC causes methylmalonic aciduria and homocystinuria type cblD
+path:R-HSA-3359474,genomic,pathway,Defective MMACHC causes methylmalonic aciduria and homocystinuria type cblC
+path:R-HSA-3359475,genomic,pathway,Defective MMAA causes methylmalonic aciduria type cblA
+path:R-HSA-3359478,genomic,pathway,Defective MUT causes methylmalonic aciduria mut type
+path:R-HSA-3359485,genomic,pathway,Defective CD320 causes methylmalonic aciduria
+path:R-HSA-3371378,genomic,pathway,Regulation by c-FLIP
+path:R-HSA-3371453,genomic,pathway,Regulation of HSF1-mediated heat shock response
+path:R-HSA-3371511,genomic,pathway,HSF1 activation
+path:R-HSA-3371556,genomic,pathway,Cellular response to heat stress
+path:R-HSA-3371568,genomic,pathway,Attenuation phase
+path:R-HSA-3371571,genomic,pathway,HSF1-dependent transactivation
+path:R-HSA-3371598,genomic,pathway,Defective BTD causes biotidinase deficiency
+path:R-HSA-3371599,genomic,pathway,Defective HLCS causes multiple carboxylase deficiency
+path:R-HSA-349425,genomic,pathway,Autodegradation of the E3 ubiquitin ligase COP1
+path:R-HSA-350054,genomic,pathway,Notch-HLH transcription pathway
+path:R-HSA-350562,genomic,pathway,Regulation of ornithine decarboxylase (ODC)
+path:R-HSA-350864,genomic,pathway,Regulation of thyroid hormone activity
+path:R-HSA-351143,genomic,pathway,Agmatine biosynthesis
+path:R-HSA-351200,genomic,pathway,Interconversion of polyamines
+path:R-HSA-351202,genomic,pathway,Metabolism of polyamines
+path:R-HSA-351906,genomic,pathway,Apoptotic cleavage of cell adhesion  proteins
+path:R-HSA-352230,genomic,pathway,Amino acid transport across the plasma membrane
+path:R-HSA-352238,genomic,pathway,Breakdown of the nuclear lamina
+path:R-HSA-354192,genomic,pathway,Integrin alphaIIb beta3 signaling
+path:R-HSA-354194,genomic,pathway,GRB2:SOS provides linkage to MAPK signaling for Integrins
+path:R-HSA-3560782,genomic,pathway,Diseases associated with glycosaminoglycan metabolism
+path:R-HSA-3560783,genomic,pathway,"Defective B4GALT7 causes EDS, progeroid type"
+path:R-HSA-3560792,genomic,pathway,Defective SLC26A2 causes chondrodysplasias
+path:R-HSA-3560796,genomic,pathway,Defective PAPSS2 causes SEMD-PA
+path:R-HSA-3560801,genomic,pathway,Defective B3GAT3 causes JDSSDHD
+path:R-HSA-3595172,genomic,pathway,Defective CHST3 causes SEDCJD
+path:R-HSA-3595174,genomic,pathway,"Defective CHST14 causes EDS, musculocontractural type"
+path:R-HSA-3595177,genomic,pathway,Defective CHSY1 causes TPBS
+path:R-HSA-3642278,genomic,pathway,Loss of Function of TGFBR2 in Cancer
+path:R-HSA-3642279,genomic,pathway,TGFBR2 MSI Frameshift Mutants in Cancer
+path:R-HSA-3645790,genomic,pathway,TGFBR2 Kinase Domain Mutants in Cancer
+path:R-HSA-3656225,genomic,pathway,Defective CHST6 causes MCDC1
+path:R-HSA-3656237,genomic,pathway,Defective EXT2 causes exostoses 2
+path:R-HSA-3656243,genomic,pathway,Defective ST3GAL3 causes MCT12 and EIEE15
+path:R-HSA-3656244,genomic,pathway,Defective B4GALT1 causes B4GALT1-CDG (CDG-2d)
+path:R-HSA-3656253,genomic,pathway,"Defective EXT1 causes exostoses 1, TRPS2 and CHDS"
+path:R-HSA-3656532,genomic,pathway,TGFBR1 KD Mutants in Cancer
+path:R-HSA-3656534,genomic,pathway,Loss of Function of TGFBR1 in Cancer
+path:R-HSA-3656535,genomic,pathway,TGFBR1 LBD Mutants in Cancer
+path:R-HSA-3700989,genomic,pathway,Transcriptional Regulation by TP53
+path:R-HSA-372708,genomic,pathway,p130Cas linkage to MAPK signaling for integrins
+path:R-HSA-372790,genomic,pathway,Signaling by GPCR
+path:R-HSA-373076,genomic,pathway,Class A/1 (Rhodopsin-like receptors)
+path:R-HSA-373080,genomic,pathway,Class B/2 (Secretin family receptors)
+path:R-HSA-373752,genomic,pathway,Netrin-1 signaling
+path:R-HSA-373753,genomic,pathway,Nephrin interactions
+path:R-HSA-373755,genomic,pathway,Semaphorin interactions
+path:R-HSA-373760,genomic,pathway,L1CAM interactions
+path:R-HSA-375165,genomic,pathway,NCAM signaling for neurite out-growth
+path:R-HSA-375170,genomic,pathway,CDO in myogenesis
+path:R-HSA-375276,genomic,pathway,Peptide ligand-binding receptors
+path:R-HSA-375280,genomic,pathway,Amine ligand-binding receptors
+path:R-HSA-375281,genomic,pathway,Hormone ligand-binding receptors
+path:R-HSA-376172,genomic,pathway,DSCAM interactions
+path:R-HSA-376176,genomic,pathway,Signaling by Robo receptor
+path:R-HSA-3769402,genomic,pathway,Deactivation of the beta-catenin transactivating complex
+path:R-HSA-3772470,genomic,pathway,Negative regulation of TCF-dependent signaling by WNT ligand antagonists
+path:R-HSA-3781860,genomic,pathway,Diseases associated with N-glycosylation of proteins
+path:R-HSA-3781865,genomic,pathway,Diseases of glycosylation
+path:R-HSA-3785653,genomic,pathway,Myoclonic epilepsy of Lafora
+path:R-HSA-379397,genomic,pathway,Enzymatic degradation of dopamine by COMT
+path:R-HSA-379398,genomic,pathway,Enzymatic degradation of Dopamine by monoamine oxidase
+path:R-HSA-379401,genomic,pathway,Dopamine clearance from the synaptic cleft
+path:R-HSA-379716,genomic,pathway,Cytosolic tRNA aminoacylation
+path:R-HSA-379724,genomic,pathway,tRNA Aminoacylation
+path:R-HSA-379726,genomic,pathway,Mitochondrial tRNA aminoacylation
+path:R-HSA-380095,genomic,pathway,Tachykinin receptors bind tachykinins
+path:R-HSA-380108,genomic,pathway,Chemokine receptors bind chemokines
+path:R-HSA-380259,genomic,pathway,Loss of Nlp from mitotic centrosomes
+path:R-HSA-380270,genomic,pathway,Recruitment of mitotic centrosome proteins and complexes
+path:R-HSA-380284,genomic,pathway,Loss of proteins required for interphase microtubule organization from the centrosome
+path:R-HSA-380287,genomic,pathway,Centrosome maturation
+path:R-HSA-380320,genomic,pathway,Recruitment of NuMA to mitotic centrosomes
+path:R-HSA-380612,genomic,pathway,Metabolism of serotonin
+path:R-HSA-380615,genomic,pathway,Serotonin clearance from the synaptic cleft
+path:R-HSA-380972,genomic,pathway,Energy dependent regulation of mTOR by LKB1-AMPK
+path:R-HSA-380994,genomic,pathway,ATF4 activates genes
+path:R-HSA-381033,genomic,pathway,ATF6 (ATF6-alpha) activates chaperones
+path:R-HSA-381038,genomic,pathway,XBP1(S) activates chaperone genes
+path:R-HSA-381042,genomic,pathway,PERK regulates gene expression
+path:R-HSA-381070,genomic,pathway,IRE1alpha activates chaperones
+path:R-HSA-381119,genomic,pathway,Unfolded Protein Response (UPR)
+path:R-HSA-381183,genomic,pathway,ATF6 (ATF6-alpha) activates chaperone genes
+path:R-HSA-381340,genomic,pathway,Transcriptional regulation of white adipocyte differentiation
+path:R-HSA-381426,genomic,pathway,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)
+path:R-HSA-3814836,genomic,pathway,Glycogen storage disease type XV (GYG1)
+path:R-HSA-381676,genomic,pathway,Glucagon-like Peptide-1 (GLP1) regulates insulin secretion
+path:R-HSA-381753,genomic,pathway,Olfactory Signaling Pathway
+path:R-HSA-381771,genomic,pathway,"Synthesis, secretion, and inactivation of Glucagon-like Peptide-1 (GLP-1)"
+path:R-HSA-382551,genomic,pathway,Transmembrane transport of small molecules
+path:R-HSA-382556,genomic,pathway,ABC-family proteins mediated transport
+path:R-HSA-3828062,genomic,pathway,Glycogen storage disease type 0 (muscle GYS1)
+path:R-HSA-383280,genomic,pathway,Nuclear Receptor transcription pathway
+path:R-HSA-3858494,genomic,pathway,Beta-catenin independent WNT signaling
+path:R-HSA-3858516,genomic,pathway,Glycogen storage disease type 0 (liver GYS2)
+path:R-HSA-3878781,genomic,pathway,Glycogen storage disease type IV (GBE1)
+path:R-HSA-388396,genomic,pathway,GPCR downstream signaling
+path:R-HSA-388479,genomic,pathway,Vasopressin-like receptors
+path:R-HSA-388841,genomic,pathway,Costimulation by the CD28 family
+path:R-HSA-389356,genomic,pathway,CD28 co-stimulation
+path:R-HSA-389357,genomic,pathway,CD28 dependent PI3K/Akt signaling
+path:R-HSA-389359,genomic,pathway,CD28 dependent Vav1 pathway
+path:R-HSA-389397,genomic,pathway,Orexin and neuropeptides FF and QRFP bind to their respective receptors
+path:R-HSA-389513,genomic,pathway,CTLA4 inhibitory signaling
+path:R-HSA-389542,genomic,pathway,NADPH regeneration
+path:R-HSA-389599,genomic,pathway,Alpha-oxidation of phytanate
+path:R-HSA-389661,genomic,pathway,Glyoxylate metabolism and glycine degradation
+path:R-HSA-389887,genomic,pathway,Beta-oxidation of pristanoyl-CoA
+path:R-HSA-389948,genomic,pathway,PD-1 signaling
+path:R-HSA-389957,genomic,pathway,Prefoldin mediated transfer of substrate  to CCT/TriC
+path:R-HSA-389958,genomic,pathway,Cooperation of Prefoldin and TriC/CCT  in actin and tubulin folding
+path:R-HSA-389960,genomic,pathway,Formation of tubulin folding intermediates by CCT/TriC
+path:R-HSA-389977,genomic,pathway,Post-chaperonin tubulin folding pathway
+path:R-HSA-390247,genomic,pathway,Beta-oxidation of very long chain fatty acids
+path:R-HSA-390450,genomic,pathway,Folding of actin by CCT/TriC
+path:R-HSA-390466,genomic,pathway,Chaperonin-mediated protein folding
+path:R-HSA-390471,genomic,pathway,Association of TriC/CCT with target proteins during biosynthesis
+path:R-HSA-390522,genomic,pathway,Striated Muscle Contraction
+path:R-HSA-390648,genomic,pathway,Muscarinic acetylcholine receptors
+path:R-HSA-390650,genomic,pathway,Histamine receptors
+path:R-HSA-390651,genomic,pathway,Dopamine receptors
+path:R-HSA-390666,genomic,pathway,Serotonin receptors
+path:R-HSA-390696,genomic,pathway,Adrenoceptors
+path:R-HSA-3906995,genomic,pathway,Diseases associated with O-glycosylation of proteins
+path:R-HSA-390918,genomic,pathway,Peroxisomal lipid metabolism
+path:R-HSA-391160,genomic,pathway,Signal regulatory protein (SIRP) family interactions
+path:R-HSA-391251,genomic,pathway,Protein folding
+path:R-HSA-391903,genomic,pathway,Eicosanoid ligand-binding receptors
+path:R-HSA-391906,genomic,pathway,Leukotriene receptors
+path:R-HSA-391908,genomic,pathway,Prostanoid ligand receptors
+path:R-HSA-392023,genomic,pathway,Adrenaline signalling through Alpha-2 adrenergic receptor
+path:R-HSA-392154,genomic,pathway,Nitric oxide stimulates guanylate cyclase
+path:R-HSA-392170,genomic,pathway,ADP signalling through P2Y purinoceptor 12
+path:R-HSA-392451,genomic,pathway,G beta:gamma signalling through PI3Kgamma
+path:R-HSA-392499,genomic,pathway,Metabolism of proteins
+path:R-HSA-392517,genomic,pathway,Rap1 signalling
+path:R-HSA-392518,genomic,pathway,Signal amplification
+path:R-HSA-392851,genomic,pathway,Prostacyclin signalling through prostacyclin receptor
+path:R-HSA-3928662,genomic,pathway,EPHB-mediated forward signaling
+path:R-HSA-3928663,genomic,pathway,EPHA-mediated growth cone collapse
+path:R-HSA-3928664,genomic,pathway,Ephrin signaling
+path:R-HSA-3928665,genomic,pathway,EPH-ephrin mediated repulsion of cells
+path:R-HSA-397014,genomic,pathway,Muscle contraction
+path:R-HSA-397795,genomic,pathway,G-protein beta:gamma signalling
+path:R-HSA-399710,genomic,pathway,Activation of AMPA receptors
+path:R-HSA-399719,genomic,pathway,Trafficking of AMPA receptors
+path:R-HSA-399721,genomic,pathway,"Glutamate Binding, Activation of AMPA Receptors and Synaptic Plasticity"
+path:R-HSA-399954,genomic,pathway,Sema3A PAK dependent Axon repulsion
+path:R-HSA-399955,genomic,pathway,SEMA3A-Plexin repulsion signaling by inhibiting Integrin adhesion
+path:R-HSA-399956,genomic,pathway,CRMPs in Sema3A signaling
+path:R-HSA-399997,genomic,pathway,Acetylcholine regulates insulin secretion
+path:R-HSA-400042,genomic,pathway,"Adrenaline,noradrenaline inhibits insulin secretion"
+path:R-HSA-400206,genomic,pathway,Regulation of lipid metabolism by Peroxisome proliferator-activated receptor alpha (PPARalpha)
+path:R-HSA-400253,genomic,pathway,Circadian Clock
+path:R-HSA-400451,genomic,pathway,Free fatty acids regulate insulin secretion
+path:R-HSA-400508,genomic,pathway,"Incretin synthesis, secretion, and inactivation"
+path:R-HSA-400511,genomic,pathway,"Synthesis, secretion, and inactivation of Glucose-dependent Insulinotropic Polypeptide (GIP)"
+path:R-HSA-400685,genomic,pathway,Sema4D in semaphorin signaling
+path:R-HSA-4043911,genomic,pathway,Defective PMM2 causes PMM2-CDG (CDG-1a)
+path:R-HSA-4043916,genomic,pathway,Defective MPI causes MPI-CDG (CDG-1b)
+path:R-HSA-4085001,genomic,pathway,Sialic acid metabolism
+path:R-HSA-4085011,genomic,pathway,"Defective GNE causes sialuria, Nonaka myopathy and inclusion body myopathy 2"
+path:R-HSA-4085023,genomic,pathway,Defective GFPT1 causes CMSTA1
+path:R-HSA-4086398,genomic,pathway,Ca2+ pathway
+path:R-HSA-4086400,genomic,pathway,PCP/CE pathway
+path:R-HSA-416476,genomic,pathway,G alpha (q) signalling events
+path:R-HSA-416482,genomic,pathway,G alpha (12/13) signalling events
+path:R-HSA-416550,genomic,pathway,Sema4D mediated inhibition of cell attachment and migration
+path:R-HSA-416572,genomic,pathway,Sema4D induced cell migration and growth-cone collapse
+path:R-HSA-416700,genomic,pathway,Other semaphorin interactions
+path:R-HSA-416993,genomic,pathway,Trafficking of GluR2-containing AMPA receptors
+path:R-HSA-417957,genomic,pathway,P2Y receptors
+path:R-HSA-417973,genomic,pathway,Adenosine P1 receptors
+path:R-HSA-418038,genomic,pathway,Nucleotide-like (purinergic) receptors
+path:R-HSA-418217,genomic,pathway,G beta:gamma signalling through PLC beta
+path:R-HSA-418346,genomic,pathway,Platelet homeostasis
+path:R-HSA-418359,genomic,pathway,Reduction of cytosolic Ca++ levels
+path:R-HSA-418360,genomic,pathway,Platelet calcium homeostasis
+path:R-HSA-418457,genomic,pathway,cGMP effects
+path:R-HSA-418555,genomic,pathway,G alpha (s) signalling events
+path:R-HSA-418592,genomic,pathway,ADP signalling through P2Y purinoceptor 1
+path:R-HSA-418594,genomic,pathway,G alpha (i) signalling events
+path:R-HSA-418597,genomic,pathway,G alpha (z) signalling events
+path:R-HSA-418885,genomic,pathway,DCC mediated attractive signaling
+path:R-HSA-418886,genomic,pathway,Netrin mediated repulsion signals
+path:R-HSA-418889,genomic,pathway,Ligand-independent caspase activation via DCC
+path:R-HSA-418890,genomic,pathway,Role of second messengers in netrin-1 signaling
+path:R-HSA-418990,genomic,pathway,Adherens junctions interactions
+path:R-HSA-419037,genomic,pathway,NCAM1 interactions
+path:R-HSA-419408,genomic,pathway,Lysosphingolipid and LPA receptors
+path:R-HSA-419771,genomic,pathway,Opsins
+path:R-HSA-419812,genomic,pathway,Calcitonin-like ligand receptors
+path:R-HSA-420029,genomic,pathway,Tight junction interactions
+path:R-HSA-420092,genomic,pathway,Glucagon-type ligand receptors
+path:R-HSA-420499,genomic,pathway,Class C/3 (Metabotropic glutamate/pheromone receptors)
+path:R-HSA-420597,genomic,pathway,Nectin/Necl  trans heterodimerization
+path:R-HSA-421270,genomic,pathway,Cell-cell junction organization
+path:R-HSA-421837,genomic,pathway,Clathrin derived vesicle budding
+path:R-HSA-422085,genomic,pathway,"Synthesis, secretion, and deacylation of Ghrelin"
+path:R-HSA-422356,genomic,pathway,Regulation of insulin secretion
+path:R-HSA-422475,genomic,pathway,Axon guidance
+path:R-HSA-425366,genomic,pathway,"Transport of glucose and other sugars, bile salts and organic acids, metal ions and amine compounds"
+path:R-HSA-425381,genomic,pathway,Bicarbonate transporters
+path:R-HSA-425393,genomic,pathway,Transport of inorganic cations/anions and amino acids/oligopeptides
+path:R-HSA-425397,genomic,pathway,"Transport of vitamins, nucleosides, and related molecules"
+path:R-HSA-425407,genomic,pathway,SLC-mediated transmembrane transport
+path:R-HSA-425410,genomic,pathway,Metal ion SLC transporters
+path:R-HSA-425561,genomic,pathway,Sodium/Calcium exchangers
+path:R-HSA-425986,genomic,pathway,Sodium/Proton exchangers
+path:R-HSA-426048,genomic,pathway,Arachidonate production from DAG
+path:R-HSA-426117,genomic,pathway,Cation-coupled Chloride cotransporters
+path:R-HSA-426486,genomic,pathway,Small interfering RNA (siRNA) biogenesis
+path:R-HSA-426496,genomic,pathway,Post-transcriptional silencing by small RNAs
+path:R-HSA-427359,genomic,pathway,SIRT1 negatively regulates rRNA Expression
+path:R-HSA-427389,genomic,pathway,ERCC6 (CSB) and EHMT2 (G9a) positively regulate rRNA expression
+path:R-HSA-427413,genomic,pathway,NoRC negatively regulates rRNA expression
+path:R-HSA-427589,genomic,pathway,Type II Na+/Pi cotransporters
+path:R-HSA-427601,genomic,pathway,Multifunctional anion exchangers
+path:R-HSA-427652,genomic,pathway,Sodium-coupled phosphate cotransporters
+path:R-HSA-427975,genomic,pathway,Proton/oligopeptide cotransporters
+path:R-HSA-428157,genomic,pathway,Sphingolipid metabolism
+path:R-HSA-428359,genomic,pathway,Insulin-like Growth Factor-2 mRNA Binding Proteins (IGF2BPs/IMPs/VICKZs) bind RNA
+path:R-HSA-428540,genomic,pathway,Activation of Rac
+path:R-HSA-428542,genomic,pathway,Regulation of Commissural axon pathfinding by Slit and Robo
+path:R-HSA-428543,genomic,pathway,Inactivation of Cdc42 and Rac
+path:R-HSA-428559,genomic,pathway,Proton-coupled neutral amino acid transporters
+path:R-HSA-428643,genomic,pathway,Organic anion transporters
+path:R-HSA-428776,genomic,pathway,Class II GLUTs
+path:R-HSA-428790,genomic,pathway,Facilitative Na+-independent glucose transporters
+path:R-HSA-428808,genomic,pathway,Na+-dependent glucose transporters
+path:R-HSA-428890,genomic,pathway,Role of Abl in Robo-Slit signaling
+path:R-HSA-428930,genomic,pathway,Thromboxane signalling through TP receptor
+path:R-HSA-429593,genomic,pathway,Inositol transporters
+path:R-HSA-429914,genomic,pathway,Deadenylation-dependent mRNA decay
+path:R-HSA-429947,genomic,pathway,Deadenylation of mRNA
+path:R-HSA-429958,genomic,pathway,mRNA decay by 3' to 5' exoribonuclease
+path:R-HSA-430039,genomic,pathway,mRNA decay by 5' to 3' exoribonuclease
+path:R-HSA-430116,genomic,pathway,GP1b-IX-V activation signalling
+path:R-HSA-432030,genomic,pathway,Transport of glycerol from adipocytes to the liver by Aquaporins
+path:R-HSA-432040,genomic,pathway,Vasopressin regulates renal water homeostasis via Aquaporins
+path:R-HSA-432047,genomic,pathway,Passive transport by Aquaporins
+path:R-HSA-432142,genomic,pathway,Platelet sensitization by LDL
+path:R-HSA-432720,genomic,pathway,Lysosome Vesicle Biogenesis
+path:R-HSA-432722,genomic,pathway,Golgi Associated Vesicle Biogenesis
+path:R-HSA-433137,genomic,pathway,"Sodium-coupled sulphate, di- and tri-carboxylate transporters"
+path:R-HSA-433692,genomic,pathway,Proton-coupled monocarboxylate transport
+path:R-HSA-4341670,genomic,pathway,Defective NEU1 causes sialidosis
+path:R-HSA-434316,genomic,pathway,Fatty Acids bound to GPR40 (FFAR1) regulate insulin secretion
+path:R-HSA-435354,genomic,pathway,Zinc transporters
+path:R-HSA-435368,genomic,pathway,Zinc efflux and compartmentalization by the SLC30 family
+path:R-HSA-437239,genomic,pathway,Recycling pathway of L1
+path:R-HSA-438064,genomic,pathway,Post NMDA receptor activation events
+path:R-HSA-438066,genomic,pathway,"Unblocking of NMDA receptor, glutamate binding and activation"
+path:R-HSA-4411364,genomic,pathway,Binding of TCF/LEF:CTNNB1 to target gene promoters
+path:R-HSA-4419969,genomic,pathway,Depolymerisation of the Nuclear Lamina
+path:R-HSA-4420097,genomic,pathway,VEGFA-VEGFR2 Pathway
+path:R-HSA-4420332,genomic,pathway,Defective B3GALT6 causes EDSP2 and SEMDJL1
+path:R-HSA-442380,genomic,pathway,Zinc influx into cells by the SLC39 gene family
+path:R-HSA-442660,genomic,pathway,Na+/Cl- dependent neurotransmitter transporters
+path:R-HSA-442717,genomic,pathway,CREB phosphorylation through the activation of CaMKK
+path:R-HSA-442720,genomic,pathway,CREB phosphorylation through the activation of Adenylate Cyclase
+path:R-HSA-442729,genomic,pathway,CREB phosphorylation through the activation of CaMKII
+path:R-HSA-442742,genomic,pathway,CREB phosphorylation through the activation of Ras
+path:R-HSA-442745,genomic,pathway,Activation of CaMK IV
+path:R-HSA-442755,genomic,pathway,Activation of NMDA receptor upon glutamate binding and postsynaptic events
+path:R-HSA-442982,genomic,pathway,Ras activation uopn Ca2+ infux through NMDA receptor
+path:R-HSA-444209,genomic,pathway,Free fatty acid receptors
+path:R-HSA-444257,genomic,pathway,RSK activation
+path:R-HSA-444411,genomic,pathway,Rhesus glycoproteins mediate ammonium transport.
+path:R-HSA-444473,genomic,pathway,Formyl peptide receptors bind formyl peptides and many other ligands
+path:R-HSA-444821,genomic,pathway,Relaxin receptors
+path:R-HSA-445095,genomic,pathway,Interaction between L1 and Ankyrins
+path:R-HSA-445144,genomic,pathway,Signal transduction by L1
+path:R-HSA-445355,genomic,pathway,Smooth Muscle Contraction
+path:R-HSA-445717,genomic,pathway,Aquaporin-mediated transport
+path:R-HSA-445989,genomic,pathway,TAK1 activates NFkB by phosphorylation and activation of IKKs complex
+path:R-HSA-446107,genomic,pathway,Type I hemidesmosome assembly
+path:R-HSA-446193,genomic,pathway,"Biosynthesis of the N-glycan precursor (dolichol lipid-linked oligosaccharide, LLO) and transfer to a nascent protein"
+path:R-HSA-446199,genomic,pathway,Synthesis of Dolichyl-phosphate
+path:R-HSA-446203,genomic,pathway,Asparagine N-linked glycosylation
+path:R-HSA-446205,genomic,pathway,Synthesis of GDP-mannose
+path:R-HSA-446210,genomic,pathway,Synthesis of UDP-N-acetyl-glucosamine
+path:R-HSA-446219,genomic,pathway,Synthesis of substrates in N-glycan biosythesis
+path:R-HSA-446343,genomic,pathway,Localization of the PINCH-ILK-PARVIN complex to focal adhesions
+path:R-HSA-446353,genomic,pathway,Cell-extracellular matrix interactions
+path:R-HSA-446388,genomic,pathway,Regulation of cytoskeletal remodeling and cell spreading by IPP complex components
+path:R-HSA-446652,genomic,pathway,Interleukin-1 signaling
+path:R-HSA-446728,genomic,pathway,Cell junction organization
+path:R-HSA-447038,genomic,pathway,NrCAM interactions
+path:R-HSA-447041,genomic,pathway,CHL1 interactions
+path:R-HSA-447043,genomic,pathway,Neurofascin interactions
+path:R-HSA-447115,genomic,pathway,Interleukin-12 signaling
+path:R-HSA-448424,genomic,pathway,Interleukin-17 signaling
+path:R-HSA-448706,genomic,pathway,Interleukin-1 processing
+path:R-HSA-449147,genomic,pathway,Signaling by Interleukins
+path:R-HSA-450282,genomic,pathway,MAPK targets/ Nuclear events mediated by MAP kinases
+path:R-HSA-450294,genomic,pathway,MAP kinase activation in TLR cascade
+path:R-HSA-450302,genomic,pathway,activated TAK1 mediates p38 MAPK activation
+path:R-HSA-450321,genomic,pathway,JNK (c-Jun kinases) phosphorylation and  activation mediated by activated human TAK1
+path:R-HSA-450341,genomic,pathway,Activation of the AP-1 family of transcription factors
+path:R-HSA-450385,genomic,pathway,Butyrate Response Factor 1 (BRF1) binds and destabilizes mRNA
+path:R-HSA-450408,genomic,pathway,AUF1 (hnRNP D0) binds and destabilizes mRNA
+path:R-HSA-450513,genomic,pathway,"Tristetraprolin (TTP, ZFP36) binds and destabilizes mRNA"
+path:R-HSA-450520,genomic,pathway,HuR (ELAVL1) binds and stabilizes mRNA
+path:R-HSA-450531,genomic,pathway,Regulation of mRNA stability by proteins that bind AU-rich elements
+path:R-HSA-450604,genomic,pathway,KSRP (KHSRP) binds and destabilizes mRNA
+path:R-HSA-451306,genomic,pathway,Ionotropic activity of Kainate Receptors
+path:R-HSA-451307,genomic,pathway,Activation of Na-permeable Kainate Receptors
+path:R-HSA-451308,genomic,pathway,Activation of Ca-permeable Kainate Receptor
+path:R-HSA-451326,genomic,pathway,Activation of Kainate Receptors upon glutamate binding
+path:R-HSA-451927,genomic,pathway,Interleukin-2 signaling
+path:R-HSA-452723,genomic,pathway,Transcriptional regulation of pluripotent stem cells
+path:R-HSA-453274,genomic,pathway,Mitotic G2-G2/M phases
+path:R-HSA-453276,genomic,pathway,Regulation of mitotic cell cycle
+path:R-HSA-453279,genomic,pathway,Mitotic G1-G1/S phases
+path:R-HSA-4549349,genomic,pathway,Defective ALG2 causes ALG2-CDG (CDG-1i)
+path:R-HSA-4549356,genomic,pathway,Defective DPAGT1 causes DPAGT1-CDG (CDG-1j) and CMSTA2
+path:R-HSA-4549380,genomic,pathway,Defective ALG1 causes ALG1-CDG (CDG-1k)
+path:R-HSA-4551295,genomic,pathway,Defective ALG11 causes ALG11-CDG (CDG-1p)
+path:R-HSA-4551638,genomic,pathway,SUMOylation of chromatin organization proteins
+path:R-HSA-456926,genomic,pathway,Thrombin signalling through proteinase activated receptors (PARs)
+path:R-HSA-4570464,genomic,pathway,SUMOylation of RNA binding proteins
+path:R-HSA-4570571,genomic,pathway,Defective RFT1 causes RFT1-CDG (CDG-1n)
+path:R-HSA-4608870,genomic,pathway,Asymmetric localization of PCP proteins
+path:R-HSA-4615885,genomic,pathway,SUMOylation of DNA replication proteins
+path:R-HSA-4641257,genomic,pathway,Degradation of AXIN
+path:R-HSA-4641258,genomic,pathway,Degradation of DVL
+path:R-HSA-4641262,genomic,pathway,Disassembly of the destruction complex and recruitment of AXIN to the membrane
+path:R-HSA-4641263,genomic,pathway,Regulation of FZD by ubiquitination
+path:R-HSA-4641265,genomic,pathway,Repression of WNT target genes
+path:R-HSA-4687000,genomic,pathway,Defective MPDU1 causes MPDU1-CDG (CDG-1f)
+path:R-HSA-4717374,genomic,pathway,Defective DPM1 causes DPM1-CDG (CDG-1e)
+path:R-HSA-4719360,genomic,pathway,Defective DPM3 causes DPM3-CDG (CDG-1o)
+path:R-HSA-4719377,genomic,pathway,Defective DPM2 causes DPM2-CDG (CDG-1u)
+path:R-HSA-4720454,genomic,pathway,Defective ALG9 causes ALG9-CDG (CDG-1l)
+path:R-HSA-4720475,genomic,pathway,Defective ALG3 causes ALG3-CDG (CDG-1d)
+path:R-HSA-4720489,genomic,pathway,Defective ALG12 causes ALG12-CDG (CDG-1g)
+path:R-HSA-4724289,genomic,pathway,Defective ALG6 causes ALG6-CDG (CDG-1c)
+path:R-HSA-4724325,genomic,pathway,Defective ALG8 causes ALG8-CDG (CDG-1h)
+path:R-HSA-4755579,genomic,pathway,Defective SRD5A3 causes SRD5A3-CDG (CDG-1q) and KHRZ
+path:R-HSA-4755583,genomic,pathway,Defective DOLK causes DOLK-CDG (CDG-1m)
+path:R-HSA-4755609,genomic,pathway,Defective DHDDS causes retinitis pigmentosa 59
+path:R-HSA-4791275,genomic,pathway,Signaling by WNT in cancer
+path:R-HSA-4793950,genomic,pathway,Defective MAN1B1 causes MRT15
+path:R-HSA-4793952,genomic,pathway,Defective MGAT2 causes MGAT2-CDG (CDG-2a)
+path:R-HSA-4793953,genomic,pathway,Defective B4GALT1 causes B4GALT1-CDG (CDG-2d)
+path:R-HSA-4793954,genomic,pathway,Defective MOGS causes MOGS-CDG (CDG-2b)
+path:R-HSA-480985,genomic,pathway,Synthesis of dolichyl-phosphate-glucose
+path:R-HSA-4839726,genomic,pathway,Chromatin organization
+path:R-HSA-4839735,genomic,pathway,"AXIN mutants destabilize the destruction complex, activating WNT signaling"
+path:R-HSA-4839743,genomic,pathway,phosphorylation site mutants of CTNNB1 are not targeted to the proteasome by the destruction complex
+path:R-HSA-4839744,genomic,pathway,truncated APC mutants destabilize the destruction complex
+path:R-HSA-4839748,genomic,pathway,AMER1 mutants destabilize the destruction complex
+path:R-HSA-499943,genomic,pathway,Synthesis and interconversion of nucleotide di- and triphosphates
+path:R-HSA-500657,genomic,pathway,Presynaptic function of Kainate receptors
+path:R-HSA-500753,genomic,pathway,Pyrimidine biosynthesis
+path:R-HSA-500792,genomic,pathway,GPCR ligand binding
+path:R-HSA-504046,genomic,pathway,"RNA Polymerase I, RNA Polymerase III, and Mitochondrial Transcription"
+path:R-HSA-5083625,genomic,pathway,Defective GALNT3 causes familial hyperphosphatemic tumoral calcinosis (HFTC)
+path:R-HSA-5083627,genomic,pathway,Defective LARGE causes MDDGA6 and MDDGB6
+path:R-HSA-5083628,genomic,pathway,"Defective POMGNT1 causes MDDGA3, MDDGB3 and MDDGC3"
+path:R-HSA-5083629,genomic,pathway,"Defective POMT2 causes MDDGA2, MDDGB2 and MDDGC2"
+path:R-HSA-5083630,genomic,pathway,Defective LFNG causes SCDO3
+path:R-HSA-5083632,genomic,pathway,Defective C1GALT1C1 causes Tn polyagglutination syndrome (TNPS)
+path:R-HSA-5083633,genomic,pathway,"Defective POMT1 causes MDDGA1, MDDGB1 and MDDGC1"
+path:R-HSA-5083635,genomic,pathway,Defective B3GALTL causes Peters-plus syndrome (PpS)
+path:R-HSA-5083636,genomic,pathway,Defective GALNT12 causes colorectal cancer 1 (CRCS1)
+path:R-HSA-5099900,genomic,pathway,WNT5A-dependent internalization of FZD4
+path:R-HSA-512988,genomic,pathway,"Interleukin-3, 5 and GM-CSF signaling"
+path:R-HSA-5140745,genomic,pathway,"WNT5A-dependent internalization of FZD2, FZD5 and ROR2"
+path:R-HSA-5173105,genomic,pathway,O-linked glycosylation
+path:R-HSA-5173214,genomic,pathway,O-glycosylation of TSR domain-containing proteins
+path:R-HSA-5205647,genomic,pathway,Mitophagy
+path:R-HSA-5205685,genomic,pathway,Pink/Parkin Mediated Mitophagy
+path:R-HSA-5210891,genomic,pathway,Uptake and function of anthrax toxins
+path:R-HSA-5213460,genomic,pathway,RIPK1-mediated regulated necrosis
+path:R-HSA-5218859,genomic,pathway,Regulated Necrosis
+path:R-HSA-5218900,genomic,pathway,CASP8 activity is inhibited
+path:R-HSA-5218920,genomic,pathway,VEGFR2 mediated vascular permeability
+path:R-HSA-5218921,genomic,pathway,VEGFR2 mediated cell proliferation
+path:R-HSA-5221030,genomic,pathway,"TET1,2,3 and TDG demethylate DNA"
+path:R-HSA-5223345,genomic,pathway,Miscellaneous transport and binding events
+path:R-HSA-5250913,genomic,pathway,Positive epigenetic regulation of rRNA expression
+path:R-HSA-5250924,genomic,pathway,B-WICH complex positively regulates rRNA expression
+path:R-HSA-5250941,genomic,pathway,Negative epigenetic regulation of rRNA expression
+path:R-HSA-5250955,genomic,pathway,Toxicity of botulinum toxin type D (BoNT/D)
+path:R-HSA-5250958,genomic,pathway,Toxicity of botulinum toxin type B (BoNT/B)
+path:R-HSA-5250968,genomic,pathway,Toxicity of botulinum toxin type A (BoNT/A)
+path:R-HSA-5250971,genomic,pathway,Toxicity of botulinum toxin type C (BoNT/C)
+path:R-HSA-5250981,genomic,pathway,Toxicity of botulinum toxin type F (BoNT/F)
+path:R-HSA-5250982,genomic,pathway,Toxicity of tetanus toxin (TeNT)
+path:R-HSA-5250989,genomic,pathway,Toxicity of botulinum toxin type G (BoNT/G)
+path:R-HSA-5250992,genomic,pathway,Toxicity of botulinum toxin type E (BoNT/E)
+path:R-HSA-525793,genomic,pathway,Myogenesis
+path:R-HSA-5260271,genomic,pathway,Diseases of Immune System
+path:R-HSA-5263617,genomic,pathway,Metabolism of ingested MeSeO2H into MeSeH
+path:R-HSA-532668,genomic,pathway,N-glycan trimming in the ER and Calnexin/Calreticulin cycle
+path:R-HSA-5334118,genomic,pathway,DNA methylation
+path:R-HSA-5336415,genomic,pathway,Uptake and function of diphtheria toxin
+path:R-HSA-5339562,genomic,pathway,Uptake and actions of bacterial toxins
+path:R-HSA-5339700,genomic,pathway,TCF7L2 mutants don't bind CTBP
+path:R-HSA-5339716,genomic,pathway,Misspliced GSK3beta mutants stabilize beta-catenin
+path:R-HSA-5339717,genomic,pathway,Misspliced LRP5 mutants have enhanced beta-catenin-dependent signaling
+path:R-HSA-5340573,genomic,pathway,WNT ligand secretion is abrogated by the PORCN inhibitor LGK974
+path:R-HSA-5340588,genomic,pathway,RNF mutants show enhanced WNT signaling and proliferation
+path:R-HSA-535734,genomic,pathway,"Fatty acid, triacylglycerol, and ketone body metabolism"
+path:R-HSA-5357572,genomic,pathway,Lysosomal glycogen catabolism
+path:R-HSA-5357609,genomic,pathway,Glycogen storage disease type II (GAA)
+path:R-HSA-5357769,genomic,pathway,Caspase activation via extrinsic apoptotic signalling pathway
+path:R-HSA-5357786,genomic,pathway,TNFR1-induced proapoptotic signaling
+path:R-HSA-5357801,genomic,pathway,Programmed Cell Death
+path:R-HSA-5357905,genomic,pathway,Regulation of TNFR1 signaling
+path:R-HSA-5357956,genomic,pathway,TNFR1-induced NFkappaB signaling pathway
+path:R-HSA-5358346,genomic,pathway,Hedgehog ligand biogenesis
+path:R-HSA-5358351,genomic,pathway,Signaling by Hedgehog
+path:R-HSA-5358493,genomic,pathway,Synthesis of diphthamide-EEF2
+path:R-HSA-5358508,genomic,pathway,Mismatch Repair
+path:R-HSA-5358565,genomic,pathway,Mismatch repair (MMR) directed by MSH2:MSH6 (MutSalpha)
+path:R-HSA-5358606,genomic,pathway,Mismatch repair (MMR) directed by MSH2:MSH3 (MutSbeta)
+path:R-HSA-5358747,genomic,pathway,S33 mutants of beta-catenin aren't phosphorylated
+path:R-HSA-5358749,genomic,pathway,S37 mutants of beta-catenin aren't phosphorylated
+path:R-HSA-5358751,genomic,pathway,S45 mutants of beta-catenin aren't phosphorylated
+path:R-HSA-5358752,genomic,pathway,T41 mutants of beta-catenin aren't phosphorylated
+path:R-HSA-5362517,genomic,pathway,Signaling by Retinoic Acid
+path:R-HSA-5362768,genomic,pathway,Hh mutants that don't undergo autocatalytic processing are degraded by ERAD
+path:R-HSA-5362798,genomic,pathway,Release of Hh-Np from the secreting cell
+path:R-HSA-5365859,genomic,pathway,RA biosynthesis pathway
+path:R-HSA-5368286,genomic,pathway,Mitochondrial translation initiation
+path:R-HSA-5368287,genomic,pathway,Mitochondrial translation
+path:R-HSA-5368598,genomic,pathway,Negative regulation of TCF-dependent signaling by DVL-interacting proteins
+path:R-HSA-5387390,genomic,pathway,Hh mutants abrogate ligand secretion
+path:R-HSA-5389840,genomic,pathway,Mitochondrial translation elongation
+path:R-HSA-5419276,genomic,pathway,Mitochondrial translation termination
+path:R-HSA-5423646,genomic,pathway,Aflatoxin activation and detoxification
+path:R-HSA-5467333,genomic,pathway,APC truncation mutants are not K63 polyubiquitinated
+path:R-HSA-5467337,genomic,pathway,APC truncation mutants have impaired AXIN binding
+path:R-HSA-5467340,genomic,pathway,AXIN missense mutants destabilize the destruction complex
+path:R-HSA-5467343,genomic,pathway,Deletions in the AMER1 gene destabilize the destruction complex
+path:R-HSA-5467345,genomic,pathway,Deletions in the AXIN genes in hepatocellular carcinoma result in elevated WNT signaling
+path:R-HSA-5467348,genomic,pathway,Truncations of AMER1 destabilize the destruction complex
+path:R-HSA-549127,genomic,pathway,Organic cation transport
+path:R-HSA-549132,genomic,pathway,Organic cation/anion/zwitterion transport
+path:R-HSA-5545619,genomic,pathway,"XAV939 inhibits tankyrase, stabilizing AXIN"
+path:R-HSA-556833,genomic,pathway,Metabolism of lipids and lipoproteins
+path:R-HSA-5576886,genomic,pathway,Phase 4 - resting membrane potential
+path:R-HSA-5576890,genomic,pathway,Phase 3 - rapid repolarisation
+path:R-HSA-5576891,genomic,pathway,Cardiac conduction
+path:R-HSA-5576892,genomic,pathway,Phase 0 - rapid depolarisation
+path:R-HSA-5576893,genomic,pathway,Phase 2 - plateau phase
+path:R-HSA-5576894,genomic,pathway,Phase 1 - inactivation of fast Na+ channels
+path:R-HSA-5578749,genomic,pathway,Transcriptional regulation by small RNAs
+path:R-HSA-5578768,genomic,pathway,Physiological factors
+path:R-HSA-5578775,genomic,pathway,Ion homeostasis
+path:R-HSA-5578995,genomic,pathway,Defective TPMT causes Thiopurine S-methyltransferase deficiency (TPMT deficiency)
+path:R-HSA-5578996,genomic,pathway,Defective CYP27A1 causes Cerebrotendinous xanthomatosis (CTX)
+path:R-HSA-5578997,genomic,pathway,Defective AHCY causes Hypermethioninemia with S-adenosylhomocysteine hydrolase deficiency (HMAHCHD)
+path:R-HSA-5578998,genomic,pathway,Defective OPLAH causes 5-oxoprolinase deficiency (OPLAHD)
+path:R-HSA-5578999,genomic,pathway,Defective GCLC causes Hemolytic anemia due to gamma-glutamylcysteine synthetase deficiency (HAGGSD)
+path:R-HSA-5579000,genomic,pathway,Defective CYP1B1 causes Glaucoma
+path:R-HSA-5579002,genomic,pathway,Defective UGT1A1 causes hyperbilirubinemia
+path:R-HSA-5579004,genomic,pathway,Defective CYP26C1 causes Focal facial dermal dysplasia 4 (FFDD4)
+path:R-HSA-5579005,genomic,pathway,"Defective CYP4F22 causes Ichthyosis, congenital, autosomal recessive 5 (ARCI5)"
+path:R-HSA-5579006,genomic,pathway,Defective GSS causes Glutathione synthetase deficiency (GSS deficiency)
+path:R-HSA-5579007,genomic,pathway,Defective ACY1 causes encephalopathy
+path:R-HSA-5579009,genomic,pathway,Defective CYP11B2 causes Corticosterone methyloxidase 1 deficiency (CMO-1 deficiency)
+path:R-HSA-5579010,genomic,pathway,"Defective CYP24A1 causes Hypercalcemia, infantile (HCAI)"
+path:R-HSA-5579011,genomic,pathway,"Defective CYP2U1 causes Spastic paraplegia 56, autosomal recessive (SPG56)"
+path:R-HSA-5579012,genomic,pathway,Defective MAOA causes Brunner syndrome (BRUNS)
+path:R-HSA-5579013,genomic,pathway,"Defective CYP7B1 causes Spastic paraplegia 5A, autosomal recessive (SPG5A) and Congenital bile acid synthesis defect 3 (CBAS3)"
+path:R-HSA-5579014,genomic,pathway,Defective CYP27B1 causes Rickets vitamin D-dependent 1A (VDDR1A)
+path:R-HSA-5579015,genomic,pathway,Defective CYP26B1 causes Radiohumeral fusions with other skeletal and craniofacial anomalies (RHFCA)
+path:R-HSA-5579016,genomic,pathway,Defective UGT1A4 causes hyperbilirubinemia
+path:R-HSA-5579017,genomic,pathway,Defective CYP11B1 causes Adrenal hyperplasia 4 (AH4)
+path:R-HSA-5579019,genomic,pathway,Defective FMO3 causes Trimethylaminuria (TMAU)
+path:R-HSA-5579020,genomic,pathway,Defective SLC35D1 causes Schneckenbecken dysplasia (SCHBCKD)
+path:R-HSA-5579021,genomic,pathway,Defective CYP21A2 causes Adrenal hyperplasia 3 (AH3)
+path:R-HSA-5579022,genomic,pathway,Defective GGT1 causes Glutathionuria (GLUTH)
+path:R-HSA-5579024,genomic,pathway,Defective MAT1A causes Methionine adenosyltransferase deficiency (MATD)
+path:R-HSA-5579026,genomic,pathway,"Defective CYP11A1 causes Adrenal insufficiency, congenital, with 46,XY sex reversal (AICSR)"
+path:R-HSA-5579027,genomic,pathway,Defective CYP2R1 causes Rickets vitamin D-dependent 1B (VDDR1B)
+path:R-HSA-5579028,genomic,pathway,Defective CYP17A1 causes Adrenal hyperplasia 5 (AH5)
+path:R-HSA-5579029,genomic,pathway,Metabolic disorders of biological oxidation enzymes
+path:R-HSA-5579030,genomic,pathway,Defective CYP19A1 causes Aromatase excess syndrome (AEXS)
+path:R-HSA-5579031,genomic,pathway,Defective ACTH causes Obesity and Pro-opiomelanocortinin deficiency (POMCD)
+path:R-HSA-5579032,genomic,pathway,Defective TBXAS1 causes Ghosal hematodiaphyseal dysplasia (GHDD)
+path:R-HSA-5601884,genomic,pathway,PIWI-interacting RNA (piRNA) biogenesis
+path:R-HSA-5602358,genomic,pathway,Diseases associated with the TLR signaling cascade
+path:R-HSA-5602410,genomic,pathway,TLR3 deficiency - HSE
+path:R-HSA-5602415,genomic,pathway,UNC93B1 deficiency - HSE
+path:R-HSA-5602498,genomic,pathway,MyD88 deficiency (TLR2/4)
+path:R-HSA-5602566,genomic,pathway,TICAM1 deficiency - HSE
+path:R-HSA-5602571,genomic,pathway,TRAF3 deficiency - HSE
+path:R-HSA-5602636,genomic,pathway,IKBKB deficiency causes SCID
+path:R-HSA-5602680,genomic,pathway,MyD88 deficiency (TLR5)
+path:R-HSA-5603027,genomic,pathway,IKBKG deficiency causes anhidrotic ectodermal dysplasia with immunodeficiency (EDA-ID) (via TLR)
+path:R-HSA-5603029,genomic,pathway,IkBA variant leads to EDA-ID
+path:R-HSA-5603037,genomic,pathway,IRAK4 deficiency (TLR5)
+path:R-HSA-5603041,genomic,pathway,IRAK4 deficiency (TLR2/4)
+path:R-HSA-5607761,genomic,pathway,Dectin-1 mediated noncanonical NF-kB signaling
+path:R-HSA-5607763,genomic,pathway,CLEC7A (Dectin-1) induces NFAT activation
+path:R-HSA-5607764,genomic,pathway,CLEC7A (Dectin-1) signaling
+path:R-HSA-5609974,genomic,pathway,Defective PGM1 causes PGM1-CDG (CDG1t)
+path:R-HSA-5609975,genomic,pathway,Diseases associated with glycosylation precursor biosynthesis
+path:R-HSA-5609976,genomic,pathway,Defective GALK1 can cause Galactosemia II (GALCT2)
+path:R-HSA-5609977,genomic,pathway,Defective GALE can cause Epimerase-deficiency galactosemia (EDG)
+path:R-HSA-5609978,genomic,pathway,Defective GALT can cause Galactosemia
+path:R-HSA-561048,genomic,pathway,Organic anion transport
+path:R-HSA-5610780,genomic,pathway,Degradation of GLI1 by the proteasome
+path:R-HSA-5610783,genomic,pathway,Degradation of GLI2 by the proteasome
+path:R-HSA-5610785,genomic,pathway,GLI3 is processed to GLI3R by the proteasome
+path:R-HSA-5610787,genomic,pathway,Hedgehog 'off' state
+path:R-HSA-5617472,genomic,pathway,Activation of anterior HOX genes in hindbrain development during early embryogenesis
+path:R-HSA-5617833,genomic,pathway,Cilium Assembly
+path:R-HSA-5619035,genomic,pathway,Defective SLC17A5 causes Salla disease (SD) and ISSD
+path:R-HSA-5619036,genomic,pathway,Defective SLC24A5 causes oculocutaneous albinism 6 (OCA6)
+path:R-HSA-5619037,genomic,pathway,Defective SLC35A1 causes congenital disorder of glycosylation 2F (CDG2F)
+path:R-HSA-5619039,genomic,pathway,"Defective SLC12A6 causes agenesis of the corpus callosum, with peripheral neuropathy (ACCPN)"
+path:R-HSA-5619040,genomic,pathway,Defective SLC34A1 causes hypophosphatemic nephrolithiasis/osteoporosis 1 (NPHLOP1)
+path:R-HSA-5619041,genomic,pathway,Defective SLC36A2 causes iminoglycinuria (IG) and hyperglycinuria (HG)
+path:R-HSA-5619042,genomic,pathway,Defective RHAG causes regulator type Rh-null hemolytic anemia (RHN)
+path:R-HSA-5619043,genomic,pathway,Defective SLC2A1 causes GLUT1 deficiency syndrome 1 (GLUT1DS1)
+path:R-HSA-5619044,genomic,pathway,Defective SLC6A19 causes Hartnup disorder (HND)
+path:R-HSA-5619045,genomic,pathway,Defective SLC34A2 causes pulmonary alveolar microlithiasis (PALM)
+path:R-HSA-5619046,genomic,pathway,Defective SLC26A4 causes Pendred syndrome (PDS)
+path:R-HSA-5619047,genomic,pathway,Defective SLC2A9 causes hypouricemia renal 2 (RHUC2)
+path:R-HSA-5619048,genomic,pathway,"Defective SLC11A2 causes hypochromic microcytic anemia, with iron overload 1 (AHMIO1)"
+path:R-HSA-5619049,genomic,pathway,Defective SLC40A1 causes hemochromatosis 4 (HFE4) (macrophages)
+path:R-HSA-5619050,genomic,pathway,"Defective SLC4A1 causes hereditary spherocytosis type 4 (HSP4),  distal renal tubular acidosis (dRTA) and dRTA with hemolytic anemia (dRTA-HA)"
+path:R-HSA-5619052,genomic,pathway,Defective SLC9A9 causes autism 16 (AUTS16)
+path:R-HSA-5619053,genomic,pathway,Defective SLC22A5 causes systemic primary carnitine deficiency (CDSP)
+path:R-HSA-5619054,genomic,pathway,"Defective SLC4A4 causes renal tubular acidosis, proximal, with ocular abnormalities and mental retardation (pRTA-OA)"
+path:R-HSA-5619055,genomic,pathway,Defective SLC24A4 causes hypomineralized amelogenesis imperfecta (AI)
+path:R-HSA-5619056,genomic,pathway,Defective HK1 causes hexokinase deficiency (HK deficiency)
+path:R-HSA-5619058,genomic,pathway,"Defective SLCO1B3 causes hyperbilirubinemia, Rotor type (HBLRR)"
+path:R-HSA-5619060,genomic,pathway,Defective CP causes aceruloplasminemia (ACERULOP)
+path:R-HSA-5619061,genomic,pathway,Defective SLC33A1 causes spastic paraplegia 42 (SPG42)
+path:R-HSA-5619062,genomic,pathway,Defective SLC1A3 causes episodic ataxia 6 (EA6)
+path:R-HSA-5619063,genomic,pathway,Defective SLC29A3 causes histiocytosis-lymphadenopathy plus syndrome (HLAS)
+path:R-HSA-5619066,genomic,pathway,Defective SLC22A18 causes lung cancer (LNCR) and embryonal rhabdomyosarcoma 1 (RMSE1)
+path:R-HSA-5619067,genomic,pathway,Defective SLC1A1 is implicated in schizophrenia 18 (SCZD18) and dicarboxylic aminoaciduria (DCBXA)
+path:R-HSA-5619068,genomic,pathway,Defective SLC2A10 causes arterial tortuosity syndrome (ATS)
+path:R-HSA-5619070,genomic,pathway,Defective SLC16A1 causes symptomatic deficiency in lactate transport (SDLT)
+path:R-HSA-5619071,genomic,pathway,Defective SLC22A12 causes renal hypouricemia 1 (RHUC1)
+path:R-HSA-5619072,genomic,pathway,Defective SLC35A2 causes congenital disorder of glycosylation 2M (CDG2M)
+path:R-HSA-5619073,genomic,pathway,Defective GCK causes maturity-onset diabetes of the young 2 (MODY2)
+path:R-HSA-5619076,genomic,pathway,Defective SLC17A8 causes autosomal dominant deafness 25 (DFNA25)
+path:R-HSA-5619077,genomic,pathway,Defective SLC24A1 causes congenital stationary night blindness 1D (CSNB1D)
+path:R-HSA-5619078,genomic,pathway,Defective SLC35C1 causes congenital disorder of glycosylation 2C (CDG2C)
+path:R-HSA-5619079,genomic,pathway,Defective SLC6A18 may confer susceptibility to iminoglycinuria and/or hyperglycinuria
+path:R-HSA-5619081,genomic,pathway,Defective SLC6A3 causes Parkinsonism-dystonia infantile (PKDYS)
+path:R-HSA-5619083,genomic,pathway,"Defective SLC35A3 causes arthrogryposis, mental retardation, and seizures (AMRS)"
+path:R-HSA-5619084,genomic,pathway,ABC transporter disorders
+path:R-HSA-5619085,genomic,pathway,Defective SLC26A3 causes congenital secretory chloride diarrhea 1 (DIAR1)
+path:R-HSA-5619087,genomic,pathway,Defective SLC12A3 causes Gitelman syndrome (GS)
+path:R-HSA-5619088,genomic,pathway,"Defective SLC39A4 causes acrodermatitis enteropathica, zinc-deficiency type (AEZ)"
+path:R-HSA-5619089,genomic,pathway,Defective SLC6A5 causes hyperekplexia 3 (HKPX3)
+path:R-HSA-5619092,genomic,pathway,"Defective SLC9A6 causes  X-linked, syndromic mental retardation,, Christianson type (MRXSCH)"
+path:R-HSA-5619094,genomic,pathway,Variant SLC6A14 may confer susceptibility towards obesity
+path:R-HSA-5619095,genomic,pathway,"Defective SLCO2A1 causes primary, autosomal recessive hypertrophic osteoarthropathy 2 (PHOAR2)"
+path:R-HSA-5619096,genomic,pathway,Defective SLC5A5 causes thyroid dyshormonogenesis 1 (TDH1)
+path:R-HSA-5619097,genomic,pathway,Defective SLC34A3 causes Hereditary hypophosphatemic rickets with hypercalciuria (HHRH)
+path:R-HSA-5619098,genomic,pathway,Defective SLC2A2 causes Fanconi-Bickel syndrome (FBS)
+path:R-HSA-5619099,genomic,pathway,Defective AVP causes neurohypophyseal diabetes insipidus (NDI)
+path:R-HSA-5619101,genomic,pathway,Variant SLC6A20 contributes towards hyperglycinuria (HG) and iminoglycinuria (IG)
+path:R-HSA-5619102,genomic,pathway,SLC transporter disorders
+path:R-HSA-5619104,genomic,pathway,Defective SLC12A1 causes Bartter syndrome 1 (BS1)
+path:R-HSA-5619107,genomic,pathway,Defective TRP may confer susceptibility towards thyroid papillary carcinoma (TPC)
+path:R-HSA-5619108,genomic,pathway,Defective SLC27A4 causes ichthyosis prematurity syndrome (IPS)
+path:R-HSA-5619109,genomic,pathway,Defective SLC6A2 causes orthostatic intolerance (OI)
+path:R-HSA-5619110,genomic,pathway,"Defective SLCO1B1 causes hyperbilirubinemia, Rotor type (HBLRR)"
+path:R-HSA-5619111,genomic,pathway,Defective SLC20A2 causes idiopathic basal ganglia calcification 1 (IBGC1)
+path:R-HSA-5619113,genomic,pathway,Defective SLC3A1 causes cystinuria (CSNU)
+path:R-HSA-5619114,genomic,pathway,Defective SLC5A7 causes distal hereditary motor neuronopathy 7A (HMN7A)
+path:R-HSA-5619115,genomic,pathway,Disorders of transmembrane transporters
+path:R-HSA-5619507,genomic,pathway,Activation of HOX genes during differentiation
+path:R-HSA-5620912,genomic,pathway,Anchoring of the basal body to the plasma membrane
+path:R-HSA-5620916,genomic,pathway,VxPx cargo-targeting to cilium
+path:R-HSA-5620920,genomic,pathway,Cargo trafficking to the periciliary membrane
+path:R-HSA-5620922,genomic,pathway,BBSome-mediated cargo-targeting to cilium
+path:R-HSA-5620924,genomic,pathway,Intraflagellar transport
+path:R-HSA-5621480,genomic,pathway,Dectin-2 family
+path:R-HSA-5621481,genomic,pathway,C-type lectin receptors (CLRs)
+path:R-HSA-5621575,genomic,pathway,CD209 (DC-SIGN) signaling
+path:R-HSA-5624138,genomic,pathway,Trafficking of myristoylated proteins to the cilium
+path:R-HSA-5624958,genomic,pathway,ARL13B-mediated ciliary trafficking of INPP5E
+path:R-HSA-5625740,genomic,pathway,RHO GTPases activate PKNs
+path:R-HSA-5625886,genomic,pathway,Activated PKN1 stimulates transcription of AR (androgen receptor) regulated genes KLK2 and KLK3
+path:R-HSA-5625900,genomic,pathway,RHO GTPases activate CIT
+path:R-HSA-5625970,genomic,pathway,RHO GTPases activate KTN1
+path:R-HSA-5626467,genomic,pathway,RHO GTPases activate IQGAPs
+path:R-HSA-5626978,genomic,pathway,TNFR1-mediated ceramide production
+path:R-HSA-5627083,genomic,pathway,RHO GTPases regulate CFTR trafficking
+path:R-HSA-5627117,genomic,pathway,RHO GTPases Activate ROCKs
+path:R-HSA-5627123,genomic,pathway,RHO GTPases activate PAKs
+path:R-HSA-5628897,genomic,pathway,TP53 Regulates Metabolic Genes
+path:R-HSA-5632681,genomic,pathway,Ligand-receptor interactions
+path:R-HSA-5632684,genomic,pathway,Hedgehog 'on' state
+path:R-HSA-5633007,genomic,pathway,Regulation of TP53 Activity
+path:R-HSA-5633008,genomic,pathway,TP53 Regulates Transcription of Cell Death Genes
+path:R-HSA-5633231,genomic,pathway,Defective ALG14 causes congenital myasthenic syndrome (ALG14-CMS)
+path:R-HSA-5635838,genomic,pathway,Activation of SMO
+path:R-HSA-5635851,genomic,pathway,GLI proteins bind promoters of Hh responsive genes to promote transcription
+path:R-HSA-5637810,genomic,pathway,Constitutive Signaling by EGFRvIII
+path:R-HSA-5637812,genomic,pathway,Signaling by EGFRvIII in Cancer
+path:R-HSA-5637815,genomic,pathway,Signaling by Ligand-Responsive EGFR Variants in Cancer
+path:R-HSA-5638302,genomic,pathway,Signaling by Overexpressed Wild-Type EGFR in Cancer
+path:R-HSA-5638303,genomic,pathway,Inhibition of Signaling by Overexpressed EGFR
+path:R-HSA-5649702,genomic,pathway,APEX1-Independent Resolution of AP Sites via the Single Nucleotide Replacement Pathway
+path:R-HSA-5651801,genomic,pathway,PCNA-Dependent Long Patch Base Excision Repair
+path:R-HSA-5652084,genomic,pathway,Fructose metabolism
+path:R-HSA-5652227,genomic,pathway,Fructose biosynthesis
+path:R-HSA-5653656,genomic,pathway,Vesicle-mediated transport
+path:R-HSA-5653890,genomic,pathway,Lactose synthesis
+path:R-HSA-5654219,genomic,pathway,Phospholipase C-mediated cascade: FGFR1
+path:R-HSA-5654221,genomic,pathway,Phospholipase C-mediated cascade; FGFR2
+path:R-HSA-5654227,genomic,pathway,Phospholipase C-mediated cascade; FGFR3
+path:R-HSA-5654228,genomic,pathway,Phospholipase C-mediated cascade; FGFR4
+path:R-HSA-5654687,genomic,pathway,Downstream signaling of activated FGFR1
+path:R-HSA-5654688,genomic,pathway,SHC-mediated cascade:FGFR1
+path:R-HSA-5654689,genomic,pathway,PI-3K cascade:FGFR1
+path:R-HSA-5654693,genomic,pathway,FRS-mediated FGFR1 signaling
+path:R-HSA-5654695,genomic,pathway,PI-3K cascade:FGFR2
+path:R-HSA-5654696,genomic,pathway,Downstream signaling of activated FGFR2
+path:R-HSA-5654699,genomic,pathway,SHC-mediated cascade:FGFR2
+path:R-HSA-5654700,genomic,pathway,FRS-mediated FGFR2 signaling
+path:R-HSA-5654704,genomic,pathway,SHC-mediated cascade:FGFR3
+path:R-HSA-5654706,genomic,pathway,FRS-mediated FGFR3 signaling
+path:R-HSA-5654708,genomic,pathway,Downstream signaling of activated FGFR3
+path:R-HSA-5654710,genomic,pathway,PI-3K cascade:FGFR3
+path:R-HSA-5654712,genomic,pathway,FRS-mediated FGFR4 signaling
+path:R-HSA-5654716,genomic,pathway,Downstream signaling of activated FGFR4
+path:R-HSA-5654719,genomic,pathway,SHC-mediated cascade:FGFR4
+path:R-HSA-5654720,genomic,pathway,PI-3K cascade:FGFR4
+path:R-HSA-5654726,genomic,pathway,Negative regulation of FGFR1 signaling
+path:R-HSA-5654727,genomic,pathway,Negative regulation of FGFR2 signaling
+path:R-HSA-5654732,genomic,pathway,Negative regulation of FGFR3 signaling
+path:R-HSA-5654733,genomic,pathway,Negative regulation of FGFR4 signaling
+path:R-HSA-5654736,genomic,pathway,Signaling by FGFR1
+path:R-HSA-5654738,genomic,pathway,Signaling by FGFR2
+path:R-HSA-5654741,genomic,pathway,Signaling by FGFR3
+path:R-HSA-5654743,genomic,pathway,Signaling by FGFR4
+path:R-HSA-5655253,genomic,pathway,Signaling by FGFR2 in disease
+path:R-HSA-5655291,genomic,pathway,Signaling by FGFR4 in disease
+path:R-HSA-5655302,genomic,pathway,Signaling by FGFR1 in disease
+path:R-HSA-5655332,genomic,pathway,Signaling by FGFR3 in disease
+path:R-HSA-5655799,genomic,pathway,Defective SLC40A1 causes hemochromatosis 4 (HFE4) (duodenum)
+path:R-HSA-5655862,genomic,pathway,Translesion synthesis by POLK
+path:R-HSA-5656121,genomic,pathway,Translesion synthesis by POLI
+path:R-HSA-5656169,genomic,pathway,Termination of translesion DNA synthesis
+path:R-HSA-5656364,genomic,pathway,Defective SLC5A1 causes congenital glucose/galactose malabsorption (GGM)
+path:R-HSA-5657560,genomic,pathway,Hereditary fructose intolerance
+path:R-HSA-5657562,genomic,pathway,Essential fructosuria
+path:R-HSA-5657655,genomic,pathway,MGMT-mediated DNA damage reversal
+path:R-HSA-5658034,genomic,pathway,HHAT G278V abrogates palmitoylation of Hh-Np
+path:R-HSA-5658208,genomic,pathway,Defective SLC5A2 causes renal glucosuria (GLYS1)
+path:R-HSA-5658442,genomic,pathway,Regulation of RAS by GAPs
+path:R-HSA-5658471,genomic,pathway,Defective SLC5A7 causes distal hereditary motor neuronopathy 7A (HMN7A)
+path:R-HSA-5658623,genomic,pathway,FGFRL1 modulation of FGFR1 signaling
+path:R-HSA-5659729,genomic,pathway,Defective SLC6A18 may confer susceptibility to iminoglycinuria and/or hyperglycinuria
+path:R-HSA-5659735,genomic,pathway,Defective SLC6A19 causes Hartnup disorder (HND)
+path:R-HSA-5659898,genomic,pathway,Intestinal saccharidase deficiencies
+path:R-HSA-5659996,genomic,pathway,RPIA deficiency: failed conversion of R5P to RU5P
+path:R-HSA-5660526,genomic,pathway,Response to metal ions
+path:R-HSA-5660668,genomic,pathway,CLEC7A/inflammasome pathway
+path:R-HSA-5660686,genomic,pathway,Variant SLC6A20 contributes towards hyperglycinuria (HG) and iminoglycinuria (IG)
+path:R-HSA-5660724,genomic,pathway,Defective SLC6A3 causes Parkinsonism-dystonia infantile (PKDYS)
+path:R-HSA-5660862,genomic,pathway,Defective SLC7A7 causes lysinuric protein intolerance (LPI)
+path:R-HSA-5660883,genomic,pathway,Defective SLC7A9 causes cystinuria (CSNU)
+path:R-HSA-5661182,genomic,pathway,"Defective SLCO1B1 causes hyperbilirubinemia, Rotor type (HBLRR)"
+path:R-HSA-5661231,genomic,pathway,Metallothioneins bind metals
+path:R-HSA-5661270,genomic,pathway,Catabolism of glucuronate to xylulose-5-phosphate
+path:R-HSA-5662702,genomic,pathway,Melanin biosynthesis
+path:R-HSA-5662853,genomic,pathway,Essential pentosuria
+path:R-HSA-5663020,genomic,pathway,Defective SLC35A1 causes congenital disorder of glycosylation 2F (CDG2F)
+path:R-HSA-5663084,genomic,pathway,Diseases of carbohydrate metabolism
+path:R-HSA-5663202,genomic,pathway,Diseases of signal transduction
+path:R-HSA-5663205,genomic,pathway,Infectious disease
+path:R-HSA-5663213,genomic,pathway,RHO GTPases Activate WASPs and WAVEs
+path:R-HSA-5663220,genomic,pathway,RHO GTPases Activate Formins
+path:R-HSA-5666185,genomic,pathway,RHO GTPases Activate Rhotekin and Rhophilins
+path:R-HSA-5668541,genomic,pathway,TNFR2 non-canonical NF-kB pathway
+path:R-HSA-5668599,genomic,pathway,RHO GTPases Activate NADPH Oxidases
+path:R-HSA-5668914,genomic,pathway,Diseases of metabolism
+path:R-HSA-5669034,genomic,pathway,TNFs bind their physiological receptors
+path:R-HSA-5673000,genomic,pathway,RAF activation
+path:R-HSA-5673001,genomic,pathway,RAF/MAP kinase cascade
+path:R-HSA-5674135,genomic,pathway,MAP2K and MAPK activation
+path:R-HSA-5674400,genomic,pathway,Constitutive Signaling by AKT1 E17K in Cancer
+path:R-HSA-5674404,genomic,pathway,PTEN Loss of Function in Cancer
+path:R-HSA-5674499,genomic,pathway,Negative feedback regulation of MAPK pathway
+path:R-HSA-5675221,genomic,pathway,Negative regulation of MAPK pathway
+path:R-HSA-5675482,genomic,pathway,Regulation of necroptotic cell death
+path:R-HSA-5676590,genomic,pathway,NIK-->noncanonical NF-kB signaling
+path:R-HSA-5676594,genomic,pathway,TNF receptor superfamily (TNFSF) members mediating non-canonical NF-kB pathway
+path:R-HSA-5676934,genomic,pathway,Protein repair
+path:R-HSA-5678420,genomic,pathway,"Defective ABCC9 causes dilated cardiomyopathy 10, familial atrial fibrillation 12 and hypertrichotic osteochondrodysplasia"
+path:R-HSA-5678520,genomic,pathway,Defective ABCB11 causes progressive familial intrahepatic cholestasis 2 and benign recurrent intrahepatic cholestasis 2
+path:R-HSA-5678771,genomic,pathway,"Defective ABCB4 causes progressive familial intrahepatic cholestasis 3, intrahepatic cholestasis of pregnancy 3 and gallbladder disease 1"
+path:R-HSA-5678895,genomic,pathway,Defective CFTR causes cystic fibrosis
+path:R-HSA-5679001,genomic,pathway,Defective ABCC2 causes Dubin-Johnson syndrome
+path:R-HSA-5679090,genomic,pathway,Defective ABCG8 causes gallbladder disease 4 and sitosterolemia
+path:R-HSA-5679096,genomic,pathway,Defective ABCG5 causes sitosterolemia
+path:R-HSA-5682113,genomic,pathway,Defective ABCA1 causes Tangier disease
+path:R-HSA-5682294,genomic,pathway,Defective ABCA12 causes autosomal recessive congenital ichthyosis type 4B
+path:R-HSA-5682910,genomic,pathway,LGI-ADAM interactions
+path:R-HSA-5683057,genomic,pathway,MAPK family signaling cascades
+path:R-HSA-5683177,genomic,pathway,Defective ABCC8 can cause hypoglycemias and hyperglycemias
+path:R-HSA-5683329,genomic,pathway,"Defective ABCD4 causes methylmalonic aciduria and homocystinuria, cblj type (MAHCJ)"
+path:R-HSA-5683371,genomic,pathway,Defective ABCB6 causes isolated colobomatous microphthalmia 7 (MCOPCB7)
+path:R-HSA-5683678,genomic,pathway,Defective ABCA3 causes pulmonary surfactant metabolism dysfunction type 3 (SMDP3)
+path:R-HSA-5683826,genomic,pathway,Surfactant metabolism
+path:R-HSA-5684045,genomic,pathway,Defective ABCD1 causes adrenoleukodystrophy (ALD)
+path:R-HSA-5684264,genomic,pathway,MAP3K8 (TPL2)-dependent MAPK1/3 activation
+path:R-HSA-5684996,genomic,pathway,MAPK1/MAPK3 signaling
+path:R-HSA-5685938,genomic,pathway,HDR through Single Strand Annealing (SSA)
+path:R-HSA-5685939,genomic,pathway,HDR through MMEJ (alt-NHEJ)
+path:R-HSA-5685942,genomic,pathway,HDR through Homologous Recombination (HRR)
+path:R-HSA-5686938,genomic,pathway,Regulation of TLR by endogenous ligand
+path:R-HSA-5687128,genomic,pathway,MAPK6/MAPK4 signaling
+path:R-HSA-5687583,genomic,pathway,Defective SLC34A2 causes pulmonary alveolar microlithiasis (PALM)
+path:R-HSA-5687613,genomic,pathway,Diseases associated with surfactant metabolism
+path:R-HSA-5687868,genomic,pathway,Defective SFTPA2 causes idiopathic pulmonary fibrosis (IPF)
+path:R-HSA-5688031,genomic,pathway,Defective pro-SFTPB causes pulmonary surfactant metabolism dysfunction 1 (SMDP1) and respiratory distress syndrome (RDS)
+path:R-HSA-5688354,genomic,pathway,Defective pro-SFTPC causes pulmonary surfactant metabolism dysfunction 2 (SMDP2) and respiratory distress syndrome (RDS)
+path:R-HSA-5688399,genomic,pathway,Defective ABCA3 causes pulmonary surfactant metabolism dysfunction 3 (SMDP3)
+path:R-HSA-5688426,genomic,pathway,Deubiquitination
+path:R-HSA-5688849,genomic,pathway,Defective CSF2RB causes pulmonary surfactant metabolism dysfunction 5 (SMDP5)
+path:R-HSA-5688890,genomic,pathway,Defective CSF2RA causes pulmonary surfactant metabolism dysfunction 4 (SMDP4)
+path:R-HSA-5689603,genomic,pathway,UCH proteinases
+path:R-HSA-5689877,genomic,pathway,Josephin domain DUBs
+path:R-HSA-5689880,genomic,pathway,Ub-specific processing proteases
+path:R-HSA-5689896,genomic,pathway,Ovarian tumor domain proteases
+path:R-HSA-5689901,genomic,pathway,Metalloprotease DUBs
+path:R-HSA-5690338,genomic,pathway,Defective ABCC6 causes pseudoxanthoma elasticum (PXE)
+path:R-HSA-5690714,genomic,pathway,CD22 mediated BCR regulation
+path:R-HSA-5693532,genomic,pathway,DNA Double-Strand Break Repair
+path:R-HSA-5693537,genomic,pathway,Resolution of D-Loop Structures
+path:R-HSA-5693538,genomic,pathway,Homology Directed Repair
+path:R-HSA-5693548,genomic,pathway,Sensing of DNA Double Strand Breaks
+path:R-HSA-5693554,genomic,pathway,Resolution of D-loop Structures through Synthesis-Dependent Strand Annealing (SDSA)
+path:R-HSA-5693565,genomic,pathway,Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks
+path:R-HSA-5693567,genomic,pathway,HDR through Homologous Recombination (HR) or Single Strand Annealing (SSA)
+path:R-HSA-5693568,genomic,pathway,Resolution of D-loop Structures through Holliday Junction Intermediates
+path:R-HSA-5693571,genomic,pathway,Nonhomologous End-Joining (NHEJ)
+path:R-HSA-5693579,genomic,pathway,Homologous DNA Pairing and Strand Exchange
+path:R-HSA-5693606,genomic,pathway,DNA Double Strand Break Response
+path:R-HSA-5693607,genomic,pathway,Processing of DNA double-strand break ends
+path:R-HSA-5693616,genomic,pathway,Presynaptic phase of homologous DNA pairing and strand exchange
+path:R-HSA-5694530,genomic,pathway,Cargo concentration in the ER
+path:R-HSA-5696394,genomic,pathway,DNA Damage Recognition in GG-NER
+path:R-HSA-5696395,genomic,pathway,Formation of Incision Complex in GG-NER
+path:R-HSA-5696397,genomic,pathway,Gap-filling DNA repair synthesis and ligation in GG-NER
+path:R-HSA-5696398,genomic,pathway,Nucleotide Excision Repair
+path:R-HSA-5696399,genomic,pathway,Global Genome Nucleotide Excision Repair (GG-NER)
+path:R-HSA-5696400,genomic,pathway,Dual Incision in GG-NER
+path:R-HSA-597592,genomic,pathway,Post-translational protein modification
+path:R-HSA-606279,genomic,pathway,Deposition of new CENPA-containing nucleosomes at the centromere
+path:R-HSA-611105,genomic,pathway,Respiratory electron transport
+path:R-HSA-622312,genomic,pathway,Inflammasomes
+path:R-HSA-622323,genomic,pathway,Presynaptic nicotinic acetylcholine receptors
+path:R-HSA-622327,genomic,pathway,Postsynaptic nicotinic acetylcholine receptors
+path:R-HSA-629587,genomic,pathway,Highly sodium permeable acetylcholine nicotinic receptors
+path:R-HSA-629594,genomic,pathway,Highly calcium permeable postsynaptic nicotinic acetylcholine receptors
+path:R-HSA-629597,genomic,pathway,Highly calcium permeable nicotinic acetylcholine receptors
+path:R-HSA-629602,genomic,pathway,Activation of Nicotinic Acetylcholine Receptors
+path:R-HSA-674695,genomic,pathway,RNA Polymerase II Pre-transcription Events
+path:R-HSA-6781823,genomic,pathway,Formation of TC-NER Pre-Incision Complex
+path:R-HSA-6781827,genomic,pathway,Transcription-Coupled Nucleotide Excision Repair (TC-NER)
+path:R-HSA-6782135,genomic,pathway,Dual incision in TC-NER
+path:R-HSA-6782210,genomic,pathway,Gap-filling DNA repair synthesis and ligation in TC-NER
+path:R-HSA-6782315,genomic,pathway,tRNA modification in the nucleus and cytosol
+path:R-HSA-6782861,genomic,pathway,Synthesis of wybutosine at G37 of tRNA(Phe)
+path:R-HSA-6783310,genomic,pathway,Fanconi Anemia Pathway
+path:R-HSA-6783589,genomic,pathway,Interleukin-6 family signaling
+path:R-HSA-6783783,genomic,pathway,Interleukin-10 signaling
+path:R-HSA-6783984,genomic,pathway,Glycine degradation
+path:R-HSA-6784531,genomic,pathway,tRNA processing in the nucleus
+path:R-HSA-6785470,genomic,pathway,tRNA processing in the mitochondrion
+path:R-HSA-6785631,genomic,pathway,ERBB2 Regulates Cell Motility
+path:R-HSA-6785807,genomic,pathway,Interleukin-4 and 13 signaling
+path:R-HSA-6787450,genomic,pathway,tRNA modification in the mitochondrion
+path:R-HSA-6787639,genomic,pathway,GDP-fucose biosynthesis
+path:R-HSA-6788467,genomic,pathway,IL-6-type cytokine receptor ligand interactions
+path:R-HSA-6788656,genomic,pathway,"Histidine, lysine, phenylalanine, tyrosine, proline and tryptophan catabolism"
+path:R-HSA-6790901,genomic,pathway,rRNA modification in the nucleus and cytosol
+path:R-HSA-6791055,genomic,pathway,"TALDO1 deficiency: failed conversion of SH7P, GA3P to Fru(6)P, E4P"
+path:R-HSA-6791226,genomic,pathway,Major pathway of rRNA processing in the nucleolus and cytosol
+path:R-HSA-6791312,genomic,pathway,TP53 Regulates Transcription of Cell Cycle Genes
+path:R-HSA-6791461,genomic,pathway,RPIA deficiency: failed conversion of RU5P to R5P
+path:R-HSA-6791462,genomic,pathway,"TALDO1 deficiency: failed conversion of  Fru(6)P, E4P to SH7P, GA3P"
+path:R-HSA-6791465,genomic,pathway,Pentose phosphate pathway disease
+path:R-HSA-6793080,genomic,pathway,rRNA modification in the mitochondrion
+path:R-HSA-6794361,genomic,pathway,Interactions of neurexins and neuroligins at synapses
+path:R-HSA-6794362,genomic,pathway,Protein-protein interactions at synapses
+path:R-HSA-6796648,genomic,pathway,TP53 Regulates Transcription of DNA Repair Genes
+path:R-HSA-6798163,genomic,pathway,Choline catabolism
+path:R-HSA-6798695,genomic,pathway,Neutrophil degranulation
+path:R-HSA-6799198,genomic,pathway,Complex I biogenesis
+path:R-HSA-6799990,genomic,pathway,Metal sequestration by antimicrobial proteins
+path:R-HSA-6802946,genomic,pathway,Signaling by moderate kinase activity BRAF mutants
+path:R-HSA-6802948,genomic,pathway,Signaling by high-kinase activity BRAF mutants
+path:R-HSA-6802949,genomic,pathway,Signaling by RAS mutants
+path:R-HSA-6802952,genomic,pathway,Signaling by BRAF and RAF fusions
+path:R-HSA-6802953,genomic,pathway,RAS signaling downstream of NF1 loss-of-function variants
+path:R-HSA-6802955,genomic,pathway,Paradoxical activation of RAF signaling by kinase inactive BRAF
+path:R-HSA-6802957,genomic,pathway,Oncogenic MAPK signaling
+path:R-HSA-6803157,genomic,pathway,Antimicrobial peptides
+path:R-HSA-6803204,genomic,pathway,TP53 Regulates Transcription of Genes Involved in Cytochrome C Release
+path:R-HSA-6803205,genomic,pathway,TP53 regulates transcription of several additional cell death genes whose specific roles in p53-dependent apoptosis remain uncertain
+path:R-HSA-6803207,genomic,pathway,TP53 Regulates Transcription of Caspase Activators and Caspases
+path:R-HSA-6803211,genomic,pathway,TP53 Regulates Transcription of Death Receptors and Ligands
+path:R-HSA-6803529,genomic,pathway,FGFR2 alternative splicing
+path:R-HSA-6803544,genomic,pathway,Ion influx/efflux at host-pathogen interface
+path:R-HSA-6804114,genomic,pathway,TP53 Regulates Transcription of Genes Involved in G2 Cell Cycle Arrest
+path:R-HSA-6804115,genomic,pathway,TP53 regulates transcription of additional cell cycle genes whose exact role in the p53 pathway remain uncertain
+path:R-HSA-6804116,genomic,pathway,TP53 Regulates Transcription of Genes Involved in G1 Cell Cycle Arrest
+path:R-HSA-6804754,genomic,pathway,Regulation of TP53 Expression
+path:R-HSA-6804756,genomic,pathway,Regulation of TP53 Activity through Phosphorylation
+path:R-HSA-6804757,genomic,pathway,Regulation of TP53 Degradation
+path:R-HSA-6804758,genomic,pathway,Regulation of TP53 Activity through Acetylation
+path:R-HSA-6804759,genomic,pathway,Regulation of TP53 Activity through Association with Co-factors
+path:R-HSA-6804760,genomic,pathway,Regulation of TP53 Activity through Methylation
+path:R-HSA-6805567,genomic,pathway,Keratinization
+path:R-HSA-6806003,genomic,pathway,Regulation of TP53 Expression and Degradation
+path:R-HSA-6806664,genomic,pathway,Metabolism of vitamin K
+path:R-HSA-6806667,genomic,pathway,Metabolism of fat-soluble vitamins
+path:R-HSA-6806834,genomic,pathway,Signaling by MET
+path:R-HSA-6806942,genomic,pathway,MET Receptor Activation
+path:R-HSA-6807004,genomic,pathway,Negative regulation of MET activity
+path:R-HSA-6807047,genomic,pathway,Cholesterol biosynthesis via desmosterol
+path:R-HSA-6807062,genomic,pathway,Cholesterol biosynthesis via lathosterol
+path:R-HSA-6807505,genomic,pathway,RNA polymerase II transcribes snRNA genes
+path:R-HSA-6807878,genomic,pathway,COPI-mediated anterograde transport
+path:R-HSA-6809371,genomic,pathway,Formation of the cornified envelope
+path:R-HSA-6809583,genomic,pathway,Retinoid metabolism disease events
+path:R-HSA-6811434,genomic,pathway,COPI-dependent Golgi-to-ER retrograde traffic
+path:R-HSA-6811436,genomic,pathway,COPI-independent Golgi-to-ER retrograde traffic
+path:R-HSA-6811438,genomic,pathway,Intra-Golgi traffic
+path:R-HSA-6811440,genomic,pathway,Retrograde transport at the Trans-Golgi-Network
+path:R-HSA-6811442,genomic,pathway,Intra-Golgi and retrograde Golgi-to-ER traffic
+path:R-HSA-6811555,genomic,pathway,PI5P Regulates TP53 Acetylation
+path:R-HSA-6811558,genomic,pathway,"PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling"
+path:R-HSA-6814122,genomic,pathway,Cooperation of PDCL (PhLP1) and TRiC/CCT in G-protein beta folding
+path:R-HSA-6814848,genomic,pathway,Glycerophospholipid catabolism
+path:R-HSA-68616,genomic,pathway,Assembly of the ORC complex at the origin of replication
+path:R-HSA-68689,genomic,pathway,CDC6 association with the ORC:origin complex
+path:R-HSA-68827,genomic,pathway,CDT1 association with the CDC6:ORC:origin complex
+path:R-HSA-68867,genomic,pathway,Assembly of the pre-replicative complex
+path:R-HSA-68874,genomic,pathway,M/G1 Transition
+path:R-HSA-68875,genomic,pathway,Mitotic Prophase
+path:R-HSA-68877,genomic,pathway,Mitotic Prometaphase
+path:R-HSA-68881,genomic,pathway,Mitotic Metaphase/Anaphase Transition
+path:R-HSA-68882,genomic,pathway,Mitotic Anaphase
+path:R-HSA-68884,genomic,pathway,Mitotic Telophase/Cytokinesis
+path:R-HSA-68886,genomic,pathway,M Phase
+path:R-HSA-68911,genomic,pathway,G2 Phase
+path:R-HSA-68949,genomic,pathway,Orc1 removal from chromatin
+path:R-HSA-68952,genomic,pathway,DNA replication initiation
+path:R-HSA-68962,genomic,pathway,Activation of the pre-replicative complex
+path:R-HSA-69002,genomic,pathway,DNA Replication Pre-Initiation
+path:R-HSA-69017,genomic,pathway,CDK-mediated phosphorylation and removal of Cdc6
+path:R-HSA-69052,genomic,pathway,Switching of origins to a post-replicative state
+path:R-HSA-69091,genomic,pathway,Polymerase switching
+path:R-HSA-69109,genomic,pathway,Leading Strand Synthesis
+path:R-HSA-69166,genomic,pathway,Removal of the Flap Intermediate
+path:R-HSA-69183,genomic,pathway,Processive synthesis on the lagging strand
+path:R-HSA-69186,genomic,pathway,Lagging Strand Synthesis
+path:R-HSA-69190,genomic,pathway,DNA strand elongation
+path:R-HSA-69200,genomic,pathway,Phosphorylation of proteins involved in G1/S transition by active Cyclin E:Cdk2 complexes
+path:R-HSA-69202,genomic,pathway,Cyclin E associated events during G1/S transition
+path:R-HSA-69205,genomic,pathway,G1/S-Specific Transcription
+path:R-HSA-69206,genomic,pathway,G1/S Transition
+path:R-HSA-69229,genomic,pathway,Ubiquitin-dependent degradation of Cyclin D1
+path:R-HSA-69231,genomic,pathway,Cyclin D associated events in G1
+path:R-HSA-69236,genomic,pathway,G1 Phase
+path:R-HSA-69239,genomic,pathway,Synthesis of DNA
+path:R-HSA-69242,genomic,pathway,S Phase
+path:R-HSA-69273,genomic,pathway,Cyclin A/B1 associated events during G2/M transition
+path:R-HSA-69275,genomic,pathway,G2/M Transition
+path:R-HSA-69278,genomic,pathway,"Cell Cycle, Mitotic"
+path:R-HSA-69298,genomic,pathway,Association of licensing factors with the pre-replicative complex
+path:R-HSA-69300,genomic,pathway,Removal of licensing factors from origins
+path:R-HSA-69304,genomic,pathway,Regulation of DNA replication
+path:R-HSA-69306,genomic,pathway,DNA Replication
+path:R-HSA-69416,genomic,pathway,Dimerization of procaspase-8
+path:R-HSA-69473,genomic,pathway,G2/M DNA damage checkpoint
+path:R-HSA-69478,genomic,pathway,G2/M DNA replication checkpoint
+path:R-HSA-69481,genomic,pathway,G2/M Checkpoints
+path:R-HSA-69541,genomic,pathway,Stabilization of p53
+path:R-HSA-69560,genomic,pathway,Transcriptional activation of p53 responsive genes
+path:R-HSA-69563,genomic,pathway,p53-Dependent G1 DNA Damage Response
+path:R-HSA-69580,genomic,pathway,p53-Dependent G1/S DNA damage checkpoint
+path:R-HSA-69601,genomic,pathway,Ubiquitin Mediated Degradation of Phosphorylated Cdc25A
+path:R-HSA-69610,genomic,pathway,p53-Independent DNA Damage Response
+path:R-HSA-69613,genomic,pathway,p53-Independent G1/S DNA damage checkpoint
+path:R-HSA-69615,genomic,pathway,G1/S DNA Damage Checkpoints
+path:R-HSA-69618,genomic,pathway,Mitotic Spindle Checkpoint
+path:R-HSA-69620,genomic,pathway,Cell Cycle Checkpoints
+path:R-HSA-69656,genomic,pathway,Cyclin A:Cdk2-associated events at S phase entry
+path:R-HSA-69895,genomic,pathway,Transcriptional  activation of  cell cycle inhibitor p21
+path:R-HSA-70153,genomic,pathway,Glucose transport
+path:R-HSA-70171,genomic,pathway,Glycolysis
+path:R-HSA-70221,genomic,pathway,Glycogen breakdown (glycogenolysis)
+path:R-HSA-70263,genomic,pathway,Gluconeogenesis
+path:R-HSA-70268,genomic,pathway,Pyruvate metabolism
+path:R-HSA-70326,genomic,pathway,Glucose metabolism
+path:R-HSA-70350,genomic,pathway,Fructose catabolism
+path:R-HSA-70370,genomic,pathway,Galactose catabolism
+path:R-HSA-70614,genomic,pathway,Amino acid synthesis and interconversion (transamination)
+path:R-HSA-70635,genomic,pathway,Urea cycle
+path:R-HSA-70688,genomic,pathway,Proline catabolism
+path:R-HSA-70895,genomic,pathway,Branched-chain amino acid catabolism
+path:R-HSA-70921,genomic,pathway,Histidine catabolism
+path:R-HSA-71032,genomic,pathway,Propionyl-CoA catabolism
+path:R-HSA-71064,genomic,pathway,Lysine catabolism
+path:R-HSA-71182,genomic,pathway,Phenylalanine and tyrosine catabolism
+path:R-HSA-71240,genomic,pathway,Tryptophan catabolism
+path:R-HSA-71262,genomic,pathway,Carnitine synthesis
+path:R-HSA-71288,genomic,pathway,Creatine metabolism
+path:R-HSA-71291,genomic,pathway,Metabolism of amino acids and derivatives
+path:R-HSA-71336,genomic,pathway,Pentose phosphate pathway (hexose monophosphate shunt)
+path:R-HSA-71384,genomic,pathway,Ethanol oxidation
+path:R-HSA-71387,genomic,pathway,Metabolism of carbohydrates
+path:R-HSA-71403,genomic,pathway,Citric acid cycle (TCA cycle)
+path:R-HSA-71406,genomic,pathway,Pyruvate metabolism and Citric Acid (TCA) cycle
+path:R-HSA-71737,genomic,pathway,Pyrophosphate hydrolysis
+path:R-HSA-72086,genomic,pathway,mRNA Capping
+path:R-HSA-72163,genomic,pathway,mRNA Splicing - Major Pathway
+path:R-HSA-72165,genomic,pathway,mRNA Splicing - Minor Pathway
+path:R-HSA-72172,genomic,pathway,mRNA Splicing
+path:R-HSA-72187,genomic,pathway,mRNA 3'-end processing
+path:R-HSA-72200,genomic,pathway,mRNA Editing: C to U Conversion
+path:R-HSA-72202,genomic,pathway,Transport of Mature Transcript to Cytoplasm
+path:R-HSA-72203,genomic,pathway,Processing of Capped Intron-Containing Pre-mRNA
+path:R-HSA-72306,genomic,pathway,tRNA processing
+path:R-HSA-72312,genomic,pathway,rRNA processing
+path:R-HSA-72613,genomic,pathway,Eukaryotic Translation Initiation
+path:R-HSA-72649,genomic,pathway,Translation initiation complex formation
+path:R-HSA-72662,genomic,pathway,"Activation of the mRNA upon binding of the cap-binding complex and eIFs, and subsequent binding to 43S"
+path:R-HSA-72689,genomic,pathway,Formation of a pool of free 40S subunits
+path:R-HSA-72695,genomic,pathway,"Formation of the ternary complex, and subsequently, the 43S complex"
+path:R-HSA-72702,genomic,pathway,Ribosomal scanning and start codon recognition
+path:R-HSA-72706,genomic,pathway,GTP hydrolysis and joining of the 60S ribosomal subunit
+path:R-HSA-72731,genomic,pathway,Recycling of eIF2:GDP
+path:R-HSA-72737,genomic,pathway,Cap-dependent Translation Initiation
+path:R-HSA-72764,genomic,pathway,Eukaryotic Translation Termination
+path:R-HSA-72766,genomic,pathway,Translation
+path:R-HSA-727802,genomic,pathway,Transport of nucleotide sugars
+path:R-HSA-73614,genomic,pathway,Pyrimidine salvage reactions
+path:R-HSA-73621,genomic,pathway,Pyrimidine catabolism
+path:R-HSA-73728,genomic,pathway,RNA Polymerase I Promoter Opening
+path:R-HSA-73762,genomic,pathway,RNA Polymerase I Transcription Initiation
+path:R-HSA-73772,genomic,pathway,RNA Polymerase I Promoter Escape
+path:R-HSA-73776,genomic,pathway,RNA Polymerase II Promoter Escape
+path:R-HSA-73777,genomic,pathway,RNA Polymerase I Chain Elongation
+path:R-HSA-73779,genomic,pathway,RNA Polymerase II Transcription Pre-Initiation And Promoter Opening
+path:R-HSA-73780,genomic,pathway,RNA Polymerase III Chain Elongation
+path:R-HSA-73817,genomic,pathway,Purine ribonucleoside monophosphate biosynthesis
+path:R-HSA-73843,genomic,pathway,5-Phosphoribose 1-diphosphate biosynthesis
+path:R-HSA-73847,genomic,pathway,Purine metabolism
+path:R-HSA-73848,genomic,pathway,Pyrimidine metabolism
+path:R-HSA-73854,genomic,pathway,RNA Polymerase I Promoter Clearance
+path:R-HSA-73856,genomic,pathway,RNA Polymerase II Transcription Termination
+path:R-HSA-73857,genomic,pathway,RNA Polymerase II Transcription
+path:R-HSA-73863,genomic,pathway,RNA Polymerase I Transcription Termination
+path:R-HSA-73864,genomic,pathway,RNA Polymerase I Transcription
+path:R-HSA-73884,genomic,pathway,Base Excision Repair
+path:R-HSA-73886,genomic,pathway,Chromosome Maintenance
+path:R-HSA-73887,genomic,pathway,Death Receptor Signalling
+path:R-HSA-73893,genomic,pathway,DNA Damage Bypass
+path:R-HSA-73894,genomic,pathway,DNA Repair
+path:R-HSA-73923,genomic,pathway,"Lipid digestion, mobilization, and transport"
+path:R-HSA-73927,genomic,pathway,Depurination
+path:R-HSA-73928,genomic,pathway,Depyrimidination
+path:R-HSA-73929,genomic,pathway,"Base-Excision Repair, AP Site Formation"
+path:R-HSA-73930,genomic,pathway,Abasic sugar-phosphate removal via the single-nucleotide replacement pathway
+path:R-HSA-73933,genomic,pathway,Resolution of Abasic Sites (AP sites)
+path:R-HSA-73942,genomic,pathway,DNA Damage Reversal
+path:R-HSA-73943,genomic,pathway,Reversal of alkylation damage by DNA dioxygenases
+path:R-HSA-73980,genomic,pathway,RNA Polymerase III Transcription Termination
+path:R-HSA-74158,genomic,pathway,RNA Polymerase III Transcription
+path:R-HSA-74160,genomic,pathway,Gene Expression
+path:R-HSA-74182,genomic,pathway,Ketone body metabolism
+path:R-HSA-74217,genomic,pathway,Purine salvage
+path:R-HSA-74259,genomic,pathway,Purine catabolism
+path:R-HSA-74713,genomic,pathway,IRS activation
+path:R-HSA-74749,genomic,pathway,Signal attenuation
+path:R-HSA-74751,genomic,pathway,Insulin receptor signalling cascade
+path:R-HSA-74752,genomic,pathway,Signaling by Insulin receptor
+path:R-HSA-749476,genomic,pathway,RNA Polymerase III Abortive And Retractive Initiation
+path:R-HSA-75035,genomic,pathway,Chk1/Chk2(Cds1) mediated inactivation of Cyclin B:Cdk1 complex
+path:R-HSA-75064,genomic,pathway,mRNA Editing: A to I Conversion
+path:R-HSA-75067,genomic,pathway,Processing of Capped Intronless Pre-mRNA
+path:R-HSA-75072,genomic,pathway,mRNA Editing
+path:R-HSA-75094,genomic,pathway,Formation of the Editosome
+path:R-HSA-75102,genomic,pathway,C6 deamination of adenosine
+path:R-HSA-75105,genomic,pathway,Fatty Acyl-CoA Biosynthesis
+path:R-HSA-75108,genomic,pathway,"Activation, myristolyation of BID and translocation to mitochondria"
+path:R-HSA-75109,genomic,pathway,Triglyceride Biosynthesis
+path:R-HSA-75153,genomic,pathway,Apoptotic execution  phase
+path:R-HSA-75157,genomic,pathway,FasL/ CD95L signaling
+path:R-HSA-75158,genomic,pathway,TRAIL  signaling
+path:R-HSA-75205,genomic,pathway,Dissolution of Fibrin Clot
+path:R-HSA-75815,genomic,pathway,Ubiquitin-dependent degradation of Cyclin D
+path:R-HSA-75876,genomic,pathway,Synthesis of very long-chain fatty acyl-CoAs
+path:R-HSA-75892,genomic,pathway,Platelet Adhesion to exposed collagen
+path:R-HSA-75893,genomic,pathway,TNF signaling
+path:R-HSA-75896,genomic,pathway,Plasmalogen biosynthesis
+path:R-HSA-75944,genomic,pathway,Transcription from mitochondrial promoters
+path:R-HSA-75953,genomic,pathway,RNA Polymerase II Transcription Initiation
+path:R-HSA-75955,genomic,pathway,RNA Polymerase II Transcription Elongation
+path:R-HSA-76002,genomic,pathway,"Platelet activation, signaling and aggregation"
+path:R-HSA-76005,genomic,pathway,Response to elevated platelet cytosolic Ca2+
+path:R-HSA-76009,genomic,pathway,Platelet Aggregation (Plug Formation)
+path:R-HSA-76042,genomic,pathway,RNA Polymerase II Transcription Initiation And Promoter Clearance
+path:R-HSA-76046,genomic,pathway,RNA Polymerase III Transcription Initiation
+path:R-HSA-76061,genomic,pathway,RNA Polymerase III Transcription Initiation From Type 1 Promoter
+path:R-HSA-76066,genomic,pathway,RNA Polymerase III Transcription Initiation From Type 2 Promoter
+path:R-HSA-76071,genomic,pathway,RNA Polymerase III Transcription Initiation From Type 3 Promoter
+path:R-HSA-77042,genomic,pathway,Formation of editosomes by ADAR proteins
+path:R-HSA-77075,genomic,pathway,RNA Pol II CTD phosphorylation and interaction with CE
+path:R-HSA-77108,genomic,pathway,Utilization of Ketone Bodies
+path:R-HSA-77111,genomic,pathway,Synthesis of Ketone Bodies
+path:R-HSA-77285,genomic,pathway,Beta oxidation of myristoyl-CoA to lauroyl-CoA
+path:R-HSA-77286,genomic,pathway,mitochondrial fatty acid beta-oxidation of saturated fatty acids
+path:R-HSA-77288,genomic,pathway,mitochondrial fatty acid beta-oxidation of unsaturated fatty acids
+path:R-HSA-77289,genomic,pathway,Mitochondrial Fatty Acid Beta-Oxidation
+path:R-HSA-77305,genomic,pathway,Beta oxidation of palmitoyl-CoA to myristoyl-CoA
+path:R-HSA-77310,genomic,pathway,Beta oxidation of lauroyl-CoA to decanoyl-CoA-CoA
+path:R-HSA-77346,genomic,pathway,Beta oxidation of decanoyl-CoA to octanoyl-CoA-CoA
+path:R-HSA-77348,genomic,pathway,Beta oxidation of octanoyl-CoA to hexanoyl-CoA
+path:R-HSA-77350,genomic,pathway,Beta oxidation of hexanoyl-CoA to butanoyl-CoA
+path:R-HSA-77352,genomic,pathway,Beta oxidation of butanoyl-CoA to acetyl-CoA
+path:R-HSA-77387,genomic,pathway,Insulin receptor recycling
+path:R-HSA-774815,genomic,pathway,Nucleosome assembly
+path:R-HSA-77588,genomic,pathway,SLBP Dependent Processing of Replication-Dependent Histone Pre-mRNAs
+path:R-HSA-77595,genomic,pathway,Processing of Intronless Pre-mRNAs
+path:R-HSA-804914,genomic,pathway,Transport of fatty acids
+path:R-HSA-83936,genomic,pathway,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane
+path:R-HSA-844455,genomic,pathway,The NLRP1 inflammasome
+path:R-HSA-844456,genomic,pathway,The NLRP3 inflammasome
+path:R-HSA-844615,genomic,pathway,The AIM2 inflammasome
+path:R-HSA-844623,genomic,pathway,The IPAF inflammasome
+path:R-HSA-877300,genomic,pathway,Interferon gamma signaling
+path:R-HSA-877312,genomic,pathway,Regulation of IFNG signaling
+path:R-HSA-879415,genomic,pathway,Advanced glycosylation endproduct receptor signaling
+path:R-HSA-879518,genomic,pathway,Transport of organic anions
+path:R-HSA-880009,genomic,pathway,Interconversion of 2-oxoglutarate and 2-hydroxyglutarate
+path:R-HSA-881907,genomic,pathway,Gastrin-CREB signalling pathway via PKC and MAPK
+path:R-HSA-8847453,genomic,pathway,Synthesis of PIPs in the nucleus
+path:R-HSA-8847993,genomic,pathway,ERBB2 Activates PTK6 Signaling
+path:R-HSA-8848021,genomic,pathway,Signaling by PTK6
+path:R-HSA-8848584,genomic,pathway,Wax biosynthesis
+path:R-HSA-8849175,genomic,pathway,Threonine catabolism
+path:R-HSA-8849468,genomic,pathway,PTK6 Regulates Proteins Involved in RNA Processing
+path:R-HSA-8849469,genomic,pathway,PTK6 Regulates RTKs and Their Effectors AKT1 and DOK1
+path:R-HSA-8849470,genomic,pathway,PTK6 Regulates Cell Cycle
+path:R-HSA-8849471,genomic,pathway,"PTK6 Regulates RHO GTPases, RAS GTPase and MAP kinases"
+path:R-HSA-8849472,genomic,pathway,PTK6 Down-Regulation
+path:R-HSA-8849473,genomic,pathway,PTK6 Expression
+path:R-HSA-8849474,genomic,pathway,PTK6 Activates STAT3
+path:R-HSA-8849932,genomic,pathway,SALM protein interactions at the synapses
+path:R-HSA-8850843,genomic,pathway,Phosphate bond hydrolysis by NTPDase proteins
+path:R-HSA-8851680,genomic,pathway,Butyrophilin (BTN) family interactions
+path:R-HSA-8851708,genomic,pathway,Signaling by FGFR2 IIIa TM
+path:R-HSA-8851805,genomic,pathway,MET activates RAS signaling
+path:R-HSA-8851907,genomic,pathway,MET activates PI3K/AKT signaling
+path:R-HSA-8852135,genomic,pathway,Protein ubiquitination
+path:R-HSA-8852276,genomic,pathway,The role of GTSE1 in G2/M progression after G2 checkpoint
+path:R-HSA-8852405,genomic,pathway,Signaling by MST1
+path:R-HSA-8853333,genomic,pathway,Signaling by FGFR2 fusions
+path:R-HSA-8853334,genomic,pathway,Signaling by FGFR3 fusions in cancer
+path:R-HSA-8853336,genomic,pathway,Signaling by plasma membrane FGFR1 fusions
+path:R-HSA-8853338,genomic,pathway,Signaling by FGFR3 point mutants in cancer
+path:R-HSA-8853383,genomic,pathway,Lysosomal oligosaccharide catabolism
+path:R-HSA-8853659,genomic,pathway,RET signaling
+path:R-HSA-8854050,genomic,pathway,FBXL7 down-regulates AURKA during mitotic entry and in early mitosis
+path:R-HSA-8854214,genomic,pathway,TBC/RABGAPs
+path:R-HSA-8854518,genomic,pathway,AURKA Activation by TPX2
+path:R-HSA-8854521,genomic,pathway,Interaction between PHLDA1 and AURKA
+path:R-HSA-8854691,genomic,pathway,"Interleukin-19, 20, 22, 24"
+path:R-HSA-8855121,genomic,pathway,VLDL interactions
+path:R-HSA-8856688,genomic,pathway,Golgi-to-ER retrograde transport
+path:R-HSA-8856825,genomic,pathway,Cargo recognition for clathrin-mediated endocytosis
+path:R-HSA-8856828,genomic,pathway,Clathrin-mediated endocytosis
+path:R-HSA-8857538,genomic,pathway,PTK6 promotes HIF1A stabilization
+path:R-HSA-8862803,genomic,pathway,Deregulated CDK5 triggers multiple neurodegenerative pathways in Alzheimer's disease models
+path:R-HSA-8863678,genomic,pathway,Neurodegenerative Diseases
+path:R-HSA-8863795,genomic,pathway,Downregulation of ERBB2 signaling
+path:R-HSA-8864260,genomic,pathway,Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors
+path:R-HSA-8865999,genomic,pathway,MET activates PTPN11
+path:R-HSA-8866376,genomic,pathway,Reelin signalling pathway
+path:R-HSA-8866423,genomic,pathway,VLDL biosynthesis
+path:R-HSA-8866427,genomic,pathway,VLDLR internalisation and degradation
+path:R-HSA-8866652,genomic,pathway,Synthesis of active ubiquitin: roles of E1 and E2 enzymes
+path:R-HSA-8866654,genomic,pathway,E3 ubiquitin ligases ubiquitinate target proteins
+path:R-HSA-8866904,genomic,pathway,Negative regulation of activity of TFAP2 (AP-2) family transcription factors
+path:R-HSA-8866906,genomic,pathway,TFAP2 (AP-2) family regulates transcription of other transcription factors
+path:R-HSA-8866907,genomic,pathway,Activation of the TFAP2 (AP-2) family of transcription factors
+path:R-HSA-8866910,genomic,pathway,TFAP2 (AP-2) family regulates transcription of growth factors and their receptors
+path:R-HSA-8866911,genomic,pathway,TFAP2 (AP-2) family regulates transcription of cell cycle factors
+path:R-HSA-8868766,genomic,pathway,rRNA processing in the mitochondrion
+path:R-HSA-8868773,genomic,pathway,rRNA processing in the nucleus and cytosol
+path:R-HSA-8869496,genomic,pathway,TFAP2A acts as a transcriptional repressor during retinoic acid induced cell differentiation
+path:R-HSA-8873719,genomic,pathway,RAB geranylgeranylation
+path:R-HSA-8874081,genomic,pathway,MET activates PTK2 signaling
+path:R-HSA-8875360,genomic,pathway,InlB-mediated entry of Listeria monocytogenes into host cell
+path:R-HSA-8875513,genomic,pathway,MET interacts with TNS proteins
+path:R-HSA-8875555,genomic,pathway,MET activates RAP1 and RAC1
+path:R-HSA-8875656,genomic,pathway,MET receptor recycling
+path:R-HSA-8875791,genomic,pathway,MET activates STAT3
+path:R-HSA-8875878,genomic,pathway,MET promotes cell motility
+path:R-HSA-8876198,genomic,pathway,RAB GEFs exchange GTP for GDP on RABs
+path:R-HSA-8876384,genomic,pathway,Listeria monocytogenes entry into host cells
+path:R-HSA-8876493,genomic,pathway,InlA-mediated entry of Listeria monocytogenes into host cells
+path:R-HSA-8876725,genomic,pathway,Protein methylation
+path:R-HSA-888568,genomic,pathway,GABA synthesis
+path:R-HSA-888590,genomic,pathway,"GABA synthesis, release, reuptake and degradation"
+path:R-HSA-888593,genomic,pathway,Reuptake of GABA
+path:R-HSA-8935690,genomic,pathway,Miscellaneous digestion events
+path:R-HSA-8937144,genomic,pathway,Aryl hydrocarbon receptor signalling
+path:R-HSA-8942233,genomic,pathway,Intestinal infectious diseases
+path:R-HSA-8948216,genomic,pathway,Collagen chain trimerization
+path:R-HSA-901032,genomic,pathway,ER Quality Control Compartment (ERQC)
+path:R-HSA-901042,genomic,pathway,Calnexin/calreticulin cycle
+path:R-HSA-909733,genomic,pathway,Interferon alpha/beta signaling
+path:R-HSA-912446,genomic,pathway,Meiotic recombination
+path:R-HSA-912526,genomic,pathway,Interleukin receptor SHC signaling
+path:R-HSA-912631,genomic,pathway,Regulation of signaling by CBL
+path:R-HSA-912694,genomic,pathway,Regulation of IFNA signaling
+path:R-HSA-913531,genomic,pathway,Interferon Signaling
+path:R-HSA-913709,genomic,pathway,O-linked glycosylation of mucins
+path:R-HSA-916853,genomic,pathway,Degradation of GABA
+path:R-HSA-917729,genomic,pathway,Endosomal Sorting Complex Required For Transport (ESCRT)
+path:R-HSA-917937,genomic,pathway,Iron uptake and transport
+path:R-HSA-917977,genomic,pathway,Transferrin endocytosis and recycling
+path:R-HSA-918233,genomic,pathway,TRAF3-dependent IRF activation pathway
+path:R-HSA-927802,genomic,pathway,Nonsense-Mediated Decay (NMD)
+path:R-HSA-933541,genomic,pathway,TRAF6 mediated IRF7 activation
+path:R-HSA-933542,genomic,pathway,TRAF6 mediated NF-kB activation
+path:R-HSA-933543,genomic,pathway,NF-kB activation through FADD/RIP-1 pathway mediated by caspase-8 and -10
+path:R-HSA-936440,genomic,pathway,Negative regulators of RIG-I/MDA5 signaling
+path:R-HSA-936837,genomic,pathway,Ion transport by P-type ATPases
+path:R-HSA-936964,genomic,pathway,Activation of IRF3/IRF7 mediated by TBK1/IKK epsilon
+path:R-HSA-937039,genomic,pathway,IRAK1 recruits IKK complex
+path:R-HSA-937041,genomic,pathway,IKK complex recruitment mediated by RIP1
+path:R-HSA-937042,genomic,pathway,IRAK2 mediated activation of TAK1 complex
+path:R-HSA-937061,genomic,pathway,TRIF-mediated TLR3/TLR4 signaling
+path:R-HSA-937072,genomic,pathway,TRAF6 mediated induction of TAK1 complex
+path:R-HSA-947581,genomic,pathway,Molybdenum cofactor biosynthesis
+path:R-HSA-948021,genomic,pathway,Transport to the Golgi and subsequent modification
+path:R-HSA-964739,genomic,pathway,N-glycan trimming and elongation in the cis-Golgi
+path:R-HSA-964827,genomic,pathway,"Progressive trimming of alpha-1,2-linked mannose residues from Man9/8/7GlcNAc2 to produce Man5GlcNAc2"
+path:R-HSA-964975,genomic,pathway,Vitamins B6 activation to pyridoxal phosphate
+path:R-HSA-975110,genomic,pathway,TRAF6 mediated IRF7 activation in TLR7/8 or 9 signaling
+path:R-HSA-975138,genomic,pathway,TRAF6 mediated induction of NFkB and MAP kinases upon TLR7/8 or 9 activation
+path:R-HSA-975144,genomic,pathway,IRAK1 recruits IKK complex upon TLR7/8 or 9 stimulation
+path:R-HSA-975155,genomic,pathway,MyD88 dependent cascade initiated on endosome
+path:R-HSA-975163,genomic,pathway,IRAK2 mediated activation of TAK1 complex upon TLR7/8 or 9 stimulation
+path:R-HSA-975298,genomic,pathway,Ligand-gated ion channel transport
+path:R-HSA-975574,genomic,pathway,Reactions specific to the hybrid N-glycan synthesis pathway
+path:R-HSA-975576,genomic,pathway,N-glycan antennae elongation in the medial/trans-Golgi
+path:R-HSA-975577,genomic,pathway,N-Glycan antennae elongation
+path:R-HSA-975578,genomic,pathway,Reactions specific to the complex N-glycan synthesis pathway
+path:R-HSA-975634,genomic,pathway,Retinoid metabolism and transport
+path:R-HSA-975871,genomic,pathway,MyD88 cascade initiated on plasma membrane
+path:R-HSA-975956,genomic,pathway,Nonsense Mediated Decay (NMD) independent of the Exon Junction Complex (EJC)
+path:R-HSA-975957,genomic,pathway,Nonsense Mediated Decay (NMD) enhanced by the Exon Junction Complex (EJC)
+path:R-HSA-977068,genomic,pathway,Termination of O-glycan biosynthesis
+path:R-HSA-977225,genomic,pathway,Amyloid fiber formation
+path:R-HSA-977347,genomic,pathway,Serine biosynthesis
+path:R-HSA-977441,genomic,pathway,GABA A receptor activation
+path:R-HSA-977442,genomic,pathway,GABA A (rho) receptor activation
+path:R-HSA-977443,genomic,pathway,GABA receptor activation
+path:R-HSA-977444,genomic,pathway,GABA B receptor activation
+path:R-HSA-977606,genomic,pathway,Regulation of Complement cascade
+path:R-HSA-982772,genomic,pathway,Growth hormone receptor signaling
+path:R-HSA-983168,genomic,pathway,Antigen processing: Ubiquitination & Proteasome degradation
+path:R-HSA-983169,genomic,pathway,Class I MHC mediated antigen processing & presentation
+path:R-HSA-983170,genomic,pathway,"Antigen Presentation: Folding, assembly and peptide loading of class I MHC"
+path:R-HSA-983189,genomic,pathway,Kinesins
+path:R-HSA-983231,genomic,pathway,Factors involved in megakaryocyte development and platelet production
+path:R-HSA-983695,genomic,pathway,Antigen activates B Cell Receptor (BCR) leading to generation of second messengers
+path:R-HSA-983705,genomic,pathway,Signaling by the B Cell Receptor (BCR)
+path:R-HSA-983712,genomic,pathway,Ion channel transport
+path:R-HSA-991365,genomic,pathway,Activation of GABAB receptors
+path:R-HSA-997269,genomic,pathway,Inhibition of adenylate cyclase pathway
+path:R-HSA-997272,genomic,pathway,Inhibition  of voltage gated Ca2+ channels via Gbeta/gamma subunits
