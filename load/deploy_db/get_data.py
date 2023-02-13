@@ -13,8 +13,10 @@ from igem.ge import db
 
 path_data = os.path.dirname(__file__) + "/data"
 
+
 # # Update files to deploy in data folder
 db.get_data(table="datasource", path=path_data)
+
 db.get_data(
     table="connector",
     path=path_data,
@@ -49,7 +51,9 @@ db.get_data(
         "description",
     ],
 )
+
 db.get_data(table="prefix", path=path_data)
+
 db.get_data(
     table="ds_column",
     path=path_data,
@@ -71,7 +75,9 @@ db.get_data(
     ],
 )
 db.get_data(table="term_group", path=path_data)
+
 db.get_data(table="term_category", path=path_data)
+
 db.get_data(
     table="term",
     path=path_data,
@@ -83,6 +89,7 @@ db.get_data(
     ],
     columns_out=["term", "term_group", "term_category", "description"],
 )
+
 db.get_data(
     table="wordterm",
     path=path_data,
@@ -90,3 +97,8 @@ db.get_data(
     columns_out=["term", "word", "status", "commute"],
 )
 print("All data files created")
+
+db.get_data(
+    table="termmap",
+    path=path_data,
+)

@@ -21,6 +21,7 @@ admin.site.site_title = "Custom IGEM admin site"
 admin.site.index_title = "Custom IGEM Admin"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('ge/', include('ge.urls')),
+    path("", admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("ge/", include("ge.urls")),
 ]
