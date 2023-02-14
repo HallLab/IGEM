@@ -46,3 +46,18 @@ except Exception as e:  # noqa F841
     sys.path.append(os.path.dirname(igem.__file__))
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.settings")
     django.setup()
+
+from .epc import analyze, describe, load, modify, plot, survey
+from .ge import db, etl, filter
+
+__all__ = [
+    "db",
+    "etl",
+    "filter",
+    "analyze",
+    "describe",
+    "load",
+    "modify",
+    "plot",
+    "survey",
+]
