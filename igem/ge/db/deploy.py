@@ -18,6 +18,7 @@ try:
         TermMap,
         WordTerm,
     )
+    from omics.models import snpgene
 except Exception as e:
     print(e)
     raise
@@ -66,6 +67,8 @@ def backup(
         ]
         qs = Connector.objects.all().values_list(*v_fields).order_by("id")
         df = pd.DataFrame(list(qs), columns=v_fields)
+        df = df.replace(["FALSE"], "False")
+        df = df.replace(["True"], "True")
         v_file = v_path_out + "/" + "connector.csv"
         df.to_csv(v_file, index=False)
 
@@ -87,6 +90,8 @@ def backup(
         ]
         qs = DSTColumn.objects.all().values_list(*v_fields).order_by("id")
         df = pd.DataFrame(list(qs), columns=v_fields)
+        df = df.replace(["FALSE"], "False")
+        df = df.replace(["True"], "True")
         v_file = v_path_out + "/" + "dstcolumn.csv"
         df.to_csv(v_file, index=False)
 
@@ -134,6 +139,8 @@ def backup(
         ]
         qs = WordTerm.objects.all().values_list(*v_fields)
         df = pd.DataFrame(list(qs), columns=v_fields)
+        df = df.replace(["FALSE"], "False")
+        df = df.replace(["True"], "True")
         v_file = v_path_out + "/" + "wordterm.csv"
         df.to_csv(v_file, index=False)
 
@@ -148,6 +155,29 @@ def backup(
         qs = TermMap.objects.all().values_list(*v_fields)
         df = pd.DataFrame(list(qs), columns=v_fields)
         v_file = v_path_out + "/" + "termmap.csv"
+        df.to_csv(v_file, index=False)
+
+    if v_table == "snpgene" or v_table == "all":
+        v_fields = [
+            "id",
+            "rsid",
+            "observed",
+            "genomicassembly",
+            "chrom",
+            "start",
+            "end",
+            "loctype",
+            "rsorienttochrom",
+            "contigallele",
+            "contig",
+            "geneid",
+            "genesymbol",
+        ]
+        qs = snpgene.objects.all().values_list(*v_fields)
+        df = pd.DataFrame(list(qs), columns=v_fields)
+        df = df.replace(["FALSE"], "False")
+        df = df.replace(["True"], "True")
+        v_file = v_path_out + "/" + "snpgene.csv"
         df.to_csv(v_file, index=False)
 
     return True
@@ -176,7 +206,7 @@ def restore(
     if v_table == "datasource" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/datasource.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -195,7 +225,7 @@ def restore(
     elif v_table == "connector" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/connector.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -224,7 +254,7 @@ def restore(
     if v_table == "prefixopc" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/prefixopc.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -239,7 +269,7 @@ def restore(
     if v_table == "dstcolumn" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/dstcolumn.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -259,7 +289,7 @@ def restore(
     if v_table == "termgroup" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/termgroup.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -276,7 +306,7 @@ def restore(
     if v_table == "termcategory" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/termcategory.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -295,7 +325,7 @@ def restore(
     if v_table == "term" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/term.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -314,7 +344,7 @@ def restore(
     if v_table == "wordterm" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/wordterm.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -332,7 +362,7 @@ def restore(
     if v_table == "termmap" or v_table == "all":
         try:
             df_src = pd.read_csv(v_path_out + "/termmap.csv")
-            df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
         except IOError as e:
             print("ERRO:", e)
             return False
@@ -347,5 +377,32 @@ def restore(
             for record in df_src.itertuples()
         ]
         TermMap.objects.bulk_create(model_instances, ignore_conflicts=True)
+
+    if v_table == "snpgene" or v_table == "all":
+        try:
+            df_src = pd.read_csv(v_path_out + "/snpgene.csv")
+            # df_src = df_src.apply(lambda x: x.astype(str).str.lower())
+        except IOError as e:
+            print("ERRO:", e)
+            return False
+        model_instances = [
+            snpgene(
+                id=record.id,
+                rsid=record.rsid,
+                observed=record.observed,
+                genomicassembly=record.genomicassembly,
+                chrom=record.chrom,
+                start=record.start,
+                end=record.end,
+                loctype=record.loctype,
+                rsorienttochrom=record.rsorienttochrom,
+                contigallele=record.contigallele,
+                contig=record.contig,
+                geneid=record.geneid,
+                genesymbol=record.genesymbol,
+            )
+            for record in df_src.itertuples()
+        ]
+        snpgene.objects.bulk_create(model_instances, ignore_conflicts=True)
 
     return True

@@ -1,0 +1,12 @@
+id,status,column_name,single_word,connector_id,pre_value_id
+1,False,ChemicalName,False,1,none
+2,True,ChemicalID,True,1,chem:
+3,False,CasRN,False,1,none
+4,False,GeneSymb,False,1,none
+5,True,GeneID,True,1,gene:
+6,False,GeneForms,False,1,none
+7,False,Organism,False,1,none
+8,False,OrganismID,False,1,none
+9,False,Interaction,False,1,none
+10,False,InteractionActions,False,1,none
+11,False,PubMedIDs,False,1,none

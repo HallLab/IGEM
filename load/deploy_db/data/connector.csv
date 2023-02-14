@@ -1,0 +1,111 @@
+id,connector,description,update_ds,source_path,source_web,source_compact,source_file_name,source_file_format,source_file_sep,source_file_skiprow,target_file_name,target_file_format,target_file_keep,datasource_id
+1,ctdcgint,Chemicalgene interactions,True,http://ctdbase.org/reports/CTD_chem_gene_ixns.csv.gz,True,True,CTD_chem_gene_ixns.csv.gz,GZ,",",29,CTD_chem_gene_ixns.csv,CSV,True,13
+2,ctdcginttyp,Chemicalgene interaction types,False,http://ctdbase.org/reports/CTD_chem_gene_ixn_types.csv.gz,True,True,CTD_chem_gene_ixn_types.csv,GZ,",",0,CTD_chem_gene_ixn_types.csv,CSV,False,13
+3,ctdcdassoc,Chemicaldisease associations,False,http://ctdbase.org/reports/CTD_chemicals_diseases.csv.gz,True,True,CTD_chemicals_diseases.csv.gz,GZ,",",0,CTD_chemicals_diseases.csv,CSV,False,13
+4,ctdcgoasso,ChemicalGO enriched associations,False,http://ctdbase.org/reports/CTD_chem_go_enriched.csv.gz,True,True,CTD_chem_go_enriched.csv.gz,GZ,",",0,CTD_chem_go_enriched.csv,CSV,False,13
+5,ctdcpassoc,Chemicalpathway enriched associations,False,http://ctdbase.org/reports/CTD_chem_pathways_enriched.csv.gz,True,True,CTD_chem_pathways_enriched.csv.gz,GZ,",",0,CTD_chem_pathways_enriched.csv,CSV,False,13
+6,ctdgdassoc,Genedisease associations,False,http://ctdbase.org/reports/CTD_genes_diseases.csv.gz,True,True,CTD_genes_diseases.csv.gz,GZ,",",0,CTD_genes_diseases.csv,CSV,False,13
+7,ctdgpassoc,Genepathway associations,False,http://ctdbase.org/reports/CTD_genes_pathways.csv.gz,True,True,CTD_genes_pathways.csv.gz,GZ,",",0,CTD_genes_pathways.csv,CSV,False,13
+8,ctddpassoc,Diseasepathway associations,False,http://ctdbase.org/reports/CTD_diseases_pathways.csv.gz,True,True,CTD_diseases_pathways.csv.gz,GZ,",",0,CTD_diseases_pathways.csv,CSV,False,13
+9,ctdcphasso,Chemicalphenotype interactions,False,http://ctdbase.org/reports/CTD_pheno_term_ixns.csv.gz,True,True,CTD_pheno_term_ixns.csv.gz,GZ,",",0,CTD_pheno_term_ixns.csv,CSV,False,13
+10,ctdesassoc,Exposurestudy associations,False,http://ctdbase.org/reports/CTD_exposure_studies.csv.gz,True,True,CTD_exposure_studies.csv.gz,GZ,",",0,CTD_exposure_studies.csv,CSV,False,13
+11,ctdeeassoc,Exposureevent associations,False,http://ctdbase.org/reports/CTD_exposure_events.csv.gz,True,True,CTD_exposure_events.csv.gz,GZ,",",0,CTD_exposure_events.csv,CSV,False,13
+12,ctdpgodaso,Phenotype (GO)Disease Biological Process Associations,False,http://ctdbase.org/reports/CTD_Phenotype-Disease_biological_process_associations.csv.gz,True,True,CTD_Phenotype-Disease_biological_process_associations.csv.gz,GZ,",",0,CTD_Phenotype-Disease_biological_process_associations.csv,CSV,False,13
+13,ctdpgodcca,Phenotype (GO)Disease Cellular Component Associations,False,http://ctdbase.org/reports/CTD_Phenotype-Disease_cellular_component_associations.csv.gz,True,True,CTD_Phenotype-Disease_cellular_component_associations.csv.gz,GZ,",",0,CTD_Phenotype-Disease_cellular_component_associations.csv,CSV,False,13
+14,ctdpgodmfa,Phenotype (GO)Disease Molecular Function Associations,False,http://ctdbase.org/reports/CTD_Phenotype-Disease_molecular_function_associations.csv.gz,True,True,CTD_Phenotype-Disease_molecular_function_associations.csv.gz,GZ,",",0,CTD_Phenotype-Disease_molecular_function_associations.csv,CSV,False,13
+15,ctdchemvoc,MASTER DATA - Chemical vocabulary,False,http://ctdbase.org/reports/CTD_chemicals.csv.gz,True,True,CTD_chemicals.csv.gz,GZ,",",0,CTD_chemicals.csv,CSV,False,13
+16,ctdmedic,MASTER DATA - Disease vocabulary (MEDIC),False,http://ctdbase.org/reports/CTD_diseases.csv.gz,True,True,CTD_diseases.csv.gz,GZ,",",0,CTD_diseases.csv,CSV,False,13
+17,ctdantovoc,MASTER DATA - Anatomy vocabulary,False,http://ctdbase.org/reports/CTD_anatomy.csv.gz,True,True,CTD_anatomy.csv.gz,GZ,",",0,CTD_anatomy.csv,CSV,False,13
+18,ctdgenevoc,MASTER DATA - Gene vocabulary,False,http://ctdbase.org/reports/CTD_genes.csv.gz,True,True,CTD_genes.csv.gz,GZ,",",0,CTD_genes.csv,CSV,False,13
+19,ctdpathvoc,MASTER DATA - Pathway vocabulary,False,http://ctdbase.org/reports/CTD_pathways.csv.gz,True,True,CTD_pathways.csv.gz,GZ,",",0,CTD_pathways.csv,CSV,False,13
+20,hmdb_prot,Protein Sequences,False,https://hmdb.ca/system/downloads/current/sequences/protein.fasta.zip,True,True,nan,nan,",",0,nan,nan,False,12
+21,hmdb_gene,Gene Sequences,False,https://hmdb.ca/system/downloads/current/sequences/gene.fasta.zip,True,True,nan,nan,",",0,nan,nan,False,12
+22,hmdb_stru,Metabolite Structures,False,https://hmdb.ca/system/downloads/current/structures.zip,True,True,nan,nan,",",0,nan,nan,False,12
+23,hmdb_metab,All Metabolites,False,https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip,True,True,nan,nan,",",0,nan,nan,False,12
+25,hmdb_urmetab,Urine Metabolites,False,https://hmdb.ca/system/downloads/current/urine_metabolites.zip,True,True,nan,nan,",",0,nan,nan,False,12
+26,hmdb_sermetab,Serum Metabolites,False,https://hmdb.ca/system/downloads/current/serum_metabolites.zip,True,True,nan,nan,",",0,nan,nan,False,12
+27,hmdb_csfmetab,CSF Metabolites,False,https://hmdb.ca/system/downloads/current/csf_metabolites.zip,True,True,nan,nan,",",0,nan,nan,False,12
+28,hmdb_salmetab,Saliva Metabolites,False,https://hmdb.ca/system/downloads/current/saliva_metabolites.zip,True,True,nan,nan,",",0,nan,nan,False,12
+29,hmdb_fecmetab,Feces Metabolites,False,https://hmdb.ca/system/downloads/current/feces_metabolites.zip,True,True,nan,nan,",",0,nan,nan,False,12
+30,hmdb_swemetab,Sweat Metabolites,False,https://hmdb.ca/system/downloads/current/sweat_metabolites.zip,True,True,nan,nan,",",0,nan,nan,False,12
+31,hmdb_ms,Mass Spectra Image Files,False,http://specdb.wishartlab.com/downloads/exports/image_files/hmdb_image_files.zip,True,True,nan,nan,",",0,nan,nan,False,12
+32,hmdb_nmrf,NMR Spectra FID Files,False,http://specdb.wishartlab.com/downloads/exports/fid_files/hmdb_fid_files.zip,True,True,nan,nan,",",0,nan,nan,False,12
+33,hmdb_nmrr,Raw NMR Spectra Peaklist Files (TXT),False,http://specdb.wishartlab.com/downloads/exports/peak_lists_txt/hmdb_nmr_peak_lists.zip,True,True,nan,nan,",",0,nan,nan,False,12
+34,hmdb_gcmspr,Raw GC-MS Spectra Peaklist Files (TXT) - Predicted,False,http://specdb.wishartlab.com/downloads/exports/peak_lists_txt/hmdb_predicted_cms_peak_lists.zip,True,True,nan,nan,",",0,nan,nan,False,12
+35,hmdb_msmspr,Raw MS-MS Spectra Peaklist Files (TXT) - Predicted,False,http://specdb.wishartlab.com/downloads/exports/peak_lists_txt/hmdb_predicted_msms_peak_lists.zip,True,True,nan,nan,",",0,nan,nan,False,12
+36,hmdb_msmspe,Raw MS-MS Spectra Peaklist Files (TXT) - Experimental,False,http://specdb.wishartlab.com/downloads/exports/peak_lists_txt/hmdb_experimental_msms_peak_lists.zip,True,True,nan,nan,",",0,nan,nan,False,12
+37,hmdb_specar,All Raw Spectra Peaklist Files (TXT),False,http://specdb.wishartlab.com/downloads/exports/peak_lists_txt/hmdb_all_peak_lists.zip,True,True,nan,nan,",",0,nan,nan,False,12
+38,hmdb_nmr,NMR Spectra Files (XML),False,http://specdb.wishartlab.com/downloads/exports/spectra_xml/hmdb_nmr_spectra.zip,True,True,nan,nan,",",0,nan,nan,False,12
+39,hmdb_gcmsp,GC-MS Spectra Files (XML) - Predicted,False,http://specdb.wishartlab.com/downloads/exports/spectra_xml/hmdb_predicted_cms_spectra.zip,True,True,nan,nan,",",0,nan,nan,False,12
+40,hmdb_gcmse,GC-MS Spectra Files (XML) - Experimental,False,http://specdb.wishartlab.com/downloads/exports/spectra_xml/hmdb_experimental_cms_spectra.zip,True,True,nan,nan,",",0,nan,nan,False,12
+41,hmdb_msmsp,MS-MS Spectra Files (XML) - Predicted,False,http://specdb.wishartlab.com/downloads/exports/spectra_xml/hmdb_predicted_msms_spectra.zip,True,True,nan,nan,",",0,nan,nan,False,12
+42,hmdb_msmse,MS-MS Spectra Files (XML) - Experimental,False,http://specdb.wishartlab.com/downloads/exports/spectra_xml/hmdb_experimental_msms_spectra.zip,True,True,nan,nan,",",0,nan,nan,False,12
+43,hmdb_speca,All Spectra Files (XML),False,http://specdb.wishartlab.com/downloads/exports/spectra_xml/hmdb_all_spectra.zip,True,True,nan,nan,",",0,nan,nan,False,12
+44,biosnap_cc_neuron,CC-Neuron/Megascale cell-cell similarity network,False,http://snap.stanford.edu/biodata/datasets/10023/files/CC-Neuron_cci.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+45,biosnap_chch_drug,ChCh-Miner/Drug-drug interaction network,False,http://snap.stanford.edu/biodata/datasets/10001/files/ChCh-Miner_durgbank-chem-chem.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+46,biosnap_chchse,ChChSe-Decagon/Poypharmacy side-effect association network,False,http://snap.stanford.edu/biodata/datasets/10017/files/ChChSe-Decagon_polypharmacy.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+47,biosnap_chg_inter,ChG-InterDecagon/Chemical-gene interaction network,False,http://snap.stanford.edu/biodata/datasets/10016/files/ChG-InterDecagon_targets.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+48,biosnap_chg_miner,ChG-Miner/Drug-target interaction network,False,http://snap.stanford.edu/biodata/datasets/10002/files/ChG-Miner_miner-chem-gene.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+49,biosnap_chg_targ,ChG-TargetDecagon/Drug-target interaction network,False,http://snap.stanford.edu/biodata/datasets/10015/files/ChG-TargetDecagon_targets.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+50,biosnap_chse_decag,ChSe-Decagon/Drug side-effect association network,False,http://snap.stanford.edu/biodata/datasets/10018/files/ChSe-Decagon_monopharmacy.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+51,biosnap_dch_miner,DCh-Miner/Disease-drug association network,False,http://snap.stanford.edu/biodata/datasets/10004/files/DCh-Miner_miner-disease-chemical.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+52,biosnap_dd_miner,DD-Miner/Disease-disease network,False,http://snap.stanford.edu/biodata/datasets/10006/files/DD-Miner_miner-disease-disease.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+53,biosnap_df_miner,DF-Miner/Disease-function association network,False,http://snap.stanford.edu/biodata/datasets/10019/files/DF-Miner_miner-disease-function.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+54,biosnap_dg_assoc,DG-AssocMiner/Disease-gene association network,False,http://snap.stanford.edu/biodata/datasets/10012/files/DG-AssocMiner_miner-disease-gene.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+55,biosnap_dg_miner,DG-Miner/Disease-gene association network,False,http://snap.stanford.edu/biodata/datasets/10020/files/DG-Miner_miner-disease-gene.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+56,biosnap_ff_miner,FF-Miner/Classification of cellular functions into a hierarchy,False,http://snap.stanford.edu/biodata/datasets/10026/files/FF-Miner_miner-func-func.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+57,biosnap_gf_miner,GF-Miner/Gene-function association network,False,http://snap.stanford.edu/biodata/datasets/10024/files/GF-Miner_miner-gene-function.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+58,biosnap_gg_enha,GG-EnhancedTissue/Enhanced tissue-specific gene interaction networks,False,http://snap.stanford.edu/biodata/datasets/10032/files/GG-NE.tar.gz,True,True,nan,nan,",",0,nan,nan,False,16
+59,biosnap_gp_miner,GP-Miner/Protein-coding genes,False,http://snap.stanford.edu/biodata/datasets/10027/files/GP-Miner_miner-gene-protein.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+60,biosnap_grgr_ne1k,GrGr-EnhancedHiC1K/Enhanced Hi-C interaction network,False,http://snap.stanford.edu/biodata/datasets/10030/files/GrGr-NE1K.tar.gz,True,True,nan,nan,",",0,nan,nan,False,16
+61,biosnap_grgr_ne5k,GrGr-EnhancedHiC5K/Enhanced Hi-C interaction network,False,http://snap.stanford.edu/biodata/datasets/10031/files/GrGr-NE5K.tar.gz,True,True,nan,nan,",",0,nan,nan,False,16
+62,biosnap_pp_decagon,PP-Decagon/Human protein-protein association network,False,http://snap.stanford.edu/biodata/datasets/10008/files/PP-Decagon_ppi.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+63,biosnap_pp_miner,PP-Miner/Species-specific protein-protein association networks,False,http://snap.stanford.edu/biodata/datasets/10028/files/PP-Miner_miner-ppi.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+64,biosnap_pp_path,PP-Pathways/Human protein-protein interaction network,False,http://snap.stanford.edu/biodata/datasets/10000/files/PP-Pathways_ppi.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+65,biosnap_ppt_comb,PPT-Ohmnet/Tissue-specific protein-protein interaction network,False,http://snap.stanford.edu/biodata/datasets/10013/files/PPT-Ohmnet_tissues-combined.edgelist.gz,True,True,nan,nan,",",0,nan,nan,False,16
+66,biosnap_ppt_data,PPT-Ohmnet/Tissue-specific protein-protein interaction network,False,http://snap.stanford.edu/biodata/datasets/10013/files/PPT-Ohmnet_tissues-data.txt.gz,True,True,nan,nan,",",0,nan,nan,False,16
+67,biosnap_ss_label,SS-Butterfly/Butterfly similarity network,False,http://snap.stanford.edu/biodata/datasets/10029/files/SS-Butterfly_labels.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+68,biosnap_ss_weight,SS-Butterfly/Butterfly similarity network,False,http://snap.stanford.edu/biodata/datasets/10029/files/SS-Butterfly_weights.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+69,biosnap_tfg_func,TFG-Ohmnet/Tissue-specific protein-function associations,False,http://snap.stanford.edu/biodata/datasets/10014/files/TFG-Ohmnet_tissue-function-gene.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+70,biosnap_dominer,D-DoMiner/Disease descriptions and synonyms,False,http://snap.stanford.edu/biodata/datasets/10021/files/D-DoMiner_miner-diseaseDOID.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+71,biosnap_ddopath,D-DoPathways/Classification of diseases into disease categories,False,http://snap.stanford.edu/biodata/datasets/10005/files/D-DoPathways_diseaseclasses.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+72,biosnap_d_mesh,D-MeshMiner/Disease descriptions,False,http://snap.stanford.edu/biodata/datasets/10003/files/D-MeshMiner_miner-disease.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+73,biosnap_d_mtf,D-MtfPathways/Higher-order network structure of disease pathways,False,http://snap.stanford.edu/biodata/datasets/10010/files/D-MtfPathways_disease-motifs.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+74,biosnap_d_miner,D-OmimMiner/Disease synopses,False,http://snap.stanford.edu/biodata/datasets/10025/files/D-OmimMiner_miner-diseaseOMIM.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+75,biosnap_d_struc,D-StructPathways/Network structure of disease pathways,False,http://snap.stanford.edu/biodata/datasets/10009/files/D-StructPathways_diseases.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+76,biosnap_g_human,G-HumanEssential/Human gene essentiality information,False,http://snap.stanford.edu/biodata/datasets/10033/files/G-HumanEssential.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+77,biosnap_g_mtf,G-MtfPathways/Higher-order network structure of genes,False,http://snap.stanford.edu/biodata/datasets/10011/files/G-MtfPathways_gene-motifs.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+78,biosnap_g_syn,"G-SynMiner/Gene names, descriptions, and synonyms",False,http://snap.stanford.edu/biodata/datasets/10022/files/G-SynMiner_miner-geneHUGO.tsv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+79,biosnap_se_do,Se-DoDecagon/Classification of drug side-effects into categories,False,http://snap.stanford.edu/biodata/datasets/10007/files/Se-DoDecagon_sidefx.csv.gz,True,True,nan,nan,",",0,nan,nan,False,16
+80,pharmgkb_01,Variant and Clinical Annotations Data,False,https://api.pharmgkb.org/v1/download/file/data/clinicalAnnotations.zip,True,True,nan,nan,",",0,nan,nan,False,18
+81,pharmgkb_02,Variant and Clinical Annotations Data,False,https://api.pharmgkb.org/v1/download/file/data/clinicalAnnotations_LOE1-2.zip,True,True,nan,nan,",",0,nan,nan,False,18
+82,pharmgkb_03,Variant and Clinical Annotations Data,False,https://api.pharmgkb.org/v1/download/file/data/variantAnnotations.zip,True,True,nan,nan,",",0,nan,nan,False,18
+83,pharmgkb_04,"Variant, Gene and Drug Relationship Data",False,https://api.pharmgkb.org/v1/download/file/data/relationships.zip,True,True,nan,nan,",",0,nan,nan,False,18
+84,pharmgkb_05,Clinical Guideline Annotations,False,https://api.pharmgkb.org/v1/download/file/data/guidelineAnnotations.json.zip,True,True,nan,nan,",",0,nan,nan,False,18
+85,pharmgkb_06,Drug Label Annotations,False,https://api.pharmgkb.org/v1/download/file/data/drugLabels.zip,True,True,nan,nan,",",0,nan,nan,False,18
+86,pharmgkb_07,Pathways,False,https://api.pharmgkb.org/v1/download/file/data/pathways-biopax.zip,True,True,nan,nan,",",0,nan,nan,False,18
+87,pharmgkb_08,Pathways,False,https://api.pharmgkb.org/v1/download/file/data/pathways-tsv.zip,True,True,nan,nan,",",0,nan,nan,False,18
+88,pharmgkb_09,Clinical Variant Data,False,https://api.pharmgkb.org/v1/download/file/data/clinicalVariants.zip,True,True,nan,nan,",",0,nan,nan,False,18
+89,pharmgkb_10,Literature Occurrence,False,https://api.pharmgkb.org/v1/download/file/data/occurrences.zip,True,True,nan,nan,",",0,nan,nan,False,18
+90,pharmgkb_11,Automated Annotations,False,https://api.pharmgkb.org/v1/download/file/data/automated_annotations.zip,True,True,nan,nan,",",0,nan,nan,False,18
+91,pharmgkb_12,Genes,False,https://api.pharmgkb.org/v1/download/file/data/genes.zip,True,True,nan,nan,",",0,nan,nan,False,18
+92,pharmgkb_13,Variants,False,https://api.pharmgkb.org/v1/download/file/data/variants.zip,True,True,nan,nan,",",0,nan,nan,False,18
+93,pharmgkb_14,Drugs,False,https://api.pharmgkb.org/v1/download/file/data/drugs.zip,True,True,nan,nan,",",0,nan,nan,False,18
+94,pharmgkb_15,Chemicals,False,https://api.pharmgkb.org/v1/download/file/data/chemicals.zip,True,True,nan,nan,",",0,nan,nan,False,18
+95,pharmgkb_16,Phenotypes,False,https://api.pharmgkb.org/v1/download/file/data/phenotypes.zip,True,True,nan,nan,",",0,nan,nan,False,18
+96,pharmgkb_17,PharmGKB Branding,False,https://github.com/PharmGKB/pgkb-branding,True,True,nan,nan,",",0,nan,nan,False,18
+97,pharmgkb_18,Papers of Interest Archive,False,https://api.pharmgkb.org/v1/download/file/attachment/PapersOfInterestArchive.csv,True,True,nan,nan,",",0,nan,nan,False,18
+98,pharmgkb_19,PharmGKB Training Exercises,False,https://api.pharmgkb.org/v1/download/file/attachment/PharmGKB_Training_Exercises.zip,True,True,nan,nan,",",0,nan,nan,False,18
+99,pharmgkb_20,International Tamoxifen Pharmacogenomics Consortium (ITPC),False,https://api.pharmgkb.org/v1/download/submission/982025782,True,True,nan,nan,",",0,nan,nan,False,18
+100,pharmgkb_21,International Tamoxifen Pharmacogenomics Consortium (ITPC),False,https://api.pharmgkb.org/v1/download/submission/982025783,True,True,nan,nan,",",0,nan,nan,False,18
+101,pharmgkb_22,International Tamoxifen Pharmacogenomics Consortium (ITPC),False,https://github.com/PharmGKB/ITPC,True,True,nan,nan,",",0,nan,nan,False,18
+102,pharmgkb_23,International Tamoxifen Pharmacogenomics Consortium (ITPC),False,https://api.pharmgkb.org/v1/download/submission/982025784,True,True,nan,nan,",",0,nan,nan,False,18
+103,pharmgkb_24,International Tamoxifen Pharmacogenomics Consortium (ITPC),False,https://api.pharmgkb.org/v1/download/submission/982025785,True,True,nan,nan,",",0,nan,nan,False,18
+104,pharmgkb_25,International SSRI Pharmacogenomics Consortium (ISPC),False,https://purl.stanford.edu/bg091gk8548,True,True,nan,nan,",",0,nan,nan,False,18
+105,pharmgkb_26,International Warfarin Pharmacogenetics Consortium (IWPC),False,https://api.pharmgkb.org/v1/download/submission/553247439,True,True,nan,nan,",",0,nan,nan,False,18
+106,pharmgkb_27,International Warfarin Pharmacogenetics Consortium (IWPC),False,https://api.pharmgkb.org/v1/download/submission/569836982,True,True,nan,nan,",",0,nan,nan,False,18
+107,pharmgkb_28,International Warfarin Pharmacogenetics Consortium (IWPC),False,https://api.pharmgkb.org/v1/download/submission/561941816,True,True,nan,nan,",",0,nan,nan,False,18
+108,pharmgkb_29,International Warfarin Pharmacogenetics Consortium (IWPC),False,https://api.pharmgkb.org/v1/download/submission/982047032,True,True,nan,nan,",",0,nan,nan,False,18
+109,pharmgkb_30,International Warfarin Pharmacogenetics Consortium (IWPC),False,https://api.pharmgkb.org/v1/download/submission/982047033,True,True,nan,nan,",",0,nan,nan,False,18
+110,pharmgkb_31,Translational Pharmacogenetics Project (TPP),False,https://purl.stanford.edu/yp464cc5056,True,True,nan,nan,",",0,nan,nan,False,18
+111,pharmgkb_32,Data-driven prediction of drug effects and interactions,False,https://purl.stanford.edu/zq918jm7358,True,True,nan,nan,",",0,nan,nan,False,18

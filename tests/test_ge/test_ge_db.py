@@ -7,7 +7,7 @@ def test_ge_db():
 
 
 def test_ge_db_truncate_table():
-    x = db.truncate_table(table="logs")
+    x = db.truncate_table(table="termmap")
     assert x is True
 
 
@@ -55,7 +55,7 @@ def test_ge_db_get_data_datasource():
     x = db.get_data(
         table="datasource",
         # datasource={'datasource__in': ['alfa']},
-        path="/users/andrerico/dev",
+        path="/users/andrerico/dev/tests",
         # columns=['id', 'datasource']
     )
     print(x)
@@ -302,4 +302,9 @@ def test_ge_db_load_data_termmap():
 
 def test_ge_db_backup_datasource():
     x = db.backup(path_out="/users/andrerico/dev")
+    assert x is True
+
+
+def test_ge_db_backup_datasource_snpgene():
+    x = db.backup(table="snpgene", path_out="/users/andrerico/dev")
     assert x is True

@@ -1,0 +1,53 @@
+id,datasource,description,category,website
+12,hmdb,human metabolome database,genomics,https://hmdb.ca/
+13,ctd,comparative toxicogenomics database,genomics,http://ctdbase.org/
+14,digchem,digchem,genomics,http://gcancer.org/digchem
+15,digsee,digsee,genomics,http://gcancer.org/digsee
+16,biosnap,biosnap datasets: stanford biomedical network dataset collection,genomics,http://snap.stanford.edu/biodata/
+17,kegg,kegg: kyoto encyclopedia of genes and genomes,genomics,https://www.genome.jp/kegg/
+18,pharmgkb,pharmacogenomics knowledge base,genomics,https://www.pharmgkb.org/downloads
+19,cardiogxe,cardiogxe catalog,genomics,https://pubmed.ncbi.nlm.nih.gov/25368670/
+20,hgnc,hugo gene nomenclature committee,genomics,http://www.genenames.org/cgi-bin/statistics
+21,geneontology,gene ontology consortium,genomics,http://geneontology.org/page/download-go-annotations
+22,string,string,genomics,http://string-db.org/cgi/download.pl
+23,drugbank,drugbank,genomics,http://www.drugbank.ca/
+24,diseaseontology,diseaseontology,genomics,http://disease-ontology.org/
+25,omim,online mendelian inheritance in man,genomics,http://www.omim.org/
+26,ensembl,ensembl,genomics,http://www.ensembl.org/biomart/martview
+27,rxnorm,rxnorm,genomics,https://bioportal.bioontology.org/
+28,foodb,foodb,genomics,https://foodb.ca/
+29,t3db,toxin and toxin target database,genomics,http://www.t3db.ca/
+30,smpdb,small molecule pathway database,genomics,https://smpdb.ca/
+31,csf metabolome,csf metabolome database,genomics,https://csfmetabolome.ca/
+32,serum metabolome,serum metabolome database,genomics,https://serummetabolome.ca/
+33,ecmdb,e. coli metabolome database,genomics,https://ecmdb.ca/
+34,markerdb,markerdb,genomics,https://markerdb.ca/
+35,afcdb,alberta food composition database,genomics,http://afcdb.ca/
+36,exposome-explorer,exposome-explorer,genomics,http://exposome-explorer.iarc.fr/
+37,phenol-explorer,phenol-explorer,genomics,http://phenol-explorer.eu/
+38,refdb,re-referenced protein chemical shift database,genomics,http://refdb.wishartlab.com/
+39,fecal metabolome,fecal metabolome database ,genomics,https://fecalmetabolome.ca/
+40,saliva metabolome,saliva metabolome database ,genomics,https://salivametabolome.ca/
+41,urine metabolome,urine metabolome database ,genomics,https://urinemetabolome.ca/
+42,np-mrd,natural product magnetic resonance database,genomics,https://np-mrd.org/
+43,bmrb,biological magnetic resonance data bank,genomics,https://bmrb.io/
+44,genecards,genecards,genomics,https://www.genecards.org/guide/datasets
+45,genecarna,genecarna,genomics,https://www.genecards.org/guide/datasets
+46,malacards,malacards,genomics,https://www.genecards.org/guide/datasets
+47,pathcards,pathcards,genomics,https://www.genecards.org/guide/datasets
+48,geneloc,geneloc,genomics,https://www.genecards.org/guide/datasets
+49,disgenet,disgenet,genomics,https://www.disgenet.org/downloads
+50,rcsb pdb,rcsb pdb,genomics,https://www.rcsb.org/
+51,mona,massbank of north america,genomics,https://massbank.us
+52,nist,national institutes for standards and technology,genomics,https://www.sisweb.com/software/ms/nist.htm
+54,metabolomics,nih metabolomics workbench,genomics,https://www.metabolomicsworkbench.org
+55,ebi,metabolights,genomics,https://www.ebi.ac.uk/metabolights/
+56,chemnetbase,dictionary of natural products ,genomics,https://dnp.chemnetbase.com/faces/chemical/chemicalsearch.xhtml
+57,pubchem,pubchem,genomics,https://pubchem.ncbi.nlm.nih.gov
+58,chemspider,chemspider,genomics,https://www.chemspider.com
+59,chebi,chemical entities of biological matter,genomics,https://www.ebi.ac.uk/chebi/
+60,mesh,medical subject headings,genomics,https://www.ncbi.nlm.nih.gov/mesh
+61,datamed,omics discovery index,genomics,https://datamed.org/
+62,ymdb,yeast metabolome database,genomics,http://www.ymdb.ca/
+63,bovinedb,bovine metabolome database,genomics,https://bovinedb.ca/
+65,bacmap,bacmap,genomics,http://bacmap.wishartlab.com/
