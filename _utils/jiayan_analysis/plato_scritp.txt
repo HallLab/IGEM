@@ -1,0 +1,25 @@
+#PBS -N EXEHEMO
+#PBS -l nodes=1:ppn=8
+#PBS -l pmem=4gb
+#PBS -l walltime=6:00:00
+#PBS -A open
+#PBS -j oe
+cd $PBS_O_WORKDIR
+​
+# Access package folder
+cd /storage/home/jpz5091
+​
+# Load required modules
+module load gcc/8.3.1
+module load openmpi
+module load boost/1.74.0
+​
+# Load required libraries
+. spack/share/spack/setup-env.sh
+spack load binutils
+spack load libiberty
+​
+# Access PLATO folder
+cd /storage/work/jpz5091/plato
+​
+./plato load-trait --file hemo_adult_discovery_final.txt --dummy-samples --ignore-error regress-auto --threads 4 --interactions --models hemokeep.txt --covariates female,black,mexican,other_hispanic,other_eth,SDDSRVYR,BMXBMI,SES_LEVEL,RIDAGEYR,LBXCOT,IRON_mg --correction Bonferroni --correction FDR --outcome LBXHGB --output hemo_dis
