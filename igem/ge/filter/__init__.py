@@ -1,3 +1,17 @@
+"""
+ge.filter
+=====
+
+Query functions with filters in the GE.db knowledge base.
+
+    .. autofunction:: gene_exposome
+    .. autofunction:: parameters_file
+    .. autofunction:: snp_exposome
+    .. autofunction:: term_map    
+    .. autofunction:: word_map
+"""
+
+
 from .convert import word_to_term
 from .filters import (  # noqa E501
     gene_exposome,

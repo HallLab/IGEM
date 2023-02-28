@@ -70,8 +70,13 @@ Pendencies:
 """
 
 
-def prepare(datasource="all", connector="all", chunk=1000000):
+def prepare(datasource="all", connector="all", chunk=1000000) -> bool:
     # config PSA folder (persistent staging area)
+    """
+    Consult the IGEM system manual for information on the ETL mechanism and
+    the PREPARE process.
+    """
+
     v_path_file = str(settings.BASE_DIR) + "/psa/"
 
     v_time_process = time.time()
@@ -303,4 +308,4 @@ def prepare(datasource="all", connector="all", chunk=1000000):
         "End of process in {0} seconds".format(int(time.time() - v_time_process))
     )  # noqa E501
 
-    return "success"
+    return True

@@ -187,6 +187,38 @@ def _gene_exposome_layout(df_query):
 
 # Return dataframe or boolean on TermMap query
 def term_map(*args, **kwargs):
+    """
+    TermMap table query function.
+
+    Parameters
+    ----------
+    - path_in: str
+        parameter file path with filter information, aggregation and result
+        file path.
+    - path_out: str
+        result file path
+    - term: list[str]
+        List of terms to filter passed through the function. If you inform the
+        file with the parameters, the values passed by this parameter will be
+        disregarded.
+
+
+    Return
+    ------
+    it may return a boolean value if you have informed an output per file
+    (path_out) or a DataFrame if you have not informed an output file.
+
+    Examples:
+    --------
+    >>> from igem.ge import filter
+    >>> filter.term_map(
+            path_in="../../file.csv",
+            path_out="../../outcome.csv"
+            )
+    >>> df_result = filter.term_map(
+            term=["gene:246126"]
+    """
+
     v_status, v_path_out, df_query = _query_map(
         query="term",
         kwargs=kwargs,
@@ -203,6 +235,39 @@ def term_map(*args, **kwargs):
 
 # Return dataframe or boolean on TermMap query in Gene x Exposome layout
 def gene_exposome(*args, **kwargs):
+    """
+    Queries GE.db and returns links between genes and exposomes based on input
+    parameters or the parameter file.
+
+    Parameters
+    ----------
+    - path_in: str
+        parameter file path with filter information, aggregation and result
+        file path.
+    - path_out: str
+        result file path
+    - term: list[str]
+        List of terms to filter passed through the function. If you inform the
+        file with the parameters, the values passed by this parameter will be
+        disregarded.
+
+
+    Return
+    ------
+    it may return a boolean value if you have informed an output per file
+    (path_out) or a DataFrame if you have not informed an output file.
+
+    Examples:
+    ---------
+    >>> from igem.ge import filter
+    >>> filter.gene_exposome(
+            path_in="../../file.csv",
+            path_out="../../outcome.csv"
+            )
+    >>> df_result = filter.gene_exposome(
+            term=["gene:246126"]
+    """
+
     v_status, v_path_out, df_query = _query_map(
         query="term",
         kwargs=kwargs,
@@ -219,6 +284,39 @@ def gene_exposome(*args, **kwargs):
 
 
 def snp_exposome(*args, **kwargs):
+    """
+    Queries GE.db and returns links between snp and exposomes based on input
+    parameters or the parameter file.
+
+    Parameters
+    ----------
+    - path_in: str
+        parameter file path with filter information, aggregation and result
+        file path.
+    - path_out: str
+        result file path
+    - term: list[str]
+        List of terms to filter passed through the function. If you inform the
+        file with the parameters, the values passed by this parameter will be
+        disregarded.
+
+
+    Return
+    ------
+    it may return a boolean value if you have informed an output per file
+    (path_out) or a DataFrame if you have not informed an output file.
+
+    Examples:
+    --------
+    >>> from igem.ge import filter
+    >>> filter.snp_exposome(
+            path_in="../../file.csv",
+            path_out="../../outcome.csv"
+            )
+    >>> df_result = filter.snp_exposome(
+            term=["gene:246126"]
+    """
+
     v_status, v_path_out, df_query = _query_map(
         query="term",
         kwargs=kwargs,
@@ -279,6 +377,35 @@ def snp_exposome(*args, **kwargs):
 
 
 def word_map(*args, **kwargs):
+    """
+    Queries GE.db and returns links between words without terms.
+
+    Parameters
+    ----------
+    - path_in: str
+        parameter file path with filter information, aggregation and result
+        file path.
+    - path_out: str
+        result file path
+    - term: list[str]
+        List of terms to filter passed through the function. If you inform the
+        file with the parameters, the values passed by this parameter will be
+        disregarded.
+
+    Return
+    ------
+    it may return a boolean value if you have informed an output per file
+    (path_out) or a DataFrame if you have not informed an output file.
+
+    Examples:
+    --------
+    >>> from igem.ge import filter
+    >>> filter.word_map(
+            path_in="../../file.csv",
+            path_out="../../outcome.csv"
+            )
+    """
+
     v_status, v_path_out, df_query = _query_map(
         query="word",
         kwargs=kwargs,
@@ -295,6 +422,53 @@ def word_map(*args, **kwargs):
 
 # PARAMETERS
 def parameters_file(path=None):
+    """
+    generates a model file to be used as a parameter file in query functions
+
+    Parameters
+    ----------
+    - path: str
+        path where the file will be generated.
+
+    File layout
+    -----------
+    In the file structure, new lines for the index filter can be included with
+    additional values, and each filter line must contain only a single value.
+    The output index and path must be unique, as they will be applied to the
+    entire corresponding field (parameter).
+
+    In the example below, let's select all terms from two data sources from a
+    single group. Also, the Datasource and Connector fields will be aggregated
+    and will not appear on the results
+
+    {parameter file layout}
+    - index,parameter,value
+    - filter,datasource,ds_01
+    - filter,datasource,ds_02
+    - filter,connector,
+    - filter,term_group,Chemical
+    - filter,term_category,
+    - filter,word,
+    - output,datasource,no
+    - output,connector,no
+    - output,term_group,
+    - output,term_category,
+    - output,term,
+    - output,word,no
+    - path,path,/../output_file.csv
+
+    Return
+    ------
+    it return a boolean value if the file was created
+
+    Examples:
+    --------
+    >>> from igem.ge import filter
+    >>> filter.parameters_file(
+            path="../../folder"
+            )
+    """
+
     v_path_in = path.lower()
     if not os.path.isdir(v_path_in):
         print("  Output path not found")

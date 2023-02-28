@@ -28,6 +28,34 @@ def backup(
     table: str = "",
     path_out: str = "",
 ) -> bool:
+    """
+    Backup the database with the internal keys. It can be performed at once
+    for all GE.db tables
+
+    Parameters
+    ----------
+    - table: str
+        (datasource, connector, dst, term_group, term_category, term,
+        prefix,  wordterm, termmap, wordmap, workflow, logs)
+    - path_out: str
+        Folder path to store the generated backup files
+
+    If inform table="all", the function will backup all table on GE database.
+
+    Return
+    ------
+    Boolean: (TRUE if the process occurred without errors and FALSE if had
+    some errors).
+
+    Examples
+    --------
+    >>> import igem
+    >>> igem.ge.db.backup(
+        table="",
+        path_out="/root/back")
+
+    """
+
     if table == "":
         table = "all"
     v_table = table.lower()
@@ -187,6 +215,34 @@ def restore(
     table: str = "",
     path_out: str = "",
 ) -> bool:
+    """
+    Restore the database with the internal keys. It can be performed at once
+    for all GE.db tables
+
+    Parameters
+    ----------
+    - table: str
+        (datasource, connector, dst, term_group, term_category, term,
+        prefix,  wordterm, termmap, wordmap, workflow, logs)
+    - path_out: str
+        Folder path to store the generated backup files
+
+    If inform table="all", the function will restore all table on GE database.
+
+    Return
+    ------
+    Boolean: (TRUE if the process occurred without errors and FALSE if had
+    some errors).
+
+    Examples
+    --------
+    >>> import igem
+    >>> igem.ge.db.restore(
+        table="",
+        path_out="/root/back")
+
+    """
+
     if table == "":
         table = "all"
     v_table = table.lower()

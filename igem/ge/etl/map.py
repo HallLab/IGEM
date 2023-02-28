@@ -62,7 +62,11 @@ def mapper(lines):
     return df_mapper
 
 
-def map(connector="all", chunck=1000000, schema=1):
+def map(connector="all", chunck=1000000, schema=1) -> bool:
+    """
+    Consult the IGEM system manual for information on the ETL mechanism and
+    the MAP process.
+    """
     v_time_process = time.time()
     v_opt_ds = connector.lower()
     v_chunk = chunck
@@ -239,4 +243,4 @@ def map(connector="all", chunck=1000000, schema=1):
         "End of process in {0} seconds".format(int(time.time() - v_time_process))
     )  # noqa E501
 
-    return "success"
+    return True

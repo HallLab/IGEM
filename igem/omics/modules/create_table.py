@@ -15,6 +15,10 @@ except Exception as e:
 
 
 def create_table(path=None):
+    """
+    function on work process
+    """
+
     # Debug Scenario
     v_term = []
     # v_term.append('2085537')

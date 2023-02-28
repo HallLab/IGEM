@@ -1,3 +1,18 @@
+"""
+ge.db
+=====
+
+ge.db database maintenance functions
+
+    .. autofunction:: get_data
+    .. autofunction:: load_data
+    .. autofunction:: delete_data
+    .. autofunction:: truncate_table
+    .. autofunction:: backup
+    .. autofunction:: restore
+"""
+
+
 from .delete import delete_data
 from .deploy import backup, restore
 from .get import get_data
