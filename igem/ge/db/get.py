@@ -133,7 +133,12 @@ def get_data(table, **kwargs):
 
         if v_table == "datasource":
             if not v_columns:
-                v_columns = ["datasource", "description", "website", "category"]
+                v_columns = [
+                    "datasource",
+                    "description",
+                    "website",
+                    "category",
+                ]  # noqa E501
 
             v_where_cs = {**v_datasource}
 
@@ -215,7 +220,12 @@ def get_data(table, **kwargs):
 
         elif v_table == "term":
             if not v_columns:
-                v_columns = ["term", "term_group", "term_category", "description"]
+                v_columns = [
+                    "term",
+                    "term_group",
+                    "term_category",
+                    "description",
+                ]  # noqa E501
                 v_columns_out = v_columns
             v_where_cs = {**v_term_group, **v_term_category, **v_term}
             qs = (

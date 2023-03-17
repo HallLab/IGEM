@@ -70,7 +70,7 @@ def search_terms(lines):
             # DF_KY_WD_TEMP = DF_KY_WD[DF_KY_WD['word'].str.match(r'\b(?:\s|^)(?:{})(?:\s|$\b)'.format('|'.join(v_str)))]  # MARCH # noqa E501
             if v_msm:
                 print(
-                    "--> Number of records found that match the list of searched elements: ",
+                    "--> Number of records found that match the list of searched elements: ",  # noqa E501
                     len(DF_KY_WD_TEMP.index),
                 )  # noqa E501
                 print("--> Selected Records to Association: ")  # noqa E501
@@ -119,7 +119,8 @@ def search_terms(lines):
                         if v_msm:
                             print("    --> Associated term: ", v_key)
                             print(
-                                "    --> Word or Words Associated: ", row["word"]
+                                "    --> Word or Words Associated: ",
+                                row["word"],  # noqa E501
                             )  # noqa E501
                             print(
                                 "    --> String after association: ", line[0]
@@ -259,7 +260,8 @@ def word_to_term(path=None):
     try:
         with ThreadPoolExecutor() as executor:
             future = {
-                executor.submit(search_terms, list_df[i]) for i in range(len(list_df))
+                executor.submit(search_terms, list_df[i])
+                for i in range(len(list_df))  # noqa E501
             }
 
         for future_to in as_completed(future):

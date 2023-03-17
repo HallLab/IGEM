@@ -1,5 +1,3 @@
-from .create_table import create_table
-
-__all__ = [
-    'create_table',
-]
+# flake8: noqa
+from .get import get_data
+from .load import load_data, statistic

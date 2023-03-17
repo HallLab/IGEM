@@ -242,7 +242,9 @@ def load_data(table: str, path: str, **kwargs) -> bool:
         df_src["term_group_id"] = df_src.set_index("term_group").index.map(
             df_group.set_index("term_group")["id"]
         )
-        df_src["term_category_id"] = df_src.set_index("term_category").index.map(
+        df_src["term_category_id"] = df_src.set_index(
+            "term_category"
+        ).index.map(  # noqa E501
             df_category.set_index("term_category")["id"]
         )  # noqa E501
         if df_src.isnull().values.any():

@@ -74,7 +74,7 @@ def collect(datasource="all", connector="all") -> bool:
             v_version = requests.head(v_file_url).headers["Content-Length"]  # noqa E501
         except:  # noqa E5722
             print(
-                "    Could not find the version of the file. Check content-length attr"
+                "    Could not find the version of the file. Check content-length attr"  # noqa E501
             )  # noqa E501
         # Get WorkFlow Control
         try:
@@ -153,7 +153,7 @@ def collect(datasource="all", connector="all") -> bool:
             if not os.path.exists(v_target_file):
                 print("    Failed to read file")  # noqa E501
                 print(
-                    "       Possible cause: check if the names of the source and destination files are correct in the connector table"
+                    "       Possible cause: check if the names of the source and destination files are correct in the connector table"  # noqa E501
                 )  # noqa E501
                 qs_wfc.source_file_version = "ERROR"
                 qs_wfc.last_update = timezone.now()
@@ -182,7 +182,9 @@ def collect(datasource="all", connector="all") -> bool:
             )  # noqa E501
 
     print(
-        "End of process in {0} seconds".format(int(time.time() - v_time_process))
+        "End of process in {0} seconds".format(
+            int(time.time() - v_time_process)
+        )  # noqa E501
     )  # noqa E501
 
     return True
