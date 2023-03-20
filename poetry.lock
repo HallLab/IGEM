@@ -200,6 +200,18 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-debug-toolbar"
+version = "3.8.1"
+description = "A configurable set of panels that display various debug information about the current request/response."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+django = ">=3.2.4"
+sqlparse = ">=0.2"
+
+[[package]]
 name = "django-thread"
 version = "0.0.1"
 description = "## Helpers for using Django from threads"
@@ -833,7 +845,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.11.0"
-content-hash = "c32ded4ef5e0b5323a7948b94c8df97ef9cef6bef14f299f2a98644b6c2d0c29"
+content-hash = "d3dbffce47615811f591000625153801c1f77dc512771f0938ddae022ffbb7d3"
 
 [metadata.files]
 asgiref = [
@@ -1148,6 +1160,10 @@ cyvcf2 = [
 django = [
     {file = "Django-4.1.5-py3-none-any.whl", hash = "sha256:4b214a05fe4c99476e99e2445c8b978c8369c18d4dea8e22ec412862715ad763"},
     {file = "Django-4.1.5.tar.gz", hash = "sha256:ff56ebd7ead0fd5dbe06fe157b0024a7aaea2e0593bb3785fb594cf94dad58ef"},
+]
+django-debug-toolbar = [
+    {file = "django_debug_toolbar-3.8.1-py3-none-any.whl", hash = "sha256:879f8a4672d41621c06a4d322dcffa630fc4df056cada6e417ed01db0e5e0478"},
+    {file = "django_debug_toolbar-3.8.1.tar.gz", hash = "sha256:24ef1a7d44d25e60d7951e378454c6509bf536dce7e7d9d36e7c387db499bc27"},
 ]
 django-thread = [
     {file = "django_thread-0.0.1-py3-none-any.whl", hash = "sha256:a65398ded5cc99bb5a09cd4d32befef26662882e7993d5409e7824b82c0947f7"},

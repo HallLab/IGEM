@@ -130,4 +130,5 @@ db.sqlite3
 db copy.sqlite3
 static/
 psa
+_utils
 
