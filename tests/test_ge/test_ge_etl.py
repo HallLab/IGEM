@@ -9,19 +9,19 @@ def test_ge_etl_collect_test():
 
 def test_ge_etl_collect():
     y = etl.collect()
-    assert "success" == y
+    assert y is True
 
 
 def test_ge_etl_prepare():
     y = etl.prepare()
-    assert "success" == y
+    assert y is True
 
 
 def test_ge_etl_map():
     y = etl.map()
-    assert "success" == y
+    assert y is True
 
 
 def test_ge_etl_reduce():
     y = etl.reduce()
-    assert "success" == y
+    assert y is True

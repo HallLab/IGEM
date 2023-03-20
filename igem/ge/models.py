@@ -88,7 +88,10 @@ class DSTColumn(models.Model):
     # pre_choice = models.BooleanField(default=False, verbose_name='Prefix?')
     # pre_value = models.CharField(max_length=5, blank=True, verbose_name='Value Prefix')  # noqa E501
     pre_value = models.ForeignKey(
-        PrefixOpc, on_delete=models.CASCADE, default="None", verbose_name="Prefix"
+        PrefixOpc,
+        on_delete=models.CASCADE,
+        default="None",
+        verbose_name="Prefix",  # noqa E501
     )  # noqa E501
     single_word = models.BooleanField(
         default=False, verbose_name="Single Word"
@@ -216,7 +219,10 @@ class Term(models.Model):
 
 class TermHierarchy(models.Model):
     term = models.ForeignKey(
-        Term, related_name="key_child", on_delete=models.CASCADE, verbose_name="Term ID"
+        Term,
+        related_name="key_child",
+        on_delete=models.CASCADE,
+        verbose_name="Term ID",  # noqa E501
     )  # noqa E501
     term_parent = models.ForeignKey(
         Term,
@@ -238,7 +244,7 @@ class TermHierarchy(models.Model):
 
 # Commute word to keyge
 class WordTerm(models.Model):
-    word = models.CharField(max_length=400, primary_key=True)
+    word = models.CharField(max_length=400, unique=True)
     term = models.ForeignKey(Term, on_delete=models.CASCADE)
     status = models.BooleanField(default=False, verbose_name="Active?")
     commute = models.BooleanField(default=False, verbose_name="Commute?")
@@ -249,6 +255,13 @@ class WordTerm(models.Model):
 
     class Meta:
         verbose_name_plural = "Word to Terms"
+        indexes = [
+            models.Index(
+                fields=[
+                    "term",
+                ]
+            ),
+        ]
 
     @classmethod
     def truncate(cls):
@@ -259,7 +272,7 @@ class WordTerm(models.Model):
 
 
 class WordMap(models.Model):
-    cword = models.CharField(max_length=15, primary_key=True)
+    cword = models.CharField(max_length=15, unique=True)
     datasource = models.ForeignKey(Datasource, on_delete=models.CASCADE)
     connector = models.ForeignKey(Connector, on_delete=models.CASCADE)
     term_1 = models.ForeignKey(
@@ -281,7 +294,7 @@ class WordMap(models.Model):
     qtd_links = models.IntegerField(default=0)
 
     def __str__(self):
-        linker = str(self.word1) + " - " + str(self.word2)
+        linker = str(self.word_1) + " - " + str(self.word_2)
         return linker
 
     class Meta:

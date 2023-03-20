@@ -44,7 +44,17 @@ class ChoiceDSTColumn(admin.TabularInline):
 
 class ConnectorAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {"fields": ["datasource", "connector", "description", "update_ds"]}),
+        (
+            None,
+            {
+                "fields": [  # noqa E501
+                    "datasource",
+                    "connector",
+                    "description",
+                    "update_ds",
+                ]
+            },
+        ),  # noqa E501
         (
             "Attributes",
             {
@@ -84,12 +94,15 @@ class TermAdmin(admin.ModelAdmin):
     list_filter = ["term_group_id", "term_category_id"]
     search_fields = ["term", "description"]
 
-    @admin.display(description="Term Group Name", ordering="term_group__term_group")
+    @admin.display(
+        description="Term Group Name", ordering="term_group__term_group"
+    )  # noqa E501
     def get_termgroup(self, obj):
         return obj.term_group.term_group
 
     @admin.display(
-        description="Term Category Name", ordering="term_category__term_category"
+        description="Term Category Name",
+        ordering="term_category__term_category",  # noqa E501
     )
     def get_termcategory(self, obj):
         return obj.term_category.term_category
@@ -99,15 +112,17 @@ class TermMapAdmin(admin.ModelAdmin):
     model = TermMap
     list_display = ("connector", "term_1", "term_2", "qtd_links")
     list_filter = ["connector"]
+    autocomplete_fields = ["connector", "term_1", "term_2"]
 
 
 class WordTermAdmin(admin.ModelAdmin):
     model = WordTerm
-    list_display = ("get_term", "word", "status", "commute")
-    list_display = ("term", "word", "status", "commute")
+    list_display = ("id", "get_term", "word", "status", "commute")
     list_filter = ["status", "commute"]
     search_fields = ["word"]
     list_select_related = ["term"]
+    # raw_id_fields = ["term"]
+    autocomplete_fields = ["term"]
 
     @admin.display(description="Term", ordering="term__term")
     def get_term(self, obj):
@@ -118,6 +133,7 @@ class WordMapAdmin(admin.ModelAdmin):
     model = WordMap
     list_display = ("connector", "word_1", "word_2", "qtd_links")
     list_filter = ["connector"]
+    raw_id_fields = ["connector", "datasource", "term_1", "term_2"]
 
 
 class WFControlAdmin(admin.ModelAdmin):
@@ -132,7 +148,13 @@ class WFControlAdmin(admin.ModelAdmin):
         "chk_map",
         "chk_reduce",
     )
-    list_filter = ["connector", "chk_collect", "chk_prepare", "chk_map", "chk_reduce"]
+    list_filter = [
+        "connector",
+        "chk_collect",
+        "chk_prepare",
+        "chk_map",
+        "chk_reduce",
+    ]  # noqa E501
     search_fields = ["connector__connector"]
 
     @admin.display(description="DS Status", ordering="connector__update_ds")

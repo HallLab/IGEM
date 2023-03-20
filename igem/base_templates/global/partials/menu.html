@@ -1,0 +1,36 @@
+<button class="button-show-menu button-show-menu-visible">
+  <i class="fas fa-bars"></i>
+  <span class="hidden-text">Show menu</span>
+</button>
+
+<div class="menu-container menu-hidden">
+  <button class="button-close-menu button-close-menu-visible">
+    <i class="fas fa-times-circle"></i>
+    <span class="hidden-text">Close menu</span>
+  </button>
+
+  <div class="menu-content">
+    <nav class="menu-nav">
+      {% comment %} <a href="{% url 'recipes:home' %}">Home</a> {% endcomment %}
+
+      {% if user.is_authenticated %}
+        <a href="">----- ETL -----</a>
+        <a href="{% url 'ge:listview_connector' %}">>   Connectors</a>
+        {% comment %} <a href="{% url 'etl:workflow' %}">>   WorkFlow</a> {% endcomment %}
+        <a href="">>   Subjects</a>
+        <a href="">>   Clinical Data</a>
+        <a href="">----- RDW -----</a>
+        {% comment %} <a href="{% url 'rdw:listview_participant' %}">>   Participants</a> {% endcomment %}
+        <a href="">>   Research Data</a>
+        {% comment %} <a href="{% url 'etl:subject' %}">Subjects</a> {% endcomment %}
+        {% comment %} <a href="{% url 'authors:dashboard_recipe_new' %}">New recipe</a> {% endcomment %}
+        {% comment %} <a href="{% url 'authors:dashboard' %}">Dashboard</a> {% endcomment %}
+        {% comment %} <a class="authors-logout-link" href="{% url 'authors:logout' %}">Logout</a> {% endcomment %}
+        {% comment %} {% include 'authors/partials/form_logout.html' %} {% endcomment %}
+      {% else %}
+        {% comment %} <a href="{% url 'authors:login' %}">Login</a> {% endcomment %}
+        {% comment %} <a href="{% url 'authors:register' %}">Register</a> {% endcomment %}
+    {% endif %}
+    </nav>
+  </div>
+</div>

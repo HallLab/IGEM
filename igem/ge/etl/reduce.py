@@ -34,10 +34,10 @@ def reduce(connector="all", chunck=1000000) -> bool:
         qs_queryset = Connector.objects.filter(**v_where_cs)
     except ObjectDoesNotExist:
         print("  Connectors not found or disabled")
-        sys.exit(2)
+        return False
     if not qs_queryset:
         print("  Connectors not found or disabled")
-        sys.exit(2)
+        return False
 
     # Start process Connector
     for qs in qs_queryset:
@@ -127,4 +127,4 @@ def reduce(connector="all", chunck=1000000) -> bool:
         "End of process in {0} seconds".format(int(time.time() - v_time_proces))
     )  # noqa E501
 
-    return "success"
+    return True
