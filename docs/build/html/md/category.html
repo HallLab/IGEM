@@ -1,0 +1,242 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Category &#8212; IGEM 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Keyge" href="keyge.html" />
+    <link rel="prev" title="Group" href="group.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="keyge.html" title="Keyge"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="group.html" title="Group"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">IGEM 0.1.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Master Data</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Category</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="category">
+<h1>Category<a class="headerlink" href="#category" title="Permalink to this heading">¶</a></h1>
+<p>Category master data acts as a grouping of <a class="reference internal" href="keyge.html#keyge"><span class="std std-ref">Keyge</span></a> at a lower level than the <a class="reference internal" href="../security.html#group"><span class="std std-ref">Group</span></a>.</p>
+<p>The system uses the CATEGORY information as a filter in queries and other interfaces. An example of the use of CATEGORY will be the <a class="reference internal" href="../reports/gene_exposome.html#gene-exposome-report"><span class="std std-ref">Gene Exposome Report</span></a>, in which the system will use the CATEGORY to select all Gene <a class="reference internal" href="keyge.html#keyge"><span class="std std-ref">Keyge</span></a>.</p>
+<dl class="simple">
+<dt>The CATEGORY data will be stored in the ge_category table of the IGEM DB defined in the initial parameters. The available fields are:</dt><dd><ul class="simple">
+<li><p><em>ID</em>: GE.db internal key</p></li>
+<li><p><em>group</em>: Abbreviated name of the CATEGORY</p></li>
+<li><p><em>Description</em>: Description for identifying and consulting the CATEGORY</p></li>
+</ul>
+</dd>
+</dl>
+<p>The inclusion of new data can be performed via the process <code class="code docutils literal notranslate"><span class="pre">db</span></code> . On the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --load category --path {path/filename}.csv
+</pre></div>
+</div>
+<p>Example of the load file can be found in the folder src/load/md/category.csv</p>
+<p>To list the CATEGORY already registered, type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --show category
+</pre></div>
+</div>
+<p>To download the CATEGORY already registered, type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --download category --path {path/filename}.csv
+</pre></div>
+</div>
+<p>To delete a specific CATEGORY, type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --delete category --category {Category Abbreviated Name}
+</pre></div>
+</div>
+<p>To delete all CATEGORY Table. type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --truncate category
+</pre></div>
+</div>
+<p>CAUTION: As GE.db is a correlational base with key integrity, all records linked to the deleted data will also be deleted, which includes KEYGE and KEYGELINKS information</p>
+<section id="category-web-interface">
+<h2>CATEGORY Web Interface<a class="headerlink" href="#category-web-interface" title="Permalink to this heading">¶</a></h2>
+<p>Through IGEM’s friendly web interface, it will be possible to carry out GROUP management activities.</p>
+<p>Activate the IGEM web service if you have not already done so. Go to the /src/ folder and type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+<img alt="Alternative text" src="../_images/md_database_01.png" />
+<p>If it returns a port error, you can specify a different port:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver 8080
+</pre></div>
+</div>
+<p>Access the address in the link provided in Starting development server. Significantly, this address may vary depending on the initial settings performed during installation.</p>
+<p>After user authentication and on the initial administration screen, select an option Keyge-CATEGORY.</p>
+<img alt="Alternative text" src="../_images/md_database_02.png" />
+<p>On the Category screen, we will have options to consult, modify, add and eliminate Category.</p>
+<img alt="Alternative text" src="../_images/md_category_01.png" />
+<p>On the first screen, we have a view of all available CATEGORY. To consult, click a desired CATEGORY.</p>
+<img alt="Alternative text" src="../_images/md_category_02.png" />
+<dl class="simple">
+<dt>On the next screen, we have all the CATEGORY fields open for modifications. To modify, change the desired information and select one of the three button options:</dt><dd><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code>: Will save the changes and open a blank CATEGORY screen to add a new CATEGORY record.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Continue</span> <span class="pre">editing</span></code>: Will save the changes and continue on the CATEGORY screen.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span></code>: Will save the changes and return to the screen with the list of CATEGORY.</p></li>
+</ul>
+</dd>
+</dl>
+<p>In the History button, we can consult all the modifications carried out in the CATEGORY, this function will be important to track modifications and audit the process.</p>
+<img alt="Alternative text" src="../_images/md_category_03.png" />
+<p>The <code class="code docutils literal notranslate"><span class="pre">DELETE</span></code> button will permanently delete the CATEGORY record.</p>
+<p>Caution: when deleting a CATEGORY, the system will also delete all records dependent on that CATEGORY, which include KEYGE, and KEYLINKS</p>
+<p>Deletion can also be performed en bloc. On the CATEGORY List screen, select all the CATEGORY you want to delete, choose the Delete Selected Keyge - Category action and click on the <code class="code docutils literal notranslate"><span class="pre">GO</span></code> button.</p>
+<p>Be careful, this elimination operation will be definitive for the CATEGORY and for all other records dependent on it, as already explained.</p>
+<img alt="Alternative text" src="../_images/md_category_04.png" />
+<dl class="simple">
+<dt>To add new CATEGORY, we will have three different ways:</dt><dd><ul class="simple">
+<li><p>by the <code class="code docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span></code> button on the left sidebar.</p></li>
+<li><p>Through the <code class="code docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">CATEGORY</span> <span class="pre">+</span></code> button in the right field of the CATEGORY list.</p></li>
+<li><p>Via the <code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code> button located within a CATEGORY record.</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="Alternative text" src="../_images/md_category_05.png" />
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Category</a><ul>
+<li><a class="reference internal" href="#category-web-interface">CATEGORY Web Interface</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="group.html"
+                          title="Previous page">&larr; Group</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="keyge.html"
+                          title="Next page">&rarr; Keyge</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/md/category.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="keyge.html" title="Keyge"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="group.html" title="Group"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">IGEM 0.1.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Master Data</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Category</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Hall Lab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

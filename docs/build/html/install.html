@@ -1,0 +1,221 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Install &#8212; IGEM 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/cloud.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Users and Role" href="security.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="security.html" title="Users and Role"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">IGEM 0.1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Install</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this heading">¶</a></h1>
+<p>The IGEM will consist of files with processes and interfaces and a relational database.</p>
+<p>Files with IGEM are available on the GitHub REPO. To make a copy on the server designated for installation, run via the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:HallLab/IGEM.git
+</pre></div>
+</div>
+<p>The following dependencies were performed in Python 3.10. It may be advisable to run IGEM in a virtual environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirement.txt
+</pre></div>
+</div>
+<p>Database customization to host IGEM</p>
+<p>IGEM accepts several types of software to manage the database, including MS SQL, MySQL, Postgres, and others. By default, the system is already configured with SQLite.
+To change the database manager, open the /src/settings.py file and change the DATABASES parameters. The example below demonstrates a configuration using a Postgres database:</p>
+<img alt="Alternative text" src="_images/install_09.png" />
+<dl class="simple">
+<dt>To start the database, type::</dt><dd><p>$ python manage.py makemigrations</p>
+</dd>
+</dl>
+<img alt="Alternative text" src="_images/install_02.png" />
+<dl class="simple">
+<dt>Start creating the structure in the designated database::</dt><dd><p>$ python manage.py migrate</p>
+</dd>
+</dl>
+<img alt="Alternative text" src="_images/install_03.png" />
+<p>At this point, we already have IGEM installed and the database created with the IGEM structure.
+To check if the system is working correctly, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ Python manage.py check
+</pre></div>
+</div>
+<img alt="Alternative text" src="_images/install_04.png" />
+<dl class="simple">
+<dt>The IGEM system has a layer of security per user and functions. To create the first user, run::</dt><dd><p>$ python manage.py createsuperuser</p>
+</dd>
+</dl>
+<p>Enter your username, email, and security password.</p>
+<img alt="Alternative text" src="_images/install_05.png" />
+<p>The system will be ready to parameterize the master data, perform external data load and generate reports.</p>
+<p>WEB interface
+The IGEM system has a web interface for performing activities such as master data registration and simple queries in the database.</p>
+<dl class="simple">
+<dt>To start the WEB service, type::</dt><dd><p>$ python manage.py runserver</p>
+</dd>
+</dl>
+<img alt="Alternative text" src="_images/install_06.png" />
+<p>In a browser, go to <a class="reference external" href="http://127.0.0.1:8000/admin">http://127.0.0.1:8000/admin</a>.</p>
+<p>The IGEM system will show the authentication page.</p>
+<img alt="Alternative text" src="_images/install_07.png" />
+<p>Enter the username and password created in the previous steps. The administration page will be loaded after authentication.</p>
+<img alt="Alternative text" src="_images/install_08.png" />
+<p>The features of this interface will be explored in detail in Master Data and Access and Permissions.</p>
+<p>File structure:</p>
+<dl class="simple">
+<dt>Inside the src directory, we will have:</dt><dd><ul class="simple">
+<li><p><em>/ge/</em>: all source codes and interfaces for the functioning of APP GE.</p></li>
+<li><p><em>/loader/</em>: all input files for loading master data and output directory of the FILTER process.</p></li>
+<li><p><em>/psa/</em>: Persist Store Area to store the database files downloaded and processed by the ETL process. Each DATASET will have its subfolder within the PSA.</p></li>
+<li><p><em>/src/</em>: hosts the source code of IGEM components, configurations and parameterizations.</p></li>
+<li><p><em>/templates/</em>: hosts the standard web interfaces in IGEM.</p></li>
+</ul>
+</dd>
+</dl>
+<p>PSA - Store Area Persists</p>
+<p>The PSA is a folder that stores the Dataset files loaded in their original format and transformed during the ETL process.
+Each Database will be a subfolder, and each Dataset a subfolder concerning the Database. These structures will be created automatically, and if deleted, they will be created again on the following workflow run for the corresponding dataset.
+Each external Dataset source will be a design solution for the original uploaded file. If you want to keep this file for queries and analyses, configure it in the Dataset register to keep the original file. Important that this file will be kept unzipped.
+To reduce the amount of system space, it is not recommended to keep these files.
+The subfolder will also have a transformed version normalized by the rules of the applied dataset.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="Previous page">&larr; Introduction</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="security.html"
+                          title="Next page">&rarr; Users and Role</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/install.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="security.html" title="Users and Role"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">IGEM 0.1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Install</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Hall Lab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

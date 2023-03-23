@@ -200,6 +200,7 @@ def get_data(table, **kwargs):
             if not v_columns:
                 v_columns = [
                     "connector",
+                    "connector_id__connector",
                     "last_update",
                     "source_file_version",
                     "source_file_size",

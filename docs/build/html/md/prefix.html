@@ -1,0 +1,240 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Prefix &#8212; IGEM 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Keyword" href="keyword.html" />
+    <link rel="prev" title="Keyge" href="keyge.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="keyword.html" title="Keyword"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="keyge.html" title="Keyge"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">IGEM 0.1.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Master Data</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Prefix</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="prefix">
+<h1>Prefix<a class="headerlink" href="#prefix" title="Permalink to this heading">¶</a></h1>
+<p>Prefixes play a fundamental role in the logic of the IGEM system for the correct identification of ref:<cite>KEYGE</cite>.</p>
+<p>Prefixes are assigned as input structure columns by <a class="reference internal" href="dataset.html#dataset"><span class="std std-ref">Dataset</span></a>. Necessary due to identification only by the code of terms mapped to <a class="reference internal" href="keyge.html#keyge"><span class="std std-ref">Keyge</span></a> and that however conflict with other categories of <a class="reference internal" href="keyge.html#keyge"><span class="std std-ref">Keyge</span></a>.</p>
+<p>For the correct identification of the <a class="reference internal" href="keyge.html#keyge"><span class="std std-ref">Keyge</span></a>, the system will add a prefix to the code located in the source DATASET before MAPREDUCE processing.</p>
+<p>Keeping without a record in none, it is important that the record is used during the IGEM ETL where additional cases from prefix to source code do not occur.</p>
+<dl class="simple">
+<dt>The PREFIX data will be stored in the ge_prefixopc table of the IGEM DB defined in the initial parameters. The available fields are:</dt><dd><ul class="simple">
+<li><p><em>pre_value</em>: prefix name</p></li>
+</ul>
+</dd>
+</dl>
+<p>The inclusion of new data can be performed via the process <code class="code docutils literal notranslate"><span class="pre">db</span></code> . On the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --load prefix --path {path/filename}.csv
+</pre></div>
+</div>
+<p>Example of the load file can be found in the folder src/load/md/prefix.csv</p>
+<p>To list the PREFIX already registered, type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --show prefix
+</pre></div>
+</div>
+<p>To download the PREFIX already registered, type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --download prefix --path {path/filename}.csv
+</pre></div>
+</div>
+<p>To delete a specific PREFIX, type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --delete prefix --prefix {Prefix}
+</pre></div>
+</div>
+<p>To delete all PREFIX Table. type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --truncate prefix
+</pre></div>
+</div>
+<p>CAUTION: As GE.db is a correlational base with key integrity, all records linked to the deleted data will also be deleted, which includes DATASET columns rules.</p>
+<section id="prefix-web-interface">
+<h2>PREFIX Web Interface<a class="headerlink" href="#prefix-web-interface" title="Permalink to this heading">¶</a></h2>
+<p>Through IGEM’s friendly web interface, it will be possible to carry out GROUP management activities.</p>
+<p>Activate the IGEM web service if you have not already done so. Go to the /src/ folder and type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+<img alt="Alternative text" src="../_images/md_database_01.png" />
+<p>If it returns a port error, you can specify a different port:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver 8080
+</pre></div>
+</div>
+<p>Access the address in the link provided in Starting development server. Significantly, this address may vary depending on the initial settings performed during installation.</p>
+<p>After user authentication and on the initial administration screen, select an option Keyge-Prefix.</p>
+<img alt="Alternative text" src="../_images/md_database_02.png" />
+<p>On the Prefix screen, we will have options to consult, modify, add and eliminate PREFIX.</p>
+<img alt="Alternative text" src="../_images/md_prefix_01.png" />
+<p>On the first screen, we have a view of all available PREFIX. To consult, click a desired PREFIX.</p>
+<img alt="Alternative text" src="../_images/md_prefix_02.png" />
+<dl class="simple">
+<dt>On the next screen, we have all the PREFIX fields open for modifications. To modify, change the desired information and select one of the three button options:</dt><dd><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code>: Will save the changes and open a blank PREFIX screen to add a new PREFIX record.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Continue</span> <span class="pre">editing</span></code>: Will save the changes and continue on the PREFIX screen.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span></code>: Will save the changes and return to the screen with the list of PREFIX.</p></li>
+</ul>
+</dd>
+</dl>
+<p>In the History button, we can consult all the modifications carried out in the PREFIX, this function will be important to track modifications and audit the process.</p>
+<img alt="Alternative text" src="../_images/md_prefix_03.png" />
+<p>The <code class="code docutils literal notranslate"><span class="pre">DELETE</span></code> button will permanently delete the PREFIX record.</p>
+<p>Caution: when deleting a PREFIX, the system will also delete all records dependent on that PREFIX, which include DATASET Columns Rules</p>
+<p>Deletion can also be performed en bloc. On the PREFIX List screen, select all the PREFIX you want to delete, choose the Delete Selected Keyge - Prefix action and click on the <code class="code docutils literal notranslate"><span class="pre">GO</span></code> button.</p>
+<p>Be careful, this elimination operation will be definitive for the PREFIX and for all other records dependent on it, as already explained.</p>
+<dl class="simple">
+<dt>To add new PREFIX, we will have three different ways:</dt><dd><ul class="simple">
+<li><p>by the <code class="code docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span></code> button on the left sidebar.</p></li>
+<li><p>Through the <code class="code docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">PREFIX</span> <span class="pre">OPC</span> <span class="pre">+</span></code> button in the right field of the PREFIX list.</p></li>
+<li><p>Via the <code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code> button located within a PREFIX record.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Prefix</a><ul>
+<li><a class="reference internal" href="#prefix-web-interface">PREFIX Web Interface</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="keyge.html"
+                          title="Previous page">&larr; Keyge</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="keyword.html"
+                          title="Next page">&rarr; Keyword</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/md/prefix.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="keyword.html" title="Keyword"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="keyge.html" title="Keyge"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">IGEM 0.1.0 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Master Data</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Prefix</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Hall Lab.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
