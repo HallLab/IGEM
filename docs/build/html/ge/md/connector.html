@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connector &mdash; IGEM 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Group" href="group.html" />
+    <link rel="prev" title="Datasource" href="datasource.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IGEM
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">Users and Role</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">GE Application</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Master Data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datasource.html">Datasource</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="group.html">Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="category.html">Category</a></li>
+<li class="toctree-l3"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prefix.html">Prefix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wordterm.html">Word to Terms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../db/index.html">Database Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">Extract, Transformation and Load (ETL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter/index.html">Reports and Filters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IGEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">GE Application</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Master Data</a></li>
+      <li class="breadcrumb-item active">Connector</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/ge/md/connector.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="connector">
+<h1>Connector<a class="headerlink" href="#connector" title="Permalink to this heading"></a></h1>
+<dl class="simple">
+<dt>A Connector record stores all information needed for external extraction and controls the links of related terms by the mapping process. The control of external data extraction occurs by Connector. Each Connector will consist of the fields:</dt><dd><ul class="simple">
+<li><p><em>Datasource</em>: Grouping of Connector, controlling access authentication.</p></li>
+<li><p><em>Connector</em>: Abbreviation for Connector identification</p></li>
+<li><p><em>Description</em>: Brief description of the purpose of Connector</p></li>
+<li><p><em>Enabled</em>: Flag informing if the Connector is active and will be considered in the ETL process</p></li>
+</ul>
+</dd>
+<dt>Group Attributes: Fields to control extraction path and file type</dt><dd><ul class="simple">
+<li><p><em>Source path from Internet</em>: Flag to route the extraction path. If enabled, it will be via HTTP and disabled. It will be considered as a local file path.</p></li>
+<li><p><em>Source path</em>: Path where the Connector file is hosted</p></li>
+<li><p><em>Source file name</em>: name of the file with the original data</p></li>
+<li><p><em>Source file format</em>: file format with the original data. This information will be imported for conversion treatment to the data ingestion format in the ETL process. If compressed, inform only the compression format, type ZIP, GZ.</p></li>
+<li><p><em>Source file sep</em>: inform the type of file separator if any. For tabular division, use /n</p></li>
+<li><p><em>Source file skip row</em>: Inform the number of lines eliminated in the ETL process. Many files have structural information in their first lines that are not needed in the ETL process.</p></li>
+<li><p><em>Source compact</em>: Flag to control if the file is compressed. If not marked, it is considered an uncompressed file.</p></li>
+<li><p><em>Target file name</em>: Name of the file after unzipping</p></li>
+<li><p><em>Target file format</em>: File format after unzipping, this field will be the actual file format, type CSV, TXT</p></li>
+<li><p><em>Keep file</em>: Flag, if selected, will keep the file after data processing for future reference. It is essential to analyze the storage space consumption, as keeping the files may consume unnecessary space. New updates will overwrite existing files.</p></li>
+</ul>
+</dd>
+<dt>Group Columns: Controls rules for handling the extracted data in a format compatible with the GE.db system. Consider only columns with standard MEsH NIH codes.</dt><dd><ul class="simple">
+<li><p><em>Column Sequence</em>: Number of the column that receives the rule</p></li>
+<li><p><em>Column Name</em>: Column name to guide and help identify the applied rule</p></li>
+<li><p><em>Active</em>: a flag that informs if the practice is active</p></li>
+<li><p><em>PREFIX</em>: inform the prefix of the word that will be considered and added to the column information.</p></li>
+</ul>
+</dd>
+</dl>
+<p>The inclusion of new data can be performed via the process <code class="code docutils literal notranslate"><span class="pre">db</span></code> . On the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ $ python manage.py db --load_data &quot;table=&#39;connector, path=&#39;{your_path}/connector.csv&#39;&quot;
+</pre></div>
+</div>
+<p>Other commands and functions for manipulating master data can be found in the database management tab.</p>
+<p>CAUTION: As GE.db is a correlational base with key integrity, all records linked to the deleted data will also be deleted, which includes Rules and TermMap information</p>
+<p><strong>Web Interface</strong></p>
+<p>Through IGEM’s friendly web interface, it will be possible to carry out Connector management activities.</p>
+<p>Activate the IGEM web service if you have not already done so. Go to the /src/ folder and type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Watching</span> <span class="k">for</span> <span class="n">file</span> <span class="n">changes</span> <span class="k">with</span> <span class="n">StatReloader</span>
+<span class="go">  Performing system checks...</span>
+<span class="go">  System check identified no issues (0 silenced).</span>
+<span class="go">  March 24, 2023 - 12:56:26</span>
+<span class="go">  Django version 4.1.5, using settings &#39;src.settings&#39;</span>
+<span class="go">  Starting development server at http://127.0.0.1:8000/</span>
+<span class="go">  Quit the server with CONTROL-C.</span>
+</pre></div>
+</div>
+<p>If it returns a port error, you can specify a different port:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver 8080
+</pre></div>
+</div>
+<p>Access the address in the link provided in Starting development server. Significantly, this address may vary depending on the initial settings performed during installation.</p>
+<p>After user authentication and on the initial administration screen, select an option Connector.</p>
+<img alt="Main Admin Page" src="../../_images/md_01_01_datasource.png" />
+<p>On the Connector screen, we will have options to consult, modify, add and eliminate Connector.</p>
+<img alt="Connector" src="../../_images/md_02_01_connector.png" />
+<p><em>Filter Connector</em></p>
+<dl class="simple">
+<dt>For the Datasource, we will have two filter locations:</dt><dd><ul class="simple">
+<li><p>First located at the top of the Datasource List screen where we can search broadly.</p></li>
+<li><p>Second on the right sidebar, being able to select by category of Datasources.</p></li>
+</ul>
+</dd>
+</dl>
+<p>To consult, click a desired Connector.</p>
+<img alt="Connector" src="../../_images/md_02_02_connector.png" />
+<p><em>Add Connector</em></p>
+<dl class="simple">
+<dt>To add new Datasource, we will have three different ways:</dt><dd><ul class="simple">
+<li><p>by the <code class="code docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span></code> button on the left sidebar.</p></li>
+<li><p>Through the <code class="code docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">Datasource</span> <span class="pre">+</span></code> button in the right field of the Datasources list.</p></li>
+<li><p>Via the <code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code> button located within a Datasource record.</p></li>
+</ul>
+</dd>
+</dl>
+<p>The Connector interface is divided into three parts with each one performing a different activity in the ETL (Extraction, Transformation and Load) process of external data to IGEM.</p>
+<p><em>PART 1</em></p>
+<p>It has fields for identifying the Connector, among them we will have which Datasource the Connector belongs to, an abbreviation that will identify the Connector in processes and queries, a description and a flag for activating or not the Connector.</p>
+<p>If the Activate FLAG is not selected, the Connector will not perform new extraction of external data, but all data already loaded will continue to be available for queries</p>
+<img alt="Alternative text" src="../../_images/md_02_03_connector.png" />
+<p><em>PART 2</em></p>
+<p>The second part will be composed of the attributes to make the connection with external sources and format of the extracted data.</p>
+<p>Each field has already been detailed at the beginning of this session.</p>
+<img alt="Alternative text" src="../../_images/md_02_04_connector.png" />
+<p><em>PART 3</em></p>
+<p>The third part stores the transformation rules that the IGEM system needs to interpret the input data and how to handle each column.</p>
+<p>If the input files are not in tabular format, as in the case of files with XML extension, the COLLECT process will transform into tabular and keep a new file in the PSA folder as detailed in the <a class="reference internal" href="../etl/collect.html#collect"><span class="std std-ref">Collect</span></a></p>
+<p>The sequence of columns does not need to be in order, however it will be necessary to identify the first column with the number 0 and so on.</p>
+<p>If a column is not informed, the system will understand it as a basic rule and process the column as detailed in the process <a class="reference internal" href="../etl/prepare.html#prepare"><span class="std std-ref">Prepare</span></a></p>
+<p>To delete a column rule, check the DELETE? On the desired line and save the Connector.</p>
+<p>To add a new column rule, select the + Add another DST column button</p>
+<p>The column name will be a header identifier used in the file generated during the ETL process. This file can be kept for future queries and Data Lake projects for example, as it has already passed through a normalization layer.</p>
+<p>The Active field tells the ETL process to read and handle the source column. If the line is not marked, it will be discarded during the PREPARE process and not going through MAPREDUCE.</p>
+<p>Important to balance workload, storage space, and other factors before keeping a column active. Many columns are unnecessary information for the purpose of term mapping and would not make sense to keep them active.</p>
+<p>The prefix field adds an identification to fields composed only of codes: For example, we will have a column with a code of a Numeric Gene only, for the IGEM to identify that this sequence of numbers is a Gene, we add a prefix that differentiates it from other types of also numerical information.</p>
+<p>It is important to maintain a synchronism between the prefixes and the registration of Keyge and Words so that the MAPREDUCE process can identify and ingest the terms found into the GE.db base.</p>
+<p>We can perform two maintenance operations on the prefixes using the change buttons and quickly add a new prefix on the Connector screen without having to leave the register. Prefixes are also treated as master data within IGEM.</p>
+<p>The SINGLE WORD option field has the function of informing the ETL process if this column is composed of a single word and does not need to go through the process of breaking up and identifying terms. This makes the process faster and reduces memory consumption during the Connector ETL. When we have selected a prefix for the column, the SINGLE WORD will have no function, because with the prefix it is assumed that it is a KEYGE without the replacement processing by the KEYWORD.</p>
+<img alt="Alternative text" src="../../_images/md_02_05_connector.png" />
+<p><em>Save Connector</em></p>
+<dl class="simple">
+<dt>On the next screen, we have all the Connector fields open for modifications. To modify, change the desired information and select one of the three button options:</dt><dd><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code>: Will save the changes and open a blank Connector screen to add a new Connector record.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Continue</span> <span class="pre">editing</span></code>: Will save the changes and continue on the Connector screen.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span></code>: Will save the changes and return to the screen with the list of Connector.</p></li>
+</ul>
+</dd>
+</dl>
+<p><em>Delete Connector</em></p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">DELETE</span></code> button will permanently delete the Datasource record.</p>
+<p>Caution: when deleting a Datasource, the system will also delete all records dependent on that Datasource, which include Connectors, Parameterizations of transformations and KEYLINKS</p>
+<p>Deletion can also be performed en bloc. On the Datasource List screen, select all the Datasource you want to delete, choose the Delete Selected Database action and click on the <code class="code docutils literal notranslate"><span class="pre">GO</span></code> button.</p>
+<p>Be careful, this elimination operation will be definitive for the Datasources and for all other records dependent on it, as already explained.</p>
+<p><em>History Change</em></p>
+<p>In the History button, we can consult all the modifications carried out in the Datasource, this function will be important to track modifications and audit the process.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datasource.html" class="btn btn-neutral float-left" title="Datasource" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="group.html" class="btn btn-neutral float-right" title="Group" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hall Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

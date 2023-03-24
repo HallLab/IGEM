@@ -12,7 +12,8 @@ A suggestion would be a model of three functions, being:
 Users
 ^^^^^
 New users can be created via command line::
-    $ python manage.py createsuperuser
+  
+$ python manage.py createsuperuser
 
 
 Through IGEM's friendly web interface, it will be possible to carry out Users management activities.
@@ -20,9 +21,13 @@ Through IGEM's friendly web interface, it will be possible to carry out Users ma
 Activate the IGEM web service if you have not already done so. Go to the /src/ folder and type the command line::
 
 $ python manage.py runserver
-
-.. image:: /_static/pictures/md_database_01.png
-  :alt: Alternative text
+>>> Watching for file changes with StatReloader
+  Performing system checks...
+  System check identified no issues (0 silenced).
+  March 24, 2023 - 12:56:26
+  Django version 4.1.5, using settings 'src.settings'
+  Starting development server at http://127.0.0.1:8000/
+  Quit the server with CONTROL-C.
 
 If it returns a port error, you can specify a different port::
 
@@ -32,7 +37,7 @@ Access the address in the link provided in Starting development server. Signific
 
 After user authentication and on the initial administration screen, select an option Users.
 
-.. image:: /_static/pictures/md_database_02.png
+.. image:: /_static/pictures/md_01_01_datasource.png
   :alt: Alternative text
 
 On the User screen, we will have options to consult, modify, add and eliminate Users.
@@ -113,7 +118,7 @@ The groups help maintain access; we can create groups for different functions an
 
 Celect an option Groups.
 
-.. image:: /_static/pictures/md_database_02.png
+.. image:: /_static/pictures/md_01_01_datasource.png
   :alt: Alternative text
 
 On the Groups screen, we will have options to consult, modify, add and eliminate Groups.

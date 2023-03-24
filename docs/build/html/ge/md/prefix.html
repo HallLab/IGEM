@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prefix &mdash; IGEM 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Word to Terms" href="wordterm.html" />
+    <link rel="prev" title="Term" href="term.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IGEM
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">Users and Role</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">GE Application</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Master Data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datasource.html">Datasource</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connector.html">Connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="group.html">Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="category.html">Category</a></li>
+<li class="toctree-l3"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Prefix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wordterm.html">Word to Terms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../db/index.html">Database Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">Extract, Transformation and Load (ETL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter/index.html">Reports and Filters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IGEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">GE Application</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Master Data</a></li>
+      <li class="breadcrumb-item active">Prefix</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/ge/md/prefix.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="prefix">
+<h1>Prefix<a class="headerlink" href="#prefix" title="Permalink to this heading"></a></h1>
+<p>Prefixes play a fundamental role in the logic of the IGEM system for the correct identification of ref:<cite>Term</cite>.</p>
+<p>Prefixes are assigned as input structure columns by <a class="reference internal" href="connector.html#connector"><span class="std std-ref">Connector</span></a>. Necessary due to identification only by the code of terms mapped to <a class="reference internal" href="term.html#term"><span class="std std-ref">Term</span></a> and that however conflict with other categories of <a class="reference internal" href="term.html#term"><span class="std std-ref">Term</span></a>.</p>
+<p>For the correct identification of the <a class="reference internal" href="term.html#term"><span class="std std-ref">Term</span></a>, the system will add a prefix to the code located in the source Connector before MAPREDUCE processing.</p>
+<p>Keeping without a record in none, it is important that the record is used during the IGEM ETL where additional cases from prefix to source code do not occur.</p>
+<p>The Prefix data will be stored in the ge_prefixopc table of the IGEM DB defined in the initial parameters. The available fields are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>pre_value</em>: prefix name</p></li>
+</ul>
+</div></blockquote>
+<p>The inclusion of new data can be performed via the process <code class="code docutils literal notranslate"><span class="pre">db</span></code> . On the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --load_data &quot;table=&#39;term, path=&#39;{your_path}/term.csv&#39;&quot;
+</pre></div>
+</div>
+<p>Other commands and functions for manipulating master data can be found in the database management tab.</p>
+<p>CAUTION: As GE.db is a correlational base with key integrity, all records linked to the deleted data will also be deleted, which includes Connector columns rules.</p>
+<p><strong>Web Interface</strong></p>
+<p>Through IGEM’s friendly web interface, it will be possible to carry out GROUP management activities.</p>
+<p>Activate the IGEM web service if you have not already done so. Go to the IGEM folder and type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Watching</span> <span class="k">for</span> <span class="n">file</span> <span class="n">changes</span> <span class="k">with</span> <span class="n">StatReloader</span>
+<span class="go">  Performing system checks...</span>
+<span class="go">  System check identified no issues (0 silenced).</span>
+<span class="go">  March 24, 2023 - 12:56:26</span>
+<span class="go">  Django version 4.1.5, using settings &#39;src.settings&#39;</span>
+<span class="go">  Starting development server at http://127.0.0.1:8000/</span>
+<span class="go">  Quit the server with CONTROL-C.</span>
+<span class="go">If it returns a port error, you can specify a different port::</span>
+</pre></div>
+</div>
+<p>$ python manage.py runserver 8080</p>
+<p>Access the address in the link provided in Starting development server. Significantly, this address may vary depending on the initial settings performed during installation.</p>
+<p>After user authentication and on the initial administration screen, select an option Keyge-Prefix.</p>
+<img alt="Alternative text" src="../../_images/md_01_01_datasource.png" />
+<p>On the Prefix screen, we will have options to consult, modify, add and eliminate Prefix.</p>
+<img alt="Alternative text" src="../../_images/md_06_01_prefix.png" />
+<p>On the first screen, we have a view of all available Prefix. To consult, click a desired Prefix.</p>
+<img alt="Alternative text" src="../../_images/md_06_02_prefix.png" />
+<dl class="simple">
+<dt>On the next screen, we have all the Prefix fields open for modifications. To modify, change the desired information and select one of the three button options:</dt><dd><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code>: Will save the changes and open a blank Prefix screen to add a new Prefix record.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Continue</span> <span class="pre">editing</span></code>: Will save the changes and continue on the Prefix screen.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span></code>: Will save the changes and return to the screen with the list of Prefix.</p></li>
+</ul>
+</dd>
+</dl>
+<p>In the History button, we can consult all the modifications carried out in the Prefix, this function will be important to track modifications and audit the process.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">DELETE</span></code> button will permanently delete the Prefix record.</p>
+<p>Caution: when deleting a Prefix, the system will also delete all records dependent on that Prefix, which include Connector Columns Rules</p>
+<p>Deletion can also be performed en bloc. On the Prefix List screen, select all the Prefix you want to delete, choose the Delete Selected Keyge - Prefix action and click on the <code class="code docutils literal notranslate"><span class="pre">GO</span></code> button.</p>
+<p>Be careful, this elimination operation will be definitive for the Prefix and for all other records dependent on it, as already explained.</p>
+<dl class="simple">
+<dt>To add new Prefix, we will have three different ways:</dt><dd><ul class="simple">
+<li><p>by the <code class="code docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span></code> button on the left sidebar.</p></li>
+<li><p>Through the <code class="code docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">Prefix</span> <span class="pre">OPC</span> <span class="pre">+</span></code> button in the right field of the Prefix list.</p></li>
+<li><p>Via the <code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code> button located within a Prefix record.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="term.html" class="btn btn-neutral float-left" title="Term" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wordterm.html" class="btn btn-neutral float-right" title="Word to Terms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hall Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

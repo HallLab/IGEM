@@ -17,7 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Master Data" href="md/index.html" />
+    <link rel="next" title="GE Application" href="ge/index.html" />
     <link rel="prev" title="Install" href="install.html" /> 
 </head>
 
@@ -31,7 +31,6 @@
           
           <a href="index.html" class="icon icon-home">
             IGEM
-              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 0.1.0
@@ -46,8 +45,6 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Users and Role</a><ul>
@@ -55,10 +52,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#group">Group</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="md/index.html">Master Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="etl/index.html">ETL Process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reports/index.html">Reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ncbi/index.html">NCBI Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ge/index.html">GE Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epc/index.html">EPC Application</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
 </ul>
 
         </div>
@@ -98,23 +96,31 @@ A suggestion would be a model of three functions, being:</p>
 </div></blockquote>
 <section id="users">
 <h2>Users<a class="headerlink" href="#users" title="Permalink to this heading"></a></h2>
-<dl class="simple">
-<dt>New users can be created via command line::</dt><dd><p>$ python manage.py createsuperuser</p>
-</dd>
-</dl>
+<p>New users can be created via command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py createsuperuser
+</pre></div>
+</div>
 <p>Through IGEM’s friendly web interface, it will be possible to carry out Users management activities.</p>
 <p>Activate the IGEM web service if you have not already done so. Go to the /src/ folder and type the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
 </pre></div>
 </div>
-<img alt="Alternative text" src="_images/md_database_01.png" />
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Watching</span> <span class="k">for</span> <span class="n">file</span> <span class="n">changes</span> <span class="k">with</span> <span class="n">StatReloader</span>
+<span class="go">  Performing system checks...</span>
+<span class="go">  System check identified no issues (0 silenced).</span>
+<span class="go">  March 24, 2023 - 12:56:26</span>
+<span class="go">  Django version 4.1.5, using settings &#39;src.settings&#39;</span>
+<span class="go">  Starting development server at http://127.0.0.1:8000/</span>
+<span class="go">  Quit the server with CONTROL-C.</span>
+</pre></div>
+</div>
 <p>If it returns a port error, you can specify a different port:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver 8080
 </pre></div>
 </div>
 <p>Access the address in the link provided in Starting development server. Significantly, this address may vary depending on the initial settings performed during installation.</p>
 <p>After user authentication and on the initial administration screen, select an option Users.</p>
-<img alt="Alternative text" src="_images/md_database_02.png" />
+<img alt="Alternative text" src="_images/md_01_01_datasource.png" />
 <p>On the User screen, we will have options to consult, modify, add and eliminate Users.</p>
 <img alt="Alternative text" src="_images/security_01.png" />
 <p>On the first screen, we have a view of all available Users. To consult, click a desired User.</p>
@@ -169,7 +175,7 @@ A suggestion would be a model of three functions, being:</p>
 <h2>Group<a class="headerlink" href="#group" title="Permalink to this heading"></a></h2>
 <p>The groups help maintain access; we can create groups for different functions and assign them to the users who perform them, thus avoiding giving users undue access.</p>
 <p>Celect an option Groups.</p>
-<img alt="Alternative text" src="_images/md_database_02.png" />
+<img alt="Alternative text" src="_images/md_01_01_datasource.png" />
 <p>On the Groups screen, we will have options to consult, modify, add and eliminate Groups.</p>
 <img alt="Alternative text" src="_images/security_08.png" />
 <p>On the first screen, we have a view of all available Groups. To consult, click a desired Group.</p>
@@ -213,7 +219,7 @@ All combinations added in the correct box will be assigned to users who inherit 
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="md/index.html" class="btn btn-neutral float-right" title="Master Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ge/index.html" class="btn btn-neutral float-right" title="GE Application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

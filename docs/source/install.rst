@@ -1,32 +1,58 @@
 Install
 -------
 
-The IGEM will consist of files with processes and interfaces and a relational database.
+IGEM is available on PyPl or through GitHub. It can be installed in a virtual environment with Python >= 3.9. Run via the command line::
 
-Files with IGEM are available on the GitHub REPO. To make a copy on the server designated for installation, run via the command line::
-
-$ git clone git@github.com:HallLab/IGEM.git
-
-The following dependencies were performed in Python 3.10. It may be advisable to run IGEM in a virtual environment::
-
-$ pip install -r requirement.txt
+$ pip install igem
 
 
-Database customization to host IGEM
+**Database Customization**
 
 IGEM accepts several types of software to manage the database, including MS SQL, MySQL, Postgres, and others. By default, the system is already configured with SQLite.
-To change the database manager, open the /src/settings.py file and change the DATABASES parameters. The example below demonstrates a configuration using a Postgres database:
 
-.. image:: /_static/pictures/install_09.png
-  :alt: Alternative text
+To change the database manager, open the {package_path}/igem/src/settings.py file and change the DATABASES parameters. The example below demonstrates a configuration using a Postgres database::
+  
+  DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "IGEM",
+        "USER": "postgres",
+        "PASSWORD": "your_password",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+    }
+  }
 
-To start the database, type::
+IMPORTANT: Changing the database is optional as the system is configured by default to create a local SQLite database.
+
+If you want to use a database created on another computer/server, edit the base path, for example, an SQLLITE base::
+
+  DATABASES = {
+      "default": {
+          "ENGINE": "django.db.backends.sqlite3",
+          "NAME": {path} / "db.sqlite3",
+      }
+  }
+
+
+We created a python script to create the database, make the first admin user, and load the initial master data. If you want to start the database using this script, download the file:
+
+_file path
+
+Unzip and run the deploy_db.py script in the environment with IGEM.
+
+
+The other way to create the database, access the IGEM folder and run the following::
+
   $ python manage.py makemigrations
+
+IGEM will copy all the tables and other metadata in the configured Database format.
 
 .. image:: /_static/pictures/install_02.png
   :alt: Alternative text
 
-Start creating the structure in the designated database::
+The next command to create the database with all the IGEM metadata::
+  
   $ python manage.py migrate
 
 .. image:: /_static/pictures/install_03.png
@@ -34,12 +60,14 @@ Start creating the structure in the designated database::
 
 At this point, we already have IGEM installed and the database created with the IGEM structure.
 To check if the system is working correctly, type::
+  
   $ Python manage.py check
 
 .. image:: /_static/pictures/install_04.png
   :alt: Alternative text
 
 The IGEM system has a layer of security per user and functions. To create the first user, run::
+  
   $ python manage.py createsuperuser
 
 Enter your username, email, and security password.
@@ -49,10 +77,14 @@ Enter your username, email, and security password.
 
 The system will be ready to parameterize the master data, perform external data load and generate reports.
 
-WEB interface
+
+
+**Web Interface**
+
 The IGEM system has a web interface for performing activities such as master data registration and simple queries in the database.
 
 To start the WEB service, type::
+  
   $ python manage.py runserver
 
 .. image:: /_static/pictures/install_06.png

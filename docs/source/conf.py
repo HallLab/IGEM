@@ -17,6 +17,8 @@ version = "0.1.0"
 
 extensions = [
     "sphinx.ext.autosectionlabel",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
 ]
 
 templates_path = ["_templates"]
@@ -32,4 +34,4 @@ html_theme = "sphinx_rtd_theme"
 
 html_static_path = ["_static"]
 
-html_logo = "_static/pictures/logo.png"
+# html_logo = "_static/pictures/logo.png"

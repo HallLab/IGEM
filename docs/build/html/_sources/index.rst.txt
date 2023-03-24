@@ -17,19 +17,18 @@ The first APP created was GE (Gene x Exposome) to collect external data sets, id
    :maxdepth: 2
    :caption: Contents:
 
-   Hall Lab Homepage <https://www.hall-lab.org>
-   IGEM Github Repo <https://github.com/HallLab/igem>
    introduction
    install
    security
-   md/index
-   etl/index
-   reports/index
-   ncbi/index
+   ge/index
+   omics/index
+   epc/index
+   Hall Lab Homepage <https://www.hall-lab.org>
+   IGEM Github Repo <https://github.com/HallLab/igem>
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`

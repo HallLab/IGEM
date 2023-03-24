@@ -31,7 +31,6 @@
           
           <a href="index.html" class="icon icon-home">
             IGEM
-              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 0.1.0
@@ -46,15 +45,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Users and Role</a></li>
-<li class="toctree-l1"><a class="reference internal" href="md/index.html">Master Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="etl/index.html">ETL Process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reports/index.html">Reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ncbi/index.html">NCBI Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ge/index.html">GE Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epc/index.html">EPC Application</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
 </ul>
 
         </div>
@@ -83,28 +81,48 @@
              
   <section id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h1>
-<p>The IGEM will consist of files with processes and interfaces and a relational database.</p>
-<p>Files with IGEM are available on the GitHub REPO. To make a copy on the server designated for installation, run via the command line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:HallLab/IGEM.git
+<p>IGEM is available on PyPl or through GitHub. It can be installed in a virtual environment with Python &gt;= 3.9. Run via the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install igem
 </pre></div>
 </div>
-<p>The following dependencies were performed in Python 3.10. It may be advisable to run IGEM in a virtual environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirement.txt
+<p><strong>Database Customization</strong></p>
+<p>IGEM accepts several types of software to manage the database, including MS SQL, MySQL, Postgres, and others. By default, the system is already configured with SQLite.</p>
+<p>To change the database manager, open the {package_path}/igem/src/settings.py file and change the DATABASES parameters. The example below demonstrates a configuration using a Postgres database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;ENGINE&quot;</span><span class="p">:</span> <span class="s2">&quot;django.db.backends.postgresql_psycopg2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;IGEM&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;USER&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PASSWORD&quot;</span><span class="p">:</span> <span class="s2">&quot;your_password&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;HOST&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PORT&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Database customization to host IGEM</p>
-<p>IGEM accepts several types of software to manage the database, including MS SQL, MySQL, Postgres, and others. By default, the system is already configured with SQLite.
-To change the database manager, open the /src/settings.py file and change the DATABASES parameters. The example below demonstrates a configuration using a Postgres database:</p>
-<img alt="Alternative text" src="_images/install_09.png" />
-<dl class="simple">
-<dt>To start the database, type::</dt><dd><p>$ python manage.py makemigrations</p>
-</dd>
-</dl>
+<p>IMPORTANT: Changing the database is optional as the system is configured by default to create a local SQLite database.</p>
+<p>If you want to use a database created on another computer/server, edit the base path, for example, an SQLLITE base:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ENGINE&quot;</span><span class="p">:</span> <span class="s2">&quot;django.db.backends.sqlite3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">}</span> <span class="o">/</span> <span class="s2">&quot;db.sqlite3&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We created a python script to create the database, make the first admin user, and load the initial master data. If you want to start the database using this script, download the file:</p>
+<p>_file path</p>
+<p>Unzip and run the deploy_db.py script in the environment with IGEM.</p>
+<p>The other way to create the database, access the IGEM folder and run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py makemigrations
+</pre></div>
+</div>
+<p>IGEM will copy all the tables and other metadata in the configured Database format.</p>
 <img alt="Alternative text" src="_images/install_02.png" />
-<dl class="simple">
-<dt>Start creating the structure in the designated database::</dt><dd><p>$ python manage.py migrate</p>
-</dd>
-</dl>
+<p>The next command to create the database with all the IGEM metadata:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py migrate
+</pre></div>
+</div>
 <img alt="Alternative text" src="_images/install_03.png" />
 <p>At this point, we already have IGEM installed and the database created with the IGEM structure.
 To check if the system is working correctly, type:</p>
@@ -112,19 +130,19 @@ To check if the system is working correctly, type:</p>
 </pre></div>
 </div>
 <img alt="Alternative text" src="_images/install_04.png" />
-<dl class="simple">
-<dt>The IGEM system has a layer of security per user and functions. To create the first user, run::</dt><dd><p>$ python manage.py createsuperuser</p>
-</dd>
-</dl>
+<p>The IGEM system has a layer of security per user and functions. To create the first user, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py createsuperuser
+</pre></div>
+</div>
 <p>Enter your username, email, and security password.</p>
 <img alt="Alternative text" src="_images/install_05.png" />
 <p>The system will be ready to parameterize the master data, perform external data load and generate reports.</p>
-<p>WEB interface
-The IGEM system has a web interface for performing activities such as master data registration and simple queries in the database.</p>
-<dl class="simple">
-<dt>To start the WEB service, type::</dt><dd><p>$ python manage.py runserver</p>
-</dd>
-</dl>
+<p><strong>Web Interface</strong></p>
+<p>The IGEM system has a web interface for performing activities such as master data registration and simple queries in the database.</p>
+<p>To start the WEB service, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
 <img alt="Alternative text" src="_images/install_06.png" />
 <p>In a browser, go to <a class="reference external" href="http://127.0.0.1:8000/admin">http://127.0.0.1:8000/admin</a>.</p>
 <p>The IGEM system will show the authentication page.</p>
