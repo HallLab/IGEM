@@ -19,6 +19,8 @@ django-thread = "^0.0.1"
 psycopg2 = "^2.9.5"
 black = "^23.1.0"
 django-debug-toolbar = "^3.8.1"
+lxml = "^4.9.2"
+scikit-learn = "^1.2.2"
 
 
 [tool.poetry.group.dev.dependencies]

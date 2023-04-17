@@ -140,7 +140,7 @@ def collect(datasource="all", connector="all") -> bool:
             # XML files to CSV
             # This point is critical for memore consume
             file_name, ext = splitext(v_target_file)
-            if qs.source_file_format == "xml":
+            if str(qs.source_file_format).lower() == "xml":
                 try:
                     v_src = str(file_name + ".xml")
                     DF = pd.read_xml(v_src)

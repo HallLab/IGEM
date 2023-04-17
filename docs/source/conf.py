@@ -34,4 +34,4 @@ html_theme = "sphinx_rtd_theme"
 
 html_static_path = ["_static"]
 
-# html_logo = "_static/pictures/logo.png"
+html_logo = "_static/pictures/logo.jpg"

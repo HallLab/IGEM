@@ -8,11 +8,11 @@ def test_ge_etl_collect_test():
 
 
 def test_ge_etl_collect():
-    y = etl.collect()
+    y = etl.collect(connector="hmdb_csfmetab")
     assert y is True
 
 
-def test_ge_etl_prepare():
+def test_ge_etl_prepare(connector="hmdb_csfmetab"):
     y = etl.prepare()
     assert y is True
 
