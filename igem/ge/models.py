@@ -1,7 +1,7 @@
 from django.db import connection, models
 
 # Data Master to collecting data
-v_version = "0.1.1"
+v_version = "0.1.2"
 
 
 class Datasource(models.Model):

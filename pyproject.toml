@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "igem"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["Andre Rico <97684721+AndreRicoPSU@users.noreply.github.com>"]
 license = "BSD-3-Clause"
