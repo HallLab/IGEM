@@ -1,4 +1,0 @@
-SNP Exposome Report
--------------------
-
-
