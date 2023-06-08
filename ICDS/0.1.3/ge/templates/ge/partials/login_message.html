@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+<div class="login-message">
+  Your are logged in with 
+  {{ request.user.username }}. 
+  <a href="{% url 'etl:listview_connector' %}">See your Connectors</a>, 
+  <a href="{% url 'etl:new_connector' %}">create a new connector</a> or  
+  {% include 'authors/partials/form_logout.html' %}
+  <a class="authors-logout-link" href="#">click here</a> to logout.
+</div>
+{% endif %}

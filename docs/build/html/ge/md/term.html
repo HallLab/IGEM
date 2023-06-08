@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Term &mdash; IGEM 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Prefix" href="prefix.html" />
+    <link rel="prev" title="Category" href="category.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IGEM
+              <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">Users and Role</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">GE Application</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Master Data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datasource.html">Datasource</a></li>
+<li class="toctree-l3"><a class="reference internal" href="connector.html">Connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="group.html">Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="category.html">Category</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prefix.html">Prefix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wordterm.html">Word to Terms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../db/index.html">Database Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">ETL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter/index.html">Reports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IGEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">GE Application</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Master Data</a></li>
+      <li class="breadcrumb-item active">Term</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/ge/md/term.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="term">
+<h1>Term<a class="headerlink" href="#term" title="Permalink to this heading"></a></h1>
+<p>Term is the main component in GE.db and GE.filter and was created to specify a search term in external data sources. A Term can be assigned to a gene, a chromosome, an SNP, a disease, a chemical, an environmental factor, or any other term necessary to keep in the GE.db knowledge base.</p>
+<p>A Term will have as attributes the Group and Category records to qualify and group, helping during searches, queries, and analysis of the GE.db knowledge base.</p>
+<p>A Term inside GE.db can be kept as a code number, a prefix + code, or even a word, depending exclusively on the initial planning adopted. Thus allowing high flexibility in the use of the IGEM system.</p>
+<p>The system has an interface for mapping external words to a Term, with this link having several external combinations for a single Term. The system does not allow mapping the same external word to more than one Term, a process necessary to guarantee the integrity of the knowledge base.</p>
+<p>As described in the introduction, the purpose of GE.db will be to search an external record for all Terms found, correlate these Terms and maintain a frequency and origin, allowing, like GE.filter, to perform searches for combinations between Term in different external data sources quickly and easily.</p>
+<p>The Term data will be stored in the ge_keyge table of the IGEM DB defined in the initial parameters. The available fields are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>ID</em>: GE.db internal key</p></li>
+<li><p><em>Term</em>: Abbreviated name of the Term</p></li>
+<li><p><em>Description</em>: Description for identifying and consulting the Term</p></li>
+<li><p><em>Category_id</em>: foreign_key from ge_category</p></li>
+<li><p><em>Group_id</em>: foreign_key from ge_group</p></li>
+</ul>
+</div></blockquote>
+<p>The inclusion of new data can be performed via the process <code class="code docutils literal notranslate"><span class="pre">db</span></code> . On the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --load_data &quot;table=&#39;term, path=&#39;{your_path}/term.csv&#39;&quot;
+</pre></div>
+</div>
+<p>Other commands and functions for manipulating master data can be found in the database management tab.</p>
+<p>CAUTION: As GE.db is a correlational base with key integrity, all records linked to the deleted data will also be deleted, which includes TermMap amd WordMap information</p>
+<p><strong>Web Interface</strong></p>
+<p>Through IGEM’s friendly web interface, it will be possible to carry out Term management activities.</p>
+<p>Activate the IGEM web service if you have not already done so. Go to the IGEM folder and type the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Watching</span> <span class="k">for</span> <span class="n">file</span> <span class="n">changes</span> <span class="k">with</span> <span class="n">StatReloader</span>
+<span class="go">  Performing system checks...</span>
+<span class="go">  System check identified no issues (0 silenced).</span>
+<span class="go">  March 24, 2023 - 12:56:26</span>
+<span class="go">  Django version 4.1.5, using settings &#39;src.settings&#39;</span>
+<span class="go">  Starting development server at http://127.0.0.1:8000/</span>
+<span class="go">  Quit the server with CONTROL-C.</span>
+</pre></div>
+</div>
+<p>If it returns a port error, you can specify a different port:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver 8080
+</pre></div>
+</div>
+<p>Access the address in the link provided in Starting development server. Significantly, this address may vary depending on the initial settings performed during installation.</p>
+<p>After user authentication and on the initial administration screen, select an option Database.</p>
+<img alt="Alternative text" src="../../_images/md_01_01_datasource.png" />
+<p>On the Database screen, we will have options to consult, modify, add and eliminate Term.</p>
+<img alt="Alternative text" src="../../_images/md_05_01_term.png" />
+<p>On the first screen, we have a view of all available Term. To consult, click a desired Term.</p>
+<img alt="Alternative text" src="../../_images/md_05_02_term.png" />
+<dl class="simple">
+<dt>On the next screen, we have all the Term fields open for modifications. To modify, change the desired information and select one of the three button options:</dt><dd><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code>: Will save the changes and open a blank Term screen to add a new Term record.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Continue</span> <span class="pre">editing</span></code>: Will save the changes and continue on the Term screen.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Save</span></code>: Will save the changes and return to the screen with the list of Term.</p></li>
+</ul>
+</dd>
+</dl>
+<p>In the History button, we can consult all the modifications carried out in the Term, this function will be important to track modifications and audit the process.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">DELETE</span></code> button will permanently delete the Term record.</p>
+<p>Caution: when deleting a Term, the system will also delete all records dependent on that Term, which include KEYWORDs, and KEYLINKs</p>
+<p>Deletion can also be performed en bloc. On the Term List screen, select all the Term you want to delete, choose the Delete Selected Term action and click on the <code class="code docutils literal notranslate"><span class="pre">GO</span></code> button.</p>
+<p>Be careful, this elimination operation will be definitive for the Term and for all other records dependent on it, as already explained.</p>
+<img alt="Alternative text" src="../../_images/md_05_03_term.png" />
+<dl class="simple">
+<dt>To add new Term, we will have three different ways:</dt><dd><ul class="simple">
+<li><p>by the <code class="code docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span></code> button on the left sidebar.</p></li>
+<li><p>Through the <code class="code docutils literal notranslate"><span class="pre">ADD</span> <span class="pre">Term</span> <span class="pre">+</span></code> button in the right field of the Term list.</p></li>
+<li><p>Via the <code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">add</span> <span class="pre">another</span></code> button located within a Term record.</p></li>
+</ul>
+</dd>
+<dt>For the Term, we will have two filter locations:</dt><dd><ul class="simple">
+<li><p>First located at the top of the Term List screen where we can search broadly.</p></li>
+<li><p>Second on the right sidebar, being able to select by Category and Group of Term.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="category.html" class="btn btn-neutral float-left" title="Category" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prefix.html" class="btn btn-neutral float-right" title="Prefix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hall Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

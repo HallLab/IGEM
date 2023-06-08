@@ -131,4 +131,8 @@ db copy.sqlite3
 static/
 psa
 _utils
-
+data
+backup
+results
+*.csv
+test_data_files

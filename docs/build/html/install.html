@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install &mdash; IGEM 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Users and Role" href="security.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            IGEM
+              <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Users and Role</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ge/index.html">GE Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epc/index.html">EPC Application</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IGEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Install</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this heading"></a></h1>
+<p>IGEM is available on PyPl or through GitHub. It can be installed in a virtual environment with Python &gt;= 3.9. Run via the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install igem
+</pre></div>
+</div>
+<p><strong>Database Customization</strong></p>
+<p>IGEM accepts several types of software to manage the database, including MS SQL, MySQL, Postgres, and others. By default, the system is already configured with SQLite.</p>
+<p>To change the database manager, open the {package_path}/igem/src/settings.py file and change the DATABASES parameters. The example below demonstrates a configuration using a Postgres database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;ENGINE&quot;</span><span class="p">:</span> <span class="s2">&quot;django.db.backends.postgresql_psycopg2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;IGEM&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;USER&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PASSWORD&quot;</span><span class="p">:</span> <span class="s2">&quot;your_password&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;HOST&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PORT&quot;</span><span class="p">:</span> <span class="s2">&quot;5432&quot;</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>IMPORTANT: Changing the database is optional as the system is configured by default to create a local SQLite database.</p>
+<p>If you want to use a database created on another computer/server, edit the base path, for example, an SQLLITE base:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ENGINE&quot;</span><span class="p">:</span> <span class="s2">&quot;django.db.backends.sqlite3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NAME&quot;</span><span class="p">:</span> <span class="p">{</span><span class="n">path</span><span class="p">}</span> <span class="o">/</span> <span class="s2">&quot;db.sqlite3&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We created a python script to create the database, make the first admin user, and load the initial master data. If you want to start the database using this script, download the file:</p>
+<p>_file path</p>
+<p>Unzip and run the deploy_db.py script in the environment with IGEM.</p>
+<p>The other way to create the database, access the IGEM folder and run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py makemigrations
+</pre></div>
+</div>
+<p>IGEM will copy all the tables and other metadata in the configured Database format.</p>
+<img alt="Alternative text" src="_images/install_02.png" />
+<p>The next command to create the database with all the IGEM metadata:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py migrate
+</pre></div>
+</div>
+<img alt="Alternative text" src="_images/install_03.png" />
+<p>At this point, we already have IGEM installed and the database created with the IGEM structure.
+To check if the system is working correctly, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ Python manage.py check
+</pre></div>
+</div>
+<img alt="Alternative text" src="_images/install_04.png" />
+<p>The IGEM system has a layer of security per user and functions. To create the first user, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py createsuperuser
+</pre></div>
+</div>
+<p>Enter your username, email, and security password.</p>
+<img alt="Alternative text" src="_images/install_05.png" />
+<p>The system will be ready to parameterize the master data, perform external data load and generate reports.</p>
+<p><strong>Web Interface</strong></p>
+<p>The IGEM system has a web interface for performing activities such as master data registration and simple queries in the database.</p>
+<p>To start the WEB service, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+<img alt="Alternative text" src="_images/install_06.png" />
+<p>In a browser, go to <a class="reference external" href="http://127.0.0.1:8000/admin">http://127.0.0.1:8000/admin</a>.</p>
+<p>The IGEM system will show the authentication page.</p>
+<img alt="Alternative text" src="_images/install_07.png" />
+<p>Enter the username and password created in the previous steps. The administration page will be loaded after authentication.</p>
+<img alt="Alternative text" src="_images/install_08.png" />
+<p>The features of this interface will be explored in detail in Master Data and Access and Permissions.</p>
+<p>File structure:</p>
+<dl class="simple">
+<dt>Inside the src directory, we will have:</dt><dd><ul class="simple">
+<li><p><em>/ge/</em>: all source codes and interfaces for the functioning of APP GE.</p></li>
+<li><p><em>/loader/</em>: all input files for loading master data and output directory of the FILTER process.</p></li>
+<li><p><em>/psa/</em>: Persist Store Area to store the database files downloaded and processed by the ETL process. Each DATASET will have its subfolder within the PSA.</p></li>
+<li><p><em>/src/</em>: hosts the source code of IGEM components, configurations and parameterizations.</p></li>
+<li><p><em>/templates/</em>: hosts the standard web interfaces in IGEM.</p></li>
+</ul>
+</dd>
+</dl>
+<p>PSA - Store Area Persists</p>
+<p>The PSA is a folder that stores the Dataset files loaded in their original format and transformed during the ETL process.
+Each Database will be a subfolder, and each Dataset a subfolder concerning the Database. These structures will be created automatically, and if deleted, they will be created again on the following workflow run for the corresponding dataset.
+Each external Dataset source will be a design solution for the original uploaded file. If you want to keep this file for queries and analyses, configure it in the Dataset register to keep the original file. Important that this file will be kept unzipped.
+To reduce the amount of system space, it is not recommended to keep these files.
+The subfolder will also have a transformed version normalized by the rules of the applied dataset.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="security.html" class="btn btn-neutral float-right" title="Users and Role" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hall Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
