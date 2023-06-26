@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gene Exposome Report &mdash; IGEM 0.1.0 documentation</title>
+  <title>Gene Exposome Report &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -34,7 +34,7 @@
               <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -48,23 +48,23 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../security.html">Users and Role</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">GE Application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../md/index.html">Master Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../db/index.html">Database Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">ETL</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Reports</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="parameters_file.html">Parameters File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="word_map.html">Word Map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="term_map.html">Term Map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="word_to_term.html">Words to Terms</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Gene Exposome Report</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Gene Exposome Report</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ge.filter.gene_exposome"><code class="docutils literal notranslate"><span class="pre">gene_exposome()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="snp_exposome.html">SNP Exposome Report</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index.html">Server Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
@@ -98,6 +98,53 @@
              
   <section id="gene-exposome-report">
 <h1>Gene Exposome Report<a class="headerlink" href="#gene-exposome-report" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ge.filter.gene_exposome">
+<span class="sig-prename descclassname"><span class="pre">ge.filter.</span></span><span class="sig-name descname"><span class="pre">gene_exposome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ge.filter.gene_exposome" title="Permalink to this definition"></a></dt>
+<dd><p>Queries GE.db and returns links between genes and exposomes based on input parameters or the parameter file.</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">path_in</span></code>: str</dt><dd><p>parameter file path with filter information, aggregation, and result file path.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">path_out</span></code>: str</dt><dd><p>result file path.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">term</span></code>: list[str]</dt><dd><p>List of terms to filter passed through the function. If you inform the file with the parameters,
+the values passed by this parameter will be disregarded.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="return">
+<h2>Return<a class="headerlink" href="#return" title="Permalink to this heading"></a></h2>
+<p>It may return a boolean value if you have informed an output per file (<code class="docutils literal notranslate"><span class="pre">path_out</span></code>) or a DataFrame
+if you have not informed an output file.</p>
+</section>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">igem.ge</span> <span class="kn">import</span> <span class="nb">filter</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">gene_exposome</span><span class="p">(</span>
+      <span class="n">path_in</span><span class="o">=</span><span class="s2">&quot;../../file.csv&quot;</span><span class="p">,</span>
+      <span class="n">path_out</span><span class="o">=</span><span class="s2">&quot;../../outcome.csv&quot;</span>
+      <span class="p">)</span>
+<span class="n">df_result</span> <span class="o">=</span> <span class="nb">filter</span><span class="o">.</span><span class="n">gene_exposome</span><span class="p">(</span>
+      <span class="n">term</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;gene:246126&quot;</span><span class="p">]</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+<p>This function queries GE.db and generates results showing links between genes and exposomes based on the provided parameters.
+The results can be saved in a specified output file path or returned as a DataFrame.</p>
+</section>
+</dd></dl>
+
 </section>
 
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reports &mdash; IGEM 0.1.0 documentation</title>
+  <title>Reports &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Parameters File" href="parameters_file.html" />
-    <link rel="prev" title="Workflow" href="../etl/workflow.html" /> 
+    <link rel="prev" title="Database Management" href="../db/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
               <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -50,9 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../security.html">Users and Role</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">GE Application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../md/index.html">Master Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../db/index.html">Database Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">ETL</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Reports</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="parameters_file.html">Parameters File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="word_map.html">Word Map</a></li>
@@ -60,11 +58,12 @@
 <li class="toctree-l3"><a class="reference internal" href="word_to_term.html">Words to Terms</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gene_exposome.html">Gene Exposome Report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="snp_exposome.html">SNP Exposome Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tags.html">Tags</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index.html">Server Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
@@ -97,14 +96,51 @@
              
   <section id="reports">
 <h1>Reports<a class="headerlink" href="#reports" title="Permalink to this heading"></a></h1>
+<p>The GE.filter module serves as a crucial component of the GE (Genomics and Exposomes) system, specifically designed to facilitate the exploration and analysis of the Knowledge Database, referred to as GE.db. This Knowledge Database contains a wealth of information related to genomics, exposomes, and their interconnectedness.</p>
+<p>By utilizing the functions provided by GE.filter, users gain the ability to efficiently retrieve and filter data from GE.db, enabling them to uncover valuable insights and relationships.</p>
+<p>Whether it’s examining term connections, exploring reports on GxE (Gene-Environment) interactions or ExE (Exposome-Environment) associations, accessing gene-level information in relation to SNPs (Single Nucleotide Polymorphisms), or converting words to IGEM terms, the GE.filter module empowers users to extract pertinent information and generate comprehensive reports.</p>
+<p>These functionalities play a crucial role in understanding the complex interplay between genomics and exposomes, supporting various research and analytical endeavors</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>term_map: The term_map function provides the mapping between IGEM terms and their associated metadata. It enables you to explore the attributes and properties of different terms stored in the GE.db, aiding in data exploration and analysis.</p></li>
+<li><p>word_to_term: This function allows you to convert individual words or a list of words into their corresponding IGEM terms. It helps in mapping user-provided words to the relevant terms stored in the GE.db, providing a standardized representation for further processing.</p></li>
+<li><p>gene_exposome: The gene_exposome function retrieves information about the gene-exposome relationship from the GE.db. It helps in understanding the interaction between genes and environmental factors, facilitating studies related to genomics and exposomes.</p></li>
+<li><p>snp_exposome: With the snp_exposome function, you can access reports and information about the impact of single nucleotide polymorphisms (SNPs) on exposomes. It helps in understanding the influence of genetic variations on environmental exposures and their potential effects on health outcomes.</p></li>
+<li><p>word_map: In the Word-Map function, all words mapped from an external dataset are stored in a temporary table within GE.db. This feature proves particularly useful for researchers who wish to list the relationships between words on a record-by-record basis, without relying on the IGEM pre-computing mapping process that converts external words to the standardized IGEM Terms. It allows users to perform analysis and retrieve word relationships specific to their research needs. However, it’s important to note that this temporary table should be used judiciously due to its high memory consumption on the database. Users are advised to run the function on a specific dataset, extract the desired relationships for their analysis, and subsequently clean up this information to optimize database performance. By providing a flexible and efficient way to explore word relationships, the Word-Map function empowers researchers in their investigations and enhances their understanding of the data.</p></li>
+</ul>
+</div></blockquote>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="parameters_file.html">Parameters File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="word_map.html">Word Map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="term_map.html">Term Map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="word_to_term.html">Words to Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gene_exposome.html">Gene Exposome Report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snp_exposome.html">SNP Exposome Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters_file.html">Parameters File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parameters_file.html#ge.filter.parameters_file"><code class="docutils literal notranslate"><span class="pre">parameters_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="word_map.html">Word Map</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="word_map.html#ge.filter.word_map"><code class="docutils literal notranslate"><span class="pre">word_map()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="term_map.html">Term Map</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="term_map.html#ge.filter.term_map"><code class="docutils literal notranslate"><span class="pre">term_map()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="word_to_term.html">Words to Terms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="word_to_term.html#ge.filter.word_to_term"><code class="docutils literal notranslate"><span class="pre">word_to_term()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gene_exposome.html">Gene Exposome Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gene_exposome.html#ge.filter.gene_exposome"><code class="docutils literal notranslate"><span class="pre">gene_exposome()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="snp_exposome.html">SNP Exposome Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="snp_exposome.html#ge.filter.snp_exposome"><code class="docutils literal notranslate"><span class="pre">snp_exposome()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tags.html">Tags</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tags.html#ge.filter.create_tag"><code class="docutils literal notranslate"><span class="pre">create_tag()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tags.html#ge.filter.get_tag"><code class="docutils literal notranslate"><span class="pre">get_tag()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tags.html#ge.filter.get_tag_data"><code class="docutils literal notranslate"><span class="pre">get_tag_data()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -113,7 +149,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../etl/workflow.html" class="btn btn-neutral float-left" title="Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../db/index.html" class="btn btn-neutral float-left" title="Database Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="parameters_file.html" class="btn btn-neutral float-right" title="Parameters File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

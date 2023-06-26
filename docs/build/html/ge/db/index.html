@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Management &mdash; IGEM 0.1.0 documentation</title>
+  <title>Database Management &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,8 +17,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ETL" href="../etl/index.html" />
-    <link rel="prev" title="Word to Terms" href="../md/wordterm.html" /> 
+    <link rel="next" title="Reports" href="../filter/index.html" />
+    <link rel="prev" title="GE Application" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
               <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -48,19 +48,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../security.html">Users and Role</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">GE Application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../md/index.html">Master Data</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Database Management</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#python-function">Python function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#command-line">Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#direct-access-to-ge-db-tables">Direct Access to GE.db Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#synchronization-with-the-hall-lab-db-server">Synchronization with the Hall Lab DB Server</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">ETL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../filter/index.html">Reports</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index.html">Server Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
@@ -93,7 +90,18 @@
              
   <section id="database-management">
 <h1>Database Management<a class="headerlink" href="#database-management" title="Permalink to this heading"></a></h1>
-<p>With the DB process, it will be possible to carry out data extraction operations, data loading, deletion, and cleaning of GE.db tables</p>
+<dl class="simple">
+<dt>The Database Management within the GE module provides two main functions:</dt><dd><ul class="simple">
+<li><p>Direct access to database tables for retrieving information</p></li>
+<li><p>Synchronization of the IGEM Client DB with the latest data from the Hall Lab DB Server.</p></li>
+</ul>
+</dd>
+</dl>
+<section id="direct-access-to-ge-db-tables">
+<h2>Direct Access to GE.db Tables<a class="headerlink" href="#direct-access-to-ge-db-tables" title="Permalink to this heading"></a></h2>
+<p>Enables direct access to the database tables, allowing users to retrieve information directly from the IGEM Client DB.</p>
+<p>This functionality provides a convenient way to query and analyze the data stored in the database tables.</p>
+<p>By leveraging this function, users can efficiently retrieve specific information from the IGEM Client DB and utilize it for their research and analysis purposes.</p>
 <dl class="simple">
 <dt>The available tables are:</dt><dd><ul class="simple">
 <li><p>datasource</p></li>
@@ -109,8 +117,7 @@
 </ul>
 </dd>
 </dl>
-<section id="python-function">
-<h2>Python function<a class="headerlink" href="#python-function" title="Permalink to this heading"></a></h2>
+<p>Python function</p>
 <p><strong>get_data</strong></p>
 <blockquote>
 <div><p>The get_data() function allows extracting data from the GE database
@@ -231,222 +238,7 @@ TRUE. Otherwise, it will return FALSE)</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>load_data</strong></p>
-<blockquote>
-<div><p>Loads data from a CSV file into the IGEM database. This process does
-not update existing data, it only inserts new records.</p>
-<p>Parameters:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>table: str</dt><dd><p>datasource, connector, ds_column, term_group, term_category, term,
-prefix, wordterm, termmap, wordmap</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>path: str</dt><dd><p>full path and file name to load</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>Layout of data file:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Datasource:</dt><dd><p>(datasource, description, category, website)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Connector:</dt><dd><p>(connector, datasource, description, update_ds, source_path,
-source_web, source_compact, source_file_name, source_file_format,
-source_file_sep, source_file_skiprow, target_file_name,
-target_file_format)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Ds_column:</dt><dd><p>(connector, status, column_number, column_name, pre_value, single_word)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term_group:</dt><dd><p>(term_group, description)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term_category:</dt><dd><p>(term_category, description)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term:</dt><dd><p>(term, category, group, description)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Prefix:</dt><dd><p>(pre_value)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Wordterm:</dt><dd><p>(term, word, status, commute)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Termmap:</dt><dd><p>(ckey, connector, term_1, term_2, qtd_links)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Wordmap:</dt><dd><p>(cword, datasource, connector, term_1, term_2, word_1, word_2,
-qtd_links)</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>We can generate an example file with the get_data() function and
-manipulate and load it with the new data.</p>
-<p>Return:</p>
-<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
-some errors).</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.ge</span> <span class="kn">import</span> <span class="n">db</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span>
-<span class="go">      table=&quot;datasource”</span>
-<span class="go">      path=”{your_path}/datasource.csv”</span>
-<span class="go">      )</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p><strong>delete_data</strong></p>
-<blockquote>
-<div><p>Allows deleting a record from the given table. The deletion will be
-carried out in all records related to the informed parameter. For example,
-if we delete a datasource, the connectors, ds_columns, and termmap
-associated with the datasource will be deleted.</p>
-<p>Parameters:</p>
-<p>Only the table parameter will always be requested, the others will depend
-on the selected table, functioning as a record that will be eliminated.</p>
-<ul class="simple">
-<li><p>table: str</p></li>
-</ul>
-<p>(datasource, connector, ds_column, term_group, term_category, term,
-prefix, wordterm, termmap, wordmap, workflow)
-- datasource: Dict{“str”:list[”str”]}
-- connector: Dict{“str”:list[”str”]}
-- word: Dict{“str”:list[”str”]}
-- term: Dict{“str”:list[”str”]}
-- term_category: Dict{“str”:list[”str”]}
-- term_group: Dict{“str”:list[”str”]}
-- prefix: Dict{“str”:list[”str”]}</p>
-<p>(Filter argument. It is used to filter the field, with the dictionary
-key being the selection argument and the dictionary value being the
-field selected as the filter. Without this parameter, the
-function will return all values of the field.)</p>
-<p>Return:</p>
-<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
-some errors).</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.ge</span> <span class="kn">import</span> <span class="n">db</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="o">.</span><span class="n">delete_data</span><span class="p">(</span>
-<span class="go">      table=&#39;datasource&#39;,</span>
-<span class="go">      datasource={&#39;datasource__in&#39;: [ds_01]}</span>
-<span class="go">      )</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p><strong>truncate_table</strong></p>
-<blockquote>
-<div><p>will delete all records from a table, never use this function, with excess
-if the need is to restart a new instance of the database, free up log
-table space or in test environments.</p>
-<p>Parameters:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>table: str</dt><dd><p>(datasource, connector, dst, term_group, term_category, term,
-prefix,  wordterm, termmap, wordmap, workflow, logs)</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>If inform table=”all”, the function will truncate all table on GE database.
-The other tables of the IGEM system will be maintained.</p>
-<p>Return:</p>
-<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
-some errors).</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.ge</span> <span class="kn">import</span> <span class="n">db</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="o">.</span><span class="n">truncate_table</span><span class="p">(</span>
-<span class="go">         table=&#39;datasource&#39;</span>
-<span class="go">         )</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p><strong>backup</strong></p>
-<blockquote>
-<div><p>Backup the database with the internal keys. It can be performed at once
-for all GE.db tables</p>
-<p>Parameters:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>table: str</dt><dd><p>(datasource, connector, dst, term_group, term_category, term,
-prefix,  wordterm, termmap, wordmap, workflow, logs)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>path_out: str</dt><dd><p>Folder path to store the generated backup files</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>If inform table=”all”, the function will backup all table on GE database.</p>
-<p>Return:</p>
-<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
-some errors).</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">igem</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">igem</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">backup</span><span class="p">(</span>
-<span class="go">         table=&quot;&quot;,</span>
-<span class="go">         path_out=&quot;/root/back&quot;)</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p><strong>restore</strong></p>
-<blockquote>
-<div><p>Restore the database with the internal keys. It can be performed at once
-for all GE.db tables</p>
-<p>Parameters:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>table: str</dt><dd><p>(datasource, connector, dst, term_group, term_category, term,
-prefix,  wordterm, termmap, wordmap, workflow, logs)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>path_out: str</dt><dd><p>Folder path to store the generated backup files</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>If inform table=”all”, the function will restore all table on GE database.</p>
-<p>Return:</p>
-<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
-some errors).</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">igem</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">igem</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span>
-<span class="go">         table=&quot;&quot;,</span>
-<span class="go">         path_out=&quot;/root/back&quot;)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</section>
-<section id="command-line">
-<h2>Command Line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h2>
+<p>Command Line</p>
 <p>Within the parameters, inform the same ones used for the functions, as well as the arguments, example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ $ python manage.py db --get_data &#39;table=&quot;datasource&quot;, datasource={“datasource__in”: [“ds_01”,”ds_02”]}&#39;
 </pre></div>
@@ -455,26 +247,29 @@ some errors).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --get_data {parameters}
 </pre></div>
 </div>
-<p>Load data:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --load_data {parameters}
+</section>
+<section id="synchronization-with-the-hall-lab-db-server">
+<h2>Synchronization with the Hall Lab DB Server<a class="headerlink" href="#synchronization-with-the-hall-lab-db-server" title="Permalink to this heading"></a></h2>
+<p>The second function of the Database Management is to synchronize the IGEM Client DB with the latest data from the Hall Lab DB Server.</p>
+<p>This synchronization process ensures that the IGEM Client DB is up to date with the most recent information available.</p>
+<p>The function offers both offline and online synchronization options.</p>
+<dl>
+<dt>Offline Sync:</dt><dd><p>In the offline synchronization mode, users manually acquire the necessary DB files from a designated source. They can obtain the latest versions of the DB files from an authorized repository and update the IGEM Client DB accordingly. This mode is suitable for situations where internet connectivity is limited or when users prefer to have full control over the synchronization process.
+Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.ge</span> <span class="kn">import</span> <span class="n">db</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">sync_db</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{your_path}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Delete data:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --delete_data {parameters}
+</dd>
+<dt>Online Sync:</dt><dd><p>The online synchronization mode automates the process of fetching the latest data from the web repository. The submodule accesses the web repository and retrieves the most recent versions of the DB files, ensuring that the IGEM Client DB is synchronized with the Hall Lab DB Server. This mode is ideal for users who prefer a seamless and automated synchronization process, without the need for manual intervention.
+Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.ge</span> <span class="kn">import</span> <span class="n">db</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">sync_db</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Delete all table:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --truncate_table {parameters}
-</pre></div>
-</div>
-<p>Backup (get data with internal ID):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --backup {parameters}
-</pre></div>
-</div>
-<p>Restore (load data with internal ID):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py db --restore {parameters}
-</pre></div>
-</div>
+</dd>
+</dl>
+<p>The GE.db submodule provides researchers with a comprehensive set of tools to access and synchronize the IGEM Client DB. Whether it’s directly querying database tables or ensuring up-to-date information through synchronization, this submodule facilitates efficient data management and enhances the research capabilities of users.</p>
 </section>
 </section>
 
@@ -482,8 +277,8 @@ some errors).</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../md/wordterm.html" class="btn btn-neutral float-left" title="Word to Terms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../etl/index.html" class="btn btn-neutral float-right" title="ETL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="GE Application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../filter/index.html" class="btn btn-neutral float-right" title="Reports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

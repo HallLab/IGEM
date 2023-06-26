@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EPC Application &mdash; IGEM 0.1.0 documentation</title>
+  <title>EPC Application &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Load" href="load.html" />
-    <link rel="prev" title="dbSNP" href="../omics/dbsnp.html" /> 
+    <link rel="prev" title="Workflow" href="../server/etl/workflow.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
               <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -48,16 +48,23 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../security.html">Users and Role</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ge/index.html">GE Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Application</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">EPC Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="load.html">Load</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze.html">Analyze</a></li>
-<li class="toctree-l2"><a class="reference internal" href="describe.html">Describe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modify.html">Modify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot.html">Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="survey.html">Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-external-datasets">Loading External Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-description">Data Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-modification">Data Modification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-analysis">Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#survey-design-and-modeling">Survey Design and Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plot-functions">Plot Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="load.html">Load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">Analyze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="describe.html">Describe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modify.html">Modify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot.html">Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="survey.html">Survey</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
@@ -90,24 +97,99 @@
              
   <section id="epc-application">
 <h1>EPC Application<a class="headerlink" href="#epc-application" title="Permalink to this heading"></a></h1>
-<p>descricao</p>
+<p>The EPC (Extend Process Call) module in the IGEM software provides a comprehensive set of functionalities that enable users to create an end-to-end pipeline for data analysis.
+This module offers various tools and functions to load external datasets, perform data description, and modify the data to adapt it to different types of analyses such as EWAS, Association Study, and ExE Pairwise analysis.
+Here is an overview of the key functionalities offered by the EPC module:</p>
+<section id="loading-external-datasets">
+<h2>Loading External Datasets<a class="headerlink" href="#loading-external-datasets" title="Permalink to this heading"></a></h2>
+<p>Allows users to seamlessly load external datasets into the script.
+It supports loading data from CSV and TSV files. This functionality enables researchers to integrate their data with the IGEM ecosystem for further analysis.</p>
+</section>
+<section id="data-description">
+<h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this heading"></a></h2>
+<p>Users can obtain a comprehensive description of their datasets. This includes calculating correlations between variables, generating frequency tables for categorical variables, determining data types of variables, calculating the percentage of missing values, computing skewness of variables, and generating summary statistics for variables.
+These descriptive statistics provide valuable insights into the dataset and help researchers understand its characteristics.</p>
+</section>
+<section id="data-modification">
+<h2>Data Modification<a class="headerlink" href="#data-modification" title="Permalink to this heading"></a></h2>
+<p>Offers a wide range of data modification functions to prepare the dataset for specific analyses.
+Users can categorize variables based on defined criteria, filter columns based on specific conditions, convert variables to binary or categorical format, merge observations or variables based on specified conditions, move variables within the dataset, record specific values for variables, remove outliers, filter rows with incomplete observations, and perform transformations on variables.
+These data modification functions enable researchers to tailor the dataset to their analysis requirements.</p>
+</section>
+<section id="data-analysis">
+<h2>Data Analysis<a class="headerlink" href="#data-analysis" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>The EPC module includes functionalities specifically designed for conducting:</dt><dd><ul class="simple">
+<li><p>Environment-Wide Association Studies (EWAS). Researchers can leverage these functions to analyze the association between epigenetic modifications and phenotypic traits. The EPC module provides dedicated tools to perform statistical tests, correct p-values, and generate graphical representations such as Manhattan plots.</p></li>
+<li><p>Association Study by providing tools to analyze the relationships between variables in the dataset. Users can perform association tests and explore the strength and significance of associations between variables. This functionality is particularly useful for identifying potential relationships and dependencies within the data.</p></li>
+<li><p>ExE (Exposure by Exposure) Pairwise analysis, allowing researchers to examine the pairwise relationships between exposures. By applying this analysis, users can identify potential interactions or dependencies between different exposures in the dataset.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="survey-design-and-modeling">
+<h2>Survey Design and Modeling<a class="headerlink" href="#survey-design-and-modeling" title="Permalink to this heading"></a></h2>
+<p>Users can define survey designs with specific sampling strategies and create survey models for analyzing survey data.
+These features cater to researchers working with survey datasets and provide specialized tools for accurate analysis.</p>
+</section>
+<section id="plot-functions">
+<h2>Plot Functions<a class="headerlink" href="#plot-functions" title="Permalink to this heading"></a></h2>
+<p>The EPC module provides various plot functions to visualize the data and gain deeper insights. These plot functions include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Distributions: Generate visual representations of variable distributions, such as histograms and kernel density plots. These plots help researchers understand the underlying distribution of variables in the dataset.</p></li>
+<li><p>Histograms: Create histograms to visualize the distribution of a single variable. This plot provides a visual summary of the frequency distribution of values in the dataset.</p></li>
+<li><p>Manhattan Plot: Generate a Manhattan plot, commonly used in genetic association studies, to visualize the genomic location of associations. This plot displays the significance of associations along the genome.</p></li>
+<li><p>Manhattan Plot with Bonferroni Correction: Similar to the Manhattan plot, this function incorporates Bonferroni correction to account for multiple hypothesis testing. It helps identify significant associations while controlling for the family-wise error rate.</p></li>
+<li><p>Manhattan Plot with False Discovery Rate (FDR): This function applies the False Discovery Rate (FDR) correction to the associations in the Manhattan plot. It allows researchers to control the expected proportion of false discoveries while identifying significant associations.</p></li>
+<li><p>Top Results Plot: Create a plot displaying the top results of an analysis, such as the most significant associations or the highest-ranked variables. This plot helps researchers focus on the most important findings in the data.</p></li>
+</ul>
+</div></blockquote>
+<p>By utilizing the functionalities offered by the EPC module, users can create a streamlined and comprehensive pipeline for data analysis within the IGEM software. This module empowers researchers to load external datasets, describe the data, modify it to suit specific analyses, and perform advanced statistical tests and visualizations.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="load.html">Load</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analyze.html">Analyze</a></li>
 <li class="toctree-l1"><a class="reference internal" href="describe.html">Describe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify.html">Modify</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plot.html">Plot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="survey.html">Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">Plot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#histogram"><cite>histogram</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot.html#id3">)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#distributions"><cite>distributions</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#id4">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#id5">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot.html#id8">)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#manhattan"><cite>manhattan</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html#id9">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="survey.html">Survey</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="survey.html#survey-design-specification">Survey Design Specification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="survey.html#your_module_name.SurveyDesignSpec"><code class="docutils literal notranslate"><span class="pre">SurveyDesignSpec()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="survey.html#survey-model">Survey Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="survey.html#your_module_name.SurveyModel"><code class="docutils literal notranslate"><span class="pre">SurveyModel()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../omics/dbsnp.html" class="btn btn-neutral float-left" title="dbSNP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../server/etl/workflow.html" class="btn btn-neutral float-left" title="Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="load.html" class="btn btn-neutral float-right" title="Load" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

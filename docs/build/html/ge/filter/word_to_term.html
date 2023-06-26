@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Words to Terms &mdash; IGEM 0.1.0 documentation</title>
+  <title>Words to Terms &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -34,7 +34,7 @@
               <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -48,23 +48,23 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../security.html">Users and Role</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">GE Application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../md/index.html">Master Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../db/index.html">Database Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">ETL</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Reports</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="parameters_file.html">Parameters File</a></li>
 <li class="toctree-l3"><a class="reference internal" href="word_map.html">Word Map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="term_map.html">Term Map</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Words to Terms</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Words to Terms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ge.filter.word_to_term"><code class="docutils literal notranslate"><span class="pre">word_to_term()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="gene_exposome.html">Gene Exposome Report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="snp_exposome.html">SNP Exposome Report</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/index.html">Server Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
@@ -98,6 +98,38 @@
              
   <section id="words-to-terms">
 <h1>Words to Terms<a class="headerlink" href="#words-to-terms" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ge.filter.word_to_term">
+<span class="sig-prename descclassname"><span class="pre">ge.filter.</span></span><span class="sig-name descname"><span class="pre">word_to_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ge.filter.word_to_term" title="Permalink to this definition"></a></dt>
+<dd><p>Perform a search for terms from a string base with the same ETL engine.</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">path</span></code>: str</dt><dd><p>File with the strings for conversion into terms. Only the first column of the file will be processed.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="return">
+<h2>Return<a class="headerlink" href="#return" title="Permalink to this heading"></a></h2>
+<p>A file will be generated with the results in the same folder as the input strings file.</p>
+</section>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">igem.ge</span> <span class="kn">import</span> <span class="nb">filter</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">word_to_term</span><span class="p">(</span>
+      <span class="n">path</span><span class="o">=</span><span class="s1">&#39;../../file.csv&#39;</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+<p>This function searches for terms from a string base using the ETL engine. It takes a file path as input,
+reads the strings from the file, and converts them into terms. The results are saved in a CSV file in the
+same folder as the input file.</p>
+</section>
+</dd></dl>
+
 </section>
 
 

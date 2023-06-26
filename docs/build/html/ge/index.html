@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GE Application &mdash; IGEM 0.1.0 documentation</title>
+  <title>GE Application &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,7 +17,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Master Data" href="md/index.html" />
+    <link rel="next" title="Database Management" href="db/index.html" />
     <link rel="prev" title="Users and Role" href="../security.html" /> 
 </head>
 
@@ -34,7 +34,7 @@
               <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -50,13 +50,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../security.html">Users and Role</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">GE Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="md/index.html">Master Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="db/index.html">Database Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="etl/index.html">ETL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filter/index.html">Reports</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../epc/index.html">EPC Application</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
@@ -88,39 +86,53 @@
              
   <section id="ge-application">
 <h1>GE Application<a class="headerlink" href="#ge-application" title="Permalink to this heading"></a></h1>
-<p>descrever o GE overview</p>
+<p>The GE module is a powerful component of the system that encompasses various functionalities related to data processing and analysis in the context of genomics and exposomes. It consists of two important components: GE.db and GE.Filter.</p>
+<ol class="arabic simple">
+<li><p>The GE.db provides direct access to the underlying database tables, allowing users to retrieve information directly from the IGEM Client DB. It offers the capability to query and analyze data stored in the database tables, empowering users to efficiently extract specific information for their research purposes.
+Additionally, the GE.db facilitates synchronization between the IGEM Client DB and the Hall Lab DB Server, ensuring the availability of up-to-date data. Users can choose between offline and online synchronization options based on their requirements.</p></li>
+<li><p>The GE.Filter offers a range of functions to filter and retrieve information from the IGEM Client DB, specifically focusing on the relationships and reports related to genomics (G), exposomes (E), and their interactions (GxE and ExE).</p></li>
+</ol>
+<p>By leveraging the functionalities of the GE.db and GE.Filter, researchers can efficiently access and analyze data, extract relevant information, and explore the relationships between various elements in the genomics and exposomes domains.</p>
+<p>These capabilities significantly enhance the research capabilities and contribute to a deeper understanding of complex biological systems.</p>
+<p>Note: The GE module is part of a larger system, and additional submodules and functionalities may exist to further enhance the research and analysis capabilities in genomics and exposomes.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="md/index.html">Master Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="md/datasource.html">Datasource</a></li>
-<li class="toctree-l2"><a class="reference internal" href="md/connector.html">Connector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="md/group.html">Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="md/category.html">Category</a></li>
-<li class="toctree-l2"><a class="reference internal" href="md/term.html">Term</a></li>
-<li class="toctree-l2"><a class="reference internal" href="md/prefix.html">Prefix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="md/wordterm.html">Word to Terms</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="db/index.html">Database Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="db/index.html#python-function">Python function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db/index.html#command-line">Command Line</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="etl/index.html">ETL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="etl/collect.html">Collect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="etl/prepare.html">Prepare</a></li>
-<li class="toctree-l2"><a class="reference internal" href="etl/map.html">Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="etl/reduce.html">Reduce</a></li>
-<li class="toctree-l2"><a class="reference internal" href="etl/workflow.html">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db/index.html#direct-access-to-ge-db-tables">Direct Access to GE.db Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db/index.html#synchronization-with-the-hall-lab-db-server">Synchronization with the Hall Lab DB Server</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="filter/index.html">Reports</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="filter/parameters_file.html">Parameters File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filter/word_map.html">Word Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filter/term_map.html">Term Map</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filter/word_to_term.html">Words to Terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filter/gene_exposome.html">Gene Exposome Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filter/snp_exposome.html">SNP Exposome Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filter/parameters_file.html">Parameters File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filter/parameters_file.html#ge.filter.parameters_file"><code class="docutils literal notranslate"><span class="pre">parameters_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="filter/word_map.html">Word Map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filter/word_map.html#ge.filter.word_map"><code class="docutils literal notranslate"><span class="pre">word_map()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="filter/term_map.html">Term Map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filter/term_map.html#ge.filter.term_map"><code class="docutils literal notranslate"><span class="pre">term_map()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="filter/word_to_term.html">Words to Terms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filter/word_to_term.html#ge.filter.word_to_term"><code class="docutils literal notranslate"><span class="pre">word_to_term()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="filter/gene_exposome.html">Gene Exposome Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filter/gene_exposome.html#ge.filter.gene_exposome"><code class="docutils literal notranslate"><span class="pre">gene_exposome()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="filter/snp_exposome.html">SNP Exposome Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filter/snp_exposome.html#ge.filter.snp_exposome"><code class="docutils literal notranslate"><span class="pre">snp_exposome()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="filter/tags.html">Tags</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="filter/tags.html#ge.filter.create_tag"><code class="docutils literal notranslate"><span class="pre">create_tag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="filter/tags.html#ge.filter.get_tag"><code class="docutils literal notranslate"><span class="pre">get_tag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="filter/tags.html#ge.filter.get_tag_data"><code class="docutils literal notranslate"><span class="pre">get_tag_data()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -132,7 +144,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../security.html" class="btn btn-neutral float-left" title="Users and Role" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="md/index.html" class="btn btn-neutral float-right" title="Master Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="db/index.html" class="btn btn-neutral float-right" title="Database Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

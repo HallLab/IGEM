@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plot &mdash; IGEM 0.1.0 documentation</title>
+  <title>Plot &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -34,7 +34,7 @@
               <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -48,16 +48,33 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../security.html">Users and Role</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ge/index.html">GE Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Application</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">EPC Application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="load.html">Load</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze.html">Analyze</a></li>
-<li class="toctree-l2"><a class="reference internal" href="describe.html">Describe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modify.html">Modify</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="survey.html">Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#loading-external-datasets">Loading External Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-description">Data Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-modification">Data Modification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-analysis">Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#survey-design-and-modeling">Survey Design and Modeling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#plot-functions">Plot Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="load.html">Load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">Analyze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="describe.html">Describe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modify.html">Modify</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Plot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#histogram"><cite>histogram</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distributions"><cite>distributions</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manhattan"><cite>manhattan</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="survey.html">Survey</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
@@ -91,6 +108,107 @@
              
   <section id="plot">
 <h1>Plot<a class="headerlink" href="#plot" title="Permalink to this heading"></a></h1>
+<p>Functions that generate plots</p>
+<section id="histogram">
+<h2><cite>histogram</cite><a class="headerlink" href="#histogram" title="Permalink to this heading"></a></h2>
+<p>Plot a histogram of the values in the given column.</p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>data</cite>: pd.DataFrame
+The DataFrame containing data to be plotted</p></li>
+<li><p><cite>column</cite>: str
+The name of the column that will be plotted</p></li>
+<li><p><cite>figsize</cite>: Tuple[int, int], default (12, 5)
+The figure size of the resulting plot</p></li>
+<li><p><cite>title</cite>: str or None, default None
+The title used for the plot</p></li>
+<li><p><cite>figure</cite>: matplotlib Figure or None, default None
+Pass in an existing figure to plot to that instead of creating a new one (ignoring figsize)</p></li>
+<li><p><cite>**kwargs</cite>: Other keyword arguments to pass to the histplot or catplot function of Seaborn</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>` python
+import igem
+igem.epc.plot.histogram(</p>
+<blockquote>
+<div><p>nhanes_discovery_cont,
+column=”BMXBMI”,
+title=x,
+bins=100</p>
+</div></blockquote>
+<section id="id3">
+<h3>)<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="distributions">
+<h2><cite>distributions</cite><a class="headerlink" href="#distributions" title="Permalink to this heading"></a></h2>
+<p>Create a pdf containing histograms for each binary or categorical variable and one of several types of plots for each continuous variable.</p>
+</section>
+<section id="id4">
+<h2>Parameters<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>data</cite>: pd.DataFrame
+The DataFrame containing data to be plotted</p></li>
+<li><p><cite>filename</cite>: str
+Name of the saved pdf file. The extension will be added automatically if it was not included.</p></li>
+<li><p><cite>continuous_kind</cite>: str, default “count”
+What kind of plots to use for continuous data. Binary and Categorical variables will always be shown with histograms. One of {‘count’, ‘box’, ‘violin’, ‘qq’}</p></li>
+<li><p><cite>nrows</cite>: int, default 4
+Number of rows per page</p></li>
+<li><p><cite>ncols</cite>: int, default 3
+Number of columns per page</p></li>
+<li><p><cite>quality</cite>: str, default “medium”
+Adjusts the DPI of the plots (150, 300, or 1200)</p></li>
+<li><p><cite>variables</cite>: List[str] or None
+Which variables to plot. If None, all variables are plotted.</p></li>
+<li><p><cite>sort</cite>: bool, default True
+Whether or not to sort variable names</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>Examples<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p><a href="#id6"><span class="problematic" id="id7">``</span></a>` python
+import igem
+igem.epc.plot.distributions(</p>
+<blockquote>
+<div><p>df[[‘female’, ‘occupation’, ‘LBX074’]], filename=”test”</p>
+</div></blockquote>
+<section id="id8">
+<h3>)<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="manhattan">
+<h2><cite>manhattan</cite><a class="headerlink" href="#manhattan" title="Permalink to this heading"></a></h2>
+<p>Create a Manhattan-like plot for a list of EWAS Results.</p>
+</section>
+<section id="id9">
+<h2>Parameters<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>dfs</cite>: Dict[str, pd.DataFrame]
+Dictionary of dataset names to pandas dataframes of ewas results (requires certain columns)</p></li>
+<li><p><cite>categories</cite>: Dict[str, str] or None, default None
+A dictionary mapping each variable name to a category name for optional grouping</p></li>
+<li><p><cite>bonferroni</cite>: float or None, default 0.05
+Show a cutoff line at the p-value corresponding to a given bonferroni-corrected p-value</p></li>
+<li><p><cite>fdr</cite>: float or None, default None
+Show a cutoff line at the p-value corresponding to a given false discovery rate (FDR)</p></li>
+<li><p><cite>num_labeled</cite>: int, default 3
+Label the top &lt;num_labeled&gt; results with the variable name</p></li>
+<li><p><cite>label_vars</cite>: List[str] or None, default None
+Label the named variables (or pass None to skip labeling this way)</p></li>
+<li><p><cite>figsize</cite>: Tuple[int, int], default (12, 6)
+The figure size of the resulting plot in inches</p></li>
+<li><p><cite>dpi</cite>: int, default 300
+The figure dots-per-inch</p></li>
+<li><p><cite>title</cite>: str or None, default None
+The title used for the plot</p></li>
+<li><p><cite>figure</cite>: matplotlib Figure or None, default</p></li>
+</ul>
+</section>
 </section>
 
 

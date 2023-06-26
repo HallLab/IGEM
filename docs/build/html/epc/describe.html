@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Describe &mdash; IGEM 0.1.0 documentation</title>
+  <title>Describe &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -34,7 +34,7 @@
               <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -48,16 +48,23 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../security.html">Users and Role</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ge/index.html">GE Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Application</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">EPC Application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="load.html">Load</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze.html">Analyze</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Describe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modify.html">Modify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot.html">Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="survey.html">Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#loading-external-datasets">Loading External Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-description">Data Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-modification">Data Modification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-analysis">Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#survey-design-and-modeling">Survey Design and Modeling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#plot-functions">Plot Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="load.html">Load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">Analyze</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Describe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modify.html">Modify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot.html">Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="survey.html">Survey</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
@@ -91,6 +98,15 @@
              
   <section id="describe">
 <h1>Describe<a class="headerlink" href="#describe" title="Permalink to this heading"></a></h1>
+<p>Functions that are used to gather information about some data.</p>
+<p>ness for continuous variables:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">igem</span>
+<span class="n">skewness</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">epc</span><span class="o">.</span><span class="n">describe</span><span class="o">.</span><span class="n">skewness</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">skewness</span>
+</pre></div>
+</div>
+</div></blockquote>
 </section>
 
 

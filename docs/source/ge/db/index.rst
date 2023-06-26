@@ -2,7 +2,19 @@
 Database Management
 ===================
 
-With the DB process, it will be possible to carry out data extraction operations, data loading, deletion, and cleaning of GE.db tables
+The Database Management within the GE module provides two main functions:
+   * Direct access to database tables for retrieving information
+   * Synchronization of the IGEM Client DB with the latest data from the Hall Lab DB Server.
+
+
+Direct Access to GE.db Tables
+-----------------------------
+
+Enables direct access to the database tables, allowing users to retrieve information directly from the IGEM Client DB.
+
+This functionality provides a convenient way to query and analyze the data stored in the database tables. 
+
+By leveraging this function, users can efficiently retrieve specific information from the IGEM Client DB and utilize it for their research and analysis purposes.
 
 The available tables are:
    * datasource
@@ -19,7 +31,7 @@ The available tables are:
 
 
 Python function
----------------
+
 
 **get_data**
 
@@ -115,196 +127,11 @@ Python function
          print("file created")
 
 
-**load_data**
-
-   Loads data from a CSV file into the IGEM database. This process does
-   not update existing data, it only inserts new records.
-
-   Parameters:
-   
-   - table: str
-      datasource, connector, ds_column, term_group, term_category, term,
-      prefix, wordterm, termmap, wordmap
-   - path: str
-      full path and file name to load
-
-   Layout of data file:
-
-   - Datasource:
-      (datasource, description, category, website)
-   - Connector:
-      (connector, datasource, description, update_ds, source_path,
-      source_web, source_compact, source_file_name, source_file_format,
-      source_file_sep, source_file_skiprow, target_file_name,
-      target_file_format)
-   - Ds_column:
-      (connector, status, column_number, column_name, pre_value, single_word)
-   - Term_group:
-      (term_group, description)
-   - Term_category:
-      (term_category, description)
-   - Term:
-      (term, category, group, description)
-   - Prefix:
-      (pre_value)
-   - Wordterm:
-      (term, word, status, commute)
-   - Termmap:
-      (ckey, connector, term_1, term_2, qtd_links)
-   - Wordmap:
-      (cword, datasource, connector, term_1, term_2, word_1, word_2,
-      qtd_links)
-
-   We can generate an example file with the get_data() function and
-   manipulate and load it with the new data.
-
-   Return:
-  
-   Boolean: (TRUE if the process occurred without errors and FALSE if had
-   some errors).
-
-   Examples:
-   
-   >>> from igem.ge import db
-   >>> db.load_data(
-         table="datasource”
-         path=”{your_path}/datasource.csv”
-         )
-
-**delete_data**
-
-   Allows deleting a record from the given table. The deletion will be
-   carried out in all records related to the informed parameter. For example,
-   if we delete a datasource, the connectors, ds_columns, and termmap
-   associated with the datasource will be deleted.
-
-   Parameters:
-
-   Only the table parameter will always be requested, the others will depend
-   on the selected table, functioning as a record that will be eliminated.
-
-   - table: str
-   (datasource, connector, ds_column, term_group, term_category, term,
-   prefix, wordterm, termmap, wordmap, workflow)
-   - datasource: Dict{“str”:list[”str”]}
-   - connector: Dict{“str”:list[”str”]}
-   - word: Dict{“str”:list[”str”]}
-   - term: Dict{“str”:list[”str”]}
-   - term_category: Dict{“str”:list[”str”]}
-   - term_group: Dict{“str”:list[”str”]}
-   - prefix: Dict{“str”:list[”str”]}
-
-   (Filter argument. It is used to filter the field, with the dictionary
-   key being the selection argument and the dictionary value being the
-   field selected as the filter. Without this parameter, the
-   function will return all values of the field.)
-
-   Return:
-
-   Boolean: (TRUE if the process occurred without errors and FALSE if had
-   some errors).
-
-   Examples:
-
-   >>> from igem.ge import db
-   >>> db.delete_data(
-         table='datasource',
-         datasource={'datasource__in': [ds_01]}
-         )
-
-
-**truncate_table**
-
-   will delete all records from a table, never use this function, with excess
-   if the need is to restart a new instance of the database, free up log
-   table space or in test environments.
-
-   Parameters:
-   
-   - table: str
-      (datasource, connector, dst, term_group, term_category, term,
-      prefix,  wordterm, termmap, wordmap, workflow, logs)
-
-   If inform table="all", the function will truncate all table on GE database.
-   The other tables of the IGEM system will be maintained.
-
-   Return:
-   
-   Boolean: (TRUE if the process occurred without errors and FALSE if had
-   some errors).
-
-   Examples:
-   
-   >>> from igem.ge import db
-   >>> db.truncate_table(
-            table='datasource'
-            )
-
-
-**backup**
-
-   Backup the database with the internal keys. It can be performed at once
-   for all GE.db tables
-
-   Parameters:
-
-   - table: str
-      (datasource, connector, dst, term_group, term_category, term,
-      prefix,  wordterm, termmap, wordmap, workflow, logs)
-   - path_out: str
-      Folder path to store the generated backup files
-
-   If inform table="all", the function will backup all table on GE database.
-
-   Return:
-
-   Boolean: (TRUE if the process occurred without errors and FALSE if had
-   some errors).
-
-   Examples:
-
-   >>> import igem
-   >>> igem.ge.db.backup(
-            table="",
-            path_out="/root/back")
-
-
-**restore**
-
-   Restore the database with the internal keys. It can be performed at once
-   for all GE.db tables
-
-   Parameters:
-
-   - table: str
-      (datasource, connector, dst, term_group, term_category, term,
-      prefix,  wordterm, termmap, wordmap, workflow, logs)
-   - path_out: str
-      Folder path to store the generated backup files
-
-   If inform table="all", the function will restore all table on GE database.
-
-   Return:
-
-   Boolean: (TRUE if the process occurred without errors and FALSE if had
-   some errors).
-
-   Examples:
-
-   >>> import igem
-   >>> igem.ge.db.restore(
-            table="",
-            path_out="/root/back")
-
-
-
 Command Line
-------------
 
 Within the parameters, inform the same ones used for the functions, as well as the arguments, example::
 
 $ $ python manage.py db --get_data 'table="datasource", datasource={“datasource__in”: [“ds_01”,”ds_02”]}'
-
 
 
 Get data::
@@ -312,30 +139,30 @@ Get data::
 $ python manage.py db --get_data {parameters}
     
 
-Load data::
 
-$ python manage.py db --load_data {parameters}
+Synchronization with the Hall Lab DB Server
+-------------------------------------------
 
+The second function of the Database Management is to synchronize the IGEM Client DB with the latest data from the Hall Lab DB Server.
 
-Delete data::
+This synchronization process ensures that the IGEM Client DB is up to date with the most recent information available.
 
-$ python manage.py db --delete_data {parameters}
-    
+The function offers both offline and online synchronization options.
 
-Delete all table::
-
-$ python manage.py db --truncate_table {parameters}
-    
-
-Backup (get data with internal ID)::   
-
-$ python manage.py db --backup {parameters}
-    
-
-Restore (load data with internal ID)::
-
-$ python manage.py db --restore {parameters}
+Offline Sync:
+   In the offline synchronization mode, users manually acquire the necessary DB files from a designated source. They can obtain the latest versions of the DB files from an authorized repository and update the IGEM Client DB accordingly. This mode is suitable for situations where internet connectivity is limited or when users prefer to have full control over the synchronization process.
+   Examples:
+   
+   >>> from igem.ge import db
+   >>> db.db.sync_db(table="all", source="{your_path}")
 
 
+Online Sync:
+   The online synchronization mode automates the process of fetching the latest data from the web repository. The submodule accesses the web repository and retrieves the most recent versions of the DB files, ensuring that the IGEM Client DB is synchronized with the Hall Lab DB Server. This mode is ideal for users who prefer a seamless and automated synchronization process, without the need for manual intervention.
+   Examples:
+   
+   >>> from igem.ge import db
+   >>> db.db.sync_db(table="all")
 
 
+The GE.db submodule provides researchers with a comprehensive set of tools to access and synchronize the IGEM Client DB. Whether it's directly querying database tables or ensuring up-to-date information through synchronization, this submodule facilitates efficient data management and enhances the research capabilities of users.

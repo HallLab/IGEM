@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Survey &mdash; IGEM 0.1.0 documentation</title>
+  <title>Survey &mdash; IGEM 0.1.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
               <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -47,16 +47,27 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../security.html">Users and Role</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ge/index.html">GE Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../omics/index.html">OMICS Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server Application</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">EPC Application</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="load.html">Load</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analyze.html">Analyze</a></li>
-<li class="toctree-l2"><a class="reference internal" href="describe.html">Describe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modify.html">Modify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot.html">Plot</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#loading-external-datasets">Loading External Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-description">Data Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-modification">Data Modification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#data-analysis">Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#survey-design-and-modeling">Survey Design and Modeling</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#plot-functions">Plot Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="load.html">Load</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyze.html">Analyze</a></li>
+<li class="toctree-l3"><a class="reference internal" href="describe.html">Describe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modify.html">Modify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot.html">Plot</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Survey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#survey-design-specification">Survey Design Specification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#survey-model">Survey Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
@@ -90,6 +101,52 @@
              
   <section id="survey">
 <h1>Survey<a class="headerlink" href="#survey" title="Permalink to this heading"></a></h1>
+<section id="survey-design-specification">
+<h2>Survey Design Specification<a class="headerlink" href="#survey-design-specification" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="your_module_name.SurveyDesignSpec">
+<span class="sig-prename descclassname"><span class="pre">your_module_name.</span></span><span class="sig-name descname"><span class="pre">SurveyDesignSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">survey_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_cluster</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fail'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_unweighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#your_module_name.SurveyDesignSpec" title="Permalink to this definition"></a></dt>
+<dd><p>Holds parameters for building a statsmodels SurveyDesign object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>survey_df</strong> (<em>pandas.DataFrame</em>) – A pandas DataFrame containing Cluster, Strata, and/or weights data.</p></li>
+<li><p><strong>strata</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the strata variable in the survey_df, defaults to None.</p></li>
+<li><p><strong>cluster</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the cluster variable in the survey_df, defaults to None.</p></li>
+<li><p><strong>nest</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not the clusters are nested in the strata, defaults to False.</p></li>
+<li><p><strong>weights</strong> (<em>str</em><em> or </em><em>dict</em><em>, </em><em>optional</em>) – The name of the weights variable in the survey_df, or a dictionary mapping variable names to weight names, defaults to None.</p></li>
+<li><p><strong>fpc</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the variable in the survey_df that contains the finite population correction information, defaults to None.</p></li>
+<li><p><strong>single_cluster</strong> (<em>str</em><em>, </em><em>optional</em>) – Setting controlling variance calculation in single-cluster (‘lonely psu’) strata. Valid options are ‘fail’, ‘adjust’, ‘average’, and ‘certainty’. Defaults to ‘fail’.</p></li>
+<li><p><strong>drop_unweighted</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, drop observations that are missing a weight value. This may not be statistically sound. Otherwise, the result for variables with missing weights (when the variable is not missing) is NULL. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A SurveyDesignSpec object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SurveyDesignSpec</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="survey-model">
+<h2>Survey Model<a class="headerlink" href="#survey-model" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="your_module_name.SurveyModel">
+<span class="sig-prename descclassname"><span class="pre">your_module_name.</span></span><span class="sig-name descname"><span class="pre">SurveyModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#your_module_name.SurveyModel" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a SurveyModel object used to fit a model to survey data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 </section>
 
 

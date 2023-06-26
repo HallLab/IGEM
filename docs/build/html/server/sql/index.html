@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database Management &mdash; IGEM 0.1.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ETL" href="../etl/index.html" />
+    <link rel="prev" title="Word to Terms" href="../md/wordterm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IGEM
+              <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ge/index.html">GE Application</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Server Application</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../md/index.html">Master Data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Database Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-function">Python function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line">Command Line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../etl/index.html">ETL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../epc/index.html">EPC Application</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.hall-lab.org">Hall Lab Homepage</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/HallLab/igem">IGEM Github Repo</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IGEM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Server Application</a></li>
+      <li class="breadcrumb-item active">Database Management</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/server/sql/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="database-management">
+<h1>Database Management<a class="headerlink" href="#database-management" title="Permalink to this heading"></a></h1>
+<p>With the sql process, it will be possible to carry out data extraction operations, data loading, deletion, and cleaning of IGEM tables</p>
+<dl class="simple">
+<dt>The available tables are:</dt><dd><ul class="simple">
+<li><p>datasource</p></li>
+<li><p>connector</p></li>
+<li><p>term_group</p></li>
+<li><p>term_category</p></li>
+<li><p>term</p></li>
+<li><p>ds_column</p></li>
+<li><p>prefix</p></li>
+<li><p>wordterm</p></li>
+<li><p>termmap</p></li>
+<li><p>wordmap</p></li>
+</ul>
+</dd>
+</dl>
+<section id="python-function">
+<h2>Python function<a class="headerlink" href="#python-function" title="Permalink to this heading"></a></h2>
+<p><strong>get_data</strong></p>
+<blockquote>
+<div><p>The get_data() function allows extracting data from the GE database
+and loading this data into a Pandas DataFrame structure or CSV File.</p>
+<p>It has an intelligent filter mechanism that allow you to perform data
+selections simply through a conversion layer of function arguments and SQL
+syntax. This allows the same input arguments regardless of implemented
+database management system.</p>
+<p>Parameters:</p>
+<p>Only the table parameter will be mandatory, the others being optional, and
+will model the data output. In the case of only informing the table, the
+function will return a DataFrame with all the columns and values of the
+table.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>table: str</dt><dd><p>datasource, connector, ds_column, term_group, term_category, term,
+prefix,  wordterm, termmap, wordmap</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>path: str</dt><dd><p>With this parameter, the function will save the selected data
+in a file in the directory informed as the parameter argument. In this
+scenario, data will not be returned in the form of a Dataframe; only a
+Boolean value will be returned, informing whether the file was
+generated or not</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>columns: list[“str”]</dt><dd><p>Columns that will be selected for output. They must be informed with
+the same name as the database. It is possible to load other data from
+other tables as long as it correlate. For example, suppose the table
+only has the term field and not the category field. In that case, you
+can inform as an argument: “term_id__term_category_id__category”, the
+system selected the ID of the term, consulted the ID of the category
+in the Term table, and went to the Category table to choose the
+category</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>columns_out: list[“str”]</dt><dd><p>If you want to rename the header of the output fields to more familiar
+names, you can use this parameter, passing the desired names in the
+same sequential sequence in the parameter columns</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>datasource: Dict{“str”:list[”str”]}</dt><dd><p>Filter argument. It is used to filter datasource, with the dictionary
+key being the selection argument and the dictionary value being the
+datasources selected as the filter. Without this parameter, the
+function will return all datasources</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>connector: Dict{“str”:list[”str”]}</dt><dd><p>Filter argument. It uses the same logic as the datasource, but applied
+to the connector field</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>word: Dict{“str”:list[”str”]}</dt><dd><p>Filter argument. It uses the same logic as the datasource, but applied
+to the word field</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>term: Dict{“str”:list[”str”]}</dt><dd><p>Filter argument. It uses the same logic as the datasource, but applied
+to the term field</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>term_category: Dict{“str”:list[”str”]}</dt><dd><p>Filter argument. It uses the same logic as the datasource, but applied
+to the term_categorty field</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>term_group: Dict{“str”:list[”str”]}</dt><dd><p>Filter argument. It uses the same logic as the datasource, but applied
+to the term_group field</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Return:</p>
+<p>Pandas Dataframe or Boolean (If the parameter path is informed, the
+function will generate the file; if successful, it will return the
+TRUE. Otherwise, it will return FALSE)</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.server</span> <span class="kn">import</span> <span class="n">sql</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sql</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span>
+<span class="go">      table=”datasource”,</span>
+<span class="go">      datasource={“datasource__in”: [“ds_01”,”ds_02”]},</span>
+<span class="go">      columns=[“id”,”datasource”],</span>
+<span class="go">      columns_out=[“Datasource ID”, “Datasource Name”],</span>
+<span class="go">      path=”{your_path}/datasource.csv”</span>
+<span class="go">      )</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span>
+<span class="go">      table=&quot;connector&quot;,</span>
+<span class="go">      connector={&quot;connector__start&quot;: [&quot;conn_ds&quot;]},</span>
+<span class="go">      datasource={&quot;datasource_id__datasource__in&quot;: [&quot;ds_01&quot;]},</span>
+<span class="go">      columns=[&quot;connector&quot;, &quot;status&quot;]</span>
+<span class="go">      )</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span>
+<span class="go">      table=&quot;termmap&quot;,</span>
+<span class="go">      term={&quot;term_id__term&quot;: &quot;chem:c112297&quot;},</span>
+<span class="go">      path=&quot;{your_path},</span>
+<span class="go">      )</span>
+<span class="go">   If x:</span>
+<span class="go">      print(&quot;file created&quot;)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>load_data</strong></p>
+<blockquote>
+<div><p>Loads data from a CSV file into the IGEM database. This process does
+not update existing data, it only inserts new records.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>table: str</dt><dd><p>datasource, connector, ds_column, term_group, term_category, term,
+prefix, wordterm, termmap, wordmap</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>path: str</dt><dd><p>full path and file name to load</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Layout of data file:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Datasource:</dt><dd><p>(datasource, description, category, website)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Connector:</dt><dd><p>(connector, datasource, description, update_ds, source_path,
+source_web, source_compact, source_file_name, source_file_format,
+source_file_sep, source_file_skiprow, target_file_name,
+target_file_format)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Ds_column:</dt><dd><p>(connector, status, column_number, column_name, pre_value, single_word)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Term_group:</dt><dd><p>(term_group, description)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Term_category:</dt><dd><p>(term_category, description)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Term:</dt><dd><p>(term, category, group, description)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Prefix:</dt><dd><p>(pre_value)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Wordterm:</dt><dd><p>(term, word, status, commute)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Termmap:</dt><dd><p>(ckey, connector, term_1, term_2, qtd_links)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Wordmap:</dt><dd><p>(cword, datasource, connector, term_1, term_2, word_1, word_2,
+qtd_links)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>We can generate an example file with the get_data() function and
+manipulate and load it with the new data.</p>
+<p>Return:</p>
+<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
+some errors).</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.server</span> <span class="kn">import</span> <span class="n">sql</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sql</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span>
+<span class="go">      table=&quot;datasource”</span>
+<span class="go">      path=”{your_path}/datasource.csv”</span>
+<span class="go">      )</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>delete_data</strong></p>
+<blockquote>
+<div><p>Allows deleting a record from the given table. The deletion will be
+carried out in all records related to the informed parameter. For example,
+if we delete a datasource, the connectors, ds_columns, and termmap
+associated with the datasource will be deleted.</p>
+<p>Parameters:</p>
+<p>Only the table parameter will always be requested, the others will depend
+on the selected table, functioning as a record that will be eliminated.</p>
+<ul class="simple">
+<li><p>table: str</p></li>
+</ul>
+<p>(datasource, connector, ds_column, term_group, term_category, term,
+prefix, wordterm, termmap, wordmap, workflow)
+- datasource: Dict{“str”:list[”str”]}
+- connector: Dict{“str”:list[”str”]}
+- word: Dict{“str”:list[”str”]}
+- term: Dict{“str”:list[”str”]}
+- term_category: Dict{“str”:list[”str”]}
+- term_group: Dict{“str”:list[”str”]}
+- prefix: Dict{“str”:list[”str”]}</p>
+<p>(Filter argument. It is used to filter the field, with the dictionary
+key being the selection argument and the dictionary value being the
+field selected as the filter. Without this parameter, the
+function will return all values of the field.)</p>
+<p>Return:</p>
+<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
+some errors).</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.server</span> <span class="kn">import</span> <span class="n">sql</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sql</span><span class="o">.</span><span class="n">delete_data</span><span class="p">(</span>
+<span class="go">      table=&#39;datasource&#39;,</span>
+<span class="go">      datasource={&#39;datasource__in&#39;: [ds_01]}</span>
+<span class="go">      )</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>truncate_table</strong></p>
+<blockquote>
+<div><p>will delete all records from a table, never use this function, with excess
+if the need is to restart a new instance of the database, free up log
+table space or in test environments.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>table: str</dt><dd><p>(datasource, connector, dst, term_group, term_category, term,
+prefix,  wordterm, termmap, wordmap, workflow, logs)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>If inform table=”all”, the function will truncate all table on GE database.
+The other tables of the IGEM system will be maintained.</p>
+<p>Return:</p>
+<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
+some errors).</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">igem.server</span> <span class="kn">import</span> <span class="n">sql</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sql</span><span class="o">.</span><span class="n">truncate_table</span><span class="p">(</span>
+<span class="go">         table=&#39;datasource&#39;</span>
+<span class="go">         )</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>backup</strong></p>
+<blockquote>
+<div><p>Backup the database with the internal keys. It can be performed at once
+for all GE.sql tables</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>table: str</dt><dd><p>(datasource, connector, dst, term_group, term_category, term,
+prefix,  wordterm, termmap, wordmap, workflow, logs)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>path_out: str</dt><dd><p>Folder path to store the generated backup files</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>If inform table=”all”, the function will backup all table on GE database.</p>
+<p>Return:</p>
+<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
+some errors).</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">igem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">igem</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">backup</span><span class="p">(</span>
+<span class="go">         table=&quot;&quot;,</span>
+<span class="go">         path_out=&quot;/root/back&quot;)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>restore</strong></p>
+<blockquote>
+<div><p>Restore the database with the internal keys. It can be performed at once
+for all GE.sql tables</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>table: str</dt><dd><p>(datasource, connector, dst, term_group, term_category, term,
+prefix,  wordterm, termmap, wordmap, workflow, logs)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>path_out: str</dt><dd><p>Folder path to store the generated backup files</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>If inform table=”all”, the function will restore all table on GE database.</p>
+<p>Return:</p>
+<p>Boolean: (TRUE if the process occurred without errors and FALSE if had
+some errors).</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">igem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">igem</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span>
+<span class="go">         table=&quot;&quot;,</span>
+<span class="go">         path_out=&quot;/root/back&quot;)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="command-line">
+<h2>Command Line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h2>
+<p>Within the parameters, inform the same ones used for the functions, as well as the arguments, example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ $ python manage.py sql --get_data &#39;table=&quot;datasource&quot;, datasource={“datasource__in”: [“ds_01”,”ds_02”]}&#39;
+</pre></div>
+</div>
+<p>Get data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py sql --get_data {parameters}
+</pre></div>
+</div>
+<p>Load data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py sql --load_data {parameters}
+</pre></div>
+</div>
+<p>Delete data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py sql --delete_data {parameters}
+</pre></div>
+</div>
+<p>Delete all table:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py sql --truncate_table {parameters}
+</pre></div>
+</div>
+<p>Backup (get data with internal ID):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py sql --backup {parameters}
+</pre></div>
+</div>
+<p>Restore (load data with internal ID):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py sql --restore {parameters}
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../md/wordterm.html" class="btn btn-neutral float-left" title="Word to Terms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../etl/index.html" class="btn btn-neutral float-right" title="ETL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Hall Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
