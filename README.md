@@ -1,13 +1,9 @@
 
+IGEM - Integrative Genome-Exposome Method
+=========================================
 
-------------
-
-
-------------
-
-IGEM: An Architecture for Efficient Bioinformatics Analysis
-============================================================
-
+An Architecture for Efficient Bioinformatics Analysis
+-----------------------------------------------------
 
 
 Abstract:
