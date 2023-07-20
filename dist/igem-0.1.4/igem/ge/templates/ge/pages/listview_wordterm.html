@@ -1,0 +1,99 @@
+{% extends 'global/base.html' %}
+{% comment %} {% load django_bootstrap5 %} {% endcomment %}
+
+{% block title %}WordTerm ({{ user }}) | {% endblock title %}
+
+{% block content %}
+  <div class="main-content center container">
+    <h2>WordTerm</h2>
+
+    {% comment %} {% include 'etl/partials/login_message.html' %} {% endcomment %}
+    {% comment %} {% include 'global/partials/messages.html' %} {% endcomment %}
+
+    <div class="authors-dashboard-container">
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">id</th>
+            <th scope="col">word</th>
+            <th scope="col">term</th>            
+          </tr>
+        </thead>
+        {% for wt in wordterms %}
+          <tbody>
+            <tr>
+              <td>
+                <a href="{% url 'ge:edit_wordterm' wt.id %}"> 
+                  <button class="plaintext-button" type="submit">✏️</button> 
+                </a>
+              </td>
+              <td>{{ wt.id }}</td>
+              <td>{{ wt.word }}</td>
+              <td>{{ wt.term }}</td>
+              {% comment %} <td>
+                {% if connector.oid_name %}
+                  {{ connector.oid_name }}</td>
+                {% else %}
+                  -
+                {% endif %} {% endcomment %}
+              
+              {% comment %} <td>
+                {% if connector.wfcontrol__get_masterdata %}
+                  🟢
+                {% else %}
+                  🔘
+                {% endif %}
+              </td>
+
+              <td>
+                {% if connector.wfcontrol__get_subjectdata %}
+                  🟢
+                {% else %}
+                  🔘                
+                {% endif %}
+              </td>
+
+              <td>
+                {% if connector.wfcontrol__get_data %}
+                  🟢
+                {% else %}
+                  🔘
+                {% endif %}
+              </td>
+
+              <td>
+                {% if connector.wfcontrol__last_update %}
+                  {{ connector.wfcontrol__last_update }}
+                {% else %}
+                  -
+                {% endif %}
+              </td>
+              
+              
+              <td>
+                <form 
+                  class="inline-form form-delete" 
+                  action="{% url 'etl:delete_connector' %}" 
+                  method='POST'
+                  >
+                  {% csrf_token %}
+                  <input type="hidden" name="id" value="{{ connector.id }}">
+                  <button class="plaintext-button" type="submit">❌</button>
+                </form>    
+              </td>
+            </tr> {% endcomment %}
+
+
+          </tbody>
+        {% empty %}
+            <p>You do not have connectors, please create one.</p>
+        {% endfor %}
+      </table>
+
+    </div>
+  </div>
+
+
+  {% endblock content %}
