@@ -11,13 +11,14 @@ from django.db.models import Q
 try:
     x = str(settings.BASE_DIR)
     sys.path.append(x)
-    from omics.models import snpgene
+    from ge.models import Term
+    from omics.models import GeneMap, snpgene
 except Exception as e:
     print(e)
     raise
 
 
-def load_data(chunk=100000, table=None, path=None) -> bool:
+def load_data(chunk=10000000, table=None, path=None) -> bool:
     """
     Loads data from a CSV file into the OMICS database. This process does
     not update existing data, it only inserts new records.
@@ -65,7 +66,60 @@ def load_data(chunk=100000, table=None, path=None) -> bool:
         print("  Inform the path and the file in CSV format to load")
         return False
 
-    if v_table == "snp":
+    if v_table == "gene":
+        v_index = 0
+        try:
+            for DFR in pd.read_csv(
+                v_path, dtype=str, index_col=False, chunksize=v_chunk
+            ):
+                DFR = DFR.apply(lambda x: x.astype(str).str.lower())
+                df_term = pd.DataFrame(list(Term.objects.values()))
+                # TODO: Change the code by descriction
+                df_term = df_term[df_term['term_category_id'] == 5]
+                DFR["term_id"] = DFR.set_index("term").index.map(
+                    df_term.set_index("term")["id"])
+
+                model_instances = []
+
+                for record in DFR.itertuples():
+                    term_id = record.term_id
+
+                    if not pd.isna(term_id):  # Check if term_id is not NaN
+                        term_id = int(term_id)
+                        # Retrieve the Term instance
+                        term_instance = Term.objects.get(pk=term_id)
+                    else:
+                        term_id = None  # Set term_id to None for NaN values
+                        term_instance = term_id
+
+                    gene_map_instance = GeneMap(
+                        assembly=record.assembly,
+                        gene_id=record.gene_id,
+                        symbol=record.symbol,
+                        chromosome=record.chromosome,
+                        nucleotide_version=record.nucleotide_version,
+                        start_position=record.start_position,
+                        end_position=record.end_position,
+                        orientation=record.orientation,
+                        term=term_instance,  # Set the term field
+                    )
+                    model_instances.append(gene_map_instance)
+
+                GeneMap.objects.bulk_create(
+                    model_instances, ignore_conflicts=True
+                )  # noqa E501
+                print("  Load with success to Gene Map table ")
+                v_index += 1
+                print("    Cicle:", v_index, "/ Rows:", len(DFR.index))
+
+        except IOError as e:
+            print("ERRO:")
+            print(e)
+            return False
+
+        return True
+
+    elif v_table == "snp":
         v_index = 0
         try:
             for DFR in pd.read_csv(
