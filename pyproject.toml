@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "igem"
-version = "0.1.5"
+version = "0.1.6"
 description = ""
 authors = ["Andre Rico <97684721+AndreRicoPSU@users.noreply.github.com>"]
 license = "BSD-3-Clause"
@@ -21,6 +21,7 @@ scikit-learn = "^1.2.2"
 xarray = "^2023.10.1"
 tqdm = "^4.66.1"
 dask = "^2023.7.1"
+pyensembl = "^2.2.9"
 
 [tool.poetry.group.dev.dependencies]
 sphinx-rtd-theme = "^1.2.0"

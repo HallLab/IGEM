@@ -24,6 +24,8 @@ try:
 except:  # noqa E722
     raise
 
+from ge.filter import positions_to_term
+
 
 class Command(BaseCommand):
     help = "This command aims to access the functions of GE.FILTER \
@@ -79,7 +81,61 @@ class Command(BaseCommand):
             help="convert words in terms",
         )
 
+        # Function to get position to list of terms map
+        parser.add_argument(
+            "--positions_to_term_map",
+            type=str,
+            metavar="parameters",
+            action="store",
+            default=None,
+            help="convert position in terms map",
+        )
+        parser.add_argument(
+            '--exposome',
+            type=str,
+            metavar="parameters",
+            action="store",
+            default=None,
+            help="convert position in terms map"
+            )
+        parser.add_argument('--assembly', type=int, default=38)
+        parser.add_argument('--boundaries', type=int, default=10000)
+        parser.add_argument('--delimiter', default=None)
+        parser.add_argument('--has_header', default=True)
+
     def handle(self, *args, **options):
+        # POSITION TO TERMS MAP
+        if options["positions_to_term_map"]:
+            # python manage.py filter --position_to_term_map input_file.txt --assembly=38 --search_range=10000 # noqa E501
+            input_file = options['positions_to_term_map']
+            exposome = options['exposome']
+            assembly = options['assembly']
+            boundaries = options['boundaries']
+            delimiter = options['delimiter']
+            has_header = options['has_header']
+
+            # Call Operation Function
+            self.stdout.write(self.style.SUCCESS("Run Terms Report from Genomic Positions")) # noqa E501
+            try:
+                return_function = positions_to_term(
+                    input_file,
+                    exposome,
+                    assembly,
+                    boundaries,
+                    delimiter,
+                    has_header
+                    )
+                if return_function:
+                    self.stdout.write(self.style.SUCCESS(
+                        "Process completed successfully"
+                        ))
+                else:
+                    self.stdout.write(self.style.ERROR_OUTPUT(
+                        "Process completed with error!"
+                        ))
+            except Exception as e:
+                self.stdout.write(self.style.ERROR_OUTPUT(f"  {e}"))
+
         # TERM_MAP
         if options["term_map"]:
             parameters = str(options["term_map"]).lower()

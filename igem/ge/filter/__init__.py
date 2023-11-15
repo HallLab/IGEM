@@ -21,6 +21,7 @@ from .filters import (  # noqa E501
     word_map,
 )
 from .genes import search_gene_map_data
+from .positions import positions_to_term
 from .tag import create_tag, get_tag, get_tag_data
 
 __all__ = [
@@ -33,5 +34,6 @@ __all__ = [
     'get_tag',
     "get_tag_data",
     "create_tag",
-    "search_gene_map_data"
+    "search_gene_map_data",
+    "positions_to_term"
 ]
