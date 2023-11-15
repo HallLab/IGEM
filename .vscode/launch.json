@@ -31,9 +31,9 @@
                 // "/Users/andrerico/DEV/projects/igem/IGEM_SandBox/scripts/echo/echo_genes_prod/output_files/10701_pre_gxe_0.7.txt",
                 // "/Users/andrerico/DEV/projects/igem/IGEM_SandBox/scripts/echo/echo_genes_prod/output_files/11901_affy5_pre_gxe_0.7.txt",
                 // "/Users/andrerico/DEV/projects/igem/IGEM_SandBox/scripts/echo/echo_genes_prod/output_files/11901_affy6_pre_gxe_0.7.txt",
-                "/Users/andrerico/DEV/projects/igem/IGEM_SandBox/scripts/echo/echo_genes_prod/output_files/12801_pre_gxe_0.7.txt",
+                "/Users/andrerico/DEV/projects/igem/IGEM_Support/scripts/echo/echo_genes_prod/output_files/12801_pre_gxe_0.7.txt",
                 "--exposome",
-                "/Users/andrerico/DEV/projects/igem/IGEM_SandBox/scripts/echo/echo_genes_prod/output_files/pre_echo_words_clean.csv",
+                "/Users/andrerico/DEV/projects/igem/IGEM_Support/scripts/echo/echo_genes_prod/output_files/pre_echo_words_clean.csv",
                 "--assembly=37",
                 "--boundaries=10000",
                 "--delimiter=\\t"  // Use two backslashes to escape the tab character

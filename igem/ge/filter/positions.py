@@ -3,7 +3,18 @@ import os
 
 import pandas as pd
 from django.db import models
-from django.db.models import Case, CharField, ExpressionWrapper, F, Value, When
+from django.db.models import (
+    Case,
+    CharField,
+    Count,
+    ExpressionWrapper,
+    F,
+    Sum,
+    Value,
+    When,
+)
+
+# from django.db.models.functions import Coalesce
 from ge.models import TermMap
 from pyensembl import EnsemblRelease
 
@@ -304,7 +315,6 @@ def positions_to_term(
         term_data = pd.read_csv(output_path)
     else:
         # Create a queryset for TermMap with term_1 having term_category='gene'
-        # TODO: Add the qtd of Sources and Records.
         queryset = TermMap.objects.filter(
             models.Q(term_1__term_category_id=5) | models.Q(term_2__term_category_id=5)  # noqa E501
             ).values(
@@ -320,6 +330,8 @@ def positions_to_term(
 
         # Use Case/When to add the symbol from GeneMap if it exists
         queryset = queryset.annotate(
+            total_qtd_links=Sum('qtd_links'),
+            connector_count=Count('connector_id', distinct=True),
             gene_symbol=Case(
                 When(
                     term_1__term_category__term_category='gene',
@@ -335,12 +347,25 @@ def positions_to_term(
                         output_field=CharField()
                         )
                     ),
+                # When(
+                #     term_1__term_category__term_category='gene',
+                #     then=Coalesce('term_1__genemap__symbol', Value(''))
+                # ),
+                # When(
+                #     term_2__term_category__term_category='gene',
+                #     then=Coalesce('term_2__genemap__symbol', Value(''))
+                # ),
                 default=Value(''),
                 output_field=CharField()
             )
         )
+        # Convert to DataFrame
         term_data = pd.DataFrame(list(queryset))
+
+        # Set the index to 'gene_symbol' if it's not already set
         term_data.set_index(['gene_symbol'], inplace=True)
+        # if 'gene_symbol' not in term_data.columns:
+        #     term_data.set_index(['gene_symbol'], inplace=True)
 
         # Memory used
         # mem_usage_mb = (term_data.memory_usage(deep=True).sum()) / 1048576
@@ -359,6 +384,8 @@ def positions_to_term(
         term_data['Exposome Term'] = ""
         term_data['Exposome Description'] = ""
         term_data['Exposome Category'] = ""
+        term_data['Qtd Links'] = ""
+        term_data['Qtd Sources'] = ""
 
         # Create boolean masks for gene and non-gene categories
         gene_mask = term_data['term_1__term_category__term_category'] == 'gene'
@@ -374,6 +401,8 @@ def positions_to_term(
         term_data.loc[gene_mask, 'Exposome Term'] = term_data.loc[gene_mask, 'term_2__term']  # noqa E501
         term_data.loc[gene_mask, 'Exposome Description'] = term_data.loc[gene_mask, 'term_2__description']  # noqa E501
         term_data.loc[gene_mask, 'Exposome Category'] = term_data.loc[gene_mask, 'term_2__term_category__term_category']  # noqa E501
+        term_data.loc[gene_mask, 'Qtd Links'] = term_data.loc[gene_mask, 'total_qtd_links']  # noqa E501
+        term_data.loc[gene_mask, 'Qtd Sources'] = term_data.loc[gene_mask, 'connector_count']  # noqa E501
 
         term_data.loc[swap_mask, 'Gene ID'] = term_data.loc[swap_mask, 'term_2']  # noqa E501
         term_data.loc[swap_mask, 'Gene Term'] = term_data.loc[swap_mask, 'term_2__term']  # noqa E501
@@ -382,6 +411,8 @@ def positions_to_term(
         term_data.loc[swap_mask, 'Exposome Term'] = term_data.loc[swap_mask, 'term_1__term']  # noqa E501
         term_data.loc[swap_mask, 'Exposome Description'] = term_data.loc[swap_mask, 'term_1__description']  # noqa E501
         term_data.loc[swap_mask, 'Exposome Category'] = term_data.loc[swap_mask, 'term_1__term_category__term_category']  # noqa E501
+        term_data.loc[swap_mask, 'Qtd Links'] = term_data.loc[swap_mask, 'total_qtd_links']  # noqa E501
+        term_data.loc[swap_mask, 'Qtd Sources'] = term_data.loc[swap_mask, 'connector_count']  # noqa E501
 
         # Drop old columns
         term_data.drop(columns=[
@@ -392,7 +423,9 @@ def positions_to_term(
             'term_1__description',
             'term_2__description',
             'term_1__term_category__term_category',
-            'term_2__term_category__term_category'
+            'term_2__term_category__term_category',
+            'total_qtd_links',
+            'connector_count',
             ], inplace=True)
 
         # TODO: Apply filter
@@ -424,7 +457,12 @@ def positions_to_term(
     # create the model
     # chrom:position x Word
     result_df['chromosome:position'] = result_df['chromosome'] + ':' + result_df['position'].astype(str)  # noqa E501
-    result_df = result_df[['chromosome:position', 'string']]
+    result_df = result_df[[
+        'chromosome:position',
+        'string',
+        'Qtd Links',
+        'Qtd Sources'
+        ]]
     result_df.dropna(subset=['string'], inplace=True)
 
     output_filename = f"result_4_model_{os.path.basename(input_df)}"
