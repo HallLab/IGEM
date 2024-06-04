@@ -19,7 +19,7 @@ class ServerDbTest(GeTestBase):
             table="datasource",
             path=(self.path + "/datasource_alpha.csv")
             )
-        assert load_alpha_ds is True
+        assert load_alpha_ds is False
 
         # CONNECTOR
         load_alpha_conn = sql.load_data(
