@@ -465,6 +465,9 @@ def positions_to_term(
         ]]
     result_df.dropna(subset=['string'], inplace=True)
 
+    # Aggregate by 'chromosome:position' and 'string'
+    result_df = result_df.groupby(['chromosome:position', 'string']).sum().reset_index()  # noqa E501
+
     output_filename = f"result_4_model_{os.path.basename(input_df)}"
     output_path = os.path.join(input_directory, output_filename)
     result_df.to_csv(output_path, index=False)
