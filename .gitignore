@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+build/
+.env
+
+# Poetry
+poetry.lock
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Node / React
+node_modules/
+frontend/dist/
+frontend/.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# MVP (legacy, not part of v2.0.0)
+mvp/

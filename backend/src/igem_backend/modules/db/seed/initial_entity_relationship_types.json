@@ -1,0 +1,17 @@
+{
+  "entity_relationship_types": [
+    {"id": 1,  "code": "is_a",               "description": "Ontological subclass relationship (child is a type of parent)"},
+    {"id": 2,  "code": "part_of",            "description": "Entity is a component of the target (e.g., gene in a pathway)"},
+    {"id": 3,  "code": "encodes",            "description": "Gene encodes a protein or other gene product"},
+    {"id": 4,  "code": "interacts_with",     "description": "Physical or functional interaction between two entities"},
+    {"id": 5,  "code": "regulates",          "description": "Entity regulates activity, expression, or function of the target"},
+    {"id": 6,  "code": "associated_with",    "description": "Statistical or curated association between two entities"},
+    {"id": 7,  "code": "in_pathway",         "description": "Entity participates in the pathway"},
+    {"id": 8,  "code": "has_transcript",     "description": "Gene has the specified transcript"},
+    {"id": 9,  "code": "GxG",               "description": "OxO: Gene-by-Gene interaction"},
+    {"id": 10, "code": "GxE",               "description": "OxO: Gene-by-Exposure/Environment interaction"},
+    {"id": 11, "code": "ExE",               "description": "OxO: Exposure-by-Exposure interaction"},
+    {"id": 12, "code": "OxO",               "description": "OxO: Generic Omics-by-Omics interaction (cross-domain)"},
+    {"id": 13, "code": "co_occurs_with",     "description": "Entities co-occur in literature without directed relationship"}
+  ]
+}

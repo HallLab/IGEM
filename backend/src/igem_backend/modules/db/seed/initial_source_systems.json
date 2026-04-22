@@ -1,0 +1,19 @@
+{
+  "source_systems": [
+    {"name": "NCBI",          "description": "National Center for Biotechnology Information", "homepage": "https://www.ncbi.nlm.nih.gov/", "active": true},
+    {"name": "HGNC",          "description": "HUGO Gene Nomenclature Committee", "homepage": "https://www.genenames.org/", "active": true},
+    {"name": "Ensembl",       "description": "Genome browser for vertebrate genomes", "homepage": "https://www.ensembl.org/", "active": true},
+    {"name": "UniProt",       "description": "Universal Protein Resource", "homepage": "https://www.uniprot.org/", "active": true},
+    {"name": "Reactome",      "description": "Open-source curated biological pathway database", "homepage": "https://reactome.org/", "active": true},
+    {"name": "KEGG",          "description": "Kyoto Encyclopedia of Genes and Genomes", "homepage": "https://www.genome.jp/kegg/", "active": true},
+    {"name": "GO",            "description": "Gene Ontology Consortium", "homepage": "https://geneontology.org/", "active": true},
+    {"name": "MONDO",         "description": "Monarch Disease Ontology", "homepage": "https://mondo.monarchinitiative.org/", "active": true},
+    {"name": "OMIM",          "description": "Online Mendelian Inheritance in Man", "homepage": "https://omim.org/", "active": true},
+    {"name": "BioGRID",       "description": "Biological General Repository for Interaction Datasets", "homepage": "https://thebiogrid.org/", "active": true},
+    {"name": "CTD",           "description": "Comparative Toxicogenomics Database — gene-chemical-disease relationships", "homepage": "https://ctdbase.org/", "active": true},
+    {"name": "PubMed",        "description": "NCBI PubMed biomedical literature database", "homepage": "https://pubmed.ncbi.nlm.nih.gov/", "active": true},
+    {"name": "gnomAD",        "description": "Genome Aggregation Database", "homepage": "https://gnomad.broadinstitute.org/", "active": true},
+    {"name": "ClinGen",       "description": "Clinical Genome Resource", "homepage": "https://www.clinicalgenome.org/", "active": true},
+    {"name": "NLP",           "description": "Relationships discovered by IGEM NLP pipeline", "homepage": null, "active": true}
+  ]
+}

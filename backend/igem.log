@@ -1,0 +1,35 @@
+2026-04-21 21:45:53,655 - INFO - Database connection established
+2026-04-21 21:45:53,655 - INFO -   Engine: sqlite | Host: local file | DB: /tmp/igem_test.db | 181.3ms
+2026-04-21 21:45:53,655 - INFO - Bootstrapping models...
+2026-04-21 21:45:53,655 - INFO - Creating tables...
+2026-04-21 21:45:53,696 - INFO - Seeding initial data...
+2026-04-21 21:45:53,723 - INFO - Seeded SystemConfig: created=4 updated=0 skipped=0
+2026-04-21 21:45:53,731 - INFO - Seeded IgemMetadata: created=1 updated=0 skipped=0
+2026-04-21 21:45:53,742 - INFO - Seeded ETLSourceSystem: created=15 updated=0 skipped=0
+2026-04-21 21:45:53,749 - INFO - Seeded ETLDataSource: created=5 updated=0 skipped=0
+2026-04-21 21:45:53,757 - INFO - Seeded EntityGroup: created=13 updated=0 skipped=0
+2026-04-21 21:45:53,765 - INFO - Seeded EntityRelationshipType: created=13 updated=0 skipped=0
+2026-04-21 21:45:53,770 - INFO - Seeded GenomeAssembly: created=2 updated=0 skipped=0
+2026-04-21 21:45:53,770 - INFO - Database created at sqlite:////tmp/igem_test.db
+2026-04-22 08:31:27,072 - INFO - Database connection established
+2026-04-22 08:31:27,072 - INFO -   Engine: sqlite | Host: local file | DB: /tmp/igem_test.db | 69.9ms
+2026-04-22 09:09:10,359 - INFO - ============================================
+2026-04-22 09:09:10,359 - INFO - GE — Genome-Exposome Platform
+2026-04-22 09:09:10,359 - INFO -   Version    : 0.1.0
+2026-04-22 09:09:10,359 - INFO -   Debug mode : False
+2026-04-22 09:09:10,359 - INFO -   DB URI     : None
+2026-04-22 09:09:10,359 - INFO - ============================================
+2026-04-22 09:09:10,396 - INFO - Database connection established
+2026-04-22 09:09:10,396 - INFO -   Engine: sqlite | Host: local file | DB: /tmp/igem_ge_test.db | 36.4ms
+2026-04-22 09:09:10,396 - INFO - Bootstrapping models...
+2026-04-22 09:09:10,396 - INFO - Creating tables...
+2026-04-22 09:09:10,469 - INFO - Seeding initial data...
+2026-04-22 09:09:10,495 - INFO - Seeded SystemConfig: created=4 updated=0 skipped=0
+2026-04-22 09:09:10,502 - INFO - Seeded IgemMetadata: created=1 updated=0 skipped=0
+2026-04-22 09:09:10,513 - INFO - Seeded ETLSourceSystem: created=15 updated=0 skipped=0
+2026-04-22 09:09:10,524 - INFO - Seeded ETLDataSource: created=5 updated=0 skipped=0
+2026-04-22 09:09:10,533 - INFO - Seeded EntityGroup: created=13 updated=0 skipped=0
+2026-04-22 09:09:10,544 - INFO - Seeded EntityRelationshipType: created=13 updated=0 skipped=0
+2026-04-22 09:09:10,550 - INFO - Seeded GenomeAssembly: created=2 updated=0 skipped=0
+2026-04-22 09:09:10,550 - INFO - Database created at sqlite:////tmp/igem_ge_test.db
+2026-04-22 09:09:10,550 - INFO - Database created at: sqlite:////tmp/igem_ge_test.db

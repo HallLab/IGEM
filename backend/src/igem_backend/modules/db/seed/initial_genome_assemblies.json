@@ -1,0 +1,6 @@
+{
+  "genome_assemblies": [
+    {"accession": "GCF_000001405.40", "assembly_name": "GRCh38.p14", "chromosome": null},
+    {"accession": "GCF_000001405.25", "assembly_name": "GRCh37.p13", "chromosome": null}
+  ]
+}

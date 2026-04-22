@@ -1,0 +1,17 @@
+{
+  "entity_groups": [
+    {"id": 1,  "name": "Variants",       "description": "Genetic variants: SNPs, InDels, CNVs, structural variants"},
+    {"id": 2,  "name": "Genes",          "description": "Genes, genomic sequences, and related annotations"},
+    {"id": 3,  "name": "Proteins",       "description": "Proteins, isoforms, peptides, and functional annotations"},
+    {"id": 4,  "name": "Pathways",       "description": "Biological pathways, networks, and molecular interactions"},
+    {"id": 5,  "name": "Diseases",       "description": "Disease entities, classifications, and associated phenotypes"},
+    {"id": 6,  "name": "Chemicals",      "description": "Chemical compounds, drugs, and experimental substances"},
+    {"id": 7,  "name": "Phenotypes",     "description": "Observable traits, HPO terms, and GWAS associations"},
+    {"id": 8,  "name": "Gene Ontology",  "description": "GO terms: molecular function, biological process, cellular component"},
+    {"id": 9,  "name": "Exposome",       "description": "Environmental exposures, lifestyle factors, and non-genetic health determinants"},
+    {"id": 10, "name": "Metabolomics",   "description": "Metabolites, small molecules, and biochemical profiles"},
+    {"id": 11, "name": "Transcriptomics","description": "Transcripts, isoforms, and RNA expression profiles"},
+    {"id": 12, "name": "Epigenomics",    "description": "DNA methylation, histone marks, and chromatin states"},
+    {"id": 13, "name": "Microbiome",     "description": "Microbial species, communities, and host interactions"}
+  ]
+}

@@ -1,0 +1,6 @@
+[
+  {"key": "igem_version", "value": "0.1.0", "type": "string", "description": "Current IGEM version", "editable": false},
+  {"key": "data_root", "value": "igem_data", "type": "string", "description": "Root directory for downloaded and processed files", "editable": true},
+  {"key": "nlp_model", "value": "en_core_sci_sm", "type": "string", "description": "Default scispaCy model for NLP entity extraction", "editable": true},
+  {"key": "nlp_confidence_threshold", "value": "0.75", "type": "float", "description": "Minimum NLP confidence score to store a relationship", "editable": true}
+]

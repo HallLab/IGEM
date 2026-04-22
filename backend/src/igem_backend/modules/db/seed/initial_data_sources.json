@@ -1,0 +1,49 @@
+{
+  "data_sources": [
+    {
+      "name": "hgnc",
+      "source_system": "HGNC",
+      "data_type": "Gene",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt",
+      "format": "TSV",
+      "dtp_script": "dtp_hgnc",
+      "active": true
+    },
+    {
+      "name": "gene_ncbi",
+      "source_system": "NCBI",
+      "data_type": "Gene",
+      "source_url": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene_info.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_gene_ncbi",
+      "active": true
+    },
+    {
+      "name": "ctd_gene_disease",
+      "source_system": "CTD",
+      "data_type": "Gene-Disease",
+      "source_url": "https://ctdbase.org/reports/CTD_genes_diseases.tsv.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_ctd_gene_disease",
+      "active": true
+    },
+    {
+      "name": "ctd_chem_gene",
+      "source_system": "CTD",
+      "data_type": "Chemical-Gene",
+      "source_url": "https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_ctd_chem_gene",
+      "active": true
+    },
+    {
+      "name": "pubmed_nlp",
+      "source_system": "PubMed",
+      "data_type": "Literature-OxO",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "format": "API",
+      "dtp_script": "dtp_pubmed_nlp",
+      "active": false
+    }
+  ]
+}

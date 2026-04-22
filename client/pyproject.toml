@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "igem"
+version = "0.1.0"
+description = "IGEM Python Client"
+authors = ["Andre <andre.rico@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "igem", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.27.0"
+pydantic = "^2.7.0"
+click = "^8.1.0"
+
+[tool.poetry.scripts]
+igem = "igem.cli:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-asyncio = "^0.23.0"
+ruff = "^0.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
