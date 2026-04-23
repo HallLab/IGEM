@@ -33,7 +33,7 @@ _PARENT_SOURCE = "disease_mondo"
 
 class DTP(DTPBase, EntityQueryMixin):
 
-    DTP_NAME = "dtp_disease_mondo_relationships"
+    DTP_NAME = "relationship_mondo"
     DTP_VERSION = "1.0.0"
     DTP_TYPE = "relationship"
     ROLLBACK_STRATEGY = "delete"
@@ -215,6 +215,7 @@ class DTP(DTPBase, EntityQueryMixin):
                 entity_1_type_id=type_id_map.get(source_type),
                 entity_2_type_id=type_id_map.get(target_type),
                 package_id=self.package.id,
+                evidence_count=1,
                 auto_commit=False,
             )
             created += 1

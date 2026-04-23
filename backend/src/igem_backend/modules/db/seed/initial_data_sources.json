@@ -28,24 +28,6 @@
       "active": true
     },
     {
-      "name": "ctd_gene_disease",
-      "source_system": "CTD",
-      "data_type": "Gene-Disease",
-      "source_url": "https://ctdbase.org/reports/CTD_genes_diseases.tsv.gz",
-      "format": "TSV",
-      "dtp_script": "dtp_ctd_gene_disease",
-      "active": true
-    },
-    {
-      "name": "ctd_chem_gene",
-      "source_system": "CTD",
-      "data_type": "Chemical-Gene",
-      "source_url": "https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz",
-      "format": "TSV",
-      "dtp_script": "dtp_ctd_chem_gene",
-      "active": true
-    },
-    {
       "name": "protein_pfam",
       "source_system": "Pfam",
       "data_type": "Protein-Domain",
@@ -64,7 +46,7 @@
       "active": true
     },
     {
-      "name": "protein_uniprot_relationships",
+      "name": "relationship_uniprot",
       "source_system": "UniProt",
       "data_type": "Protein-Relationship",
       "source_url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.xml.gz",
@@ -82,12 +64,21 @@
       "active": true
     },
     {
-      "name": "disease_mondo_relationships",
+      "name": "relationship_mondo",
       "source_system": "MONDO",
       "data_type": "Disease-Relationship",
       "source_url": "https://purl.obolibrary.org/obo/mondo.json",
       "format": "JSON",
       "dtp_script": "dtp_disease_mondo_relationships",
+      "active": true
+    },
+    {
+      "name": "disease_mesh",
+      "source_system": "MESH",
+      "data_type": "Disease",
+      "source_url": "https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/",
+      "format": "XML",
+      "dtp_script": "dtp_disease_mesh",
       "active": true
     },
     {
@@ -109,7 +100,7 @@
       "active": true
     },
     {
-      "name": "pathway_reactome_relationships",
+      "name": "relationship_reactome",
       "source_system": "Reactome",
       "data_type": "Pathway-Relationship",
       "source_url": "https://reactome.org/download/current/",
@@ -136,7 +127,7 @@
       "active": true
     },
     {
-      "name": "phenotype_hpo_genes",
+      "name": "relationship_hpo_genes",
       "source_system": "HPO",
       "data_type": "Gene-Phenotype",
       "source_url": "https://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt",
@@ -151,6 +142,33 @@
       "source_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/",
       "format": "TSV",
       "dtp_script": "dtp_chemical_chebi",
+      "active": true
+    },
+    {
+      "name": "chemical_mesh",
+      "source_system": "MESH",
+      "data_type": "Chemical",
+      "source_url": "https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/",
+      "format": "XML",
+      "dtp_script": "dtp_chemical_mesh",
+      "active": true
+    },
+    {
+      "name": "relationship_ctd_gene_disease",
+      "source_system": "CTD",
+      "data_type": "Gene-Disease",
+      "source_url": "https://ctdbase.org/reports/CTD_genes_diseases.tsv.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_ctd_gene_disease",
+      "active": true
+    },
+    {
+      "name": "relationship_ctd_chem_gene",
+      "source_system": "CTD",
+      "data_type": "Chemical-Gene",
+      "source_url": "https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_ctd_chem_gene",
       "active": true
     },
     {

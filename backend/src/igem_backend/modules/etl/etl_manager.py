@@ -473,7 +473,7 @@ class ETLManager:
         return all_ok
 
     def _rollback_strategy(self, ds: ETLDataSource) -> str:
-        """Read ROLLBACK_STRATEGY from the DTP class; default to 'deactivate'."""
+        """Read ROLLBACK_STRATEGY from the DTP class; default 'deactivate'."""
         try:
             module = self._load_module(ds)
             return getattr(module.DTP, "ROLLBACK_STRATEGY", "deactivate")
@@ -701,7 +701,7 @@ class ETLManager:
 
             data_sources = (
                 session.query(ETLDataSource)
-                .order_by(ETLDataSource.id)
+                .order_by(ETLDataSource.name)
                 .all()
             )
 

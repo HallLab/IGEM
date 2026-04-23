@@ -991,3 +991,686 @@
 2026-04-23 10:40:04,142 - INFO - [Load] Completed for 'phenotype_hpo_genes' in 47s
 2026-04-23 10:40:04,143 - INFO - ETL concluido para 'phenotype_hpo_genes' em 51s
 2026-04-23 10:40:04,143 - INFO - ============================================
+2026-04-23 10:41:01,490 - INFO - ============================================
+2026-04-23 10:41:01,491 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:41:01,491 - INFO -   Version    : 0.1.0
+2026-04-23 10:41:01,491 - INFO -   Debug mode : False
+2026-04-23 10:41:01,491 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:41:01,491 - INFO - ============================================
+2026-04-23 10:41:01,563 - INFO - Database connection established
+2026-04-23 10:41:01,563 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.7ms
+2026-04-23 10:41:41,738 - INFO - ============================================
+2026-04-23 10:41:41,738 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:41:41,738 - INFO -   Version    : 0.1.0
+2026-04-23 10:41:41,738 - INFO -   Debug mode : False
+2026-04-23 10:41:41,738 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:41:41,738 - INFO - ============================================
+2026-04-23 10:41:41,811 - INFO - Database connection established
+2026-04-23 10:41:41,811 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 72.1ms
+2026-04-23 10:41:41,846 - INFO - Starting ETL for 'pathway_reactome_relationships'
+2026-04-23 10:41:42,106 - INFO - [dtp_pathway_reactome_relationships] Extract not applicable — raw data is owned by dtp_pathway_reactome.
+2026-04-23 10:41:42,110 - INFO - [Transform] Up-to-date for 'pathway_reactome_relationships'
+2026-04-23 10:41:42,113 - INFO - [dtp_pathway_reactome_relationships] Load starting...
+2026-04-23 10:42:33,925 - INFO - [dtp_pathway_reactome_relationships] 169352 skipped rows written to igem_data/processed/Reactome/pathway_reactome/skipped_relationships.csv
+2026-04-23 10:42:33,925 - INFO - [dtp_pathway_reactome_relationships] Load complete: total=414687 created=245335 skipped=169352 warnings=0
+2026-04-23 10:42:33,941 - INFO - [Load] Completed for 'pathway_reactome_relationships' in 51s
+2026-04-23 10:42:33,941 - INFO - ETL concluido para 'pathway_reactome_relationships' em 52s
+2026-04-23 10:42:33,941 - INFO - ============================================
+2026-04-23 10:44:55,933 - INFO - ============================================
+2026-04-23 10:44:55,933 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:44:55,933 - INFO -   Version    : 0.1.0
+2026-04-23 10:44:55,933 - INFO -   Debug mode : False
+2026-04-23 10:44:55,933 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:44:55,933 - INFO - ============================================
+2026-04-23 10:44:56,015 - INFO - Database connection established
+2026-04-23 10:44:56,016 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 82.0ms
+2026-04-23 10:44:56,061 - INFO - Starting ETL for 'protein_uniprot_relationships'
+2026-04-23 10:44:56,331 - INFO - [dtp_protein_uniprot_relationships] Extract not applicable — raw data is owned by dtp_protein_uniprot.
+2026-04-23 10:44:56,335 - INFO - [Transform] Up-to-date for 'protein_uniprot_relationships'
+2026-04-23 10:44:56,338 - INFO - [dtp_protein_uniprot_relationships] Load starting...
+2026-04-23 10:46:03,529 - INFO - [dtp_protein_uniprot_relationships] 95717 skipped rows written to igem_data/processed/UniProt/protein_uniprot/skipped_relationships.csv
+2026-04-23 10:46:03,529 - INFO - [dtp_protein_uniprot_relationships] Load complete: total=389110 created=293393 skipped=95717 warnings=0
+2026-04-23 10:46:03,547 - INFO - [Load] Completed for 'protein_uniprot_relationships' in 1m 7s
+2026-04-23 10:46:03,548 - INFO - ETL concluido para 'protein_uniprot_relationships' em 1m 7s
+2026-04-23 10:46:03,548 - INFO - ============================================
+2026-04-23 11:15:13,278 - INFO - ============================================
+2026-04-23 11:15:13,278 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:15:13,278 - INFO -   Version    : 0.1.0
+2026-04-23 11:15:13,278 - INFO -   Debug mode : False
+2026-04-23 11:15:13,278 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:15:13,278 - INFO - ============================================
+2026-04-23 11:15:13,358 - INFO - Database connection established
+2026-04-23 11:15:13,358 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 79.6ms
+2026-04-23 11:15:13,359 - INFO - Database connection established
+2026-04-23 11:15:13,359 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 11:15:13,393 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 11:15:13,396 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 11:15:13,401 - INFO - Seeded ETLSourceSystem: created=0 updated=19 skipped=0
+2026-04-23 11:15:13,409 - INFO - Seeded ETLDataSource: created=0 updated=19 skipped=0
+2026-04-23 11:15:13,413 - INFO - Seeded EntityType: created=0 updated=14 skipped=0
+2026-04-23 11:15:13,418 - INFO - Seeded EntityRelationshipType: created=0 updated=18 skipped=0
+2026-04-23 11:15:13,421 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 11:15:13,421 - INFO - Database upgraded successfully
+2026-04-23 11:15:13,421 - INFO - ============================================
+2026-04-23 11:15:18,817 - INFO - ============================================
+2026-04-23 11:15:18,817 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:15:18,817 - INFO -   Version    : 0.1.0
+2026-04-23 11:15:18,817 - INFO -   Debug mode : False
+2026-04-23 11:15:18,817 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:15:18,817 - INFO - ============================================
+2026-04-23 11:15:18,891 - INFO - Database connection established
+2026-04-23 11:15:18,891 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 73.8ms
+2026-04-23 11:16:20,336 - INFO - ============================================
+2026-04-23 11:16:20,336 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:16:20,336 - INFO -   Version    : 0.1.0
+2026-04-23 11:16:20,336 - INFO -   Debug mode : False
+2026-04-23 11:16:20,336 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:16:20,336 - INFO - ============================================
+2026-04-23 11:16:20,414 - INFO - Database connection established
+2026-04-23 11:16:20,414 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 77.5ms
+2026-04-23 11:16:20,448 - INFO - Starting ETL for 'ctd_gene_disease'
+2026-04-23 11:16:20,718 - INFO - [dtp_ctd_gene_disease] Extract starting...
+2026-04-23 11:16:20,722 - INFO - Downloading https://ctdbase.org/reports/CTD_genes_diseases.tsv.gz
+2026-04-23 11:17:10,703 - INFO - [dtp_ctd_gene_disease] CTD_genes_diseases.tsv.gz downloaded (3,086,586,751 bytes)
+2026-04-23 11:17:10,706 - INFO - [Extract] Completed for 'ctd_gene_disease' in 49s
+2026-04-23 11:17:10,709 - INFO - [dtp_ctd_gene_disease] Transform starting...
+2026-04-23 11:17:10,709 - INFO - Parsing CTD_genes_diseases.tsv.gz (stream)...
+2026-04-23 11:18:43,778 - INFO -   evidence distribution: marker/mechanism:32005, therapeutic:1938
+2026-04-23 11:18:43,778 - INFO - [dtp_ctd_gene_disease] Transform complete: 124,015,651 raw rows → 33,943 direct-evidence pairs
+2026-04-23 11:18:43,781 - INFO - [Transform] Completed for 'ctd_gene_disease' in 1m 33s
+2026-04-23 11:18:43,784 - INFO - [dtp_ctd_gene_disease] Load starting...
+2026-04-23 11:18:43,846 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 11:18:44,729 - INFO - Pre-loading disease map (MESH + OMIM)...
+2026-04-23 11:18:44,972 - INFO -   genes=70,213 diseases=17,984
+2026-04-23 11:18:52,548 - INFO - [dtp_ctd_gene_disease] 10196 skipped rows written to igem_data/processed/CTD/ctd_gene_disease/skipped_relationships.csv
+2026-04-23 11:18:52,548 - INFO - [dtp_ctd_gene_disease] Load complete: total=33943 created=23747 skipped=10196 warnings=0
+2026-04-23 11:18:52,551 - INFO - [Load] Completed for 'ctd_gene_disease' in 8s
+2026-04-23 11:18:52,552 - INFO - ETL concluido para 'ctd_gene_disease' em 2m 32s
+2026-04-23 11:18:52,552 - INFO - ============================================
+2026-04-23 11:19:27,656 - INFO - ============================================
+2026-04-23 11:19:27,656 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:19:27,656 - INFO -   Version    : 0.1.0
+2026-04-23 11:19:27,656 - INFO -   Debug mode : False
+2026-04-23 11:19:27,656 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:19:27,656 - INFO - ============================================
+2026-04-23 11:19:27,740 - INFO - Database connection established
+2026-04-23 11:19:27,741 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 84.1ms
+2026-04-23 11:19:27,778 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 11:19:28,037 - INFO - [dtp_ctd_chem_gene] Extract starting...
+2026-04-23 11:19:28,038 - INFO - Downloading https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz
+2026-04-23 11:19:29,126 - INFO - [dtp_ctd_chem_gene] CTD_chem_gene_ixns.tsv.gz downloaded (41,863,206 bytes)
+2026-04-23 11:19:29,131 - INFO - [Extract] Completed for 'ctd_chem_gene' in 1s
+2026-04-23 11:19:29,134 - INFO - [dtp_ctd_chem_gene] Transform starting...
+2026-04-23 11:19:29,134 - INFO - Parsing CTD_chem_gene_ixns.tsv.gz (stream, human only)...
+2026-04-23 11:19:33,364 - INFO - [dtp_ctd_chem_gene] Transform complete: 3,064,949 raw rows → 0 unique human Chemical×Gene pairs
+2026-04-23 11:19:33,364 - INFO - [Transform] Completed for 'ctd_chem_gene' in 4s
+2026-04-23 11:19:33,367 - INFO - [dtp_ctd_chem_gene] Load starting...
+2026-04-23 11:19:33,405 - INFO - [Load] Completed for 'ctd_chem_gene' in 0s
+2026-04-23 11:19:33,405 - INFO - ETL concluido para 'ctd_chem_gene' em 5s
+2026-04-23 11:19:33,405 - INFO - ============================================
+2026-04-23 11:23:24,549 - INFO - ============================================
+2026-04-23 11:23:24,549 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:23:24,549 - INFO -   Version    : 0.1.0
+2026-04-23 11:23:24,549 - INFO -   Debug mode : False
+2026-04-23 11:23:24,549 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:23:24,549 - INFO - ============================================
+2026-04-23 11:23:24,626 - INFO - Database connection established
+2026-04-23 11:23:24,626 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 76.4ms
+2026-04-23 11:23:24,659 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 11:23:24,872 - INFO - [dtp_ctd_chem_gene] Extract starting...
+2026-04-23 11:23:24,872 - INFO - Downloading https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz
+2026-04-23 11:23:25,959 - INFO - [dtp_ctd_chem_gene] CTD_chem_gene_ixns.tsv.gz downloaded (41,863,206 bytes)
+2026-04-23 11:23:25,964 - INFO - [Extract] Up-to-date for 'ctd_chem_gene' (1s)
+2026-04-23 11:23:25,966 - INFO - [Transform] Up-to-date for 'ctd_chem_gene'
+2026-04-23 11:23:25,968 - INFO - [Load] Up-to-date for 'ctd_chem_gene'
+2026-04-23 11:23:25,968 - INFO - ETL concluido para 'ctd_chem_gene' em 1s
+2026-04-23 11:23:25,968 - INFO - ============================================
+2026-04-23 11:23:58,443 - INFO - ============================================
+2026-04-23 11:23:58,443 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:23:58,443 - INFO -   Version    : 0.1.0
+2026-04-23 11:23:58,443 - INFO -   Debug mode : False
+2026-04-23 11:23:58,443 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:23:58,443 - INFO - ============================================
+2026-04-23 11:23:58,517 - INFO - Database connection established
+2026-04-23 11:23:58,517 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 73.1ms
+2026-04-23 11:23:58,556 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 11:23:58,806 - INFO - [dtp_ctd_chem_gene] Extract starting...
+2026-04-23 11:23:58,806 - INFO - Downloading https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz
+2026-04-23 11:23:59,985 - INFO - [dtp_ctd_chem_gene] CTD_chem_gene_ixns.tsv.gz downloaded (41,863,206 bytes)
+2026-04-23 11:23:59,990 - INFO - [Extract] Up-to-date for 'ctd_chem_gene' (1s)
+2026-04-23 11:23:59,992 - INFO - [Transform] Up-to-date for 'ctd_chem_gene'
+2026-04-23 11:23:59,994 - INFO - [dtp_ctd_chem_gene] Load starting...
+2026-04-23 11:24:00,058 - INFO - [Load] Completed for 'ctd_chem_gene' in 0s
+2026-04-23 11:24:00,059 - INFO - ETL concluido para 'ctd_chem_gene' em 1s
+2026-04-23 11:24:00,059 - INFO - ============================================
+2026-04-23 11:24:19,509 - INFO - ============================================
+2026-04-23 11:24:19,509 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:24:19,509 - INFO -   Version    : 0.1.0
+2026-04-23 11:24:19,509 - INFO -   Debug mode : False
+2026-04-23 11:24:19,509 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:24:19,509 - INFO - ============================================
+2026-04-23 11:24:19,589 - INFO - Database connection established
+2026-04-23 11:24:19,589 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 79.0ms
+2026-04-23 11:24:19,624 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 11:24:19,876 - INFO - [dtp_ctd_chem_gene] Extract starting...
+2026-04-23 11:24:19,876 - INFO - Downloading https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz
+2026-04-23 11:24:20,906 - INFO - [dtp_ctd_chem_gene] CTD_chem_gene_ixns.tsv.gz downloaded (41,863,206 bytes)
+2026-04-23 11:24:20,910 - INFO - [Extract] Up-to-date for 'ctd_chem_gene' (1s)
+2026-04-23 11:24:20,913 - INFO - [dtp_ctd_chem_gene] Transform starting...
+2026-04-23 11:24:20,913 - INFO - Parsing CTD_chem_gene_ixns.tsv.gz (stream, human only)...
+2026-04-23 11:24:25,525 - INFO - [dtp_ctd_chem_gene] Transform complete: 3,064,949 raw rows → 822,727 unique human Chemical×Gene pairs
+2026-04-23 11:24:25,560 - INFO - [Transform] Completed for 'ctd_chem_gene' in 4s
+2026-04-23 11:24:25,563 - INFO - [Load] Up-to-date for 'ctd_chem_gene'
+2026-04-23 11:24:25,563 - INFO - ETL concluido para 'ctd_chem_gene' em 5s
+2026-04-23 11:24:25,563 - INFO - ============================================
+2026-04-23 11:25:18,783 - INFO - ============================================
+2026-04-23 11:25:18,783 - INFO - GE — Genome-Exposome Platform
+2026-04-23 11:25:18,783 - INFO -   Version    : 0.1.0
+2026-04-23 11:25:18,783 - INFO -   Debug mode : False
+2026-04-23 11:25:18,783 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 11:25:18,783 - INFO - ============================================
+2026-04-23 11:25:18,858 - INFO - Database connection established
+2026-04-23 11:25:18,858 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 73.7ms
+2026-04-23 11:25:18,897 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 11:25:19,108 - INFO - [dtp_ctd_chem_gene] Load starting...
+2026-04-23 11:25:19,283 - INFO - Pre-loading chemical map (all code aliases)...
+2026-04-23 11:25:23,605 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 11:25:24,011 - INFO -   chemicals=561,241 genes=70,213
+2026-04-23 11:25:35,340 - INFO - [dtp_ctd_chem_gene] 822727 skipped rows written to igem_data/processed/CTD/ctd_chem_gene/skipped_relationships.csv
+2026-04-23 11:25:35,340 - INFO - [dtp_ctd_chem_gene] Load complete: total=822727 created=0 skipped=822727 warnings=0
+2026-04-23 11:25:35,388 - INFO - [Load] Completed for 'ctd_chem_gene' in 16s
+2026-04-23 11:25:35,390 - INFO - ETL concluido para 'ctd_chem_gene' em 16s
+2026-04-23 11:25:35,390 - INFO - ============================================
+2026-04-23 12:35:12,982 - INFO - ============================================
+2026-04-23 12:35:12,982 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:35:12,982 - INFO -   Version    : 0.1.0
+2026-04-23 12:35:12,982 - INFO -   Debug mode : False
+2026-04-23 12:35:12,982 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:35:12,982 - INFO - ============================================
+2026-04-23 12:35:13,056 - INFO - Database connection established
+2026-04-23 12:35:13,056 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 73.2ms
+2026-04-23 12:35:13,056 - INFO - Database connection established
+2026-04-23 12:35:13,056 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 12:35:13,091 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 12:35:13,093 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 12:35:13,098 - INFO - Seeded ETLSourceSystem: created=1 updated=19 skipped=0
+2026-04-23 12:35:13,108 - INFO - Seeded ETLDataSource: created=2 updated=19 skipped=0
+2026-04-23 12:35:13,112 - INFO - Seeded EntityType: created=0 updated=14 skipped=0
+2026-04-23 12:35:13,117 - INFO - Seeded EntityRelationshipType: created=0 updated=18 skipped=0
+2026-04-23 12:35:13,118 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 12:35:13,118 - INFO - Database upgraded successfully
+2026-04-23 12:35:13,118 - INFO - ============================================
+2026-04-23 12:35:20,069 - INFO - ============================================
+2026-04-23 12:35:20,069 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:35:20,069 - INFO -   Version    : 0.1.0
+2026-04-23 12:35:20,069 - INFO -   Debug mode : False
+2026-04-23 12:35:20,069 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:35:20,069 - INFO - ============================================
+2026-04-23 12:35:20,140 - INFO - Database connection established
+2026-04-23 12:35:20,140 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 70.1ms
+2026-04-23 12:35:37,724 - INFO - ============================================
+2026-04-23 12:35:37,724 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:35:37,724 - INFO -   Version    : 0.1.0
+2026-04-23 12:35:37,724 - INFO -   Debug mode : False
+2026-04-23 12:35:37,724 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:35:37,724 - INFO - ============================================
+2026-04-23 12:35:37,796 - INFO - Database connection established
+2026-04-23 12:35:37,796 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.9ms
+2026-04-23 12:35:37,831 - INFO - Starting ETL for 'chemical_mesh'
+2026-04-23 12:35:38,116 - INFO - [dtp_chemical_mesh] Extract starting...
+2026-04-23 12:35:38,117 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/c2026.bin
+2026-04-23 12:35:38,823 - INFO -   c2026.bin: 16,471 bytes
+2026-04-23 12:35:38,823 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/d2026.bin
+2026-04-23 12:35:39,314 - INFO -   d2026.bin: 16,471 bytes
+2026-04-23 12:35:39,317 - INFO - [dtp_chemical_mesh] MeSH files downloaded (32,942 bytes total)
+2026-04-23 12:35:39,329 - INFO - [Extract] Completed for 'chemical_mesh' in 1s
+2026-04-23 12:35:39,334 - INFO - [dtp_chemical_mesh] Transform starting...
+2026-04-23 12:35:39,334 - INFO - Parsing c2026.bin (SCRs)...
+2026-04-23 12:35:39,336 - INFO - Parsing d2026.bin (D-tree descriptors)...
+2026-04-23 12:35:39,389 - INFO - [dtp_chemical_mesh] Transform complete: 0 MeSH chemical terms
+2026-04-23 12:35:39,389 - INFO - [Transform] Completed for 'chemical_mesh' in 0s
+2026-04-23 12:35:39,392 - INFO - [dtp_chemical_mesh] Load starting...
+2026-04-23 12:35:39,450 - INFO - [Load] Completed for 'chemical_mesh' in 0s
+2026-04-23 12:35:39,450 - INFO - ETL concluido para 'chemical_mesh' em 1s
+2026-04-23 12:35:39,451 - INFO - ============================================
+2026-04-23 12:35:53,828 - INFO - ============================================
+2026-04-23 12:35:53,829 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:35:53,829 - INFO -   Version    : 0.1.0
+2026-04-23 12:35:53,829 - INFO -   Debug mode : False
+2026-04-23 12:35:53,829 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:35:53,829 - INFO - ============================================
+2026-04-23 12:35:53,907 - INFO - Database connection established
+2026-04-23 12:35:53,907 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 77.8ms
+2026-04-23 12:37:35,213 - INFO - ============================================
+2026-04-23 12:37:35,213 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:37:35,213 - INFO -   Version    : 0.1.0
+2026-04-23 12:37:35,213 - INFO -   Debug mode : False
+2026-04-23 12:37:35,213 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:37:35,213 - INFO - ============================================
+2026-04-23 12:37:35,285 - INFO - Database connection established
+2026-04-23 12:37:35,285 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.2ms
+2026-04-23 12:37:35,320 - INFO - Starting ETL for 'disease_mesh'
+2026-04-23 12:37:35,503 - INFO - [dtp_disease_mesh] Extract starting...
+2026-04-23 12:37:35,504 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/d2026.bin
+2026-04-23 12:37:36,199 - INFO - [dtp_disease_mesh] d2026.bin downloaded (16,471 bytes)
+2026-04-23 12:37:36,212 - INFO - [Extract] Completed for 'disease_mesh' in 0s
+2026-04-23 12:37:36,218 - INFO - [dtp_disease_mesh] Transform starting...
+2026-04-23 12:37:36,218 - INFO - Parsing d2026.bin (C-tree + F03 filter)...
+2026-04-23 12:37:36,261 - INFO -   0 descriptors parsed → 0 disease terms
+2026-04-23 12:37:36,261 - INFO - [dtp_disease_mesh] Transform complete: 0 MeSH disease terms
+2026-04-23 12:37:36,261 - INFO - [Transform] Completed for 'disease_mesh' in 0s
+2026-04-23 12:37:36,265 - INFO - [dtp_disease_mesh] Load starting...
+2026-04-23 12:37:36,303 - INFO - [Load] Completed for 'disease_mesh' in 0s
+2026-04-23 12:37:36,304 - INFO - ETL concluido para 'disease_mesh' em 0s
+2026-04-23 12:37:36,304 - INFO - ============================================
+2026-04-23 12:52:16,717 - INFO - ============================================
+2026-04-23 12:52:16,718 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:52:16,718 - INFO -   Version    : 0.1.0
+2026-04-23 12:52:16,718 - INFO -   Debug mode : False
+2026-04-23 12:52:16,718 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:52:16,718 - INFO - ============================================
+2026-04-23 12:52:16,779 - INFO - Database connection established
+2026-04-23 12:52:16,779 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 60.4ms
+2026-04-23 12:52:25,943 - INFO - ============================================
+2026-04-23 12:52:25,943 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:52:25,943 - INFO -   Version    : 0.1.0
+2026-04-23 12:52:25,943 - INFO -   Debug mode : False
+2026-04-23 12:52:25,944 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:52:25,944 - INFO - ============================================
+2026-04-23 12:52:26,022 - INFO - Database connection established
+2026-04-23 12:52:26,022 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 78.0ms
+2026-04-23 12:52:26,056 - INFO - Starting ETL for 'disease_mesh'
+2026-04-23 12:52:26,273 - INFO - [dtp_disease_mesh] Extract starting...
+2026-04-23 12:52:26,273 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/desc2026.gz
+2026-04-23 12:52:26,902 - INFO - [dtp_disease_mesh] desc2026.gz downloaded (16,471 bytes)
+2026-04-23 12:52:26,911 - INFO - [Extract] Up-to-date for 'disease_mesh' (0s)
+2026-04-23 12:52:26,918 - INFO - [Transform] Up-to-date for 'disease_mesh'
+2026-04-23 12:52:26,920 - INFO - [Load] Up-to-date for 'disease_mesh'
+2026-04-23 12:52:26,920 - INFO - ETL concluido para 'disease_mesh' em 0s
+2026-04-23 12:52:26,920 - INFO - ============================================
+2026-04-23 12:53:17,487 - INFO - ============================================
+2026-04-23 12:53:17,487 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:53:17,487 - INFO -   Version    : 0.1.0
+2026-04-23 12:53:17,487 - INFO -   Debug mode : False
+2026-04-23 12:53:17,488 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:53:17,488 - INFO - ============================================
+2026-04-23 12:53:17,571 - INFO - Database connection established
+2026-04-23 12:53:17,571 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 83.1ms
+2026-04-23 12:53:32,631 - INFO - ============================================
+2026-04-23 12:53:32,632 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:53:32,632 - INFO -   Version    : 0.1.0
+2026-04-23 12:53:32,632 - INFO -   Debug mode : False
+2026-04-23 12:53:32,632 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:53:32,632 - INFO - ============================================
+2026-04-23 12:53:32,717 - INFO - Database connection established
+2026-04-23 12:53:32,717 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 85.0ms
+2026-04-23 12:53:32,756 - INFO - Starting ETL for 'chemical_mesh'
+2026-04-23 12:53:33,023 - INFO - [dtp_chemical_mesh] Extract starting...
+2026-04-23 12:53:33,024 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/supp2026.gz
+2026-04-23 12:53:33,446 - INFO -   supp2026.gz: 16,471 bytes
+2026-04-23 12:53:33,446 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/desc2026.gz
+2026-04-23 12:53:33,924 - INFO -   desc2026.gz: 16,471 bytes
+2026-04-23 12:53:33,927 - INFO - [dtp_chemical_mesh] MeSH XML files downloaded (32,942 bytes total)
+2026-04-23 12:53:33,943 - INFO - [Extract] Up-to-date for 'chemical_mesh' (0s)
+2026-04-23 12:53:33,947 - INFO - [Transform] Up-to-date for 'chemical_mesh'
+2026-04-23 12:53:33,950 - INFO - [Load] Up-to-date for 'chemical_mesh'
+2026-04-23 12:53:33,951 - INFO - ETL concluido para 'chemical_mesh' em 1s
+2026-04-23 12:53:33,951 - INFO - ============================================
+2026-04-23 12:55:20,191 - INFO - ============================================
+2026-04-23 12:55:20,191 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:55:20,191 - INFO -   Version    : 0.1.0
+2026-04-23 12:55:20,191 - INFO -   Debug mode : False
+2026-04-23 12:55:20,191 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:55:20,191 - INFO - ============================================
+2026-04-23 12:55:20,264 - INFO - Database connection established
+2026-04-23 12:55:20,265 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 72.9ms
+2026-04-23 12:55:20,305 - INFO - Starting ETL for 'chemical_mesh'
+2026-04-23 12:55:20,578 - INFO - [dtp_chemical_mesh] Extract starting...
+2026-04-23 12:55:20,578 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/supp2026.gz
+2026-04-23 12:55:21,099 - INFO -   supp2026.gz: 16,471 bytes
+2026-04-23 12:55:21,099 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/desc2026.gz
+2026-04-23 12:55:21,542 - INFO -   desc2026.gz: 16,471 bytes
+2026-04-23 12:55:21,555 - INFO - [dtp_chemical_mesh] MeSH XML files downloaded (32,942 bytes total)
+2026-04-23 12:55:21,565 - INFO - [Extract] Up-to-date for 'chemical_mesh' (0s)
+2026-04-23 12:55:21,569 - INFO - [Transform] Up-to-date for 'chemical_mesh'
+2026-04-23 12:55:21,572 - INFO - [Load] Up-to-date for 'chemical_mesh'
+2026-04-23 12:55:21,573 - INFO - ETL concluido para 'chemical_mesh' em 1s
+2026-04-23 12:55:21,573 - INFO - ============================================
+2026-04-23 12:55:57,631 - INFO - ============================================
+2026-04-23 12:55:57,632 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:55:57,632 - INFO -   Version    : 0.1.0
+2026-04-23 12:55:57,632 - INFO -   Debug mode : False
+2026-04-23 12:55:57,632 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:55:57,632 - INFO - ============================================
+2026-04-23 12:55:57,698 - INFO - Database connection established
+2026-04-23 12:55:57,699 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 66.4ms
+2026-04-23 12:55:57,732 - INFO - Starting ETL for 'chemical_mesh'
+2026-04-23 12:55:57,980 - INFO - [dtp_chemical_mesh] Extract starting...
+2026-04-23 12:55:57,980 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/supp2026.gz
+2026-04-23 12:55:58,454 - INFO -   supp2026.gz: 16,471 bytes
+2026-04-23 12:55:58,454 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/desc2026.gz
+2026-04-23 12:55:59,019 - INFO -   desc2026.gz: 16,471 bytes
+2026-04-23 12:55:59,032 - INFO - [dtp_chemical_mesh] MeSH XML files downloaded (32,942 bytes total)
+2026-04-23 12:55:59,042 - INFO - [Extract] Up-to-date for 'chemical_mesh' (1s)
+2026-04-23 12:55:59,047 - INFO - [Transform] Up-to-date for 'chemical_mesh'
+2026-04-23 12:55:59,051 - INFO - [dtp_chemical_mesh] Load starting...
+2026-04-23 12:55:59,189 - INFO - [Load] Completed for 'chemical_mesh' in 0s
+2026-04-23 12:55:59,190 - INFO - ETL concluido para 'chemical_mesh' em 1s
+2026-04-23 12:55:59,190 - INFO - ============================================
+2026-04-23 12:57:02,540 - INFO - ============================================
+2026-04-23 12:57:02,540 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:57:02,540 - INFO -   Version    : 0.1.0
+2026-04-23 12:57:02,540 - INFO -   Debug mode : False
+2026-04-23 12:57:02,540 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:57:02,540 - INFO - ============================================
+2026-04-23 12:57:02,617 - INFO - Database connection established
+2026-04-23 12:57:02,617 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 76.6ms
+2026-04-23 12:57:02,653 - INFO - Starting ETL for 'chemical_mesh'
+2026-04-23 12:57:02,844 - INFO - [dtp_chemical_mesh] Extract starting...
+2026-04-23 12:57:02,844 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/supp2026.gz
+2026-04-23 12:57:03,462 - INFO -   supp2026.gz: 16,471 bytes
+2026-04-23 12:57:03,462 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/asciimesh/desc2026.gz
+2026-04-23 12:57:03,957 - INFO -   desc2026.gz: 16,471 bytes
+2026-04-23 12:57:03,972 - INFO - [dtp_chemical_mesh] MeSH XML files downloaded (32,942 bytes total)
+2026-04-23 12:57:03,982 - INFO - [Extract] Completed for 'chemical_mesh' in 1s
+2026-04-23 12:57:03,987 - INFO - [dtp_chemical_mesh] Transform starting...
+2026-04-23 12:57:03,987 - INFO - Parsing supp2026.gz (SCRs)...
+2026-04-23 12:57:03,988 - ERROR - [dtp_chemical_mesh] Transform failed: Not a gzipped file (b'\n\n')
+2026-04-23 12:57:03,989 - ERROR - [Transform] Failed for 'chemical_mesh' after 0s: [dtp_chemical_mesh] Transform failed: Not a gzipped file (b'\n\n')
+2026-04-23 12:57:03,991 - INFO - [dtp_chemical_mesh] Load starting...
+2026-04-23 12:57:04,058 - INFO - [Load] Completed for 'chemical_mesh' in 0s
+2026-04-23 12:57:04,059 - INFO - ETL concluido para 'chemical_mesh' em 1s
+2026-04-23 12:57:04,059 - INFO - ============================================
+2026-04-23 12:58:13,602 - INFO - ============================================
+2026-04-23 12:58:13,603 - INFO - GE — Genome-Exposome Platform
+2026-04-23 12:58:13,603 - INFO -   Version    : 0.1.0
+2026-04-23 12:58:13,603 - INFO -   Debug mode : False
+2026-04-23 12:58:13,603 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 12:58:13,603 - INFO - ============================================
+2026-04-23 12:58:13,658 - INFO - Database connection established
+2026-04-23 12:58:13,658 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 55.2ms
+2026-04-23 12:58:13,690 - INFO - Starting ETL for 'chemical_mesh'
+2026-04-23 12:58:13,879 - INFO - [dtp_chemical_mesh] Extract starting...
+2026-04-23 12:58:13,879 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/supp2026.gz
+2026-04-23 12:58:14,621 - INFO -   supp2026.gz: 786,059,002 bytes
+2026-04-23 12:58:14,621 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.gz
+2026-04-23 12:58:14,998 - INFO -   desc2026.gz: 312,952,703 bytes
+2026-04-23 12:58:22,642 - INFO - [dtp_chemical_mesh] MeSH XML files downloaded (1,099,011,705 bytes total)
+2026-04-23 12:58:22,646 - INFO - [Extract] Completed for 'chemical_mesh' in 8s
+2026-04-23 12:58:22,649 - INFO - [dtp_chemical_mesh] Transform starting...
+2026-04-23 12:58:22,649 - INFO - Parsing supp2026.gz (SCRs)...
+2026-04-23 12:58:22,650 - ERROR - [dtp_chemical_mesh] Transform failed: Not a gzipped file (b'<?')
+2026-04-23 12:58:22,651 - ERROR - [Transform] Failed for 'chemical_mesh' after 0s: [dtp_chemical_mesh] Transform failed: Not a gzipped file (b'<?')
+2026-04-23 12:58:22,654 - INFO - [dtp_chemical_mesh] Load starting...
+2026-04-23 12:58:22,753 - INFO - [Load] Completed for 'chemical_mesh' in 0s
+2026-04-23 12:58:22,753 - INFO - ETL concluido para 'chemical_mesh' em 9s
+2026-04-23 12:58:22,753 - INFO - ============================================
+2026-04-23 13:02:03,320 - INFO - ============================================
+2026-04-23 13:02:03,321 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:02:03,321 - INFO -   Version    : 0.1.0
+2026-04-23 13:02:03,321 - INFO -   Debug mode : False
+2026-04-23 13:02:03,321 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:02:03,321 - INFO - ============================================
+2026-04-23 13:02:03,379 - INFO - Database connection established
+2026-04-23 13:02:03,380 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 58.2ms
+2026-04-23 13:02:03,417 - INFO - Starting ETL for 'chemical_mesh'
+2026-04-23 13:02:03,708 - INFO - [dtp_chemical_mesh] Extract starting...
+2026-04-23 13:02:03,709 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/supp2026.xml
+2026-04-23 13:03:07,756 - INFO -   supp2026.xml: 786,059,002 bytes
+2026-04-23 13:03:07,757 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.xml
+2026-04-23 13:03:15,537 - INFO -   desc2026.xml: 312,952,703 bytes
+2026-04-23 13:03:22,927 - INFO - [dtp_chemical_mesh] MeSH XML files downloaded (1,099,011,705 bytes total)
+2026-04-23 13:03:22,931 - INFO - [Extract] Completed for 'chemical_mesh' in 1m 19s
+2026-04-23 13:03:22,933 - INFO - [dtp_chemical_mesh] Transform starting...
+2026-04-23 13:03:22,933 - INFO - Parsing supp2026.xml (SCRs)...
+2026-04-23 13:03:39,056 - INFO -   323,964 SCR chemical terms
+2026-04-23 13:03:39,056 - INFO - Parsing desc2026.xml (D-tree descriptors)...
+2026-04-23 13:03:45,007 - INFO -   0 descriptor chemical terms
+2026-04-23 13:03:45,390 - INFO -   mesh_source distribution: SCR:323964
+2026-04-23 13:03:45,390 - INFO - [dtp_chemical_mesh] Transform complete: 323,964 MeSH chemical terms
+2026-04-23 13:03:45,438 - INFO - [Transform] Completed for 'chemical_mesh' in 22s
+2026-04-23 13:03:45,441 - INFO - [dtp_chemical_mesh] Load starting...
+2026-04-23 13:03:45,597 - INFO - Pre-loading existing MESH chemical aliases...
+2026-04-23 13:03:46,025 - INFO -   0 existing MESH chemical alias norms
+2026-04-23 13:06:36,377 - INFO - [dtp_chemical_mesh] Load complete: total=323964 created=323964 skipped=0 warnings=0
+2026-04-23 13:06:36,410 - INFO - [Load] Completed for 'chemical_mesh' in 2m 50s
+2026-04-23 13:06:36,414 - INFO - ETL concluido para 'chemical_mesh' em 4m 32s
+2026-04-23 13:06:36,414 - INFO - ============================================
+2026-04-23 13:07:35,648 - INFO - ============================================
+2026-04-23 13:07:35,648 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:07:35,648 - INFO -   Version    : 0.1.0
+2026-04-23 13:07:35,648 - INFO -   Debug mode : False
+2026-04-23 13:07:35,648 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:07:35,648 - INFO - ============================================
+2026-04-23 13:07:35,733 - INFO - Database connection established
+2026-04-23 13:07:35,733 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 84.3ms
+2026-04-23 13:07:35,771 - INFO - Starting ETL for 'disease_mesh'
+2026-04-23 13:07:36,054 - INFO - [dtp_disease_mesh] Extract starting...
+2026-04-23 13:07:36,054 - INFO - Downloading https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.xml
+2026-04-23 13:07:42,810 - INFO - [dtp_disease_mesh] desc2026.xml downloaded (312,952,703 bytes)
+2026-04-23 13:07:42,814 - INFO - [Extract] Completed for 'disease_mesh' in 6s
+2026-04-23 13:07:42,816 - INFO - [dtp_disease_mesh] Transform starting...
+2026-04-23 13:07:42,816 - INFO - Parsing desc2026.xml (C-tree + F03 filter)...
+2026-04-23 13:07:48,132 - INFO -   5,194 disease terms extracted
+2026-04-23 13:07:48,132 - INFO - [dtp_disease_mesh] Transform complete: 5,194 MeSH disease terms
+2026-04-23 13:07:48,133 - INFO - [Transform] Completed for 'disease_mesh' in 5s
+2026-04-23 13:07:48,135 - INFO - [dtp_disease_mesh] Load starting...
+2026-04-23 13:07:48,176 - INFO - Pre-loading existing MESH disease aliases...
+2026-04-23 13:07:48,693 - INFO -   8,088 existing MESH disease alias norms
+2026-04-23 13:07:50,584 - INFO - [dtp_disease_mesh] Load complete: total=5194 created=1993 skipped=3201 warnings=0
+2026-04-23 13:07:50,585 - INFO - [Load] Completed for 'disease_mesh' in 2s
+2026-04-23 13:07:50,587 - INFO - ETL concluido para 'disease_mesh' em 14s
+2026-04-23 13:07:50,587 - INFO - ============================================
+2026-04-23 13:23:37,992 - INFO - ============================================
+2026-04-23 13:23:37,993 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:23:37,993 - INFO -   Version    : 0.1.0
+2026-04-23 13:23:37,993 - INFO -   Debug mode : False
+2026-04-23 13:23:37,993 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:23:37,993 - INFO - ============================================
+2026-04-23 13:23:38,074 - INFO - Database connection established
+2026-04-23 13:23:38,074 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 80.5ms
+2026-04-23 13:23:38,113 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 13:23:38,421 - INFO - [dtp_ctd_chem_gene] Extract starting...
+2026-04-23 13:23:38,421 - INFO - Downloading https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz
+2026-04-23 13:23:39,574 - INFO - [dtp_ctd_chem_gene] CTD_chem_gene_ixns.tsv.gz downloaded (41,863,206 bytes)
+2026-04-23 13:23:39,581 - INFO - [Extract] Up-to-date for 'ctd_chem_gene' (1s)
+2026-04-23 13:23:39,585 - INFO - [Transform] Up-to-date for 'ctd_chem_gene'
+2026-04-23 13:23:39,588 - INFO - [dtp_ctd_chem_gene] Load starting...
+2026-04-23 13:23:39,845 - INFO - Pre-loading chemical map (all code aliases)...
+2026-04-23 13:23:46,240 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 13:23:46,644 - INFO -   chemicals=885,205 genes=70,213
+2026-04-23 13:23:58,329 - INFO - [dtp_ctd_chem_gene] 822727 skipped rows written to igem_data/processed/CTD/ctd_chem_gene/skipped_relationships.csv
+2026-04-23 13:23:58,329 - INFO - [dtp_ctd_chem_gene] Load complete: total=822727 created=0 skipped=822727 warnings=0
+2026-04-23 13:23:58,386 - INFO - [Load] Completed for 'ctd_chem_gene' in 18s
+2026-04-23 13:23:58,386 - INFO - ETL concluido para 'ctd_chem_gene' em 20s
+2026-04-23 13:23:58,386 - INFO - ============================================
+2026-04-23 13:24:31,926 - INFO - ============================================
+2026-04-23 13:24:31,926 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:24:31,926 - INFO -   Version    : 0.1.0
+2026-04-23 13:24:31,926 - INFO -   Debug mode : False
+2026-04-23 13:24:31,926 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:24:31,926 - INFO - ============================================
+2026-04-23 13:24:32,004 - INFO - Database connection established
+2026-04-23 13:24:32,004 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 77.3ms
+2026-04-23 13:24:32,043 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 13:24:32,267 - INFO - [dtp_ctd_chem_gene] Extract starting...
+2026-04-23 13:24:32,267 - INFO - Downloading https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz
+2026-04-23 13:24:33,685 - INFO - [dtp_ctd_chem_gene] CTD_chem_gene_ixns.tsv.gz downloaded (41,863,206 bytes)
+2026-04-23 13:24:33,689 - INFO - [Extract] Up-to-date for 'ctd_chem_gene' (1s)
+2026-04-23 13:24:33,693 - INFO - [dtp_ctd_chem_gene] Transform starting...
+2026-04-23 13:24:33,693 - INFO - Parsing CTD_chem_gene_ixns.tsv.gz (stream, human only)...
+2026-04-23 13:24:38,393 - INFO - [dtp_ctd_chem_gene] Transform complete: 3,064,949 raw rows → 822,727 unique human Chemical×Gene pairs
+2026-04-23 13:24:38,429 - INFO - [Transform] Completed for 'ctd_chem_gene' in 4s
+2026-04-23 13:24:38,432 - INFO - [dtp_ctd_chem_gene] Load starting...
+2026-04-23 13:24:38,556 - INFO - Pre-loading chemical map (all code aliases)...
+2026-04-23 13:24:45,191 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 13:24:46,210 - INFO -   chemicals=885,205 genes=70,213
+2026-04-23 13:24:58,027 - INFO - [dtp_ctd_chem_gene] 822727 skipped rows written to igem_data/processed/CTD/ctd_chem_gene/skipped_relationships.csv
+2026-04-23 13:24:58,027 - INFO - [dtp_ctd_chem_gene] Load complete: total=822727 created=0 skipped=822727 warnings=0
+2026-04-23 13:24:58,081 - INFO - [Load] Completed for 'ctd_chem_gene' in 19s
+2026-04-23 13:24:58,083 - INFO - ETL concluido para 'ctd_chem_gene' em 26s
+2026-04-23 13:24:58,083 - INFO - ============================================
+2026-04-23 13:30:30,094 - INFO - ============================================
+2026-04-23 13:30:30,094 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:30:30,094 - INFO -   Version    : 0.1.0
+2026-04-23 13:30:30,094 - INFO -   Debug mode : False
+2026-04-23 13:30:30,094 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:30:30,094 - INFO - ============================================
+2026-04-23 13:30:30,177 - INFO - Database connection established
+2026-04-23 13:30:30,177 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 82.6ms
+2026-04-23 13:30:30,216 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-23 13:30:30,487 - INFO - [dtp_ctd_chem_gene] Extract starting...
+2026-04-23 13:30:30,487 - INFO - Downloading https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz
+2026-04-23 13:30:31,613 - INFO - [dtp_ctd_chem_gene] CTD_chem_gene_ixns.tsv.gz downloaded (41,863,206 bytes)
+2026-04-23 13:30:31,617 - INFO - [Extract] Up-to-date for 'ctd_chem_gene' (1s)
+2026-04-23 13:30:31,619 - INFO - [Transform] Up-to-date for 'ctd_chem_gene'
+2026-04-23 13:30:31,621 - INFO - [dtp_ctd_chem_gene] Load starting...
+2026-04-23 13:30:31,772 - INFO - Pre-loading chemical map (all code aliases)...
+2026-04-23 13:30:38,245 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 13:30:39,064 - INFO -   chemicals=885,205 genes=70,213
+2026-04-23 13:32:39,422 - INFO - [dtp_ctd_chem_gene] 488322 skipped rows written to igem_data/processed/CTD/ctd_chem_gene/skipped_relationships.csv
+2026-04-23 13:32:39,422 - INFO - [dtp_ctd_chem_gene] Load complete: total=822727 created=334405 skipped=488322 warnings=0
+2026-04-23 13:32:39,478 - INFO - [Load] Completed for 'ctd_chem_gene' in 2m 7s
+2026-04-23 13:32:39,479 - INFO - ETL concluido para 'ctd_chem_gene' em 2m 9s
+2026-04-23 13:32:39,479 - INFO - ============================================
+2026-04-23 13:35:09,761 - INFO - ============================================
+2026-04-23 13:35:09,761 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:35:09,761 - INFO -   Version    : 0.1.0
+2026-04-23 13:35:09,761 - INFO -   Debug mode : False
+2026-04-23 13:35:09,761 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:35:09,761 - INFO - ============================================
+2026-04-23 13:35:09,829 - INFO - Database connection established
+2026-04-23 13:35:09,830 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 67.8ms
+2026-04-23 13:36:04,282 - INFO - ============================================
+2026-04-23 13:36:04,283 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:36:04,283 - INFO -   Version    : 0.1.0
+2026-04-23 13:36:04,283 - INFO -   Debug mode : False
+2026-04-23 13:36:04,283 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:36:04,283 - INFO - ============================================
+2026-04-23 13:36:04,360 - INFO - Database connection established
+2026-04-23 13:36:04,360 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 76.2ms
+2026-04-23 13:36:04,398 - INFO - Starting ETL for 'ctd_gene_disease'
+2026-04-23 13:36:04,623 - INFO - [dtp_ctd_gene_disease] Extract starting...
+2026-04-23 13:36:04,623 - INFO - Downloading https://ctdbase.org/reports/CTD_genes_diseases.tsv.gz
+2026-04-23 13:36:50,652 - INFO - [dtp_ctd_gene_disease] CTD_genes_diseases.tsv.gz downloaded (3,086,586,751 bytes)
+2026-04-23 13:36:50,655 - INFO - [Extract] Up-to-date for 'ctd_gene_disease' (46s)
+2026-04-23 13:36:50,657 - INFO - [Transform] Up-to-date for 'ctd_gene_disease'
+2026-04-23 13:36:50,659 - INFO - [dtp_ctd_gene_disease] Load starting...
+2026-04-23 13:36:50,741 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 13:36:51,795 - INFO - Pre-loading disease map (MESH + OMIM)...
+2026-04-23 13:36:52,145 - INFO -   genes=70,213 diseases=19,977
+2026-04-23 13:36:58,878 - INFO - [dtp_ctd_gene_disease] 1341 skipped rows written to igem_data/processed/CTD/ctd_gene_disease/skipped_relationships.csv
+2026-04-23 13:36:58,878 - INFO - [dtp_ctd_gene_disease] Load complete: total=33943 created=32602 skipped=1341 warnings=0
+2026-04-23 13:36:58,881 - INFO - [Load] Completed for 'ctd_gene_disease' in 8s
+2026-04-23 13:36:58,882 - INFO - ETL concluido para 'ctd_gene_disease' em 54s
+2026-04-23 13:36:58,882 - INFO - ============================================
+2026-04-23 13:51:49,473 - INFO - ============================================
+2026-04-23 13:51:49,473 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:51:49,473 - INFO -   Version    : 0.1.0
+2026-04-23 13:51:49,473 - INFO -   Debug mode : False
+2026-04-23 13:51:49,473 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:51:49,473 - INFO - ============================================
+2026-04-23 13:51:49,546 - INFO - Database connection established
+2026-04-23 13:51:49,546 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 72.8ms
+2026-04-23 13:51:49,547 - INFO - Database connection established
+2026-04-23 13:51:49,547 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 13:51:49,585 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 13:51:49,587 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 13:51:49,592 - INFO - Seeded ETLSourceSystem: created=0 updated=20 skipped=0
+2026-04-23 13:51:49,600 - INFO - Seeded ETLDataSource: created=0 updated=21 skipped=0
+2026-04-23 13:51:49,604 - INFO - Seeded EntityType: created=0 updated=14 skipped=0
+2026-04-23 13:51:49,608 - INFO - Seeded EntityRelationshipType: created=0 updated=18 skipped=0
+2026-04-23 13:51:49,610 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 13:51:49,610 - INFO - Database upgraded successfully
+2026-04-23 13:51:49,610 - INFO - ============================================
+2026-04-23 13:51:54,519 - INFO - ============================================
+2026-04-23 13:51:54,519 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:51:54,519 - INFO -   Version    : 0.1.0
+2026-04-23 13:51:54,519 - INFO -   Debug mode : False
+2026-04-23 13:51:54,519 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:51:54,519 - INFO - ============================================
+2026-04-23 13:51:54,591 - INFO - Database connection established
+2026-04-23 13:51:54,591 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.5ms
+2026-04-23 13:54:43,733 - INFO - ============================================
+2026-04-23 13:54:43,733 - INFO - GE — Genome-Exposome Platform
+2026-04-23 13:54:43,733 - INFO -   Version    : 0.1.0
+2026-04-23 13:54:43,733 - INFO -   Debug mode : False
+2026-04-23 13:54:43,733 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 13:54:43,733 - INFO - ============================================
+2026-04-23 13:54:43,809 - INFO - Database connection established
+2026-04-23 13:54:43,809 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 75.7ms
+2026-04-23 14:26:50,721 - INFO - ============================================
+2026-04-23 14:26:50,722 - INFO - GE — Genome-Exposome Platform
+2026-04-23 14:26:50,722 - INFO -   Version    : 0.1.0
+2026-04-23 14:26:50,722 - INFO -   Debug mode : False
+2026-04-23 14:26:50,722 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 14:26:50,722 - INFO - ============================================
+2026-04-23 14:26:50,808 - INFO - Database connection established
+2026-04-23 14:26:50,808 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 86.0ms
+2026-04-23 14:26:50,842 - WARNING - No matching active DataSources found.
+2026-04-23 14:27:10,936 - INFO - ============================================
+2026-04-23 14:27:10,936 - INFO - GE — Genome-Exposome Platform
+2026-04-23 14:27:10,937 - INFO -   Version    : 0.1.0
+2026-04-23 14:27:10,937 - INFO -   Debug mode : False
+2026-04-23 14:27:10,937 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 14:27:10,937 - INFO - ============================================
+2026-04-23 14:27:11,014 - INFO - Database connection established
+2026-04-23 14:27:11,014 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 76.8ms
+2026-04-23 14:27:11,050 - INFO - Starting ETL for 'relationship_ctd_gene_disease'
+2026-04-23 14:27:11,307 - INFO - [relationship_ctd_gene_disease] Load starting...
+2026-04-23 14:27:11,448 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 14:27:12,456 - INFO - Pre-loading disease map (MESH + OMIM)...
+2026-04-23 14:27:12,780 - INFO -   genes=70,213 diseases=19,977
+2026-04-23 14:27:18,308 - INFO - [relationship_ctd_gene_disease] 1341 skipped rows written to igem_data/processed/CTD/relationship_ctd_gene_disease/skipped_relationships.csv
+2026-04-23 14:27:18,308 - INFO - [relationship_ctd_gene_disease] Load complete: total=33943 created=32602 skipped=1341 warnings=0
+2026-04-23 14:27:18,311 - INFO - [Load] Completed for 'relationship_ctd_gene_disease' in 7s
+2026-04-23 14:27:18,312 - INFO - ETL concluido para 'relationship_ctd_gene_disease' em 7s
+2026-04-23 14:27:18,312 - INFO - ============================================
+2026-04-23 14:27:44,454 - INFO - ============================================
+2026-04-23 14:27:44,454 - INFO - GE — Genome-Exposome Platform
+2026-04-23 14:27:44,454 - INFO -   Version    : 0.1.0
+2026-04-23 14:27:44,454 - INFO -   Debug mode : False
+2026-04-23 14:27:44,454 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 14:27:44,454 - INFO - ============================================
+2026-04-23 14:27:44,537 - INFO - Database connection established
+2026-04-23 14:27:44,537 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 82.3ms
+2026-04-23 14:27:44,568 - INFO - Starting ETL for 'relationship_ctd_chem_gene'
+2026-04-23 14:27:44,790 - INFO - [relationship_ctd_chem_gene] Load starting...
+2026-04-23 14:27:44,939 - INFO - Pre-loading chemical map (all code aliases)...
+2026-04-23 14:27:51,722 - INFO - Pre-loading gene map (NCBI)...
+2026-04-23 14:27:52,130 - INFO -   chemicals=885,205 genes=70,213
+2026-04-23 14:28:58,917 - INFO - [relationship_ctd_chem_gene] 488322 skipped rows written to igem_data/processed/CTD/relationship_ctd_chem_gene/skipped_relationships.csv
+2026-04-23 14:28:58,917 - INFO - [relationship_ctd_chem_gene] Load complete: total=822727 created=334405 skipped=488322 warnings=0
+2026-04-23 14:28:58,965 - INFO - [Load] Completed for 'relationship_ctd_chem_gene' in 1m 14s
+2026-04-23 14:28:58,965 - INFO - ETL concluido para 'relationship_ctd_chem_gene' em 1m 14s
+2026-04-23 14:28:58,966 - INFO - ============================================
+2026-04-23 14:31:41,080 - INFO - ============================================
+2026-04-23 14:31:41,080 - INFO - GE — Genome-Exposome Platform
+2026-04-23 14:31:41,080 - INFO -   Version    : 0.1.0
+2026-04-23 14:31:41,080 - INFO -   Debug mode : False
+2026-04-23 14:31:41,080 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 14:31:41,080 - INFO - ============================================
+2026-04-23 14:31:41,162 - INFO - Database connection established
+2026-04-23 14:31:41,162 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 81.8ms
+2026-04-23 14:31:41,199 - INFO - Starting ETL for 'relationship_hpo_genes'
+2026-04-23 14:31:41,410 - INFO - [relationship_hpo_genes] Load starting...
+2026-04-23 14:32:34,422 - INFO - [relationship_hpo_genes] 269 skipped rows written to igem_data/processed/HPO/relationship_hpo_genes/skipped_relationships.csv
+2026-04-23 14:32:34,423 - INFO - [relationship_hpo_genes] Load complete: total=270236 created=269967 skipped=269 warnings=0
+2026-04-23 14:32:34,426 - INFO - [Load] Completed for 'relationship_hpo_genes' in 53s
+2026-04-23 14:32:34,427 - INFO - ETL concluido para 'relationship_hpo_genes' em 53s
+2026-04-23 14:32:34,427 - INFO - ============================================
+2026-04-23 14:33:10,070 - INFO - ============================================
+2026-04-23 14:33:10,071 - INFO - GE — Genome-Exposome Platform
+2026-04-23 14:33:10,071 - INFO -   Version    : 0.1.0
+2026-04-23 14:33:10,071 - INFO -   Debug mode : False
+2026-04-23 14:33:10,071 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 14:33:10,071 - INFO - ============================================
+2026-04-23 14:33:10,146 - INFO - Database connection established
+2026-04-23 14:33:10,146 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 75.2ms
+2026-04-23 14:33:10,180 - INFO - Starting ETL for 'relationship_mondo'
+2026-04-23 14:33:10,391 - INFO - [relationship_mondo] Load starting...
+2026-04-23 14:33:22,579 - INFO - [relationship_mondo] 438 skipped rows written to igem_data/processed/MONDO/disease_mondo/skipped_relationships.csv
+2026-04-23 14:33:22,580 - INFO - [relationship_mondo] Load complete: total=48999 created=48561 skipped=438 warnings=0
+2026-04-23 14:33:22,581 - INFO - [Load] Completed for 'relationship_mondo' in 12s
+2026-04-23 14:33:22,583 - INFO - ETL concluido para 'relationship_mondo' em 12s
+2026-04-23 14:33:22,583 - INFO - ============================================
