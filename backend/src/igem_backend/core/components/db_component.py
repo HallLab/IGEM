@@ -41,14 +41,12 @@ class DBComponent(BaseComponent):
         db.create_db(overwrite=overwrite)
 
         self.core.db = db
-        self.core.logger.log(f"Database created at: {self.core.db_uri}", "INFO")
         return True
 
     def upgrade(self) -> bool:
         """Re-apply seeds idempotently against an existing database."""
         db = self.require_db()
         db.upgrade_db()
-        self.core.logger.log("Database upgraded (seeds applied).", "INFO")
         return True
 
     def get_session(self):

@@ -50,6 +50,11 @@ class Logger:
         log_level = self.LOG_LEVELS.get(level.upper(), logging.INFO)
         self.logger.log(log_level, message)
 
+    def footer(self, message: str, level: str = "SUCCESS") -> None:
+        """Log a closing message followed by a separator line."""
+        self.log(message, level)
+        self.log("=" * 44, "INFO")
+
     def set_log_level(self, log_level):
         level = self.LOG_LEVELS.get(log_level.upper(), logging.INFO)
         self.logger.setLevel(level)

@@ -1,3 +1,5 @@
+import enum
+
 from sqlalchemy import (
     BigInteger,
     Boolean,
@@ -5,31 +7,52 @@ from sqlalchemy import (
     Enum,
     Float,
     ForeignKey,
+    Index,
     Integer,
     String,
     UniqueConstraint,
 )
 from sqlalchemy.orm import relationship
 
+
 from igem_backend.modules.db.base import Base
 from igem_backend.modules.db.types import PKBigIntOrInt
 
 
-class EntityGroup(Base):
-    """
-    Conceptual category of a biological entity (e.g. Gene, Variant, Exposome).
+class EntityDomain(str, enum.Enum):
+    GENOMICS = "Genomics"
+    EXPOSOME = "Exposome"
+    KNOWLEDGE = "Knowledge"
 
-    Used to enforce semantic boundaries in OxO integration and to drive
-    relationship type validation (GxE, GxG, ExE, etc.).
+
+class EntityType(Base):
+    """
+    Specific category of a biological or environmental entity (e.g. Gene,
+    Variant, Chemical, Disease, Exposome, Pathway).
+
+    Each EntityType belongs to one EntityDomain (Genomics, Exposome, Knowledge),
+    stored as an Enum column — no separate table, no join required.
+    The domain drives OxO relationship classification (GxG, GxE, ExE, GxK).
     """
 
-    __tablename__ = "entity_groups"
+    __tablename__ = "entity_types"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(255), unique=True, nullable=False)
+    name = Column(String(50), unique=True, nullable=False)
+    domain = Column(
+        Enum(
+            "Genomics",
+            "Exposome",
+            "Knowledge",
+            name="entity_domain_enum",
+            create_constraint=True,
+            validate_strings=True,
+        ),
+        nullable=False,
+    )
     description = Column(String(512), nullable=True)
 
-    entities = relationship("Entity", back_populates="entity_group")
+    entities = relationship("Entity", back_populates="entity_type")
 
 
 class Entity(Base):
@@ -37,7 +60,7 @@ class Entity(Base):
     A unique biological or exposome concept: gene, variant, chemical,
     disease, exposure, pathway, etc.
 
-    Each entity belongs to one EntityGroup and accumulates aliases from
+    Each entity belongs to one EntityType and accumulates aliases from
     multiple data sources via EntityAlias.
     """
 
@@ -45,13 +68,13 @@ class Entity(Base):
 
     id = Column(PKBigIntOrInt, primary_key=True, autoincrement=True)
 
-    group_id = Column(
+    type_id = Column(
         Integer,
-        ForeignKey("entity_groups.id", ondelete="SET NULL"),
+        ForeignKey("entity_types.id", ondelete="SET NULL"),
         nullable=True,
         index=True,
     )
-    entity_group = relationship("EntityGroup", back_populates="entities")
+    entity_type = relationship("EntityType", back_populates="entities")
 
     has_conflict = Column(Boolean, nullable=True, default=None)
     is_active = Column(Boolean, nullable=True, default=True)
@@ -85,7 +108,10 @@ class Entity(Base):
 
     primary_name = relationship(
         "EntityAlias",
-        primaryjoin="and_(Entity.id==EntityAlias.entity_id, EntityAlias.is_primary==True)",
+        primaryjoin=(
+            "and_(Entity.id==EntityAlias.entity_id,"
+            " EntityAlias.is_primary==True)"
+        ),
         viewonly=True,
         uselist=False,
     )
@@ -114,12 +140,12 @@ class EntityAlias(Base):
     )
     entity = relationship("Entity", back_populates="entity_aliases")
 
-    group_id = Column(
+    type_id = Column(
         Integer,
-        ForeignKey("entity_groups.id", ondelete="SET NULL"),
+        ForeignKey("entity_types.id", ondelete="SET NULL"),
         nullable=True,
     )
-    entity_group = relationship("EntityGroup", passive_deletes=True)
+    entity_type = relationship("EntityType", passive_deletes=True)
 
     alias_value = Column(String(1000), nullable=False)
 
@@ -176,7 +202,9 @@ class EntityRelationshipType(Base):
     code = Column(String(50), unique=True, nullable=False)
     description = Column(String(255), nullable=True)
 
-    relationships = relationship("EntityRelationship", back_populates="relationship_type")
+    relationships = relationship(
+        "EntityRelationship", back_populates="relationship_type"
+    )
 
 
 class EntityRelationship(Base):
@@ -187,7 +215,7 @@ class EntityRelationship(Base):
     - discovery_method: how this relationship was found
       (structured = curated DB, regex = IGEM MVP approach,
        nlp = scispaCy extraction, pubmed = PubMed mining, manual)
-    - confidence_score: float 0–1; null means curated (implicit 1.0)
+    - confidence_score: float 0-1; null means curated (implicit 1.0)
     - evidence_count: number of text occurrences supporting this relationship
     - source_ref: PMID, DOI, or URL of the evidence source
     """
@@ -208,14 +236,14 @@ class EntityRelationship(Base):
         back_populates="relationships_as_1",
     )
 
-    entity_1_group_id = Column(
+    entity_1_type_id = Column(
         Integer,
-        ForeignKey("entity_groups.id", ondelete="CASCADE"),
+        ForeignKey("entity_types.id", ondelete="CASCADE"),
         nullable=True,
         index=True,
     )
-    entity_1_group = relationship(
-        "EntityGroup", foreign_keys=[entity_1_group_id], passive_deletes=True
+    entity_1_type = relationship(
+        "EntityType", foreign_keys=[entity_1_type_id], passive_deletes=True
     )
 
     entity_2_id = Column(
@@ -230,14 +258,14 @@ class EntityRelationship(Base):
         back_populates="relationships_as_2",
     )
 
-    entity_2_group_id = Column(
+    entity_2_type_id = Column(
         Integer,
-        ForeignKey("entity_groups.id", ondelete="CASCADE"),
+        ForeignKey("entity_types.id", ondelete="CASCADE"),
         nullable=True,
         index=True,
     )
-    entity_2_group = relationship(
-        "EntityGroup", foreign_keys=[entity_2_group_id], passive_deletes=True
+    entity_2_type = relationship(
+        "EntityType", foreign_keys=[entity_2_type_id], passive_deletes=True
     )
 
     relationship_type_id = Column(
@@ -271,7 +299,6 @@ class EntityRelationship(Base):
     # PMID, DOI, or URL of primary evidence
     source_ref = Column(String(512), nullable=True)
 
-    # Provenance
     data_source_id = Column(
         Integer,
         ForeignKey("etl_data_sources.id", ondelete="CASCADE"),
@@ -293,5 +320,75 @@ class EntityRelationship(Base):
             "relationship_type_id",
             "data_source_id",
             name="uq_entity_relationships_pair_source",
+        ),
+        # Single-column lookups (used with UNION for bidirectional queries)
+        Index("ix_er_entity1_id", "entity_1_id"),
+        Index("ix_er_entity2_id", "entity_2_id"),
+        # OxO domain-pair queries: GxE, GxG, ExE, GxK
+        Index("ix_er_type_pair", "entity_1_type_id", "entity_2_type_id"),
+        # Filter by discovery source
+        Index("ix_er_discovery_method", "discovery_method"),
+        Index("ix_er_data_source_id", "data_source_id"),
+    )
+
+
+class EntityLocation(Base):
+    """
+    Genomic coordinates for entities with a chromosomal position.
+
+    Used by Genes, Variants, and Epigenomic marks. One entity may have
+    locations on multiple assemblies (e.g. GRCh38 and GRCh37).
+
+    Chromosome encoding: 1-22 autosomes | 23=X | 24=Y | 25=MT
+    """
+
+    __tablename__ = "entity_locations"
+
+    id = Column(PKBigIntOrInt, primary_key=True, autoincrement=True)
+
+    entity_id = Column(
+        BigInteger,
+        ForeignKey("entities.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    entity = relationship("Entity")
+
+    entity_type_id = Column(
+        Integer,
+        ForeignKey("entity_types.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+    )
+
+    assembly_id = Column(
+        Integer,
+        ForeignKey("genome_assemblies.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+
+    chromosome = Column(Integer, nullable=False, index=True)
+    start_pos = Column(BigInteger, nullable=False)
+    end_pos = Column(BigInteger, nullable=False)
+
+    strand = Column(
+        Enum("+", "-", name="strand_enum", create_constraint=True),
+        nullable=True,
+    )
+
+    # Cytogenetic band (e.g. 12p13.31)
+    region_label = Column(String(50), nullable=True)
+
+    data_source_id = Column(
+        Integer, ForeignKey("etl_data_sources.id", ondelete="SET NULL"), nullable=True
+    )
+    etl_package_id = Column(
+        Integer, ForeignKey("etl_packages.id", ondelete="SET NULL"), nullable=True
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "entity_id", "assembly_id", name="uq_entity_location_assembly"
         ),
     )

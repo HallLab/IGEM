@@ -2,7 +2,11 @@ from __future__ import annotations
 
 import click
 
-from igem_backend.api.cli.common import db_uri_option, debug_option, require_db_uri
+from igem_backend.api.cli.common import (
+    db_uri_option,
+    debug_option,
+    require_db_uri,
+)
 
 
 @click.group("etl")
@@ -55,10 +59,17 @@ def etl_run(
     ge = GE(db_uri=uri, debug_mode=debug)
 
     step_list = [s.strip() for s in steps.split(",")]
-    force_list = [s.strip() for s in force_steps.split(",")] if force_steps else []
+    force_list = (
+        [s.strip() for s in force_steps.split(",")] if force_steps else []
+    )
     source_list = list(sources) if sources else None
 
-    if source_list:
+    full_pipeline = (
+        step_list == ["extract", "transform", "load"] and not force_list
+    )
+
+    if source_list or not full_pipeline:
+        # Specific sources or partial steps → run() respects step selection
         ge.etl.run(
             data_sources=source_list,
             source_system=source_system,
@@ -66,10 +77,13 @@ def etl_run(
             force_steps=force_list,
         )
     else:
-        ge.etl.run_all(
-            source_system=source_system,
-            steps=step_list,
-            force_steps=force_list,
+        # Full pipeline, no overrides → run_all() with resume logic
+        summary = ge.etl.run_all(source_system=source_system)
+        click.echo(
+            f"\n  selected={summary['selected']}"
+            f"  skipped={summary['skipped']}"
+            f"  succeeded={summary['succeeded']}"
+            f"  failed={summary['failed']}"
         )
 
 
@@ -89,23 +103,42 @@ def etl_status(ctx: click.Context, db_uri: str | None, debug: bool):
         click.echo("No ETL runs recorded.")
         return
 
-    col_w = [20, 12, 10, 22, 22]
-    header = (
-        f"{'Data Source':<{col_w[0]}}"
-        f"{'Step':<{col_w[1]}}"
-        f"{'Status':<{col_w[2]}}"
-        f"{'Started':<{col_w[3]}}"
-        f"{'Finished':<{col_w[4]}}"
+    _STATUS_LABEL = {
+        "completed":      "ok",
+        "up-to-date":     "up",
+        "failed":         "FAIL",
+        "running":        "run",
+        "not-applicable": "-",
+        "pending":        "pend",
+    }
+
+    def _s(val) -> str:
+        return _STATUS_LABEL.get(val or "", "-")
+
+    def _rows(val) -> str:
+        return f"{val:>10,}" if val is not None else f"{'  -':>10}"
+
+    w = [20, 11, 11, 11, 11, 10, 12]
+    sep = "-" * sum(w)
+    click.echo(
+        f"{'Data Source':<{w[0]}}"
+        f"{'Extract':<{w[1]}}"
+        f"{'Transform':<{w[2]}}"
+        f"{'Load':<{w[3]}}"
+        f"{'Rows':>{w[4]}}"
+        f"{'Version':<{w[5]}}"
+        f"{'Last Run':<{w[6]}}"
     )
-    click.echo(header)
-    click.echo("-" * sum(col_w))
+    click.echo(sep)
     for row in rows:
         click.echo(
-            f"{str(row.get('data_source', '')):<{col_w[0]}}"
-            f"{str(row.get('step', '')):<{col_w[1]}}"
-            f"{str(row.get('status', '')):<{col_w[2]}}"
-            f"{str(row.get('started_at', '')):<{col_w[3]}}"
-            f"{str(row.get('finished_at', '')):<{col_w[4]}}"
+            f"{str(row.get('data_source', '')):<{w[0]}}"
+            f"{_s(row.get('extract_status')):<{w[1]}}"
+            f"{_s(row.get('transform_status')):<{w[2]}}"
+            f"{_s(row.get('load_status')):<{w[3]}}"
+            f"{_rows(row.get('load_rows'))}"
+            f"  {str(row.get('version_tag') or '-'):<{w[5] - 2}}"
+            f"{str(row.get('last_run') or '-'):<{w[6]}}"
         )
 
 
@@ -125,7 +158,11 @@ def etl_status(ctx: click.Context, db_uri: str | None, debug: bool):
     type=int,
     help="Specific ETLPackage IDs to roll back.",
 )
-@click.option("--delete-files", is_flag=True, help="Also delete downloaded/processed files.")
+@click.option(
+    "--delete-files",
+    is_flag=True,
+    help="Also delete downloaded/processed files.",
+)
 @debug_option
 @click.pass_context
 def etl_rollback(
@@ -140,7 +177,9 @@ def etl_rollback(
     from igem_backend.ge import GE
 
     if not sources and not package_ids:
-        raise click.UsageError("Provide at least one --source or --package-id.")
+        raise click.UsageError(
+            "Provide at least one --source or --package-id."
+        )
 
     uri = require_db_uri(ctx, db_uri)
     ge = GE(db_uri=uri, debug_mode=debug)
@@ -149,4 +188,3 @@ def etl_rollback(
         package_ids=list(package_ids) or None,
         delete_files=delete_files,
     )
-    click.echo("Rollback completed.")

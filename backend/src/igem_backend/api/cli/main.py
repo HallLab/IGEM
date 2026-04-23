@@ -6,6 +6,7 @@ from igem_backend import __version__
 from igem_backend.api.cli.common import db_uri_option, debug_option
 from igem_backend.api.cli.groups.db import db_group
 from igem_backend.api.cli.groups.etl import etl_group
+from igem_backend.api.cli.groups.report import report_group
 
 
 @click.group()
@@ -22,3 +23,8 @@ def main(ctx: click.Context, db_uri: str | None, debug: bool):
 
 main.add_command(db_group)
 main.add_command(etl_group)
+main.add_command(report_group)
+
+
+if __name__ == "__main__":
+    main()

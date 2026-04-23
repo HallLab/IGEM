@@ -1,0 +1,19 @@
+# IGEM local configuration
+# Copy to .igem.toml and adjust to your environment.
+# This file is NOT committed (see .gitignore).
+
+[database]
+# SQLite (development)
+uri = "sqlite:///igem.db"
+
+# PostgreSQL (production)
+# uri = "postgresql://igem_user:secret@localhost:5432/igem_db"
+
+[etl]
+# Directory where raw source files are stored (HGNC TSV, CTD CSV, etc.)
+# data_dir = "/data/igem/raw"
+
+[server]
+host = "0.0.0.0"
+port = 8000
+debug = false

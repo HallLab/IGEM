@@ -4,16 +4,20 @@
     {"name": "HGNC",          "description": "HUGO Gene Nomenclature Committee", "homepage": "https://www.genenames.org/", "active": true},
     {"name": "Ensembl",       "description": "Genome browser for vertebrate genomes", "homepage": "https://www.ensembl.org/", "active": true},
     {"name": "UniProt",       "description": "Universal Protein Resource", "homepage": "https://www.uniprot.org/", "active": true},
+    {"name": "Pfam",          "description": "Protein families database (now part of InterPro)", "homepage": "https://pfam.xfam.org/", "active": true},
     {"name": "Reactome",      "description": "Open-source curated biological pathway database", "homepage": "https://reactome.org/", "active": true},
     {"name": "KEGG",          "description": "Kyoto Encyclopedia of Genes and Genomes", "homepage": "https://www.genome.jp/kegg/", "active": true},
     {"name": "GO",            "description": "Gene Ontology Consortium", "homepage": "https://geneontology.org/", "active": true},
     {"name": "MONDO",         "description": "Monarch Disease Ontology", "homepage": "https://mondo.monarchinitiative.org/", "active": true},
     {"name": "OMIM",          "description": "Online Mendelian Inheritance in Man", "homepage": "https://omim.org/", "active": true},
     {"name": "BioGRID",       "description": "Biological General Repository for Interaction Datasets", "homepage": "https://thebiogrid.org/", "active": true},
+    {"name": "ChEBI",         "description": "Chemical Entities of Biological Interest — EMBL-EBI chemical ontology", "homepage": "https://www.ebi.ac.uk/chebi/", "active": true},
+    {"name": "HPO",           "description": "Human Phenotype Ontology — standardised vocabulary of phenotypic abnormalities", "homepage": "https://hpo.jax.org/", "active": true},
     {"name": "CTD",           "description": "Comparative Toxicogenomics Database — gene-chemical-disease relationships", "homepage": "https://ctdbase.org/", "active": true},
     {"name": "PubMed",        "description": "NCBI PubMed biomedical literature database", "homepage": "https://pubmed.ncbi.nlm.nih.gov/", "active": true},
     {"name": "gnomAD",        "description": "Genome Aggregation Database", "homepage": "https://gnomad.broadinstitute.org/", "active": true},
     {"name": "ClinGen",       "description": "Clinical Genome Resource", "homepage": "https://www.clinicalgenome.org/", "active": true},
+    {"name": "UBERON",        "description": "Ubiquitous Biological and Biomedical Ontology — cross-species anatomical entities", "homepage": "https://obophenotype.github.io/uberon/", "active": true},
     {"name": "NLP",           "description": "Relationships discovered by IGEM NLP pipeline", "homepage": null, "active": true}
   ]
 }

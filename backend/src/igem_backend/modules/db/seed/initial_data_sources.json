@@ -1,12 +1,12 @@
 {
   "data_sources": [
     {
-      "name": "hgnc",
+      "name": "gene_hgnc",
       "source_system": "HGNC",
       "data_type": "Gene",
-      "source_url": "https://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt",
-      "format": "TSV",
-      "dtp_script": "dtp_hgnc",
+      "source_url": "https://storage.googleapis.com/public-download-files/hgnc/json/json/hgnc_complete_set.json",
+      "format": "JSON",
+      "dtp_script": "dtp_gene_hgnc",
       "active": true
     },
     {
@@ -16,6 +16,15 @@
       "source_url": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene_info.gz",
       "format": "TSV",
       "dtp_script": "dtp_gene_ncbi",
+      "active": true
+    },
+    {
+      "name": "gene_ensembl",
+      "source_system": "Ensembl",
+      "data_type": "Gene",
+      "source_url": "https://ftp.ensembl.org/pub/current_gff3/homo_sapiens/",
+      "format": "GFF3",
+      "dtp_script": "dtp_gene_ensembl",
       "active": true
     },
     {
@@ -34,6 +43,123 @@
       "source_url": "https://ctdbase.org/reports/CTD_chem_gene_ixns.tsv.gz",
       "format": "TSV",
       "dtp_script": "dtp_ctd_chem_gene",
+      "active": true
+    },
+    {
+      "name": "protein_pfam",
+      "source_system": "Pfam",
+      "data_type": "Protein-Domain",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/pfamA.txt.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_protein_pfam",
+      "active": true
+    },
+    {
+      "name": "protein_uniprot",
+      "source_system": "UniProt",
+      "data_type": "Protein",
+      "source_url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.xml.gz",
+      "format": "XML",
+      "dtp_script": "dtp_protein_uniprot",
+      "active": true
+    },
+    {
+      "name": "protein_uniprot_relationships",
+      "source_system": "UniProt",
+      "data_type": "Protein-Relationship",
+      "source_url": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.xml.gz",
+      "format": "XML",
+      "dtp_script": "dtp_protein_uniprot_relationships",
+      "active": true
+    },
+    {
+      "name": "disease_mondo",
+      "source_system": "MONDO",
+      "data_type": "Disease",
+      "source_url": "https://purl.obolibrary.org/obo/mondo.json",
+      "format": "JSON",
+      "dtp_script": "dtp_disease_mondo",
+      "active": true
+    },
+    {
+      "name": "disease_mondo_relationships",
+      "source_system": "MONDO",
+      "data_type": "Disease-Relationship",
+      "source_url": "https://purl.obolibrary.org/obo/mondo.json",
+      "format": "JSON",
+      "dtp_script": "dtp_disease_mondo_relationships",
+      "active": true
+    },
+    {
+      "name": "go",
+      "source_system": "GO",
+      "data_type": "Gene Ontology",
+      "source_url": "https://purl.obolibrary.org/obo/go.obo",
+      "format": "OBO",
+      "dtp_script": "dtp_go",
+      "active": true
+    },
+    {
+      "name": "pathway_reactome",
+      "source_system": "Reactome",
+      "data_type": "Pathway",
+      "source_url": "https://reactome.org/download/current/",
+      "format": "TSV",
+      "dtp_script": "dtp_pathway_reactome",
+      "active": true
+    },
+    {
+      "name": "pathway_reactome_relationships",
+      "source_system": "Reactome",
+      "data_type": "Pathway-Relationship",
+      "source_url": "https://reactome.org/download/current/",
+      "format": "TSV",
+      "dtp_script": "dtp_pathway_reactome_relationships",
+      "active": true
+    },
+    {
+      "name": "pathway_kegg",
+      "source_system": "KEGG",
+      "data_type": "Pathway",
+      "source_url": "https://rest.kegg.jp/list/pathway/hsa",
+      "format": "TSV",
+      "dtp_script": "dtp_pathway_kegg",
+      "active": true
+    },
+    {
+      "name": "phenotype_hpo",
+      "source_system": "HPO",
+      "data_type": "Phenotype",
+      "source_url": "https://purl.obolibrary.org/obo/hp.obo",
+      "format": "OBO",
+      "dtp_script": "dtp_phenotype_hpo",
+      "active": true
+    },
+    {
+      "name": "phenotype_hpo_genes",
+      "source_system": "HPO",
+      "data_type": "Gene-Phenotype",
+      "source_url": "https://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt",
+      "format": "TSV",
+      "dtp_script": "dtp_phenotype_hpo_genes",
+      "active": true
+    },
+    {
+      "name": "chemical_chebi",
+      "source_system": "ChEBI",
+      "data_type": "Chemical",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/",
+      "format": "TSV",
+      "dtp_script": "dtp_chemical_chebi",
+      "active": true
+    },
+    {
+      "name": "anatomy_uberon",
+      "source_system": "UBERON",
+      "data_type": "Anatomy",
+      "source_url": "https://purl.obolibrary.org/obo/uberon/basic.obo",
+      "format": "OBO",
+      "dtp_script": "dtp_anatomy_uberon",
       "active": true
     },
     {

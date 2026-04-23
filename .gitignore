@@ -1,3 +1,13 @@
+# IGEM local config (may contain DB credentials)
+.igem.toml
+*.log
+*.log
+
+# SQLite databases and WAL mode artifacts
+*.db
+*.db-shm
+*.db-wal
+
 # Python
 __pycache__/
 *.py[cod]
@@ -27,5 +37,6 @@ frontend/.env.local
 # macOS
 .DS_Store
 
-# MVP (legacy, not part of v2.0.0)
+# Special folders
 mvp/
+igem_data/

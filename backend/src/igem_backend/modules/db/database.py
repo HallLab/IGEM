@@ -5,7 +5,7 @@ import time
 from pathlib import Path
 from typing import Dict, Optional
 
-from sqlalchemy import Table, create_engine, text
+from sqlalchemy import Table, create_engine, event, text
 from sqlalchemy.engine import Engine
 from sqlalchemy.engine.url import URL, make_url
 from sqlalchemy.orm import sessionmaker
@@ -103,6 +103,17 @@ class Database(CreateDBMixin):
 
         start = time.perf_counter()
         self.engine = create_engine(self.db_uri, **self._engine_kwargs(self.db_uri))
+
+        if make_url(self.db_uri).drivername.startswith("sqlite"):
+            @event.listens_for(self.engine, "connect")
+            def _set_sqlite_pragmas(dbapi_conn, _record):
+                cur = dbapi_conn.cursor()
+                cur.execute("PRAGMA journal_mode=WAL")
+                cur.execute("PRAGMA synchronous=NORMAL")
+                cur.execute("PRAGMA cache_size=-65536")   # 64 MB page cache
+                cur.execute("PRAGMA temp_store=MEMORY")
+                cur.close()
+
         bootstrap_models(self.engine)
 
         self.SessionLocal = sessionmaker(

@@ -1,11 +1,56 @@
 import hashlib
 import os
+from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Any, Dict, Optional
 
 import requests
 
 from igem_backend.utils.text import normalize_text
+
+
+@dataclass
+class ETLStepStats:
+    """
+    Structured statistics returned by DTP extract / transform / load steps.
+
+    Stored in ETLPackage.stats (JSON) and mapped to the typed row-count
+    columns (extract_rows, transform_rows, load_rows) by the ETL manager.
+    """
+
+    # row-level counts (load / transform)
+    total: int = 0
+    created: int = 0
+    updated: int = 0
+    skipped: int = 0
+    warnings: int = 0
+    errors: int = 0
+
+    # file-level metadata (extract / transform)
+    file_size_bytes: Optional[int] = None
+    output_size_bytes: Optional[int] = None
+    columns: Optional[int] = None
+
+    # domain-specific extras (arbitrary key/value)
+    extras: Dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> dict:
+        d: dict = {}
+        for f_name in (
+            "total", "created", "updated", "skipped", "warnings", "errors",
+            "file_size_bytes", "output_size_bytes", "columns",
+        ):
+            v = getattr(self, f_name)
+            if v is not None and v != 0:
+                d[f_name] = v
+        if self.extras:
+            d.update(self.extras)
+        return d
+
+    @property
+    def row_count(self) -> int:
+        """Primary row count for ETLPackage.*_rows columns."""
+        return self.total or self.created
 
 
 class DTPBase:
@@ -16,12 +61,23 @@ class DTPBase:
     - Text normalization and safe truncation helpers
     - HTTP download utilities
     - File path helpers (mirrors BF4 layout: <root>/<SourceSystem>/<dtp_name>/)
-    - Entity group resolution cache
+    - Entity type resolution cache
+
+    Class attributes to override per DTP:
+    - DTP_TYPE: "master" | "relationship" | "mixed"
+    - ROLLBACK_STRATEGY: "deactivate" | "delete"
+      master      → deactivate (is_active=False); never deletes entities so
+                    relationships from other sources stay intact
+      relationship → delete; safe because only EntityRelationship rows are owned
+      mixed        → deactivate entities/aliases, delete relationships
     """
 
     TRUNCATE_MODE: bool = True
     MAXLEN_ALIAS: int = 1000
     MAXLEN_SHORT: int = 255
+
+    DTP_TYPE: str = "master"
+    ROLLBACK_STRATEGY: str = "deactivate"
 
     def __init__(self, *args, **kwargs):
         self.trunc_metrics: Dict[str, int] = {}
@@ -107,18 +163,18 @@ class DTPBase:
     # -------------------------------------------------------------------------
     # Entity group cache
     # -------------------------------------------------------------------------
-    def get_entity_group_id(self, name: str) -> int:
-        from igem_backend.modules.db.models.model_entities import EntityGroup
+    def get_entity_type_id(self, name: str) -> int:
+        from igem_backend.modules.db.models.model_entities import EntityType
 
-        if not hasattr(self, "_entity_group_cache"):
-            self._entity_group_cache: Dict[str, int] = {}
+        if not hasattr(self, "_entity_type_cache"):
+            self._entity_type_cache: Dict[str, int] = {}
 
-        if name not in self._entity_group_cache:
-            group = self.session.query(EntityGroup).filter_by(name=name).first()
-            if not group:
-                raise ValueError(f"EntityGroup '{name}' not found in database.")
-            self._entity_group_cache[name] = group.id
-        return self._entity_group_cache[name]
+        if name not in self._entity_type_cache:
+            entity_type = self.session.query(EntityType).filter_by(name=name).first()
+            if not entity_type:
+                raise ValueError(f"EntityType '{name}' not found in database.")
+            self._entity_type_cache[name] = entity_type.id
+        return self._entity_type_cache[name]
 
     # -------------------------------------------------------------------------
     # Build alias list from a schema map

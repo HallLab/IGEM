@@ -12,6 +12,11 @@
     {"id": 10, "code": "GxE",               "description": "OxO: Gene-by-Exposure/Environment interaction"},
     {"id": 11, "code": "ExE",               "description": "OxO: Exposure-by-Exposure interaction"},
     {"id": 12, "code": "OxO",               "description": "OxO: Generic Omics-by-Omics interaction (cross-domain)"},
-    {"id": 13, "code": "co_occurs_with",     "description": "Entities co-occur in literature without directed relationship"}
+    {"id": 13, "code": "co_occurs_with",      "description": "Entities co-occur in literature without directed relationship"},
+    {"id": 14, "code": "has_genetic_basis",   "description": "Disease has causal basis in gene mutation (gain/loss-of-function or somatic)"},
+    {"id": 15, "code": "has_phenotype",       "description": "Disease has associated phenotypic feature (HP term or characteristic)"},
+    {"id": 16, "code": "has_location",        "description": "Disease has anatomical location or cellular origin (UBERON/CL)"},
+    {"id": 17, "code": "has_disruption_in",   "description": "Disease has basis in disruption of a biological process or function (GO term)"},
+    {"id": 18, "code": "responds_to",         "description": "Disease responds to or has basis in accumulation of a chemical (ChEBI)"}
   ]
 }

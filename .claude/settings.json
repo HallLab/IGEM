@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.md$\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/\")",
+      "Bash(curl -s \"https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python -m ruff check src/igem_backend/modules/report/reports/report_protein_annotations.py)",
+      "Bash(.venv/bin/python -c ' *)",
+      "Read(//Users/andrerico/**)",
+      "Bash(python -c \"from igem_backend.modules.report.reports.report_disease_annotations import DiseaseAnnotationsReport; r = DiseaseAnnotationsReport\\(\\); print\\('columns:', r.available_columns\\(\\)\\); print\\('example:', r.example_input\\(\\)\\)\")",
+      "Bash(python -c \"from src.igem_backend.modules.report.reports.report_disease_annotations import DiseaseAnnotationsReport; r = DiseaseAnnotationsReport\\(\\); print\\('OK:', r.REPORT_NAME\\); print\\('columns:', len\\(r.available_columns\\(\\)\\)\\)\")",
+      "Bash(pip show *)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('src/igem_backend/modules/report/reports/report_disease_annotations.py'\\).read\\(\\)\\); print\\('Syntax OK'\\)\")",
+      "Bash(python3 -)",
+      "Bash(.venv/bin/python3 -)",
+      "Bash(.venv/bin/python3 -c ' *)",
+      "Bash(curl -s --max-time 15 \"https://purl.obolibrary.org/obo/uberon/basic.obo\")",
+      "Bash(curl -sL --max-time 30 \"https://github.com/obophenotype/uberon/releases/latest/download/uberon-basic.obo\")",
+      "Bash(curl -sL --max-time 60 \"https://github.com/obophenotype/uberon/releases/latest/download/uberon-basic.obo\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('src/igem_backend/modules/etl/dtps/dtp_disease_mondo_relationships.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
+    ]
+  }
+}

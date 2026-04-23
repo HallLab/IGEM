@@ -12,12 +12,56 @@ from igem_backend.modules.db.models.model_entities import (
 class EntityQueryMixin:
     """
     Reusable ORM helpers for DTPs to create/resolve entities and relationships.
+
+    Canonical edge ordering (enforced in get_or_create_relationship):
+    - Gene always as entity_1 when paired with any non-Gene entity.
+    - Gene vs Gene: lower entity_id as entity_1.
+    - All other pairs: inserted as provided; use UNION at query time.
     """
+
+    # ------------------------------------------------------------------
+    # Canonical ordering
+    # ------------------------------------------------------------------
+
+    def _gene_type_id(self) -> int:
+        """Cached lookup for the 'Genes' EntityType id."""
+        if not hasattr(self, "_cached_gene_type_id"):
+            self._cached_gene_type_id = self.get_entity_type_id("Genes")
+        return self._cached_gene_type_id
+
+    def _canonical_order(
+        self,
+        e1_id: int,
+        e1_type_id: Optional[int],
+        e2_id: int,
+        e2_type_id: Optional[int],
+    ) -> tuple[int, Optional[int], int, Optional[int]]:
+        """
+        Return (entity_1_id, entity_1_type_id, entity_2_id, entity_2_type_id)
+        with Gene always in the entity_1 slot.
+        """
+        gene_tid = self._gene_type_id()
+        e1_gene = e1_type_id == gene_tid
+        e2_gene = e2_type_id == gene_tid
+
+        # entity_2 is Gene, entity_1 is not → swap
+        if e2_gene and not e1_gene:
+            return e2_id, e2_type_id, e1_id, e1_type_id
+
+        # both Gene → lower id first (deterministic, avoids duplicate pairs)
+        if e1_gene and e2_gene and e1_id > e2_id:
+            return e2_id, e2_type_id, e1_id, e1_type_id
+
+        return e1_id, e1_type_id, e2_id, e2_type_id
+
+    # ------------------------------------------------------------------
+    # Entity helpers
+    # ------------------------------------------------------------------
 
     def get_or_create_entity(
         self,
         name: str,
-        group_id: int,
+        type_id: int,
         data_source_id: int,
         package_id: Optional[int] = None,
         alias_type: str = "preferred",
@@ -28,7 +72,6 @@ class EntityQueryMixin:
     ) -> tuple[Optional[int], bool]:
         """
         Get or create an Entity by its primary alias.
-
         Returns (entity_id, is_new).
         """
         try:
@@ -50,7 +93,7 @@ class EntityQueryMixin:
                 return existing.entity_id, False
 
             entity = Entity(
-                group_id=group_id,
+                type_id=type_id,
                 is_active=is_active,
                 data_source_id=data_source_id,
                 etl_package_id=package_id,
@@ -60,7 +103,7 @@ class EntityQueryMixin:
 
             primary = EntityAlias(
                 entity_id=entity.id,
-                group_id=group_id,
+                type_id=type_id,
                 alias_value=self.guard_alias(clean_name),
                 alias_type=alias_type,
                 xref_source=xref_source,
@@ -80,13 +123,15 @@ class EntityQueryMixin:
 
         except Exception as e:
             self.session.rollback()
-            self.logger.log(f"get_or_create_entity failed for '{name}': {e}", "WARNING")
+            self.logger.log(
+                f"get_or_create_entity failed for '{name}': {e}", "WARNING"
+            )
             return None, False
 
     def add_aliases(
         self,
         entity_id: int,
-        group_id: int,
+        type_id: int,
         aliases: list[dict],
         is_active: bool = True,
         data_source_id: int = 0,
@@ -95,7 +140,6 @@ class EntityQueryMixin:
     ) -> int:
         """
         Add a list of alias dicts to an entity, skipping existing ones.
-
         Returns the number of aliases added.
         """
         existing = {
@@ -105,11 +149,14 @@ class EntityQueryMixin:
             .all()
         }
 
-        # Deduplicate by alias_norm within this batch
         seen_norms: set[str] = set()
         count = 0
         for alias in aliases:
-            key = (alias["alias_value"].strip(), alias["alias_type"], alias["xref_source"])
+            key = (
+                alias["alias_value"].strip(),
+                alias["alias_type"],
+                alias["xref_source"],
+            )
             if key in existing:
                 continue
             norm = (alias.get("alias_norm") or "").strip()
@@ -120,7 +167,7 @@ class EntityQueryMixin:
 
             self.session.add(EntityAlias(
                 entity_id=entity_id,
-                group_id=group_id,
+                type_id=type_id,
                 alias_value=self.guard_alias(key[0]),
                 alias_type=key[1],
                 xref_source=key[2],
@@ -141,8 +188,14 @@ class EntityQueryMixin:
             return count
         except IntegrityError:
             self.session.rollback()
-            self.logger.log(f"Rollback while adding aliases to entity {entity_id}", "WARNING")
+            self.logger.log(
+                f"Rollback while adding aliases to entity {entity_id}", "WARNING"
+            )
             return 0
+
+    # ------------------------------------------------------------------
+    # Relationship helpers
+    # ------------------------------------------------------------------
 
     def get_or_create_relationship(
         self,
@@ -150,8 +203,8 @@ class EntityQueryMixin:
         entity_2_id: int,
         relationship_type_id: int,
         data_source_id: int,
-        entity_1_group_id: Optional[int] = None,
-        entity_2_group_id: Optional[int] = None,
+        entity_1_type_id: Optional[int] = None,
+        entity_2_type_id: Optional[int] = None,
         package_id: Optional[int] = None,
         discovery_method: str = "structured",
         confidence_score: Optional[float] = None,
@@ -160,13 +213,20 @@ class EntityQueryMixin:
         auto_commit: bool = True,
     ) -> bool:
         """
-        Get or create an EntityRelationship. Returns True if created, False if exists.
+        Get or create an EntityRelationship.
+
+        Applies canonical ordering (Gene always entity_1) before insert.
+        Returns True if created, False if already exists.
         """
+        e1_id, e1_tid, e2_id, e2_tid = self._canonical_order(
+            entity_1_id, entity_1_type_id, entity_2_id, entity_2_type_id
+        )
+
         existing = (
             self.session.query(EntityRelationship)
             .filter_by(
-                entity_1_id=entity_1_id,
-                entity_2_id=entity_2_id,
+                entity_1_id=e1_id,
+                entity_2_id=e2_id,
                 relationship_type_id=relationship_type_id,
                 data_source_id=data_source_id,
             )
@@ -176,10 +236,10 @@ class EntityQueryMixin:
             return False
 
         self.session.add(EntityRelationship(
-            entity_1_id=entity_1_id,
-            entity_2_id=entity_2_id,
-            entity_1_group_id=entity_1_group_id,
-            entity_2_group_id=entity_2_group_id,
+            entity_1_id=e1_id,
+            entity_2_id=e2_id,
+            entity_1_type_id=e1_tid,
+            entity_2_type_id=e2_tid,
             relationship_type_id=relationship_type_id,
             data_source_id=data_source_id,
             etl_package_id=package_id,

@@ -22,7 +22,7 @@ class ETLComponent(BaseComponent):
         )
 
     def _paths(self) -> tuple[str, str]:
-        data_root = self.core.settings.get("data_root", "igem_data")
+        data_root = self.core.get("data_root", "igem_data")
         return f"{data_root}/downloads", f"{data_root}/processed"
 
     # -------------------------------------------------------------------------

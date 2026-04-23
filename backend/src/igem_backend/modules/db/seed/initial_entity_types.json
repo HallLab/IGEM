@@ -1,0 +1,18 @@
+{
+  "entity_types": [
+    {"id": 1,  "name": "Variants",        "domain": "Genomics",  "description": "Genetic variants: SNPs, InDels, CNVs, structural variants"},
+    {"id": 2,  "name": "Genes",           "domain": "Genomics",  "description": "Genes, genomic sequences, and related annotations"},
+    {"id": 3,  "name": "Proteins",        "domain": "Genomics",  "description": "Proteins, isoforms, peptides, and functional annotations"},
+    {"id": 4,  "name": "Transcriptomics", "domain": "Genomics",  "description": "Transcripts, isoforms, and RNA expression profiles"},
+    {"id": 5,  "name": "Epigenomics",     "domain": "Genomics",  "description": "DNA methylation, histone marks, and chromatin states"},
+    {"id": 6,  "name": "Pathways",        "domain": "Knowledge", "description": "Biological pathways, networks, and molecular interactions"},
+    {"id": 7,  "name": "Gene Ontology",   "domain": "Knowledge", "description": "GO terms: molecular function, biological process, cellular component"},
+    {"id": 8,  "name": "Diseases",        "domain": "Exposome",  "description": "Disease entities, classifications, and associated phenotypes"},
+    {"id": 9,  "name": "Chemicals",       "domain": "Exposome",  "description": "Chemical compounds, drugs, and environmental substances (identity: CAS, InChI, SMILES)"},
+    {"id": 10, "name": "Phenotypes",      "domain": "Exposome",  "description": "Observable traits, HPO terms, and GWAS associations"},
+    {"id": 11, "name": "Exposome",        "domain": "Exposome",  "description": "Measured environmental exposures: route, media, units (NHANES, CDC)"},
+    {"id": 12, "name": "Metabolomics",    "domain": "Exposome",  "description": "Metabolites and small molecules measured as biochemical exposures (open: may move to Genomics)"},
+    {"id": 13, "name": "Microbiome",      "domain": "Genomics",  "description": "Microbial species and communities sequenced from host samples (open: may move to Exposome)"},
+    {"id": 14, "name": "Anatomy",         "domain": "Knowledge", "description": "Anatomical entities: organs, tissues, regions, and structures from the UBERON ontology"}
+  ]
+}

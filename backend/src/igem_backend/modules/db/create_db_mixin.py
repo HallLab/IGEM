@@ -4,18 +4,17 @@ import json
 import os
 from typing import Dict, List, Optional
 
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine.url import make_url
-
 from igem_backend.modules.db.base import Base
 from igem_backend.utils.db_loader import bootstrap_models
+from sqlalchemy import create_engine, text
+from sqlalchemy.engine.url import make_url
 
 SEED_UNIQUE_KEYS: Dict[str, List[str]] = {
     "SystemConfig": ["key"],
     "IgemMetadata": ["schema_version"],
     "ETLSourceSystem": ["name"],
     "ETLDataSource": ["name"],
-    "EntityGroup": ["name"],
+    "EntityType": ["name"],
     "EntityRelationshipType": ["id"],
     "GenomeAssembly": ["accession"],
 }
@@ -75,7 +74,7 @@ class CreateDBMixin:
             self.logger.log("Seeding initial data...", "INFO")
             self._seed_all()
 
-            self.logger.log(f"Database created at {self.db_uri}", "SUCCESS")
+            self.logger.footer(f"Database created at {self.db_uri}")
             return True
 
         except Exception as e:
@@ -87,6 +86,7 @@ class CreateDBMixin:
         self.connect(check_exists=True)
         bootstrap_models(self.engine)
         self._seed_all()
+        self.logger.footer("Database upgraded successfully")
 
     def _seed_all(self) -> None:
         seed_dir = os.path.join(os.path.dirname(__file__), "seed")
@@ -94,7 +94,7 @@ class CreateDBMixin:
         self._seed("initial_metadata.json", "model_config", "IgemMetadata")
         self._seed("initial_source_systems.json", "model_etl", "ETLSourceSystem", key="source_systems")
         self._seed("initial_data_sources.json", "model_etl", "ETLDataSource", key="data_sources")
-        self._seed("initial_entity_groups.json", "model_entities", "EntityGroup", key="entity_groups")
+        self._seed("initial_entity_types.json", "model_entities", "EntityType", key="entity_types")
         self._seed("initial_entity_relationship_types.json", "model_entities", "EntityRelationshipType", key="entity_relationship_types")
         self._seed("initial_genome_assemblies.json", "model_config", "GenomeAssembly", key="genome_assemblies")
 

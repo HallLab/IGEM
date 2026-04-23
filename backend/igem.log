@@ -1,35 +1,993 @@
-2026-04-21 21:45:53,655 - INFO - Database connection established
-2026-04-21 21:45:53,655 - INFO -   Engine: sqlite | Host: local file | DB: /tmp/igem_test.db | 181.3ms
-2026-04-21 21:45:53,655 - INFO - Bootstrapping models...
-2026-04-21 21:45:53,655 - INFO - Creating tables...
-2026-04-21 21:45:53,696 - INFO - Seeding initial data...
-2026-04-21 21:45:53,723 - INFO - Seeded SystemConfig: created=4 updated=0 skipped=0
-2026-04-21 21:45:53,731 - INFO - Seeded IgemMetadata: created=1 updated=0 skipped=0
-2026-04-21 21:45:53,742 - INFO - Seeded ETLSourceSystem: created=15 updated=0 skipped=0
-2026-04-21 21:45:53,749 - INFO - Seeded ETLDataSource: created=5 updated=0 skipped=0
-2026-04-21 21:45:53,757 - INFO - Seeded EntityGroup: created=13 updated=0 skipped=0
-2026-04-21 21:45:53,765 - INFO - Seeded EntityRelationshipType: created=13 updated=0 skipped=0
-2026-04-21 21:45:53,770 - INFO - Seeded GenomeAssembly: created=2 updated=0 skipped=0
-2026-04-21 21:45:53,770 - INFO - Database created at sqlite:////tmp/igem_test.db
-2026-04-22 08:31:27,072 - INFO - Database connection established
-2026-04-22 08:31:27,072 - INFO -   Engine: sqlite | Host: local file | DB: /tmp/igem_test.db | 69.9ms
-2026-04-22 09:09:10,359 - INFO - ============================================
-2026-04-22 09:09:10,359 - INFO - GE — Genome-Exposome Platform
-2026-04-22 09:09:10,359 - INFO -   Version    : 0.1.0
-2026-04-22 09:09:10,359 - INFO -   Debug mode : False
-2026-04-22 09:09:10,359 - INFO -   DB URI     : None
-2026-04-22 09:09:10,359 - INFO - ============================================
-2026-04-22 09:09:10,396 - INFO - Database connection established
-2026-04-22 09:09:10,396 - INFO -   Engine: sqlite | Host: local file | DB: /tmp/igem_ge_test.db | 36.4ms
-2026-04-22 09:09:10,396 - INFO - Bootstrapping models...
-2026-04-22 09:09:10,396 - INFO - Creating tables...
-2026-04-22 09:09:10,469 - INFO - Seeding initial data...
-2026-04-22 09:09:10,495 - INFO - Seeded SystemConfig: created=4 updated=0 skipped=0
-2026-04-22 09:09:10,502 - INFO - Seeded IgemMetadata: created=1 updated=0 skipped=0
-2026-04-22 09:09:10,513 - INFO - Seeded ETLSourceSystem: created=15 updated=0 skipped=0
-2026-04-22 09:09:10,524 - INFO - Seeded ETLDataSource: created=5 updated=0 skipped=0
-2026-04-22 09:09:10,533 - INFO - Seeded EntityGroup: created=13 updated=0 skipped=0
-2026-04-22 09:09:10,544 - INFO - Seeded EntityRelationshipType: created=13 updated=0 skipped=0
-2026-04-22 09:09:10,550 - INFO - Seeded GenomeAssembly: created=2 updated=0 skipped=0
-2026-04-22 09:09:10,550 - INFO - Database created at sqlite:////tmp/igem_ge_test.db
-2026-04-22 09:09:10,550 - INFO - Database created at: sqlite:////tmp/igem_ge_test.db
+2026-04-22 17:29:20,470 - INFO - ============================================
+2026-04-22 17:29:20,470 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:29:20,470 - INFO -   Version    : 0.1.0
+2026-04-22 17:29:20,471 - INFO -   Debug mode : False
+2026-04-22 17:29:20,471 - INFO -   DB URI     : sqlite:///ge.db
+2026-04-22 17:29:20,471 - INFO - ============================================
+2026-04-22 17:29:20,471 - ERROR - Database not found at sqlite:///ge.db
+2026-04-22 17:31:03,279 - INFO - ============================================
+2026-04-22 17:31:03,279 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:31:03,279 - INFO -   Version    : 0.1.0
+2026-04-22 17:31:03,279 - INFO -   Debug mode : False
+2026-04-22 17:31:03,279 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:31:03,279 - INFO - ============================================
+2026-04-22 17:31:03,383 - INFO - Database connection established
+2026-04-22 17:31:03,383 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 103.0ms
+2026-04-22 17:31:03,383 - INFO - Database connection established
+2026-04-22 17:31:03,383 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.1ms
+2026-04-22 17:31:03,417 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 17:31:03,419 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 17:31:03,423 - INFO - Seeded ETLSourceSystem: created=0 updated=15 skipped=0
+2026-04-22 17:31:03,436 - INFO - Seeded ETLDataSource: created=1 updated=5 skipped=0
+2026-04-22 17:31:03,440 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 17:31:03,444 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 17:31:03,446 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 17:31:03,446 - INFO - Database upgraded successfully
+2026-04-22 17:31:03,446 - INFO - ============================================
+2026-04-22 17:32:02,627 - INFO - ============================================
+2026-04-22 17:32:02,627 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:32:02,627 - INFO -   Version    : 0.1.0
+2026-04-22 17:32:02,627 - INFO -   Debug mode : False
+2026-04-22 17:32:02,627 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:32:02,627 - INFO - ============================================
+2026-04-22 17:32:02,664 - INFO - Database connection established
+2026-04-22 17:32:02,664 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 36.2ms
+2026-04-22 17:32:45,956 - INFO - ============================================
+2026-04-22 17:32:45,956 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:32:45,956 - INFO -   Version    : 0.1.0
+2026-04-22 17:32:45,956 - INFO -   Debug mode : False
+2026-04-22 17:32:45,956 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:32:45,956 - INFO - ============================================
+2026-04-22 17:32:45,991 - INFO - Database connection established
+2026-04-22 17:32:45,991 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 34.5ms
+2026-04-22 17:34:27,479 - INFO - ============================================
+2026-04-22 17:34:27,479 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:34:27,479 - INFO -   Version    : 0.1.0
+2026-04-22 17:34:27,479 - INFO -   Debug mode : False
+2026-04-22 17:34:27,479 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:34:27,479 - INFO - ============================================
+2026-04-22 17:34:27,514 - INFO - Database connection established
+2026-04-22 17:34:27,514 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 33.9ms
+2026-04-22 17:34:27,549 - INFO - Starting ETL for 'gene_ncbi'
+2026-04-22 17:34:42,364 - INFO - [dtp_gene_ncbi] Extract starting...
+2026-04-22 17:34:42,366 - INFO - Downloading gene_info.gz from https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene_info.gz
+2026-04-22 17:34:57,302 - INFO - gene_info.gz downloaded to igem_data/downloads/NCBI/gene_ncbi/gene_info.gz
+2026-04-22 17:34:57,305 - INFO - [Extract] Completed for 'gene_ncbi' in 14s
+2026-04-22 17:34:57,308 - INFO - [dtp_gene_ncbi] Transform starting...
+2026-04-22 17:36:09,865 - INFO - Transformed 193789 NCBI human gene records -> igem_data/processed/NCBI/gene_ncbi/master_data.parquet
+2026-04-22 17:36:09,883 - INFO - [Transform] Completed for 'gene_ncbi' in 1m 12s
+2026-04-22 17:36:09,887 - INFO - [dtp_gene_ncbi] Load starting...
+2026-04-22 17:41:34,379 - INFO - [dtp_gene_ncbi] Load complete: total=25854 created=25847 updated=7 warnings=0
+2026-04-22 17:41:34,380 - INFO - [Load] Completed for 'gene_ncbi' in 5m 24s
+2026-04-22 17:41:34,380 - INFO - ETL concluido para 'gene_ncbi' em 7m 6s
+2026-04-22 17:41:34,380 - INFO - ============================================
+2026-04-22 17:42:17,628 - INFO - ============================================
+2026-04-22 17:42:17,628 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:42:17,628 - INFO -   Version    : 0.1.0
+2026-04-22 17:42:17,628 - INFO -   Debug mode : False
+2026-04-22 17:42:17,628 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:42:17,628 - INFO - ============================================
+2026-04-22 17:42:17,689 - INFO - Database connection established
+2026-04-22 17:42:17,690 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 60.7ms
+2026-04-22 17:42:17,727 - INFO - Starting ETL for 'gene_ensembl'
+2026-04-22 17:42:18,845 - INFO - [dtp_gene_ensembl] Extract starting...
+2026-04-22 17:42:18,847 - INFO - Downloading GFF3 from https://ftp.ensembl.org/pub/current_gff3/homo_sapiens/Homo_sapiens.GRCh38.113.chr.gff3.gz
+2026-04-22 17:42:19,774 - ERROR - [dtp_gene_ensembl] Extract failed: 404 Client Error: Not Found for url: https://ftp.ensembl.org/pub/current_gff3/homo_sapiens/Homo_sapiens.GRCh38.113.chr.gff3.gz
+2026-04-22 17:42:19,775 - ERROR - [Extract] Failed for 'gene_ensembl' after 0s: [dtp_gene_ensembl] Extract failed: 404 Client Error: Not Found for url: https://ftp.ensembl.org/pub/current_gff3/homo_sapiens/Homo_sapiens.GRCh38.113.chr.gff3.gz
+2026-04-22 17:42:19,779 - WARNING - [Transform] No successful extract for 'gene_ensembl' — skipping.
+2026-04-22 17:42:19,780 - WARNING - [Load] No successful transform for 'gene_ensembl' — skipping.
+2026-04-22 17:42:19,780 - INFO - ETL concluido para 'gene_ensembl' em 2s
+2026-04-22 17:42:19,780 - INFO - ============================================
+2026-04-22 17:45:13,370 - INFO - ============================================
+2026-04-22 17:45:13,370 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:45:13,370 - INFO -   Version    : 0.1.0
+2026-04-22 17:45:13,370 - INFO -   Debug mode : False
+2026-04-22 17:45:13,370 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:45:13,370 - INFO - ============================================
+2026-04-22 17:45:13,413 - INFO - Database connection established
+2026-04-22 17:45:13,413 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 43.0ms
+2026-04-22 17:45:13,414 - INFO - Database connection established
+2026-04-22 17:45:13,414 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.1ms
+2026-04-22 17:45:13,450 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 17:45:13,452 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 17:45:13,457 - INFO - Seeded ETLSourceSystem: created=0 updated=15 skipped=0
+2026-04-22 17:45:13,468 - INFO - Seeded ETLDataSource: created=0 updated=6 skipped=0
+2026-04-22 17:45:13,473 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 17:45:13,477 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 17:45:13,479 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 17:45:13,479 - INFO - Database upgraded successfully
+2026-04-22 17:45:13,479 - INFO - ============================================
+2026-04-22 17:45:16,313 - INFO - ============================================
+2026-04-22 17:45:16,313 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:45:16,313 - INFO -   Version    : 0.1.0
+2026-04-22 17:45:16,313 - INFO -   Debug mode : False
+2026-04-22 17:45:16,313 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:45:16,313 - INFO - ============================================
+2026-04-22 17:45:16,359 - INFO - Database connection established
+2026-04-22 17:45:16,359 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 45.6ms
+2026-04-22 17:45:16,396 - INFO - Starting ETL for 'gene_ensembl'
+2026-04-22 17:45:17,515 - INFO - [dtp_gene_ensembl] Extract starting...
+2026-04-22 17:45:17,516 - INFO - Discovering current GFF3 release from https://ftp.ensembl.org/pub/current_gff3/homo_sapiens/
+2026-04-22 17:45:17,990 - INFO - Resolved GFF3 file: Homo_sapiens.GRCh38.115.chr.gff3.gz
+2026-04-22 17:45:17,992 - INFO - Downloading GFF3 from https://ftp.ensembl.org/pub/current_gff3/homo_sapiens/Homo_sapiens.GRCh38.115.chr.gff3.gz
+2026-04-22 17:45:21,571 - INFO - GFF3 downloaded to igem_data/downloads/Ensembl/gene_ensembl/ensembl_genes.gff3.gz
+2026-04-22 17:45:21,574 - INFO - [Extract] Completed for 'gene_ensembl' in 4s
+2026-04-22 17:45:21,577 - INFO - [dtp_gene_ensembl] Transform starting...
+2026-04-22 17:45:32,953 - INFO - Transformed 78691 Ensembl gene records -> igem_data/processed/Ensembl/gene_ensembl/master_data.parquet
+2026-04-22 17:45:32,959 - INFO - [Transform] Completed for 'gene_ensembl' in 11s
+2026-04-22 17:45:32,962 - INFO - [dtp_gene_ensembl] Load starting...
+2026-04-22 17:45:37,407 - INFO - [dtp_gene_ensembl] Load complete: upserted=41212 skipped=1818
+2026-04-22 17:45:37,414 - INFO - [Load] Completed for 'gene_ensembl' in 4s
+2026-04-22 17:45:37,415 - INFO - ETL concluido para 'gene_ensembl' em 21s
+2026-04-22 17:45:37,415 - INFO - ============================================
+2026-04-22 17:46:53,633 - INFO - ============================================
+2026-04-22 17:46:53,633 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:46:53,633 - INFO -   Version    : 0.1.0
+2026-04-22 17:46:53,633 - INFO -   Debug mode : False
+2026-04-22 17:46:53,633 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:46:53,633 - INFO - ============================================
+2026-04-22 17:46:53,684 - INFO - Database connection established
+2026-04-22 17:46:53,684 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 50.7ms
+2026-04-22 17:49:12,327 - INFO - ============================================
+2026-04-22 17:49:12,327 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:49:12,328 - INFO -   Version    : 0.1.0
+2026-04-22 17:49:12,328 - INFO -   Debug mode : False
+2026-04-22 17:49:12,328 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:49:12,328 - INFO - ============================================
+2026-04-22 17:49:12,378 - INFO - Database connection established
+2026-04-22 17:49:12,378 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 50.2ms
+2026-04-22 17:49:28,698 - INFO - ============================================
+2026-04-22 17:49:28,698 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:49:28,698 - INFO -   Version    : 0.1.0
+2026-04-22 17:49:28,698 - INFO -   Debug mode : False
+2026-04-22 17:49:28,698 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:49:28,698 - INFO - ============================================
+2026-04-22 17:49:28,749 - INFO - Database connection established
+2026-04-22 17:49:28,749 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 50.9ms
+2026-04-22 17:49:28,786 - INFO - Skipping 'gene_hgnc' (up-to-date).
+2026-04-22 17:49:28,787 - INFO - Skipping 'gene_ncbi' (up-to-date).
+2026-04-22 17:49:28,788 - INFO - Starting ETL for 'ctd_gene_disease'
+2026-04-22 17:49:28,789 - ERROR - ETL failed for 'ctd_gene_disease' after 0s: No module named 'igem_backend.modules.etl.dtps.dtp_ctd_gene_disease'
+2026-04-22 17:49:28,790 - ERROR - run_all failed for 'ctd_gene_disease'.
+2026-04-22 17:49:28,791 - INFO - Starting ETL for 'ctd_chem_gene'
+2026-04-22 17:49:28,791 - ERROR - ETL failed for 'ctd_chem_gene' after 0s: No module named 'igem_backend.modules.etl.dtps.dtp_ctd_chem_gene'
+2026-04-22 17:49:28,792 - ERROR - run_all failed for 'ctd_chem_gene'.
+2026-04-22 17:49:28,792 - INFO - Skipping 'gene_ensembl' (up-to-date).
+2026-04-22 17:49:28,792 - INFO - run_all concluido: selected=5 skipped=3 succeeded=0 failed=2
+2026-04-22 17:49:28,792 - INFO - ============================================
+2026-04-22 17:49:43,682 - INFO - ============================================
+2026-04-22 17:49:43,682 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:49:43,682 - INFO -   Version    : 0.1.0
+2026-04-22 17:49:43,682 - INFO -   Debug mode : False
+2026-04-22 17:49:43,682 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:49:43,682 - INFO - ============================================
+2026-04-22 17:49:43,739 - INFO - Database connection established
+2026-04-22 17:49:43,739 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 56.2ms
+2026-04-22 17:51:29,163 - INFO - ============================================
+2026-04-22 17:51:29,163 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:51:29,163 - INFO -   Version    : 0.1.0
+2026-04-22 17:51:29,163 - INFO -   Debug mode : False
+2026-04-22 17:51:29,163 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:51:29,163 - INFO - ============================================
+2026-04-22 17:51:29,217 - INFO - Database connection established
+2026-04-22 17:51:29,217 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 53.7ms
+2026-04-22 17:54:27,623 - INFO - ============================================
+2026-04-22 17:54:27,623 - INFO - GE — Genome-Exposome Platform
+2026-04-22 17:54:27,623 - INFO -   Version    : 0.1.0
+2026-04-22 17:54:27,623 - INFO -   Debug mode : False
+2026-04-22 17:54:27,623 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 17:54:27,623 - INFO - ============================================
+2026-04-22 17:54:27,671 - INFO - Database connection established
+2026-04-22 17:54:27,671 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 47.1ms
+2026-04-22 18:07:26,454 - INFO - ============================================
+2026-04-22 18:07:26,454 - INFO - GE — Genome-Exposome Platform
+2026-04-22 18:07:26,454 - INFO -   Version    : 0.1.0
+2026-04-22 18:07:26,454 - INFO -   Debug mode : False
+2026-04-22 18:07:26,454 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 18:07:26,454 - INFO - ============================================
+2026-04-22 18:07:26,519 - INFO - Database connection established
+2026-04-22 18:07:26,519 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 64.4ms
+2026-04-22 18:07:31,185 - INFO - ============================================
+2026-04-22 18:07:31,185 - INFO - GE — Genome-Exposome Platform
+2026-04-22 18:07:31,185 - INFO -   Version    : 0.1.0
+2026-04-22 18:07:31,185 - INFO -   Debug mode : False
+2026-04-22 18:07:31,185 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 18:07:31,185 - INFO - ============================================
+2026-04-22 18:07:31,236 - INFO - Database connection established
+2026-04-22 18:07:31,236 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 50.4ms
+2026-04-22 18:07:31,243 - INFO - [report] Running 'gene_annotations'...
+2026-04-22 18:07:31,290 - INFO - [report] 'gene_annotations' complete: 3 rows in 0.0s
+2026-04-22 18:07:31,290 - INFO - ============================================
+2026-04-22 18:07:35,753 - INFO - ============================================
+2026-04-22 18:07:35,753 - INFO - GE — Genome-Exposome Platform
+2026-04-22 18:07:35,753 - INFO -   Version    : 0.1.0
+2026-04-22 18:07:35,753 - INFO -   Debug mode : False
+2026-04-22 18:07:35,753 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 18:07:35,753 - INFO - ============================================
+2026-04-22 18:07:35,808 - INFO - Database connection established
+2026-04-22 18:07:35,808 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 54.5ms
+2026-04-22 21:08:07,961 - INFO - ============================================
+2026-04-22 21:08:07,961 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:08:07,961 - INFO -   Version    : 0.1.0
+2026-04-22 21:08:07,961 - INFO -   Debug mode : False
+2026-04-22 21:08:07,961 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:08:07,961 - INFO - ============================================
+2026-04-22 21:08:08,049 - INFO - Database connection established
+2026-04-22 21:08:08,049 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 87.3ms
+2026-04-22 21:08:08,056 - INFO - [report] Running 'gene_annotations'...
+2026-04-22 21:08:08,096 - INFO - [report] 'gene_annotations' complete: 1 rows in 0.0s
+2026-04-22 21:08:08,096 - INFO - ============================================
+2026-04-22 21:09:49,182 - INFO - ============================================
+2026-04-22 21:09:49,182 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:09:49,182 - INFO -   Version    : 0.1.0
+2026-04-22 21:09:49,182 - INFO -   Debug mode : False
+2026-04-22 21:09:49,182 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:09:49,183 - INFO - ============================================
+2026-04-22 21:09:49,245 - INFO - Database connection established
+2026-04-22 21:09:49,245 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 62.3ms
+2026-04-22 21:09:49,251 - INFO - [report] Running 'gene_annotations'...
+2026-04-22 21:09:49,288 - INFO - [report] 'gene_annotations' complete: 2 rows in 0.0s
+2026-04-22 21:09:49,288 - INFO - ============================================
+2026-04-22 21:20:15,334 - INFO - ============================================
+2026-04-22 21:20:15,334 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:20:15,334 - INFO -   Version    : 0.1.0
+2026-04-22 21:20:15,334 - INFO -   Debug mode : False
+2026-04-22 21:20:15,334 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:20:15,334 - INFO - ============================================
+2026-04-22 21:20:15,406 - INFO - Database connection established
+2026-04-22 21:20:15,406 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.7ms
+2026-04-22 21:20:34,315 - INFO - ============================================
+2026-04-22 21:20:34,315 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:20:34,315 - INFO -   Version    : 0.1.0
+2026-04-22 21:20:34,315 - INFO -   Debug mode : False
+2026-04-22 21:20:34,315 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:20:34,316 - INFO - ============================================
+2026-04-22 21:20:34,392 - INFO - Database connection established
+2026-04-22 21:20:34,392 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 76.3ms
+2026-04-22 21:20:34,393 - INFO - Database connection established
+2026-04-22 21:20:34,393 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-22 21:20:34,431 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 21:20:34,434 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 21:20:34,440 - INFO - Seeded ETLSourceSystem: created=1 updated=15 skipped=0
+2026-04-22 21:20:34,445 - INFO - Seeded ETLDataSource: created=2 updated=6 skipped=0
+2026-04-22 21:20:34,449 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 21:20:34,454 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 21:20:34,460 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 21:20:34,461 - INFO - Database upgraded successfully
+2026-04-22 21:20:34,461 - INFO - ============================================
+2026-04-22 21:20:41,856 - INFO - ============================================
+2026-04-22 21:20:41,856 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:20:41,856 - INFO -   Version    : 0.1.0
+2026-04-22 21:20:41,856 - INFO -   Debug mode : False
+2026-04-22 21:20:41,856 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:20:41,856 - INFO - ============================================
+2026-04-22 21:20:41,932 - INFO - Database connection established
+2026-04-22 21:20:41,932 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 75.2ms
+2026-04-22 21:48:07,865 - INFO - ============================================
+2026-04-22 21:48:07,865 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:48:07,865 - INFO -   Version    : 0.1.0
+2026-04-22 21:48:07,865 - INFO -   Debug mode : False
+2026-04-22 21:48:07,865 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:48:07,865 - INFO - ============================================
+2026-04-22 21:48:07,938 - INFO - Database connection established
+2026-04-22 21:48:07,938 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 72.1ms
+2026-04-22 21:48:07,938 - INFO - Database connection established
+2026-04-22 21:48:07,938 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-22 21:48:07,970 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 21:48:07,973 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 21:48:07,977 - INFO - Seeded ETLSourceSystem: created=0 updated=16 skipped=0
+2026-04-22 21:48:07,982 - INFO - Seeded ETLDataSource: created=1 updated=8 skipped=0
+2026-04-22 21:48:07,987 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 21:48:07,990 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 21:48:07,992 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 21:48:07,992 - INFO - Database upgraded successfully
+2026-04-22 21:48:07,992 - INFO - ============================================
+2026-04-22 21:48:13,086 - INFO - ============================================
+2026-04-22 21:48:13,087 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:48:13,087 - INFO -   Version    : 0.1.0
+2026-04-22 21:48:13,087 - INFO -   Debug mode : False
+2026-04-22 21:48:13,087 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:48:13,087 - INFO - ============================================
+2026-04-22 21:48:13,163 - INFO - Database connection established
+2026-04-22 21:48:13,163 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 75.9ms
+2026-04-22 21:50:12,161 - INFO - ============================================
+2026-04-22 21:50:12,161 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:50:12,161 - INFO -   Version    : 0.1.0
+2026-04-22 21:50:12,161 - INFO -   Debug mode : False
+2026-04-22 21:50:12,161 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:50:12,161 - INFO - ============================================
+2026-04-22 21:50:12,231 - INFO - Database connection established
+2026-04-22 21:50:12,231 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 69.2ms
+2026-04-22 21:50:12,264 - INFO - Starting ETL for 'protein_pfam'
+2026-04-22 21:50:12,500 - INFO - [dtp_protein_pfam] Extract starting...
+2026-04-22 21:50:12,502 - INFO - Downloading Pfam from https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz
+2026-04-22 21:50:12,944 - ERROR - [dtp_protein_pfam] Extract failed: 404 Client Error: Not Found for url: https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz
+2026-04-22 21:50:12,947 - ERROR - [Extract] Failed for 'protein_pfam' after 0s: [dtp_protein_pfam] Extract failed: 404 Client Error: Not Found for url: https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz
+2026-04-22 21:50:12,956 - WARNING - [Transform] No successful extract for 'protein_pfam' — skipping.
+2026-04-22 21:50:12,960 - WARNING - [Load] No successful transform for 'protein_pfam' — skipping.
+2026-04-22 21:50:12,960 - INFO - ETL concluido para 'protein_pfam' em 0s
+2026-04-22 21:50:12,960 - INFO - ============================================
+2026-04-22 21:53:39,658 - INFO - ============================================
+2026-04-22 21:53:39,659 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:53:39,659 - INFO -   Version    : 0.1.0
+2026-04-22 21:53:39,659 - INFO -   Debug mode : False
+2026-04-22 21:53:39,659 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:53:39,659 - INFO - ============================================
+2026-04-22 21:53:39,734 - INFO - Database connection established
+2026-04-22 21:53:39,734 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 74.5ms
+2026-04-22 21:53:39,734 - INFO - Database connection established
+2026-04-22 21:53:39,734 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-22 21:53:39,772 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 21:53:39,775 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 21:53:39,779 - INFO - Seeded ETLSourceSystem: created=0 updated=16 skipped=0
+2026-04-22 21:53:39,785 - INFO - Seeded ETLDataSource: created=0 updated=9 skipped=0
+2026-04-22 21:53:39,788 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 21:53:39,792 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 21:53:39,794 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 21:53:39,794 - INFO - Database upgraded successfully
+2026-04-22 21:53:39,794 - INFO - ============================================
+2026-04-22 21:53:44,927 - INFO - ============================================
+2026-04-22 21:53:44,927 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:53:44,927 - INFO -   Version    : 0.1.0
+2026-04-22 21:53:44,927 - INFO -   Debug mode : False
+2026-04-22 21:53:44,927 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:53:44,927 - INFO - ============================================
+2026-04-22 21:53:44,986 - INFO - Database connection established
+2026-04-22 21:53:44,986 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 59.2ms
+2026-04-22 21:53:45,017 - INFO - Starting ETL for 'protein_pfam'
+2026-04-22 21:53:45,237 - INFO - [dtp_protein_pfam] Extract starting...
+2026-04-22 21:53:45,237 - INFO - Downloading Pfam from https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/pfamA.txt.gz
+2026-04-22 21:53:46,444 - INFO - Pfam data downloaded to igem_data/downloads/Pfam/protein_pfam/pfamA.txt.gz
+2026-04-22 21:53:46,451 - INFO - [Extract] Completed for 'protein_pfam' in 1s
+2026-04-22 21:53:46,455 - INFO - [dtp_protein_pfam] Transform starting...
+2026-04-22 21:53:46,890 - INFO - Transformed 27481 Pfam entries -> igem_data/processed/Pfam/protein_pfam/master_data.parquet
+2026-04-22 21:53:46,899 - INFO - [Transform] Completed for 'protein_pfam' in 0s
+2026-04-22 21:53:46,902 - INFO - [dtp_protein_pfam] Load starting...
+2026-04-22 21:53:48,393 - WARNING - Truncation summary: short_text=13729
+2026-04-22 21:53:48,393 - INFO - [dtp_protein_pfam] Load complete: total=27481 created=27481 updated=0 warnings=0
+2026-04-22 21:53:48,395 - INFO - [Load] Completed for 'protein_pfam' in 1s
+2026-04-22 21:53:48,397 - INFO - ETL concluido para 'protein_pfam' em 3s
+2026-04-22 21:53:48,397 - INFO - ============================================
+2026-04-22 21:55:42,278 - INFO - ============================================
+2026-04-22 21:55:42,278 - INFO - GE — Genome-Exposome Platform
+2026-04-22 21:55:42,278 - INFO -   Version    : 0.1.0
+2026-04-22 21:55:42,278 - INFO -   Debug mode : False
+2026-04-22 21:55:42,278 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 21:55:42,278 - INFO - ============================================
+2026-04-22 21:55:42,349 - INFO - Database connection established
+2026-04-22 21:55:42,349 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 70.5ms
+2026-04-22 21:55:42,391 - INFO - Starting ETL for 'protein_uniprot'
+2026-04-22 21:55:42,646 - INFO - [dtp_protein_uniprot] Extract starting...
+2026-04-22 21:55:42,648 - INFO - Downloading UniProt XML from https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.xml.gz
+2026-04-22 21:55:45,456 - INFO - UniProt XML downloaded to igem_data/downloads/UniProt/protein_uniprot/uniprot_human.xml.gz
+2026-04-22 21:55:45,459 - INFO - [Extract] Completed for 'protein_uniprot' in 2s
+2026-04-22 21:55:45,462 - INFO - [dtp_protein_uniprot] Transform starting...
+2026-04-22 21:56:18,517 - ERROR - [dtp_protein_uniprot] Transform failed: "None of [Index(['uniprot_id', 'uniprot_name', 'gene_symbol', 'full_name', 'function',\n       'location', 'tissue_expression', 'secondary_ids', 'isoforms',\n       'pfam_ids'],\n      dtype='object')] are in the [columns]"
+2026-04-22 21:56:20,579 - ERROR - [Transform] Failed for 'protein_uniprot' after 35s: [dtp_protein_uniprot] Transform failed: "None of [Index(['uniprot_id', 'uniprot_name', 'gene_symbol', 'full_name', 'function',\n       'location', 'tissue_expression', 'secondary_ids', 'isoforms',\n       'pfam_ids'],\n      dtype='object')] are in the [columns]"
+2026-04-22 21:56:20,582 - WARNING - [Load] No successful transform for 'protein_uniprot' — skipping.
+2026-04-22 21:56:20,582 - INFO - ETL concluido para 'protein_uniprot' em 38s
+2026-04-22 21:56:20,582 - INFO - ============================================
+2026-04-22 22:07:07,425 - INFO - ============================================
+2026-04-22 22:07:07,425 - INFO - GE — Genome-Exposome Platform
+2026-04-22 22:07:07,425 - INFO -   Version    : 0.1.0
+2026-04-22 22:07:07,425 - INFO -   Debug mode : False
+2026-04-22 22:07:07,425 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 22:07:07,425 - INFO - ============================================
+2026-04-22 22:07:07,481 - INFO - Database connection established
+2026-04-22 22:07:07,481 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 55.7ms
+2026-04-22 22:07:07,513 - INFO - Starting ETL for 'protein_uniprot'
+2026-04-22 22:07:07,762 - INFO - [dtp_protein_uniprot] Transform starting...
+2026-04-22 22:07:36,370 - INFO - Relationship rows generated: 389110
+2026-04-22 22:07:36,373 - INFO - Transformed 20659 UniProt entries -> igem_data/processed/UniProt/protein_uniprot/master_data.parquet
+2026-04-22 22:07:36,414 - INFO - [Transform] Completed for 'protein_uniprot' in 28s
+2026-04-22 22:07:36,417 - INFO - [dtp_protein_uniprot] Load starting...
+2026-04-22 22:22:35,724 - WARNING - Truncation summary: function=6418, short_text=1476
+2026-04-22 22:22:35,724 - INFO - [dtp_protein_uniprot] Load complete: total=20659 created=20659 updated=0 warnings=0 isoforms=32922 pfam_links=33886
+2026-04-22 22:22:35,726 - INFO - [Load] Completed for 'protein_uniprot' in 14m 59s
+2026-04-22 22:22:35,727 - INFO - ETL concluido para 'protein_uniprot' em 15m 28s
+2026-04-22 22:22:35,727 - INFO - ============================================
+2026-04-22 22:43:35,027 - INFO - ============================================
+2026-04-22 22:43:35,027 - INFO - GE — Genome-Exposome Platform
+2026-04-22 22:43:35,027 - INFO -   Version    : 0.1.0
+2026-04-22 22:43:35,027 - INFO -   Debug mode : False
+2026-04-22 22:43:35,027 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 22:43:35,027 - INFO - ============================================
+2026-04-22 22:43:35,099 - INFO - Database connection established
+2026-04-22 22:43:35,099 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.2ms
+2026-04-22 22:43:35,108 - INFO - [report] Running 'protein_annotations'...
+2026-04-22 22:43:35,151 - INFO - [report] 'protein_annotations' complete: 2 rows in 0.0s
+2026-04-22 22:43:35,151 - INFO - ============================================
+2026-04-22 23:06:49,987 - INFO - ============================================
+2026-04-22 23:06:49,988 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:06:49,988 - INFO -   Version    : 0.1.0
+2026-04-22 23:06:49,988 - INFO -   Debug mode : False
+2026-04-22 23:06:49,988 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:06:49,988 - INFO - ============================================
+2026-04-22 23:06:50,046 - INFO - Database connection established
+2026-04-22 23:06:50,046 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 58.1ms
+2026-04-22 23:06:50,073 - WARNING - No matching active DataSources found.
+2026-04-22 23:07:15,293 - INFO - ============================================
+2026-04-22 23:07:15,293 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:07:15,293 - INFO -   Version    : 0.1.0
+2026-04-22 23:07:15,293 - INFO -   Debug mode : False
+2026-04-22 23:07:15,293 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:07:15,293 - INFO - ============================================
+2026-04-22 23:07:15,362 - INFO - Database connection established
+2026-04-22 23:07:15,362 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 68.6ms
+2026-04-22 23:07:15,363 - INFO - Database connection established
+2026-04-22 23:07:15,363 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-22 23:07:15,397 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 23:07:15,400 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 23:07:15,405 - INFO - Seeded ETLSourceSystem: created=0 updated=16 skipped=0
+2026-04-22 23:07:15,412 - INFO - Seeded ETLDataSource: created=3 updated=9 skipped=0
+2026-04-22 23:07:15,418 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 23:07:15,422 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 23:07:15,424 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 23:07:15,424 - INFO - Database upgraded successfully
+2026-04-22 23:07:15,424 - INFO - ============================================
+2026-04-22 23:07:23,095 - INFO - ============================================
+2026-04-22 23:07:23,095 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:07:23,095 - INFO -   Version    : 0.1.0
+2026-04-22 23:07:23,096 - INFO -   Debug mode : False
+2026-04-22 23:07:23,096 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:07:23,096 - INFO - ============================================
+2026-04-22 23:07:23,164 - INFO - Database connection established
+2026-04-22 23:07:23,164 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 68.1ms
+2026-04-22 23:07:23,196 - INFO - Starting ETL for 'pathway_kegg'
+2026-04-22 23:07:23,422 - INFO - [dtp_pathway_kegg] Extract starting...
+2026-04-22 23:07:23,424 - INFO - Fetching KEGG pathway list from https://rest.kegg.jp/list/pathway/hsa
+2026-04-22 23:07:25,068 - INFO - [dtp_pathway_kegg] KEGG data downloaded (21,967 bytes)
+2026-04-22 23:07:25,080 - INFO - [Extract] Completed for 'pathway_kegg' in 1s
+2026-04-22 23:07:25,088 - INFO - [dtp_pathway_kegg] Transform starting...
+2026-04-22 23:07:25,177 - INFO - [dtp_pathway_kegg] Transform complete: 370 KEGG pathways
+2026-04-22 23:07:25,178 - INFO - [Transform] Completed for 'pathway_kegg' in 0s
+2026-04-22 23:07:25,181 - INFO - [dtp_pathway_kegg] Load starting...
+2026-04-22 23:07:31,928 - INFO - [dtp_pathway_kegg] Load complete: total=370 created=370 skipped=0 warnings=0
+2026-04-22 23:07:31,928 - INFO - [Load] Completed for 'pathway_kegg' in 6s
+2026-04-22 23:07:31,928 - INFO - ETL concluido para 'pathway_kegg' em 8s
+2026-04-22 23:07:31,928 - INFO - ============================================
+2026-04-22 23:07:44,340 - INFO - ============================================
+2026-04-22 23:07:44,341 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:07:44,341 - INFO -   Version    : 0.1.0
+2026-04-22 23:07:44,341 - INFO -   Debug mode : False
+2026-04-22 23:07:44,341 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:07:44,341 - INFO - ============================================
+2026-04-22 23:07:44,412 - INFO - Database connection established
+2026-04-22 23:07:44,413 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.2ms
+2026-04-22 23:07:44,452 - INFO - Starting ETL for 'pathway_reactome'
+2026-04-22 23:07:44,703 - INFO - [dtp_pathway_reactome] Extract starting...
+2026-04-22 23:07:44,705 - INFO - Downloading ReactomePathways.txt ...
+2026-04-22 23:07:44,997 - INFO - Downloading ReactomePathwaysRelation.txt ...
+2026-04-22 23:07:45,140 - INFO - Downloading ReactomePathways.gmt.zip ...
+2026-04-22 23:07:45,298 - INFO - Downloading Ensembl2Reactome.txt ...
+2026-04-22 23:07:48,246 - INFO - Downloading UniProt2Reactome.txt ...
+2026-04-22 23:07:49,201 - INFO - [dtp_pathway_reactome] 5 files downloaded (223,099,826 bytes)
+2026-04-22 23:07:49,211 - INFO - [Extract] Completed for 'pathway_reactome' in 4s
+2026-04-22 23:07:49,217 - INFO - [dtp_pathway_reactome] Transform starting...
+2026-04-22 23:07:49,280 - INFO -   master_data: 2870 human pathways
+2026-04-22 23:07:50,127 - INFO -   relationship_data: 414687 rows
+2026-04-22 23:07:50,127 - INFO - [dtp_pathway_reactome] Transform complete: 2870 pathways, 414687 relationship rows
+2026-04-22 23:07:50,144 - INFO - [Transform] Completed for 'pathway_reactome' in 0s
+2026-04-22 23:07:50,147 - INFO - [dtp_pathway_reactome] Load starting...
+2026-04-22 23:08:43,290 - INFO - [dtp_pathway_reactome] Load complete: total=2870 created=2870 skipped=0 warnings=0
+2026-04-22 23:08:43,290 - INFO - [Load] Completed for 'pathway_reactome' in 53s
+2026-04-22 23:08:43,296 - INFO - ETL concluido para 'pathway_reactome' em 58s
+2026-04-22 23:08:43,296 - INFO - ============================================
+2026-04-22 23:19:49,586 - INFO - ============================================
+2026-04-22 23:19:49,586 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:19:49,586 - INFO -   Version    : 0.1.0
+2026-04-22 23:19:49,586 - INFO -   Debug mode : False
+2026-04-22 23:19:49,586 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:19:49,586 - INFO - ============================================
+2026-04-22 23:19:49,657 - INFO - Database connection established
+2026-04-22 23:19:49,657 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 70.0ms
+2026-04-22 23:19:49,666 - INFO - [report] Running 'pathway_annotations'...
+2026-04-22 23:19:49,712 - INFO - [report] 'pathway_annotations' complete: 2 rows in 0.0s
+2026-04-22 23:19:49,712 - INFO - ============================================
+2026-04-22 23:28:25,249 - INFO - ============================================
+2026-04-22 23:28:25,249 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:28:25,249 - INFO -   Version    : 0.1.0
+2026-04-22 23:28:25,249 - INFO -   Debug mode : False
+2026-04-22 23:28:25,249 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:28:25,249 - INFO - ============================================
+2026-04-22 23:28:25,313 - INFO - Database connection established
+2026-04-22 23:28:25,313 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 63.3ms
+2026-04-22 23:28:25,313 - INFO - Database connection established
+2026-04-22 23:28:25,313 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.1ms
+2026-04-22 23:28:25,350 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 23:28:25,378 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 23:28:25,389 - INFO - Seeded ETLSourceSystem: created=0 updated=16 skipped=0
+2026-04-22 23:28:25,397 - INFO - Seeded ETLDataSource: created=1 updated=12 skipped=0
+2026-04-22 23:28:25,401 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 23:28:25,405 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 23:28:25,406 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 23:28:25,406 - INFO - Database upgraded successfully
+2026-04-22 23:28:25,407 - INFO - ============================================
+2026-04-22 23:28:36,486 - INFO - ============================================
+2026-04-22 23:28:36,486 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:28:36,486 - INFO -   Version    : 0.1.0
+2026-04-22 23:28:36,486 - INFO -   Debug mode : False
+2026-04-22 23:28:36,486 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:28:36,486 - INFO - ============================================
+2026-04-22 23:28:36,554 - INFO - Database connection established
+2026-04-22 23:28:36,554 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 67.2ms
+2026-04-22 23:28:36,585 - INFO - Starting ETL for 'go'
+2026-04-22 23:28:36,803 - INFO - [dtp_go] Extract starting...
+2026-04-22 23:28:36,805 - INFO - Downloading GO OBO from https://purl.obolibrary.org/obo/go.obo
+2026-04-22 23:28:38,258 - INFO - [dtp_go] GO OBO downloaded (36,555,702 bytes)
+2026-04-22 23:28:38,263 - INFO - [Extract] Completed for 'go' in 1s
+2026-04-22 23:28:38,267 - INFO - [dtp_go] Transform starting...
+2026-04-22 23:28:38,268 - INFO - Parsing OBO file...
+2026-04-22 23:28:38,875 - INFO -   master_data: 38560 active GO terms
+2026-04-22 23:28:38,895 - INFO -   relations_data: 73910 GO DAG edges
+2026-04-22 23:28:38,895 - INFO - [dtp_go] Transform complete: 38560 terms, 73910 DAG edges
+2026-04-22 23:28:38,907 - INFO - [Transform] Completed for 'go' in 0s
+2026-04-22 23:28:38,910 - INFO - [dtp_go] Load starting...
+2026-04-22 23:43:20,092 - INFO - [dtp_go] Phase 1 complete: total=38560 created=38560 skipped=0 warnings=0
+2026-04-22 23:43:23,731 - INFO - [dtp_go] Load complete: terms: total=38560 created=38560 skipped=0 | DAG: created=73910 skipped=0
+2026-04-22 23:43:23,736 - INFO - [Load] Completed for 'go' in 14m 44s
+2026-04-22 23:43:23,739 - INFO - ETL concluido para 'go' em 14m 47s
+2026-04-22 23:43:23,739 - INFO - ============================================
+2026-04-22 23:53:23,744 - INFO - ============================================
+2026-04-22 23:53:23,744 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:53:23,744 - INFO -   Version    : 0.1.0
+2026-04-22 23:53:23,744 - INFO -   Debug mode : False
+2026-04-22 23:53:23,744 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:53:23,744 - INFO - ============================================
+2026-04-22 23:53:23,815 - INFO - Database connection established
+2026-04-22 23:53:23,815 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 70.4ms
+2026-04-22 23:53:42,147 - INFO - ============================================
+2026-04-22 23:53:42,148 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:53:42,148 - INFO -   Version    : 0.1.0
+2026-04-22 23:53:42,148 - INFO -   Debug mode : False
+2026-04-22 23:53:42,148 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:53:42,148 - INFO - ============================================
+2026-04-22 23:53:42,218 - INFO - Database connection established
+2026-04-22 23:53:42,218 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 69.4ms
+2026-04-22 23:53:42,218 - INFO - Database connection established
+2026-04-22 23:53:42,218 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-22 23:53:42,253 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-22 23:53:42,256 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-22 23:53:42,260 - INFO - Seeded ETLSourceSystem: created=0 updated=16 skipped=0
+2026-04-22 23:53:42,269 - INFO - Seeded ETLDataSource: created=2 updated=13 skipped=0
+2026-04-22 23:53:42,274 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-22 23:53:42,277 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-22 23:53:42,279 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-22 23:53:42,279 - INFO - Database upgraded successfully
+2026-04-22 23:53:42,279 - INFO - ============================================
+2026-04-22 23:53:58,733 - INFO - ============================================
+2026-04-22 23:53:58,733 - INFO - GE — Genome-Exposome Platform
+2026-04-22 23:53:58,733 - INFO -   Version    : 0.1.0
+2026-04-22 23:53:58,733 - INFO -   Debug mode : False
+2026-04-22 23:53:58,733 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-22 23:53:58,733 - INFO - ============================================
+2026-04-22 23:53:58,787 - INFO - Database connection established
+2026-04-22 23:53:58,787 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 54.2ms
+2026-04-22 23:53:58,820 - INFO - Starting ETL for 'disease_mondo'
+2026-04-22 23:53:59,001 - INFO - [dtp_disease_mondo] Extract starting...
+2026-04-22 23:53:59,002 - INFO - Streaming MONDO JSON from https://purl.obolibrary.org/obo/mondo.json
+2026-04-22 23:54:01,035 - INFO - [dtp_disease_mondo] mondo.json downloaded (102,877,798 bytes)
+2026-04-22 23:54:01,039 - INFO - [Extract] Completed for 'disease_mondo' in 2s
+2026-04-22 23:54:01,041 - INFO - [dtp_disease_mondo] Transform starting...
+2026-04-22 23:54:01,041 - INFO - Loading MONDO JSON...
+2026-04-22 23:54:01,884 - INFO -   master_data: 26710 active MONDO terms
+2026-04-22 23:54:02,142 - INFO -   relationship_data: 39856 MONDO→MONDO edges
+2026-04-22 23:54:02,142 - INFO - [dtp_disease_mondo] Transform complete: 26710 terms, 39856 DAG edges
+2026-04-22 23:54:02,186 - INFO - [Transform] Completed for 'disease_mondo' in 1s
+2026-04-22 23:54:02,189 - INFO - [dtp_disease_mondo] Load starting...
+2026-04-22 23:54:02,238 - INFO - [dtp_disease_mondo] Building DiseaseGroup map...
+2026-04-22 23:54:02,265 - INFO -   36 DiseaseGroup entries ready
+2026-04-22 23:54:28,363 - INFO - [dtp_disease_mondo] Load complete: total=26710 created=26710 skipped=0 warnings=0
+2026-04-22 23:54:28,365 - INFO - [Load] Completed for 'disease_mondo' in 26s
+2026-04-22 23:54:28,365 - INFO - ETL concluido para 'disease_mondo' em 29s
+2026-04-22 23:54:28,365 - INFO - ============================================
+2026-04-23 00:04:39,654 - INFO - ============================================
+2026-04-23 00:04:39,655 - INFO - GE — Genome-Exposome Platform
+2026-04-23 00:04:39,655 - INFO -   Version    : 0.1.0
+2026-04-23 00:04:39,655 - INFO -   Debug mode : False
+2026-04-23 00:04:39,655 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 00:04:39,655 - INFO - ============================================
+2026-04-23 00:04:39,720 - INFO - Database connection established
+2026-04-23 00:04:39,720 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 64.5ms
+2026-04-23 00:04:39,721 - INFO - Database connection established
+2026-04-23 00:04:39,721 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 00:04:39,756 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 00:04:39,758 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 00:04:39,762 - INFO - Seeded ETLSourceSystem: created=0 updated=16 skipped=0
+2026-04-23 00:04:39,768 - WARNING - ETLSourceSystem not found: ChEBI
+2026-04-23 00:04:39,769 - INFO - Seeded ETLDataSource: created=0 updated=15 skipped=1
+2026-04-23 00:04:39,773 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-23 00:04:39,776 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-23 00:04:39,778 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 00:04:39,778 - INFO - Database upgraded successfully
+2026-04-23 00:04:39,778 - INFO - ============================================
+2026-04-23 00:04:47,416 - INFO - ============================================
+2026-04-23 00:04:47,416 - INFO - GE — Genome-Exposome Platform
+2026-04-23 00:04:47,416 - INFO -   Version    : 0.1.0
+2026-04-23 00:04:47,416 - INFO -   Debug mode : False
+2026-04-23 00:04:47,416 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 00:04:47,417 - INFO - ============================================
+2026-04-23 00:04:47,489 - INFO - Database connection established
+2026-04-23 00:04:47,490 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 72.4ms
+2026-04-23 00:04:47,490 - INFO - Database connection established
+2026-04-23 00:04:47,490 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 00:04:47,525 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 00:04:47,528 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 00:04:47,532 - INFO - Seeded ETLSourceSystem: created=0 updated=16 skipped=0
+2026-04-23 00:04:47,539 - WARNING - ETLSourceSystem not found: ChEBI
+2026-04-23 00:04:47,539 - INFO - Seeded ETLDataSource: created=0 updated=15 skipped=1
+2026-04-23 00:04:47,543 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-23 00:04:47,547 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-23 00:04:47,549 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 00:04:47,549 - INFO - Database upgraded successfully
+2026-04-23 00:04:47,549 - INFO - ============================================
+2026-04-23 00:05:26,541 - INFO - ============================================
+2026-04-23 00:05:26,541 - INFO - GE — Genome-Exposome Platform
+2026-04-23 00:05:26,541 - INFO -   Version    : 0.1.0
+2026-04-23 00:05:26,541 - INFO -   Debug mode : False
+2026-04-23 00:05:26,541 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 00:05:26,541 - INFO - ============================================
+2026-04-23 00:05:26,607 - INFO - Database connection established
+2026-04-23 00:05:26,607 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 64.8ms
+2026-04-23 00:05:26,607 - INFO - Database connection established
+2026-04-23 00:05:26,607 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 00:05:26,640 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 00:05:26,642 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 00:05:26,647 - INFO - Seeded ETLSourceSystem: created=1 updated=16 skipped=0
+2026-04-23 00:05:26,655 - INFO - Seeded ETLDataSource: created=1 updated=15 skipped=0
+2026-04-23 00:05:26,658 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-23 00:05:26,661 - INFO - Seeded EntityRelationshipType: created=0 updated=13 skipped=0
+2026-04-23 00:05:26,663 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 00:05:26,663 - INFO - Database upgraded successfully
+2026-04-23 00:05:26,663 - INFO - ============================================
+2026-04-23 00:06:01,338 - INFO - ============================================
+2026-04-23 00:06:01,338 - INFO - GE — Genome-Exposome Platform
+2026-04-23 00:06:01,338 - INFO -   Version    : 0.1.0
+2026-04-23 00:06:01,338 - INFO -   Debug mode : False
+2026-04-23 00:06:01,338 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 00:06:01,338 - INFO - ============================================
+2026-04-23 00:06:01,403 - INFO - Database connection established
+2026-04-23 00:06:01,404 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 65.1ms
+2026-04-23 00:06:01,435 - INFO - Starting ETL for 'chemical_chebi'
+2026-04-23 00:06:01,694 - INFO - [dtp_chemical_chebi] Extract starting...
+2026-04-23 00:06:01,696 - INFO - Downloading https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/compounds.tsv.gz
+2026-04-23 00:06:02,861 - INFO -   compounds.tsv.gz: 6,642,111 bytes
+2026-04-23 00:06:02,862 - INFO - Downloading https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/chemical_data.tsv.gz
+2026-04-23 00:06:03,826 - INFO -   chemical_data.tsv.gz: 4,856,812 bytes
+2026-04-23 00:06:03,827 - INFO - Downloading https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/secondary_ids.tsv.gz
+2026-04-23 00:06:04,319 - INFO -   secondary_ids.tsv.gz: 86,565 bytes
+2026-04-23 00:06:04,319 - INFO - Downloading https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/database_accession.tsv.gz
+2026-04-23 00:06:05,275 - INFO -   database_accession.tsv.gz: 3,748,989 bytes
+2026-04-23 00:06:05,275 - INFO - Downloading https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/source.tsv.gz
+2026-04-23 00:06:05,593 - INFO -   source.tsv.gz: 3,723 bytes
+2026-04-23 00:06:05,601 - INFO - [dtp_chemical_chebi] Extract complete: 5 files, 15,338,200 bytes total
+2026-04-23 00:06:05,608 - INFO - [Extract] Completed for 'chemical_chebi' in 3s
+2026-04-23 00:06:05,614 - INFO - [dtp_chemical_chebi] Transform starting...
+2026-04-23 00:06:06,130 - INFO -   compounds: 205,170 records after filter
+2026-04-23 00:06:14,623 - INFO - [dtp_chemical_chebi] Transform complete: 205,170 compounds
+2026-04-23 00:06:14,667 - INFO - [Transform] Completed for 'chemical_chebi' in 9s
+2026-04-23 00:06:14,669 - INFO - [dtp_chemical_chebi] Load starting...
+2026-04-23 00:08:05,730 - INFO - [dtp_chemical_chebi] Load complete: total=205170 created=205170 skipped=0 warnings=0
+2026-04-23 00:08:05,747 - INFO - [Load] Completed for 'chemical_chebi' in 1m 51s
+2026-04-23 00:08:05,747 - INFO - ETL concluido para 'chemical_chebi' em 2m 4s
+2026-04-23 00:08:05,748 - INFO - ============================================
+2026-04-23 07:51:20,070 - INFO - ============================================
+2026-04-23 07:51:20,070 - INFO - GE — Genome-Exposome Platform
+2026-04-23 07:51:20,070 - INFO -   Version    : 0.1.0
+2026-04-23 07:51:20,070 - INFO -   Debug mode : False
+2026-04-23 07:51:20,070 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 07:51:20,070 - INFO - ============================================
+2026-04-23 07:51:20,146 - INFO - Database connection established
+2026-04-23 07:51:20,146 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 75.5ms
+2026-04-23 07:51:55,647 - INFO - ============================================
+2026-04-23 07:51:55,647 - INFO - GE — Genome-Exposome Platform
+2026-04-23 07:51:55,647 - INFO -   Version    : 0.1.0
+2026-04-23 07:51:55,647 - INFO -   Debug mode : False
+2026-04-23 07:51:55,647 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 07:51:55,647 - INFO - ============================================
+2026-04-23 07:51:55,713 - INFO - Database connection established
+2026-04-23 07:51:55,713 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 65.4ms
+2026-04-23 07:51:55,747 - INFO - Starting ETL for 'protein_uniprot_relationships'
+2026-04-23 07:51:56,083 - INFO - [dtp_protein_uniprot_relationships] Extract not applicable — raw data is owned by dtp_protein_uniprot.
+2026-04-23 07:51:56,089 - INFO - [dtp_protein_uniprot_relationships] Transform not applicable — relationship_data.parquet is generated by dtp_protein_uniprot.
+2026-04-23 07:51:56,089 - INFO - [Transform] Completed for 'protein_uniprot_relationships' in 0s
+2026-04-23 07:51:56,093 - INFO - [dtp_protein_uniprot_relationships] Load starting...
+2026-04-23 07:53:43,030 - INFO - [dtp_protein_uniprot_relationships] Load complete: total=389110 created=293393 skipped=95717 warnings=0
+2026-04-23 07:53:43,042 - INFO - [Load] Completed for 'protein_uniprot_relationships' in 1m 46s
+2026-04-23 07:53:43,042 - INFO - ETL concluido para 'protein_uniprot_relationships' em 1m 47s
+2026-04-23 07:53:43,042 - INFO - ============================================
+2026-04-23 07:54:40,707 - INFO - ============================================
+2026-04-23 07:54:40,708 - INFO - GE — Genome-Exposome Platform
+2026-04-23 07:54:40,708 - INFO -   Version    : 0.1.0
+2026-04-23 07:54:40,708 - INFO -   Debug mode : False
+2026-04-23 07:54:40,708 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 07:54:40,708 - INFO - ============================================
+2026-04-23 07:54:40,769 - INFO - Database connection established
+2026-04-23 07:54:40,769 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 60.6ms
+2026-04-23 07:54:40,807 - INFO - Starting ETL for 'pathway_reactome_relationships'
+2026-04-23 07:54:41,040 - INFO - [dtp_pathway_reactome_relationships] Extract not applicable — raw data is owned by dtp_pathway_reactome.
+2026-04-23 07:54:41,045 - INFO - [dtp_pathway_reactome_relationships] Transform not applicable — relationship_data.parquet is generated by dtp_pathway_reactome.
+2026-04-23 07:54:41,045 - INFO - [Transform] Completed for 'pathway_reactome_relationships' in 0s
+2026-04-23 07:54:41,049 - INFO - [dtp_pathway_reactome_relationships] Load starting...
+2026-04-23 07:55:59,312 - INFO - [dtp_pathway_reactome_relationships] Load complete: total=414687 created=245335 skipped=169352 warnings=0
+2026-04-23 07:55:59,317 - INFO - [Load] Completed for 'pathway_reactome_relationships' in 1m 18s
+2026-04-23 07:55:59,318 - INFO - ETL concluido para 'pathway_reactome_relationships' em 1m 18s
+2026-04-23 07:55:59,318 - INFO - ============================================
+2026-04-23 07:57:23,372 - INFO - ============================================
+2026-04-23 07:57:23,372 - INFO - GE — Genome-Exposome Platform
+2026-04-23 07:57:23,372 - INFO -   Version    : 0.1.0
+2026-04-23 07:57:23,372 - INFO -   Debug mode : False
+2026-04-23 07:57:23,372 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 07:57:23,373 - INFO - ============================================
+2026-04-23 07:57:23,446 - INFO - Database connection established
+2026-04-23 07:57:23,446 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 73.3ms
+2026-04-23 07:57:23,481 - INFO - Starting ETL for 'disease_mondo_relationships'
+2026-04-23 07:57:23,677 - INFO - [dtp_disease_mondo_relationships] Extract not applicable — raw data is owned by dtp_disease_mondo.
+2026-04-23 07:57:23,681 - INFO - [dtp_disease_mondo_relationships] Transform not applicable — relationship_data.parquet is generated by dtp_disease_mondo.
+2026-04-23 07:57:23,681 - INFO - [Transform] Completed for 'disease_mondo_relationships' in 0s
+2026-04-23 07:57:23,684 - INFO - [dtp_disease_mondo_relationships] Load starting...
+2026-04-23 07:57:36,515 - INFO - [dtp_disease_mondo_relationships] Load complete: total=39856 created=39856 skipped=0 warnings=0
+2026-04-23 07:57:36,517 - INFO - [Load] Completed for 'disease_mondo_relationships' in 12s
+2026-04-23 07:57:36,517 - INFO - ETL concluido para 'disease_mondo_relationships' em 13s
+2026-04-23 07:57:36,517 - INFO - ============================================
+2026-04-23 09:14:11,800 - INFO - ============================================
+2026-04-23 09:14:11,801 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:14:11,801 - INFO -   Version    : 0.1.0
+2026-04-23 09:14:11,801 - INFO -   Debug mode : False
+2026-04-23 09:14:11,801 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:14:11,801 - INFO - ============================================
+2026-04-23 09:14:11,873 - INFO - Database connection established
+2026-04-23 09:14:11,873 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 72.1ms
+2026-04-23 09:14:18,813 - INFO - ============================================
+2026-04-23 09:14:18,813 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:14:18,814 - INFO -   Version    : 0.1.0
+2026-04-23 09:14:18,814 - INFO -   Debug mode : False
+2026-04-23 09:14:18,814 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:14:18,814 - INFO - ============================================
+2026-04-23 09:14:18,875 - INFO - Database connection established
+2026-04-23 09:14:18,875 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 61.0ms
+2026-04-23 09:14:18,876 - INFO - Database connection established
+2026-04-23 09:14:18,876 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.1ms
+2026-04-23 09:14:18,908 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 09:14:18,911 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 09:14:18,915 - INFO - Seeded ETLSourceSystem: created=0 updated=17 skipped=0
+2026-04-23 09:14:18,923 - INFO - Seeded ETLDataSource: created=0 updated=16 skipped=0
+2026-04-23 09:14:18,926 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-23 09:14:18,932 - INFO - Seeded EntityRelationshipType: created=5 updated=13 skipped=0
+2026-04-23 09:14:18,935 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 09:14:18,935 - INFO - Database upgraded successfully
+2026-04-23 09:14:18,935 - INFO - ============================================
+2026-04-23 09:15:30,516 - INFO - ============================================
+2026-04-23 09:15:30,516 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:15:30,516 - INFO -   Version    : 0.1.0
+2026-04-23 09:15:30,516 - INFO -   Debug mode : False
+2026-04-23 09:15:30,516 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:15:30,516 - INFO - ============================================
+2026-04-23 09:15:30,588 - INFO - Database connection established
+2026-04-23 09:15:30,588 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.4ms
+2026-04-23 09:15:30,627 - INFO - Starting ETL for 'disease_mondo'
+2026-04-23 09:15:30,999 - INFO - [dtp_disease_mondo] Extract starting...
+2026-04-23 09:15:30,999 - INFO - Streaming MONDO JSON from https://purl.obolibrary.org/obo/mondo.json
+2026-04-23 09:15:32,878 - INFO - [dtp_disease_mondo] mondo.json downloaded (102,877,798 bytes)
+2026-04-23 09:15:32,882 - INFO - [Extract] Up-to-date for 'disease_mondo' (1s)
+2026-04-23 09:15:32,885 - INFO - [dtp_disease_mondo] Transform starting...
+2026-04-23 09:15:32,885 - INFO - Loading MONDO JSON...
+2026-04-23 09:15:33,714 - INFO -   master_data: 26710 active MONDO terms
+2026-04-23 09:15:33,986 - INFO -   relationship_data: 48999 total (39856 disease-disease; Anatomy:1013, Chemicals:47, Gene Ontology:348, Genes:6655, Phenotypes:1080)
+2026-04-23 09:15:33,987 - INFO - [dtp_disease_mondo] Transform complete: 26710 terms, 48999 relationship edges
+2026-04-23 09:15:34,033 - INFO - [Transform] Completed for 'disease_mondo' in 1s
+2026-04-23 09:15:34,035 - INFO - [Load] Up-to-date for 'disease_mondo'
+2026-04-23 09:15:34,035 - INFO - ETL concluido para 'disease_mondo' em 3s
+2026-04-23 09:15:34,035 - INFO - ============================================
+2026-04-23 09:29:00,177 - INFO - ============================================
+2026-04-23 09:29:00,177 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:29:00,177 - INFO -   Version    : 0.1.0
+2026-04-23 09:29:00,177 - INFO -   Debug mode : False
+2026-04-23 09:29:00,177 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:29:00,177 - INFO - ============================================
+2026-04-23 09:29:00,272 - INFO - Database connection established
+2026-04-23 09:29:00,272 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 94.8ms
+2026-04-23 09:29:00,273 - INFO - Database connection established
+2026-04-23 09:29:00,273 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 09:29:00,312 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 09:29:00,315 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 09:29:00,320 - INFO - Seeded ETLSourceSystem: created=1 updated=17 skipped=0
+2026-04-23 09:29:00,328 - INFO - Seeded ETLDataSource: created=2 updated=16 skipped=0
+2026-04-23 09:29:00,332 - INFO - Seeded EntityType: created=0 updated=13 skipped=0
+2026-04-23 09:29:00,338 - INFO - Seeded EntityRelationshipType: created=0 updated=18 skipped=0
+2026-04-23 09:29:00,342 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 09:29:00,342 - INFO - Database upgraded successfully
+2026-04-23 09:29:00,342 - INFO - ============================================
+2026-04-23 09:34:14,823 - INFO - ============================================
+2026-04-23 09:34:14,823 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:34:14,823 - INFO -   Version    : 0.1.0
+2026-04-23 09:34:14,823 - INFO -   Debug mode : False
+2026-04-23 09:34:14,823 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:34:14,823 - INFO - ============================================
+2026-04-23 09:34:14,888 - INFO - Database connection established
+2026-04-23 09:34:14,888 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 64.0ms
+2026-04-23 09:34:14,916 - WARNING - No matching active DataSources found.
+2026-04-23 09:34:21,376 - INFO - ============================================
+2026-04-23 09:34:21,376 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:34:21,376 - INFO -   Version    : 0.1.0
+2026-04-23 09:34:21,376 - INFO -   Debug mode : False
+2026-04-23 09:34:21,376 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:34:21,376 - INFO - ============================================
+2026-04-23 09:34:21,454 - INFO - Database connection established
+2026-04-23 09:34:21,454 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 77.5ms
+2026-04-23 09:34:21,492 - INFO - Starting ETL for 'phenotype_hpo'
+2026-04-23 09:35:33,200 - INFO - ============================================
+2026-04-23 09:35:33,200 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:35:33,200 - INFO -   Version    : 0.1.0
+2026-04-23 09:35:33,201 - INFO -   Debug mode : False
+2026-04-23 09:35:33,201 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:35:33,201 - INFO - ============================================
+2026-04-23 09:35:33,272 - INFO - Database connection established
+2026-04-23 09:35:33,272 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 71.2ms
+2026-04-23 09:35:33,313 - INFO - Starting ETL for 'phenotype_hpo'
+2026-04-23 09:35:33,545 - INFO - [dtp_phenotype_hpo] Extract starting...
+2026-04-23 09:35:33,547 - INFO - Streaming HPO OBO from https://purl.obolibrary.org/obo/hp.obo
+2026-04-23 09:35:34,392 - INFO - [dtp_phenotype_hpo] hp.obo downloaded (10,703,106 bytes)
+2026-04-23 09:35:34,400 - INFO - [Extract] Completed for 'phenotype_hpo' in 0s
+2026-04-23 09:35:34,404 - INFO - [dtp_phenotype_hpo] Transform starting...
+2026-04-23 09:35:34,405 - INFO - Parsing hp.obo...
+2026-04-23 09:35:34,637 - INFO -   master_data: 19,388 active HP terms
+2026-04-23 09:35:34,645 - INFO -   relations_data: 23,677 HP→HP edges
+2026-04-23 09:35:34,645 - INFO - [dtp_phenotype_hpo] Transform complete: 19,388 terms, 23,677 hierarchy edges
+2026-04-23 09:35:34,648 - INFO - [Transform] Completed for 'phenotype_hpo' in 0s
+2026-04-23 09:35:34,651 - INFO - [dtp_phenotype_hpo] Load starting...
+2026-04-23 09:35:34,756 - INFO - [dtp_phenotype_hpo] Phase 1: loading HP terms...
+2026-04-23 09:35:44,492 - INFO - [dtp_phenotype_hpo] Phase 1 complete: created=19388 skipped=0 warnings=0
+2026-04-23 09:35:44,495 - INFO - [dtp_phenotype_hpo] Phase 2: loading 23,677 hierarchy edges...
+2026-04-23 09:35:45,600 - INFO - [dtp_phenotype_hpo] Load complete: terms created=19388 skipped=0; relations created=23670 skipped=7
+2026-04-23 09:35:45,602 - INFO - [Load] Completed for 'phenotype_hpo' in 10s
+2026-04-23 09:35:45,603 - INFO - ETL concluido para 'phenotype_hpo' em 12s
+2026-04-23 09:35:45,603 - INFO - ============================================
+2026-04-23 09:36:48,389 - INFO - ============================================
+2026-04-23 09:36:48,390 - INFO - GE — Genome-Exposome Platform
+2026-04-23 09:36:48,390 - INFO -   Version    : 0.1.0
+2026-04-23 09:36:48,390 - INFO -   Debug mode : False
+2026-04-23 09:36:48,390 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 09:36:48,390 - INFO - ============================================
+2026-04-23 09:36:48,465 - INFO - Database connection established
+2026-04-23 09:36:48,465 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 74.8ms
+2026-04-23 09:36:48,505 - INFO - Starting ETL for 'phenotype_hpo_genes'
+2026-04-23 09:36:48,757 - INFO - [dtp_phenotype_hpo_genes] Extract starting...
+2026-04-23 09:36:48,758 - INFO - Downloading https://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt
+2026-04-23 09:36:49,685 - INFO - [dtp_phenotype_hpo_genes] genes_to_phenotype.txt downloaded (20,533,481 bytes)
+2026-04-23 09:36:49,692 - INFO - [Extract] Completed for 'phenotype_hpo_genes' in 0s
+2026-04-23 09:36:49,695 - INFO - [dtp_phenotype_hpo_genes] Transform starting...
+2026-04-23 09:36:50,050 - INFO - [dtp_phenotype_hpo_genes] Transform complete: 270,236 unique Gene×HP pairs
+2026-04-23 09:36:50,053 - INFO - [Transform] Completed for 'phenotype_hpo_genes' in 0s
+2026-04-23 09:36:50,055 - INFO - [dtp_phenotype_hpo_genes] Load starting...
+2026-04-23 09:38:17,514 - INFO - [dtp_phenotype_hpo_genes] Load complete: total=270236 created=269967 skipped=269 warnings=0
+2026-04-23 09:38:17,518 - INFO - [Load] Completed for 'phenotype_hpo_genes' in 1m 27s
+2026-04-23 09:38:17,520 - INFO - ETL concluido para 'phenotype_hpo_genes' em 1m 29s
+2026-04-23 09:38:17,520 - INFO - ============================================
+2026-04-23 10:15:41,205 - INFO - ============================================
+2026-04-23 10:15:41,206 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:15:41,206 - INFO -   Version    : 0.1.0
+2026-04-23 10:15:41,206 - INFO -   Debug mode : False
+2026-04-23 10:15:41,206 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:15:41,206 - INFO - ============================================
+2026-04-23 10:15:41,288 - INFO - Database connection established
+2026-04-23 10:15:41,288 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 81.3ms
+2026-04-23 10:15:41,288 - INFO - Database connection established
+2026-04-23 10:15:41,288 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 0.2ms
+2026-04-23 10:15:41,323 - INFO - Seeded SystemConfig: created=0 updated=4 skipped=0
+2026-04-23 10:15:41,325 - INFO - Seeded IgemMetadata: created=0 updated=1 skipped=0
+2026-04-23 10:15:41,331 - INFO - Seeded ETLSourceSystem: created=1 updated=18 skipped=0
+2026-04-23 10:15:41,339 - INFO - Seeded ETLDataSource: created=1 updated=18 skipped=0
+2026-04-23 10:15:41,344 - INFO - Seeded EntityType: created=1 updated=13 skipped=0
+2026-04-23 10:15:41,348 - INFO - Seeded EntityRelationshipType: created=0 updated=18 skipped=0
+2026-04-23 10:15:41,350 - INFO - Seeded GenomeAssembly: created=0 updated=2 skipped=0
+2026-04-23 10:15:41,350 - INFO - Database upgraded successfully
+2026-04-23 10:15:41,350 - INFO - ============================================
+2026-04-23 10:16:06,267 - INFO - ============================================
+2026-04-23 10:16:06,267 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:16:06,267 - INFO -   Version    : 0.1.0
+2026-04-23 10:16:06,267 - INFO -   Debug mode : False
+2026-04-23 10:16:06,267 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:16:06,267 - INFO - ============================================
+2026-04-23 10:16:06,332 - INFO - Database connection established
+2026-04-23 10:16:06,332 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 64.0ms
+2026-04-23 10:16:06,373 - INFO - Starting ETL for 'anatomy_uberon'
+2026-04-23 10:16:06,641 - INFO - [dtp_anatomy_uberon] Extract starting...
+2026-04-23 10:16:06,643 - INFO - Downloading UBERON basic from https://purl.obolibrary.org/obo/uberon/basic.obo
+2026-04-23 10:16:07,564 - INFO - [dtp_anatomy_uberon] uberon-basic.obo downloaded (12,146,722 bytes)
+2026-04-23 10:16:07,571 - INFO - [Extract] Completed for 'anatomy_uberon' in 0s
+2026-04-23 10:16:07,575 - INFO - [dtp_anatomy_uberon] Transform starting...
+2026-04-23 10:16:07,576 - INFO - Parsing uberon-basic.obo...
+2026-04-23 10:16:07,851 - INFO -   anatomy_level distribution: organ:202, region:13005, structure:234, system:248, tissue:1144
+2026-04-23 10:16:07,851 - INFO -   master_data: 14,833 terms loaded, 140 skipped (abstract/grouping)
+2026-04-23 10:16:07,851 - INFO - [dtp_anatomy_uberon] Transform complete: 14,833 anatomy terms
+2026-04-23 10:16:07,853 - INFO - [Transform] Completed for 'anatomy_uberon' in 0s
+2026-04-23 10:16:07,855 - INFO - [dtp_anatomy_uberon] Load starting...
+2026-04-23 10:16:16,040 - INFO - [dtp_anatomy_uberon] Load complete: total=14833 created=14833 skipped=0 warnings=0
+2026-04-23 10:16:16,040 - INFO - [Load] Completed for 'anatomy_uberon' in 8s
+2026-04-23 10:16:16,043 - INFO - ETL concluido para 'anatomy_uberon' em 9s
+2026-04-23 10:16:16,043 - INFO - ============================================
+2026-04-23 10:19:34,201 - INFO - ============================================
+2026-04-23 10:19:34,201 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:19:34,201 - INFO -   Version    : 0.1.0
+2026-04-23 10:19:34,201 - INFO -   Debug mode : False
+2026-04-23 10:19:34,201 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:19:34,202 - INFO - ============================================
+2026-04-23 10:19:34,250 - INFO - Database connection established
+2026-04-23 10:19:34,250 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 47.9ms
+2026-04-23 10:19:34,287 - INFO - Starting ETL for 'disease_mondo_relationships'
+2026-04-23 10:19:34,503 - INFO - [dtp_disease_mondo_relationships] Extract not applicable — raw data is owned by dtp_disease_mondo.
+2026-04-23 10:19:34,507 - INFO - [Transform] Up-to-date for 'disease_mondo_relationships'
+2026-04-23 10:19:34,509 - INFO - [Load] Up-to-date for 'disease_mondo_relationships'
+2026-04-23 10:19:34,509 - INFO - ETL concluido para 'disease_mondo_relationships' em 0s
+2026-04-23 10:19:34,509 - INFO - ============================================
+2026-04-23 10:19:49,576 - INFO - ============================================
+2026-04-23 10:19:49,576 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:19:49,576 - INFO -   Version    : 0.1.0
+2026-04-23 10:19:49,576 - INFO -   Debug mode : False
+2026-04-23 10:19:49,576 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:19:49,576 - INFO - ============================================
+2026-04-23 10:19:49,652 - INFO - Database connection established
+2026-04-23 10:19:49,652 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 75.2ms
+2026-04-23 10:19:49,688 - INFO - Starting ETL for 'disease_mondo_relationships'
+2026-04-23 10:19:49,923 - INFO - [dtp_disease_mondo_relationships] Extract not applicable — raw data is owned by dtp_disease_mondo.
+2026-04-23 10:19:49,928 - INFO - [Transform] Up-to-date for 'disease_mondo_relationships'
+2026-04-23 10:19:49,931 - INFO - [dtp_disease_mondo_relationships] Load starting...
+2026-04-23 10:20:01,598 - INFO - [dtp_disease_mondo_relationships] Load complete: total=48999 created=48561 skipped=438 warnings=0
+2026-04-23 10:20:01,600 - INFO - [Load] Completed for 'disease_mondo_relationships' in 11s
+2026-04-23 10:20:01,602 - INFO - ETL concluido para 'disease_mondo_relationships' em 11s
+2026-04-23 10:20:01,602 - INFO - ============================================
+2026-04-23 10:25:27,961 - INFO - ============================================
+2026-04-23 10:25:27,961 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:25:27,961 - INFO -   Version    : 0.1.0
+2026-04-23 10:25:27,961 - INFO -   Debug mode : False
+2026-04-23 10:25:27,961 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:25:27,961 - INFO - ============================================
+2026-04-23 10:25:28,039 - INFO - Database connection established
+2026-04-23 10:25:28,039 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 77.7ms
+2026-04-23 10:25:28,075 - INFO - Starting ETL for 'disease_mondo_relationships'
+2026-04-23 10:25:28,349 - INFO - [dtp_disease_mondo_relationships] Extract not applicable — raw data is owned by dtp_disease_mondo.
+2026-04-23 10:25:28,353 - INFO - [Transform] Up-to-date for 'disease_mondo_relationships'
+2026-04-23 10:25:28,356 - INFO - [dtp_disease_mondo_relationships] Load starting...
+2026-04-23 10:25:38,916 - INFO - [dtp_disease_mondo_relationships] 438 skipped rows written to igem_data/processed/MONDO/disease_mondo/skipped_relationships.parquet (columns: source_id, target_id, source_type, target_type, relation_type, skip_reason)
+2026-04-23 10:25:38,916 - INFO - [dtp_disease_mondo_relationships] Load complete: total=48999 created=48561 skipped=438 warnings=0
+2026-04-23 10:25:38,917 - INFO - [Load] Completed for 'disease_mondo_relationships' in 10s
+2026-04-23 10:25:38,918 - INFO - ETL concluido para 'disease_mondo_relationships' em 10s
+2026-04-23 10:25:38,918 - INFO - ============================================
+2026-04-23 10:28:18,251 - INFO - ============================================
+2026-04-23 10:28:18,251 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:28:18,251 - INFO -   Version    : 0.1.0
+2026-04-23 10:28:18,251 - INFO -   Debug mode : False
+2026-04-23 10:28:18,251 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:28:18,251 - INFO - ============================================
+2026-04-23 10:28:18,325 - INFO - Database connection established
+2026-04-23 10:28:18,325 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 73.5ms
+2026-04-23 10:28:18,381 - INFO - Starting ETL for 'disease_mondo_relationships'
+2026-04-23 10:28:18,479 - INFO - [dtp_disease_mondo_relationships] Extract not applicable — raw data is owned by dtp_disease_mondo.
+2026-04-23 10:28:18,481 - INFO - [Transform] Up-to-date for 'disease_mondo_relationships'
+2026-04-23 10:28:18,483 - INFO - [dtp_disease_mondo_relationships] Load starting...
+2026-04-23 10:28:28,406 - INFO - [dtp_disease_mondo_relationships] 438 skipped rows written to igem_data/processed/MONDO/disease_mondo/skipped_relationships.csv
+2026-04-23 10:28:28,406 - INFO - [dtp_disease_mondo_relationships] Load complete: total=48999 created=48561 skipped=438 warnings=0
+2026-04-23 10:28:28,407 - INFO - [Load] Completed for 'disease_mondo_relationships' in 9s
+2026-04-23 10:28:28,408 - INFO - ETL concluido para 'disease_mondo_relationships' em 10s
+2026-04-23 10:28:28,408 - INFO - ============================================
+2026-04-23 10:39:12,501 - INFO - ============================================
+2026-04-23 10:39:12,501 - INFO - GE — Genome-Exposome Platform
+2026-04-23 10:39:12,501 - INFO -   Version    : 0.1.0
+2026-04-23 10:39:12,501 - INFO -   Debug mode : False
+2026-04-23 10:39:12,501 - INFO -   DB URI     : sqlite:////Users/andrerico/Works/Sys/IGEM/ge.db
+2026-04-23 10:39:12,501 - INFO - ============================================
+2026-04-23 10:39:12,580 - INFO - Database connection established
+2026-04-23 10:39:12,580 - INFO -   Engine: sqlite | Host: local file | DB: /Users/andrerico/Works/Sys/IGEM/ge.db | 78.3ms
+2026-04-23 10:39:12,613 - INFO - Starting ETL for 'phenotype_hpo_genes'
+2026-04-23 10:39:12,866 - INFO - [dtp_phenotype_hpo_genes] Extract starting...
+2026-04-23 10:39:12,867 - INFO - Downloading https://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt
+2026-04-23 10:39:16,288 - INFO - [dtp_phenotype_hpo_genes] genes_to_phenotype.txt downloaded (20,533,481 bytes)
+2026-04-23 10:39:16,295 - INFO - [Extract] Up-to-date for 'phenotype_hpo_genes' (3s)
+2026-04-23 10:39:16,298 - INFO - [Transform] Up-to-date for 'phenotype_hpo_genes'
+2026-04-23 10:39:16,301 - INFO - [dtp_phenotype_hpo_genes] Load starting...
+2026-04-23 10:40:04,139 - INFO - [dtp_phenotype_hpo_genes] 269 skipped rows written to igem_data/processed/HPO/phenotype_hpo_genes/skipped_relationships.csv
+2026-04-23 10:40:04,139 - INFO - [dtp_phenotype_hpo_genes] Load complete: total=270236 created=269967 skipped=269 warnings=0
+2026-04-23 10:40:04,142 - INFO - [Load] Completed for 'phenotype_hpo_genes' in 47s
+2026-04-23 10:40:04,143 - INFO - ETL concluido para 'phenotype_hpo_genes' em 51s
+2026-04-23 10:40:04,143 - INFO - ============================================

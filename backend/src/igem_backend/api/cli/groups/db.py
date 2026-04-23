@@ -1,12 +1,7 @@
 from __future__ import annotations
 
 import click
-
-from igem_backend.api.cli.common import (
-    db_uri_option,
-    debug_option,
-    require_db_uri,
-)
+from igem_backend.api.cli.common import db_uri_option, debug_option, require_db_uri
 
 
 @click.group("db")
@@ -30,7 +25,6 @@ def db_create(
     uri = require_db_uri(ctx, db_uri)
     ge = GE(db_uri=uri, debug_mode=debug, auto_connect=False)
     ge.db.create(overwrite=overwrite)
-    click.echo("Database created successfully.")
 
 
 @db_group.command("upgrade")
@@ -44,7 +38,6 @@ def db_upgrade(ctx: click.Context, db_uri: str | None, debug: bool):
     uri = require_db_uri(ctx, db_uri)
     ge = GE(db_uri=uri, debug_mode=debug)
     ge.db.upgrade()
-    click.echo("Database upgraded successfully.")
 
 
 @db_group.command("info")
