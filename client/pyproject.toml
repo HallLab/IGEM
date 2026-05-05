@@ -33,15 +33,6 @@ bed-reader = "^1.0.0"
 statsmodels = "^0.14.0"
 tqdm = "^4.66.0"
 
-# Optional embedded-server dep. Enables `IGEM(server_url="embedded:///path")`
-# by mounting the FastAPI app in-process via httpx ASGITransport. Only
-# installed when extras=["embedded"] is requested (e.g. inside the
-# Docker container shipped to HPC). See docs/caderno/2026-05-05_01.md.
-igem-server = { path = "../backend", develop = true, optional = true }
-
-[tool.poetry.extras]
-embedded = ["igem-server"]
-
 [tool.poetry.scripts]
 igem = "igem.api.cli.main:main"
 
@@ -49,6 +40,21 @@ igem = "igem.api.cli.main:main"
 pytest = "^8.2.0"
 pytest-asyncio = "^0.23.0"
 ruff = "^0.4.0"
+
+# Embedded mode (in-process IGEM-Server) — for local development and
+# the Docker container. Activated via `poetry install --with embedded`.
+# The path dependency is intentionally in a poetry group (not main
+# dependencies / extras) so it never reaches PyPI metadata, which
+# rejects local file:// URIs. End users wanting embedded mode install
+# the server package separately:
+#
+#     pip install igem igem-server
+#
+[tool.poetry.group.embedded]
+optional = true
+
+[tool.poetry.group.embedded.dependencies]
+igem-server = { path = "../backend", develop = true }
 
 [build-system]
 requires = ["poetry-core"]

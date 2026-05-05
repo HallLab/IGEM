@@ -112,9 +112,11 @@ class IGEMCore:
             from igem_backend.main import app
         except ImportError as exc:
             raise RuntimeError(
-                "embedded:// transport requires igem-backend to be "
-                "installed.\nInstall the embedded extra: "
-                "pip install 'igem[embedded]' (or `poetry install -E embedded`)"
+                "embedded:// transport requires igem-server to be "
+                "installed alongside igem.\n"
+                "    pip install igem-server\n"
+                "(In local dev: `poetry install --with embedded` "
+                "from the client/ directory.)"
             ) from exc
 
         # TestClient triggers FastAPI's lifespan only inside its own
