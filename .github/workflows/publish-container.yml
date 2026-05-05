@@ -68,15 +68,20 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push (multi-platform)
+      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           file: docker/Dockerfile
           push: true
-          # linux/amd64 covers most HPC clusters; arm64 covers
-          # Apple Silicon laptops for local testing.
-          platforms: linux/amd64,linux/arm64
+          # linux/amd64 only for now — covers all HPC clusters and
+          # Linux laptops. arm64 builds via QEMU emulation are slow
+          # and fail on C-extension deps (numcodecs, sgkit transitive).
+          # Apple Silicon laptop users can build locally with
+          # `docker buildx build --platform linux/arm64 ...`.
+          # Native arm64 GitHub runners (ubuntu-24.04-arm) can be
+          # added later in a matrix build if there's HPC demand.
+          platforms: linux/amd64
           tags: |
             ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ steps.tag.outputs.version }}
             ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:latest
