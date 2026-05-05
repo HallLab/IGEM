@@ -57,7 +57,7 @@ jobs:
       - name: Publish to PyPI
         working-directory: backend
         env:
-          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN_IGEM_SERVER }}
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN_SERVER }}
         run: poetry publish
 
       - name: Summary
