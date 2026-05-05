@@ -61,10 +61,14 @@ RUN groupadd -g ${USER_GID} igem && \
 # the runtime image.
 WORKDIR /opt/igem
 
-COPY backend/pyproject.toml backend/poetry.lock ./backend/
+# Note: we don't COPY poetry.lock — it's gitignored AND `pip install`
+# doesn't use it. If you decide to commit lock files for stricter
+# reproducibility, add `backend/poetry.lock` and `client/poetry.lock`
+# to the COPY lines.
+COPY backend/pyproject.toml ./backend/
 COPY backend/src ./backend/src
 
-COPY client/pyproject.toml client/poetry.lock ./client/
+COPY client/pyproject.toml ./client/
 COPY client/src ./client/src
 COPY client/README.md ./client/
 
