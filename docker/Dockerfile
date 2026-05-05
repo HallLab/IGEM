@@ -65,12 +65,17 @@ WORKDIR /opt/igem
 # doesn't use it. If you decide to commit lock files for stricter
 # reproducibility, add `backend/poetry.lock` and `client/poetry.lock`
 # to the COPY lines.
+#
+# README files are referenced by `readme = "README.md"` in each
+# pyproject.toml. pip+poetry-core fails wheel metadata generation if
+# they are missing inside the container.
 COPY backend/pyproject.toml ./backend/
+COPY backend/README.md ./backend/
 COPY backend/src ./backend/src
 
 COPY client/pyproject.toml ./client/
-COPY client/src ./client/src
 COPY client/README.md ./client/
+COPY client/src ./client/src
 
 # Backend first; client embedded extra resolves to a path-installed
 # backend that's already in the image (poetry path dep is not honoured
