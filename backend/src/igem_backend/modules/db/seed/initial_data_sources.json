@@ -181,6 +181,51 @@
       "active": true
     },
     {
+      "name": "chemical_unichem",
+      "source_system": "UniChem",
+      "data_type": "Chemical",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/chembl/UniChem/data/table_dumps/",
+      "format": "TSV",
+      "dtp_script": "dtp_chemical_unichem",
+      "active": true
+    },
+    {
+      "name": "chemical_hmdb",
+      "source_system": "HMDB",
+      "data_type": "Chemical",
+      "source_url": "https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip",
+      "format": "XML",
+      "dtp_script": "dtp_chemical_hmdb",
+      "active": true
+    },
+    {
+      "name": "nlp_hmdb",
+      "source_system": "NLP",
+      "data_type": "NLP-Chemical",
+      "source_url": "https://hmdb.ca/system/downloads/current/hmdb_metabolites.zip",
+      "format": "XML",
+      "dtp_script": "dtp_nlp_hmdb",
+      "active": true
+    },
+    {
+      "name": "chemical_groups",
+      "source_system": "IGEM",
+      "data_type": "Chemical-Classification",
+      "source_url": null,
+      "format": "internal",
+      "dtp_script": "dtp_chemical_groups",
+      "active": true
+    },
+    {
+      "name": "chemical_chebi_roles",
+      "source_system": "ChEBI",
+      "data_type": "Chemical-Classification",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/relation.tsv.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_chemical_chebi_roles",
+      "active": true
+    },
+    {
       "name": "pubmed_nlp",
       "source_system": "PubMed",
       "data_type": "Literature-OxO",

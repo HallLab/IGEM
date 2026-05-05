@@ -1,9 +1,23 @@
 [tool.poetry]
-name = "igem-backend"
+name = "igem-server"
 version = "0.1.0"
-description = "IGEM Backend API"
+description = "IGEM Server — bioinformatics knowledge graph backend (ETL + NLP + reports)"
 authors = ["Andre <andre.rico@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/andrerico/IGEM"
+repository = "https://github.com/andrerico/IGEM"
 packages = [{ include = "igem_backend", from = "src" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -20,6 +34,10 @@ pandas = "^2.2.0"
 pyarrow = "^16.0.0"
 packaging = "^24.0"
 click = "^8.1.0"
+pgvector = "^0.3.0"
+pyahocorasick = "^2.3.0"
+duckdb = "^1.0.0"
+duckdb-engine = "^0.13.0"
 
 [tool.poetry.scripts]
 igem-server = "igem_backend.api.cli.main:main"

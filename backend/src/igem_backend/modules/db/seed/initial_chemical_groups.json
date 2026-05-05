@@ -1,0 +1,13 @@
+{
+  "chemical_groups": [
+    {"id": 1, "name": "Metabolite",  "description": "Endogenous or microbial small molecules involved in metabolic processes"},
+    {"id": 2, "name": "Drug",        "description": "Pharmaceutical compounds, approved medications, and investigational drugs"},
+    {"id": 3, "name": "Pollutant",   "description": "Environmental contaminants and industrial chemicals with toxicological relevance"},
+    {"id": 4, "name": "Nutrient",    "description": "Dietary components essential or beneficial for human nutrition"},
+    {"id": 5, "name": "Toxin",       "description": "Naturally occurring or synthetic toxic substances"},
+    {"id": 6, "name": "Hormone",     "description": "Endocrine signaling molecules (steroid, peptide, amine hormones)"},
+    {"id": 7, "name": "Vitamin",     "description": "Essential organic micronutrients required in small amounts"},
+    {"id": 8, "name": "Lipid",       "description": "Fatty acids, glycerolipids, sphingolipids, sterols, and related species"},
+    {"id": 9, "name": "Amino-Acid",  "description": "Proteinogenic and non-proteinogenic amino acids and their derivatives"}
+  ]
+}

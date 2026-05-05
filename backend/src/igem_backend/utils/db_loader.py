@@ -19,6 +19,8 @@ def load_all_models() -> None:
     import_module("igem_backend.modules.db.models.model_go")
     import_module("igem_backend.modules.db.models.model_phenotypes")
     import_module("igem_backend.modules.db.models.model_anatomy")
+    # NLP
+    import_module("igem_backend.modules.db.models.model_nlp")
 
 
 def bootstrap_models(engine) -> None:

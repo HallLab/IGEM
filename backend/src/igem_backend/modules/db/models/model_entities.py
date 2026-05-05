@@ -1,5 +1,6 @@
 import enum
 
+from pgvector.sqlalchemy import Vector
 from sqlalchemy import (
     BigInteger,
     Boolean,
@@ -160,6 +161,11 @@ class EntityAlias(Base):
 
     # Lowercased/stripped value for stable NLP matching
     alias_norm = Column(String(1000), nullable=True, index=True)
+
+    # SapBERT semantic embedding (768-dim) — populated by entity_resolver
+    # Vector index (HNSW) created separately after data load:
+    #   CREATE INDEX ON entity_aliases USING hnsw (embedding vector_cosine_ops);
+    embedding = Column(Vector(768), nullable=True)
 
     locale = Column(String(8), nullable=True)
 

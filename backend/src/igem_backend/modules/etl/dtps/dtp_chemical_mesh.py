@@ -1,40 +1,62 @@
 """
-MeSH Chemical Master DTP.
+MeSH Chemical DTP — enricher for UniChem/ChEBI/HMDB-seeded entities.
 
-Pipeline role:
-- Supplement DTP for chemical entities — runs AFTER dtp_chemical_chebi.
-- Only creates Chemical entities for MESH IDs not already in the database.
-  Chemicals already covered by ChEBI (via MESH xrefs) are silently skipped.
+Pipeline role
+-------------
+Runs AFTER dtp_chemical_unichem, dtp_chemical_chebi, and dtp_chemical_hmdb.
+Matches each MeSH chemical term against an existing Entity and enriches
+it with MeSH-specific nomenclature (MESH codes, alternative names).
 
-Sources (downloaded from NLM, year-stamped filenames):
-  supp{year}.xml — Supplementary Concept Records (SCRs): specific compounds
-                   e.g. C534883 = 10074-G5 (a MYC inhibitor)
-  desc{year}.xml — Main Heading descriptors filtered to D-section tree numbers:
+Match strategy (first that wins)
+--------------------------------
+  1. MeSH UI match (bare OR CURIE) against existing code/MESH alias
+                                                                 (strong)
+     — typically lands on entities where ChEBI added a MeSH xref
+  2. CAS number match against existing ChemicalMaster.cas_number   (medium)
+  3. Unique normalized name match against existing preferred
+     aliases (only when exactly ONE entity shares the normalized
+     name — ambiguous names fall through)                          (weak)
+  4. Fallback — create a new Entity. MeSH descriptors of chemical
+     categories (e.g. "Antineoplastic Agents") typically fall here.
+
+Primary promotion rule
+----------------------
+MeSH names tend to be generic ("Glucose" vs. ChEBI's "D-glucose").
+`preferred/MESH` is only promoted to is_primary=True when the entity
+has NO preferred primary yet (newly created, or never enriched by a
+higher-priority source). For matches against entities already carrying
+a ChEBI/HMDB preferred-primary alias, MeSH adds its preferred name as
+a regular alias (is_primary=False), leaving the display name unchanged.
+
+Idempotency
+-----------
+Entities that already carry a `preferred/MESH` alias are skipped on
+re-run.
+
+Sources (NLM, year-stamped)
+---------------------------
+  supp{year}.xml — Supplementary Concept Records (SCRs): specific
+                   compounds, e.g. C534883 = 10074-G5 (MYC inhibitor)
+  desc{year}.xml — Main Heading descriptors filtered to D-tree:
                    drug/chemical classes, e.g. D007854 = Lead
 
 Base URL: https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/
 
-Deduplication:
-  Pre-loads all MESH code aliases on Chemical entities (xref_source IN
-  ["MESH","MeSH"]). Checks both with and without "MESH:" prefix since
-  ChEBI stores bare IDs ("c534883") while IGEM-native aliases use CURIE
-  ("mesh:c534883").
-
-What is loaded:
-  Entity (type=Chemicals) + EntityAlias:
-    code/MESH     → MESH:C534883 or MESH:D007854  (primary, CURIE format)
+What is added
+-------------
+  EntityAlias:
+    code/MESH      → MESH:<UI>                           (CURIE form)
     preferred/MESH → term name
-    synonym/MESH  → entry terms / synonyms
-  ChemicalMaster:
-    ctd_id   = bare MESH ID without prefix (e.g. "C534883")
-    cas_number from RelatedRegistryNumberList when present
-    chebi_id remains null (MeSH-only chemicals)
-    structure fields (formula, MW, SMILES) remain null
+    synonym/MESH   → entry terms / synonyms
+  ChemicalMaster (fill-null only):
+    ctd_id     = bare MESH UI (e.g. "C534883")
+    cas_number (when MeSH provides one and field was NULL)
 """
 
 import datetime
 import re
 import xml.etree.ElementTree as ET
+from collections import defaultdict
 from pathlib import Path
 from typing import Optional
 
@@ -43,6 +65,7 @@ import requests
 
 from igem_backend.modules.etl.mixins.base_dtp import DTPBase, ETLStepStats
 from igem_backend.modules.etl.mixins.entity_query_mixin import EntityQueryMixin
+from igem_backend.modules.nlp.normalizer import normalize
 
 _CAS_RE = re.compile(r"^\d+-\d+-\d+")
 
@@ -285,7 +308,7 @@ class DTP(DTPBase, EntityQueryMixin):
             return False, msg, ETLStepStats(errors=1)
 
     # -------------------------------------------------------------------------
-    # LOAD
+    # LOAD — enrich matched entities; fallback creates new entities
     # -------------------------------------------------------------------------
     def load(self, processed_dir: str) -> tuple[bool, str, ETLStepStats]:
         self.logger.log(f"[{self.DTP_NAME}] Load starting...", "INFO")
@@ -302,7 +325,9 @@ class DTP(DTPBase, EntityQueryMixin):
             df = pd.read_parquet(parquet_file, engine="pyarrow")
         except Exception as e:
             return (
-                False, f"Could not read parquet: {e}", ETLStepStats(errors=1)
+                False,
+                f"Could not read parquet: {e}",
+                ETLStepStats(errors=1),
             )
 
         if df.empty:
@@ -318,75 +343,190 @@ class DTP(DTPBase, EntityQueryMixin):
 
         chem_type_id = self.get_entity_type_id("Chemicals")
 
-        # Pre-load existing MESH chemical aliases — check both CURIE and bare.
-        # ChEBI stores bare ("c534883"); IGEM-native uses CURIE ("mesh:c534883")
-        self.logger.log(
-            "Pre-loading existing MESH chemical aliases...", "INFO"
-        )
-        existing: set[str] = set()
-        for a in self.session.query(EntityAlias).filter(
+        # --- Pre-load match maps ---
+        # 1. MESH xref → entity. Store BOTH bare and CURIE forms to match
+        #    however each upstream source stored the xref.
+        self.logger.log("  Loading MESH xref → entity map...", "INFO")
+        mesh_xref_to_entity: dict[str, int] = {}
+        for val, eid in self.session.query(
+            EntityAlias.alias_value, EntityAlias.entity_id
+        ).filter(
             EntityAlias.type_id == chem_type_id,
             EntityAlias.alias_type == "code",
             EntityAlias.xref_source.in_(["MESH", "MeSH"]),
         ).all():
-            norm = (a.alias_norm or "").strip()
+            if not val:
+                continue
+            mesh_xref_to_entity[val] = eid
+            mesh_xref_to_entity[val.lower()] = eid
+            if ":" in val:
+                bare = val.split(":", 1)[1]
+                mesh_xref_to_entity[bare] = eid
+                mesh_xref_to_entity[bare.lower()] = eid
+
+        # 2. CAS → entity (from ChemicalMaster.cas_number)
+        self.logger.log("  Loading CAS → entity map...", "INFO")
+        cas_to_entity: dict[str, int] = {
+            row[0]: row[1]
+            for row in self.session.query(
+                ChemicalMaster.cas_number, ChemicalMaster.entity_id
+            ).filter(ChemicalMaster.cas_number.isnot(None)).all()
+            if row[0]
+        }
+
+        # 3. Normalized name → entities (LIST — ambiguous names kept separate)
+        self.logger.log(
+            "  Loading normalized preferred-name → entities...", "INFO"
+        )
+        name_to_entities: dict[str, list[int]] = defaultdict(list)
+        for norm, eid in self.session.query(
+            EntityAlias.alias_norm, EntityAlias.entity_id
+        ).filter(
+            EntityAlias.type_id == chem_type_id,
+            EntityAlias.alias_type == "preferred",
+            EntityAlias.alias_norm.isnot(None),
+        ).all():
             if norm:
-                existing.add(norm)
-                if ":" in norm:
-                    existing.add(norm.split(":", 1)[1])
+                name_to_entities[norm].append(eid)
+
+        # 4. Already enriched by MeSH (idempotency)
+        already_enriched: set[int] = {
+            row[0]
+            for row in self.session.query(
+                EntityAlias.entity_id
+            ).filter(
+                EntityAlias.xref_source.in_(["MESH", "MeSH"]),
+                EntityAlias.alias_type == "preferred",
+            ).distinct().all()
+        }
 
         self.logger.log(
-            f"  {len(existing):,} existing MESH chemical alias norms", "INFO"
+            f"  Lookups: mesh_xref={len(mesh_xref_to_entity):,} "
+            f"cas={len(cas_to_entity):,} "
+            f"preferred_names={len(name_to_entities):,} "
+            f"already={len(already_enriched):,}",
+            "INFO",
         )
 
-        total = created = skipped = warnings = 0
+        total = 0
+        matched_mesh = 0
+        matched_cas = 0
+        matched_name = 0
+        created_new = 0
+        already_done = 0
+        warnings = 0
         BATCH = 500
 
         for i, (_, row) in enumerate(df.iterrows()):
             total += 1
-
             ui = str(row.get("ui") or "").strip()
             name = str(row.get("name") or "").strip()
             if not ui or not name:
                 warnings += 1
                 continue
 
-            ui_lower = ui.lower()
-            if ui_lower in existing or f"mesh:{ui_lower}" in existing:
-                skipped += 1
+            mesh_curie = f"MESH:{ui}"
+            cas_raw = str(row.get("cas_number") or "").strip()
+            cas = cas_raw if cas_raw and cas_raw != "0" else None
+
+            # --- Match strategy ---
+            entity_id: Optional[int] = None
+            match_type: Optional[str] = None
+
+            if mesh_curie in mesh_xref_to_entity:
+                entity_id = mesh_xref_to_entity[mesh_curie]
+                match_type = "mesh"
+            elif ui in mesh_xref_to_entity:
+                entity_id = mesh_xref_to_entity[ui]
+                match_type = "mesh"
+            elif cas and cas in cas_to_entity:
+                entity_id = cas_to_entity[cas]
+                match_type = "cas"
+            else:
+                norm_name = normalize(name)
+                candidates = name_to_entities.get(norm_name, [])
+                if len(candidates) == 1:
+                    entity_id = candidates[0]
+                    match_type = "name"
+                # Ambiguous names (>1 candidate) → fall through to create
+
+            # Idempotency guard
+            if entity_id is not None and entity_id in already_enriched:
+                already_done += 1
                 continue
 
-            entity = Entity(
-                type_id=chem_type_id,
-                is_active=True,
-                data_source_id=self.data_source.id,
-                etl_package_id=self.package.id,
-            )
-            self.session.add(entity)
-            self.session.flush()
+            # Stats
+            if match_type == "mesh":
+                matched_mesh += 1
+            elif match_type == "cas":
+                matched_cas += 1
+            elif match_type == "name":
+                matched_name += 1
 
-            seen: set[tuple] = set()
+            # Fallback: create new entity
+            if entity_id is None:
+                entity = Entity(
+                    type_id=chem_type_id,
+                    is_active=True,
+                    data_source_id=self.data_source.id,
+                    etl_package_id=self.package.id,
+                )
+                self.session.add(entity)
+                self.session.flush()
+                entity_id = entity.id
+                created_new += 1
+
+            # --- Decide if MeSH promotes preferred to is_primary ---
+            # MeSH is the LOWEST priority source for display names.
+            # Only promote when no preferred-primary exists yet.
+            if match_type is not None:
+                existing_alias_keys = {
+                    (av, at, xs)
+                    for av, at, xs in self.session.query(
+                        EntityAlias.alias_value,
+                        EntityAlias.alias_type,
+                        EntityAlias.xref_source,
+                    ).filter_by(entity_id=entity_id).all()
+                }
+                has_preferred_primary = self.session.query(
+                    EntityAlias.id
+                ).filter_by(
+                    entity_id=entity_id,
+                    alias_type="preferred",
+                    is_primary=True,
+                ).first() is not None
+                promote_primary = not has_preferred_primary
+                if promote_primary:
+                    # Demote UniChem UCI (non-preferred primary) so MeSH
+                    # preferred name can take the slot.
+                    self.session.query(EntityAlias).filter_by(
+                        entity_id=entity_id, is_primary=True
+                    ).update({"is_primary": False})
+            else:
+                existing_alias_keys = set()
+                promote_primary = True  # freshly created entity
+
+            seen_keys: set[tuple[str, str, str]] = set(existing_alias_keys)
 
             def _add_alias(
                 val: str,
                 atype: str,
-                norm: Optional[str] = None,
                 primary: bool = False,
             ) -> None:
                 val = (self.guard_alias(val) or "").strip()
                 if not val:
                     return
-                key = (val, atype)
-                if key in seen:
+                key = (val, atype, "MESH")
+                if key in seen_keys:
                     return
-                seen.add(key)
+                seen_keys.add(key)
                 self.session.add(EntityAlias(
-                    entity_id=entity.id,
+                    entity_id=entity_id,
                     type_id=chem_type_id,
                     alias_value=val,
                     alias_type=atype,
                     xref_source="MESH",
-                    alias_norm=self.guard_alias_norm(norm or val.lower()),
+                    alias_norm=self.guard_alias_norm(normalize(val)),
                     is_primary=primary,
                     is_active=True,
                     locale="en",
@@ -394,38 +534,53 @@ class DTP(DTPBase, EntityQueryMixin):
                     etl_package_id=self.package.id,
                 ))
 
-            mesh_curie = f"MESH:{ui}"
-            _add_alias(mesh_curie, "code", mesh_curie.lower(), primary=True)
-            _add_alias(name, "preferred", self._normalize(name))
+            _add_alias(mesh_curie, "code", primary=False)
+            _add_alias(name, "preferred", primary=promote_primary)
             for syn in str(row.get("synonyms") or "").split("|"):
                 syn = syn.strip()
                 if syn and syn != name:
-                    _add_alias(syn, "synonym", self._normalize(syn))
+                    _add_alias(syn, "synonym")
 
-            cas_raw = str(row.get("cas_number") or "").strip()
-            cas = cas_raw if cas_raw and cas_raw != "0" else None
+            # --- ChemicalMaster: fill-null-only or create ---
+            cm = self.session.query(ChemicalMaster).filter_by(
+                entity_id=entity_id
+            ).one_or_none()
 
-            self.session.add(ChemicalMaster(
-                entity_id=entity.id,
-                ctd_id=ui,
-                cas_number=cas,
-                chebi_id=None,
-                data_source_id=self.data_source.id,
-                etl_package_id=self.package.id,
-            ))
+            if cm is None:
+                cm = ChemicalMaster(
+                    entity_id=entity_id,
+                    ctd_id=ui,
+                    cas_number=cas,
+                    chebi_id=None,
+                    data_source_id=self.data_source.id,
+                    etl_package_id=self.package.id,
+                )
+                self.session.add(cm)
+            else:
+                if cm.ctd_id is None:
+                    cm.ctd_id = ui
+                if cm.cas_number is None and cas:
+                    cm.cas_number = cas
 
-            existing.add(ui_lower)
-            existing.add(f"mesh:{ui_lower}")
-            created += 1
+            already_enriched.add(entity_id)
+            # Keep lookup maps fresh within this run
+            mesh_xref_to_entity[mesh_curie] = entity_id
+            mesh_xref_to_entity[ui] = entity_id
+            if cas and cas not in cas_to_entity:
+                cas_to_entity[cas] = entity_id
 
             if (i + 1) % BATCH == 0:
                 try:
                     self.session.commit()
-                    self.logger.log(
-                        f"[{self.DTP_NAME}] Committed batch "
-                        f"{i + 1}/{total}",
-                        "DEBUG",
-                    )
+                    if (i + 1) % (BATCH * 20) == 0:
+                        self.logger.log(
+                            f"  Committed {i + 1:,}/{total:,} "
+                            f"(mesh={matched_mesh:,} "
+                            f"cas={matched_cas:,} "
+                            f"name={matched_name:,} "
+                            f"new={created_new:,})",
+                            "INFO",
+                        )
                 except Exception as e:
                     self.session.rollback()
                     return (
@@ -438,18 +593,34 @@ class DTP(DTPBase, EntityQueryMixin):
             self.session.commit()
         except Exception as e:
             self.session.rollback()
-            return False, f"Final commit failed: {e}", ETLStepStats(errors=1)
+            return (
+                False,
+                f"Final commit failed: {e}",
+                ETLStepStats(errors=1),
+            )
 
         stats = ETLStepStats(
             total=total,
-            created=created,
-            skipped=skipped,
+            created=matched_mesh + matched_cas + matched_name + created_new,
+            skipped=already_done,
             warnings=warnings,
+            extras={
+                "matched_mesh_xref": matched_mesh,
+                "matched_cas":       matched_cas,
+                "matched_name":      matched_name,
+                "created_new":       created_new,
+                "already_enriched":  already_done,
+            },
         )
         msg = (
-            f"[{self.DTP_NAME}] Load complete: "
-            f"total={total} created={created} "
-            f"skipped={skipped} warnings={warnings}"
+            f"[{self.DTP_NAME}] Enrich complete: "
+            f"total={total:,} "
+            f"mesh={matched_mesh:,} "
+            f"cas={matched_cas:,} "
+            f"name={matched_name:,} "
+            f"new={created_new:,} "
+            f"already={already_done:,} "
+            f"warn={warnings:,}"
         )
         self.logger.log(msg, "INFO")
         return True, msg, stats

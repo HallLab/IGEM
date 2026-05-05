@@ -40,3 +40,5 @@ frontend/.env.local
 # Special folders
 mvp/
 igem_data/
+snapshots/
+docs/caderno/

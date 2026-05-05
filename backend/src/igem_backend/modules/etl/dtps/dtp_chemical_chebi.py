@@ -1,35 +1,50 @@
 """
-ChEBI Chemical DTP.
+ChEBI Chemical DTP — enricher for UniChem-seeded entities.
 
-Pipeline role:
-- Master DTP for chemical entities from the Chemical Entities of Biological
-  Interest (ChEBI) ontology published by EMBL-EBI.
-- No dependency on Gene/Protein DTPs.
-- CTD chemical-gene and chemical-disease relationships are handled by
-  separate CTD DTPs (dtp_ctd_chem_gene, etc.).
+Pipeline role
+-------------
+Runs AFTER dtp_chemical_unichem. Matches each ChEBI compound against an
+existing Entity (created by UniChem) and enriches it with:
 
-Source files (ChEBI FTP flat files):
-  compounds.tsv.gz        — primary compound records (ID, name, status)
-  chemical_data.tsv.gz    — molecular properties in long format (FORMULA,
-                            CHARGE, MASS, MONOISOTOPIC MASS, SMILES, InChIKey)
-  secondary_ids.tsv.gz    — deprecated ChEBI IDs that map to current compounds
-  database_accession.tsv.gz — external cross-references (CAS, PubChem, KEGG…)
-  source.tsv.gz           — lookup table for source names in database_accession
+  - compound name (preferred/ChEBI alias, promoted to is_primary)
+  - secondary ChEBI codes
+  - CAS / PubChem / KEGG / InChIKey and ~30 other xrefs
+  - ChemicalMaster fields that UniChem left NULL: smiles, formula,
+    molecular_weight, cas_number, pubchem_cid
+  - inchi_key / chebi_id only when missing (UniChem usually already has them)
 
-What is loaded:
-  Entity (type=Chemicals) + EntityAlias:
-    - code/ChEBI      → CHEBI:xxxxxxx  (primary)
-    - preferred/ChEBI → compound name
-    - code/ChEBI      → secondary CHEBI IDs (is_primary=False)
-    - code/<PREFIX>   → CAS, PubChem CID, KEGG, InChIKey, …
-  ChemicalMaster (chebi_id, molecular_weight, formula, smiles, inchi_key,
-                  cas_number, pubchem_cid)
+Match strategy (first that wins)
+--------------------------------
+  1. InChIKey match against existing ChemicalMaster.inchi_key  (strong)
+  2. CHEBI:id match against existing EntityAlias
+     (xref_source=ChEBI, alias_type=code)                        (medium)
+  3. Fallback — create new Entity (for ChEBI compounds UniChem did not
+     load because they fell outside the UniChem preset filter)
 
-Status mapping:
-  status 'C' (checked) → active
-  status 'E' (entry)   → active
-  status 'S' (star)    → active
-  anything else        → entity created but is_active=False
+Fill-null-only semantics
+------------------------
+When enriching an existing ChemicalMaster, ChEBI never OVERWRITES fields
+that are already populated. This preserves UniChem as the initial source
+of truth for structural identity (InChIKey, chebi_id, pubchem_cid).
+
+Idempotency
+-----------
+Entities that already carry a `preferred/ChEBI` alias are skipped on
+re-run. To force re-enrichment, delete those aliases first.
+
+Source files (ChEBI FTP flat files)
+-----------------------------------
+  compounds.tsv.gz          — primary compound records (ID, name, status)
+  chemical_data.tsv.gz      — molecular properties (FORMULA, MASS,
+                              MONOISOTOPIC MASS, SMILES, InChIKey)
+  secondary_ids.tsv.gz      — deprecated ChEBI IDs → current compounds
+  database_accession.tsv.gz — external cross-references
+  source.tsv.gz             — lookup table for xref source names
+
+Status mapping
+--------------
+  status 'C' / 'E' / 'S'    → entity marked active
+  anything else             → entity marked is_active=False
 """
 
 import json
@@ -43,6 +58,7 @@ import requests
 
 from igem_backend.modules.etl.mixins.base_dtp import DTPBase, ETLStepStats
 from igem_backend.modules.etl.mixins.entity_query_mixin import EntityQueryMixin
+from igem_backend.modules.nlp.normalizer import normalize
 
 _BASE_URL = "https://ftp.ebi.ac.uk/pub/databases/chebi/flat_files/"
 _FILES = [
@@ -356,7 +372,7 @@ class DTP(DTPBase, EntityQueryMixin):
             return False, msg, ETLStepStats(errors=1)
 
     # -------------------------------------------------------------------------
-    # LOAD
+    # LOAD — enrich UniChem-seeded entities; fallback creates new entities
     # -------------------------------------------------------------------------
     def load(self, processed_dir: str) -> tuple[bool, str, ETLStepStats]:
         self.logger.log(f"[{self.DTP_NAME}] Load starting...", "INFO")
@@ -372,32 +388,71 @@ class DTP(DTPBase, EntityQueryMixin):
         try:
             df = pd.read_parquet(parquet_file, engine="pyarrow")
         except Exception as e:
-            return False, f"Could not read parquet: {e}", ETLStepStats(errors=1)
+            return (
+                False,
+                f"Could not read parquet: {e}",
+                ETLStepStats(errors=1),
+            )
 
         if df.empty:
             return True, "No chemical rows to load.", ETLStepStats()
 
-        from igem_backend.modules.db.models.model_chemicals import ChemicalMaster
-        from igem_backend.modules.db.models.model_entities import Entity, EntityAlias
+        from igem_backend.modules.db.models.model_chemicals import (
+            ChemicalMaster,
+        )
+        from igem_backend.modules.db.models.model_entities import (
+            Entity,
+            EntityAlias,
+        )
 
         chem_type_id = self.get_entity_type_id("Chemicals")
 
-        # Pre-load existing ChEBI ids to skip already-loaded compounds
-        existing: set[str] = {
-            cm.chebi_id
-            for (cm,) in self.session.query(ChemicalMaster).with_entities(
-                ChemicalMaster
-            ).all()
-            if cm.chebi_id
-        }
-        # Simpler: just fetch the chebi_id column
-        existing = {
-            row[0]
-            for row in self.session.query(ChemicalMaster.chebi_id).all()
+        # --- Pre-load match + idempotency maps ---
+        self.logger.log("  Loading InChIKey → entity map...", "INFO")
+        inchi_to_entity: dict[str, int] = {
+            row[0]: row[1]
+            for row in self.session.query(
+                ChemicalMaster.inchi_key, ChemicalMaster.entity_id
+            ).filter(ChemicalMaster.inchi_key.isnot(None)).all()
             if row[0]
         }
 
-        total = created = skipped = warnings = 0
+        self.logger.log("  Loading ChEBI xref → entity map...", "INFO")
+        chebi_xref_to_entity: dict[str, int] = {
+            row[0]: row[1]
+            for row in self.session.query(
+                EntityAlias.alias_value, EntityAlias.entity_id
+            ).filter(
+                EntityAlias.xref_source == "ChEBI",
+                EntityAlias.alias_type == "code",
+            ).all()
+            if row[0]
+        }
+
+        self.logger.log("  Loading already-enriched entity set...", "INFO")
+        already_enriched: set[int] = {
+            row[0]
+            for row in self.session.query(
+                EntityAlias.entity_id
+            ).filter(
+                EntityAlias.xref_source == "ChEBI",
+                EntityAlias.alias_type == "preferred",
+            ).distinct().all()
+        }
+
+        self.logger.log(
+            f"  Lookups ready: inchi={len(inchi_to_entity):,} "
+            f"chebi_xref={len(chebi_xref_to_entity):,} "
+            f"already_enriched={len(already_enriched):,}",
+            "INFO",
+        )
+
+        total = 0
+        matched_inchi = 0
+        matched_chebi = 0
+        created_new = 0
+        already_done = 0
+        warnings = 0
         BATCH = 500
 
         for i, (_, row) in enumerate(df.iterrows()):
@@ -405,30 +460,85 @@ class DTP(DTPBase, EntityQueryMixin):
 
             chebi_id = str(row.get("chebi_id") or "").strip()
             label = str(row.get("label") or "").strip()
-
             if not chebi_id or not label:
                 warnings += 1
-                continue
-
-            if chebi_id in existing:
-                skipped += 1
                 continue
 
             status = str(row.get("status") or "E").strip().upper()
             is_active = status in _ACTIVE_STATUSES
 
-            # --- Entity (direct add — compound is guaranteed new) ---
-            entity = Entity(
-                type_id=chem_type_id,
-                is_active=is_active,
-                data_source_id=self.data_source.id,
-                etl_package_id=self.package.id,
+            inchi_key_raw = (
+                str(row.get("inchi_key") or "").strip() or None
             )
-            self.session.add(entity)
-            self.session.flush()
+            smiles_raw = str(row.get("smiles") or "").strip() or None
+            formula_raw = str(row.get("formula") or "").strip() or None
 
-            # --- Aliases ---
-            seen_keys: set[tuple[str, str, str]] = set()
+            mol_weight: Optional[float] = None
+            raw_mass = row.get("mass")
+            if raw_mass is not None and \
+                    str(raw_mass).strip() not in ("", "nan"):
+                try:
+                    mol_weight = float(raw_mass)
+                except (ValueError, TypeError):
+                    pass
+
+            # --- Match strategy ---
+            entity_id: Optional[int] = None
+            match_type: Optional[str] = None
+            if inchi_key_raw and inchi_key_raw in inchi_to_entity:
+                entity_id = inchi_to_entity[inchi_key_raw]
+                match_type = "inchi"
+            elif chebi_id in chebi_xref_to_entity:
+                entity_id = chebi_xref_to_entity[chebi_id]
+                match_type = "chebi"
+
+            # Idempotency guard
+            if entity_id is not None and entity_id in already_enriched:
+                already_done += 1
+                continue
+
+            # Stats for successful matches (only count after idempotency)
+            if match_type == "inchi":
+                matched_inchi += 1
+            elif match_type == "chebi":
+                matched_chebi += 1
+
+            # Fallback: create new entity
+            if entity_id is None:
+                entity = Entity(
+                    type_id=chem_type_id,
+                    is_active=is_active,
+                    data_source_id=self.data_source.id,
+                    etl_package_id=self.package.id,
+                )
+                self.session.add(entity)
+                self.session.flush()
+                entity_id = entity.id
+                created_new += 1
+
+            # --- Pre-load existing aliases on MATCHED entities only ---
+            # Newly-created entities have no prior aliases, so we can skip
+            # the lookup for them. This avoids unique-constraint collisions
+            # when xrefs overlap across sources (e.g. UniChem already added
+            # code/ChEBI for this compound).
+            if match_type is not None:
+                existing_alias_keys = {
+                    (av, at, xs)
+                    for av, at, xs in self.session.query(
+                        EntityAlias.alias_value,
+                        EntityAlias.alias_type,
+                        EntityAlias.xref_source,
+                    ).filter_by(entity_id=entity_id).all()
+                }
+                # Demote UniChem's primary so ChEBI's preferred name
+                # can take the primary slot.
+                self.session.query(EntityAlias).filter_by(
+                    entity_id=entity_id, is_primary=True
+                ).update({"is_primary": False})
+            else:
+                existing_alias_keys = set()
+
+            seen_keys: set[tuple[str, str, str]] = set(existing_alias_keys)
 
             def _add_alias(
                 val: str,
@@ -445,12 +555,14 @@ class DTP(DTPBase, EntityQueryMixin):
                     return
                 seen_keys.add(key)
                 self.session.add(EntityAlias(
-                    entity_id=entity.id,
+                    entity_id=entity_id,
                     type_id=chem_type_id,
                     alias_value=val,
                     alias_type=atype,
                     xref_source=xsrc,
-                    alias_norm=self.guard_alias_norm(norm or val.lower()),
+                    alias_norm=self.guard_alias_norm(
+                        norm or normalize(val)
+                    ),
                     is_primary=primary,
                     is_active=is_active,
                     locale="en",
@@ -458,23 +570,23 @@ class DTP(DTPBase, EntityQueryMixin):
                     etl_package_id=self.package.id,
                 ))
 
-            # Primary: CHEBI:xxxxxxx
-            _add_alias(chebi_id, "code", "ChEBI", chebi_id.lower(), primary=True)
-            # Preferred name
-            _add_alias(label, "preferred", "ChEBI", self._normalize(label))
+            # ChEBI's preferred name takes the is_primary slot
+            _add_alias(label, "preferred", "ChEBI", primary=True)
+            # ChEBI code (if UniChem already added it, the dedup set skips)
+            _add_alias(chebi_id, "code", "ChEBI")
             # Secondary ChEBI IDs
             for sec_id in json.loads(row.get("secondary_ids") or "[]"):
                 if sec_id:
-                    _add_alias(sec_id, "code", "ChEBI", sec_id.lower())
-            # External xrefs (CAS, PubChem, KEGG, InChIKey, …)
+                    _add_alias(sec_id, "code", "ChEBI")
+            # External xrefs
             xrefs_extra = json.loads(row.get("xrefs_extra") or "[]")
             for xr in xrefs_extra[:_MAX_XREF_ALIASES]:
                 val = str(xr.get("alias_value") or "").strip()
                 src_name = str(xr.get("xref_source") or "").strip()
                 if val and src_name:
-                    _add_alias(val, "code", src_name, val.lower())
+                    _add_alias(val, "code", src_name)
 
-            # --- Extract ChemicalMaster column values from xrefs ---
+            # --- Extract ChemicalMaster scalar values from xrefs ---
             cas_number: Optional[str] = None
             pubchem_cid: Optional[str] = None
             for xr in xrefs_extra:
@@ -487,42 +599,59 @@ class DTP(DTPBase, EntityQueryMixin):
                 elif src_name == "PubChem" and not pubchem_cid:
                     pubchem_cid = val[:20]
 
-            # --- ChemicalMaster ---
-            inchi_key_raw = str(row.get("inchi_key") or "").strip() or None
-            smiles_raw = str(row.get("smiles") or "").strip() or None
-            formula_raw = str(row.get("formula") or "").strip() or None
+            # --- ChemicalMaster: fill-null-only or create ---
+            cm = self.session.query(ChemicalMaster).filter_by(
+                entity_id=entity_id
+            ).one_or_none()
 
-            mol_weight: Optional[float] = None
-            raw_mass = row.get("mass")
-            if raw_mass is not None and str(raw_mass).strip() not in ("", "nan"):
-                try:
-                    mol_weight = float(raw_mass)
-                except (ValueError, TypeError):
-                    pass
+            if cm is None:
+                cm = ChemicalMaster(
+                    entity_id=entity_id,
+                    chebi_id=chebi_id,
+                    inchi_key=inchi_key_raw[:27] if inchi_key_raw else None,
+                    smiles=smiles_raw[:4000] if smiles_raw else None,
+                    formula=formula_raw[:100] if formula_raw else None,
+                    molecular_weight=mol_weight,
+                    cas_number=cas_number,
+                    pubchem_cid=pubchem_cid,
+                    data_source_id=self.data_source.id,
+                    etl_package_id=self.package.id,
+                )
+                self.session.add(cm)
+            else:
+                if cm.chebi_id is None:
+                    cm.chebi_id = chebi_id
+                if cm.inchi_key is None and inchi_key_raw:
+                    cm.inchi_key = inchi_key_raw[:27]
+                if cm.smiles is None and smiles_raw:
+                    cm.smiles = smiles_raw[:4000]
+                if cm.formula is None and formula_raw:
+                    cm.formula = formula_raw[:100]
+                if cm.molecular_weight is None and mol_weight is not None:
+                    cm.molecular_weight = mol_weight
+                if cm.cas_number is None and cas_number:
+                    cm.cas_number = cas_number
+                if cm.pubchem_cid is None and pubchem_cid:
+                    cm.pubchem_cid = pubchem_cid
 
-            cm = ChemicalMaster(
-                entity_id=entity.id,
-                chebi_id=chebi_id,
-                inchi_key=inchi_key_raw[:27] if inchi_key_raw else None,
-                smiles=smiles_raw[:4000] if smiles_raw else None,
-                formula=formula_raw[:100] if formula_raw else None,
-                molecular_weight=mol_weight,
-                cas_number=cas_number,
-                pubchem_cid=pubchem_cid,
-                data_source_id=self.data_source.id,
-                etl_package_id=self.package.id,
-            )
-            self.session.add(cm)
-            existing.add(chebi_id)
-            created += 1
+            already_enriched.add(entity_id)
+            # Keep InChIKey → entity map fresh for next rows that share it
+            if inchi_key_raw and inchi_key_raw not in inchi_to_entity:
+                inchi_to_entity[inchi_key_raw] = entity_id
+            if chebi_id not in chebi_xref_to_entity:
+                chebi_xref_to_entity[chebi_id] = entity_id
 
             if (i + 1) % BATCH == 0:
                 try:
                     self.session.commit()
-                    self.logger.log(
-                        f"[{self.DTP_NAME}] Committed batch {i + 1}/{total}",
-                        "DEBUG",
-                    )
+                    if (i + 1) % (BATCH * 20) == 0:
+                        self.logger.log(
+                            f"  Committed {i + 1:,}/{total:,} "
+                            f"(inchi={matched_inchi:,} "
+                            f"chebi={matched_chebi:,} "
+                            f"new={created_new:,})",
+                            "INFO",
+                        )
                 except Exception as e:
                     self.session.rollback()
                     return (
@@ -535,17 +664,32 @@ class DTP(DTPBase, EntityQueryMixin):
             self.session.commit()
         except Exception as e:
             self.session.rollback()
-            return False, f"Final commit failed: {e}", ETLStepStats(errors=1)
+            return (
+                False,
+                f"Final commit failed: {e}",
+                ETLStepStats(errors=1),
+            )
 
         stats = ETLStepStats(
             total=total,
-            created=created,
-            skipped=skipped,
+            created=matched_inchi + matched_chebi + created_new,
+            skipped=already_done,
             warnings=warnings,
+            extras={
+                "matched_inchi":     matched_inchi,
+                "matched_chebi_xref": matched_chebi,
+                "created_new":        created_new,
+                "already_enriched":   already_done,
+            },
         )
         msg = (
-            f"[{self.DTP_NAME}] Load complete: "
-            f"total={total} created={created} skipped={skipped} warnings={warnings}"
+            f"[{self.DTP_NAME}] Enrich complete: "
+            f"total={total:,} "
+            f"inchi={matched_inchi:,} "
+            f"chebi_xref={matched_chebi:,} "
+            f"new={created_new:,} "
+            f"already={already_done:,} "
+            f"warn={warnings:,}"
         )
         self.logger.log(msg, "INFO")
         return True, msg, stats

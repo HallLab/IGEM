@@ -28,8 +28,18 @@ def try_resolve_db_uri(cli_db_uri: str | None = None) -> str | None:
 
 
 def require_db_uri(ctx: click.Context, local_db_uri: str | None = None) -> str:
-    """Resolve URI from local flag → ctx.obj → env vars → .igem.toml. Raises UsageError if none found."""
-    uri = try_resolve_db_uri(local_db_uri) or try_resolve_db_uri((ctx.obj or {}).get("db_uri"))
+    """
+    Resolve URI in priority order:
+      1. subcommand --db-uri flag (local_db_uri)
+      2. top-level --db-uri flag (ctx.obj["db_uri"])
+      3. DATABASE_URL env var
+      4. IGEM_DB_URI env var
+      5. .igem.toml [database] uri
+    Raises UsageError if none found.
+    """
+    top_level_uri = (ctx.obj or {}).get("db_uri") if ctx else None
+    explicit = _clean(local_db_uri) or _clean(top_level_uri)
+    uri = explicit or try_resolve_db_uri(None)  # falls back to env/toml
     if not uri:
         raise click.UsageError(
             "Database URI not set.\n"

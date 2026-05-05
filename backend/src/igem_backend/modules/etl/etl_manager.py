@@ -161,10 +161,18 @@ class ETLManager:
         delete_files: bool = False,
         download_path: Optional[str] = None,
         processed_path: Optional[str] = None,
+        hard: bool = False,
     ) -> bool:
-        """Rollback ETL data by data_source or specific package_ids."""
+        """Rollback ETL data by data_source or specific package_ids.
+
+        hard=False: soft rollback — deactivate (is_active=False) masters and
+                    delete relationships only.
+        hard=True:  hard rollback — DELETE Entity/EntityAlias rows (cascades
+                    through domain master tables via FK ondelete=CASCADE) and
+                    DELETE EntityRelationship rows.
+        """
         if package_ids:
-            return self._rollback_by_packages(package_ids)
+            return self._rollback_by_packages(package_ids, hard=hard)
 
         with self.db.get_session() as session:
             ds_ids = self._resolve_ds_ids(session, source_system, data_sources)
@@ -173,7 +181,7 @@ class ETLManager:
         for ds_id in ds_ids:
             with self.db.get_session() as session:
                 ds = self._load_ds(session, ds_id)
-                ok, _ = self._rollback_ds(session, ds)
+                ok, _ = self._rollback_ds(session, ds, hard=hard)
                 if not ok:
                     all_ok = False
                     continue
@@ -181,7 +189,8 @@ class ETLManager:
                     self._clean_files(ds, download_path, processed_path)
 
         status = "concluido" if all_ok else "concluido com erros"
-        self.logger.footer(f"Rollback {status}")
+        mode = "hard" if hard else "soft"
+        self.logger.footer(f"Rollback ({mode}) {status}")
         return all_ok
 
     # -------------------------------------------------------------------------
@@ -422,28 +431,32 @@ class ETLManager:
     # Rollback helpers
     # -------------------------------------------------------------------------
     def _rollback_ds(
-        self, session: Session, ds: ETLDataSource
+        self, session: Session, ds: ETLDataSource, hard: bool = False
     ) -> tuple[bool, str]:
         strategy = self._rollback_strategy(ds)
+        mode = "hard" if hard else "soft"
         try:
             counts = self._apply_rollback(
-                session, strategy, data_source_id=ds.id
+                session, strategy, data_source_id=ds.id, hard=hard
             )
             session.commit()
             msg = (
-                f"Rollback ({strategy}) completed for '{ds.name}': "
+                f"Rollback {mode} ({strategy}) completed for '{ds.name}': "
                 + ", ".join(f"{k}={v}" for k, v in counts.items())
             )
             self.logger.log(msg, "INFO")
             return True, msg
         except Exception as e:
             session.rollback()
-            msg = f"Rollback failed for '{ds.name}': {e}"
+            msg = f"Rollback {mode} failed for '{ds.name}': {e}"
             self.logger.log(msg, "ERROR")
             return False, msg
 
-    def _rollback_by_packages(self, package_ids: Sequence[int]) -> bool:
+    def _rollback_by_packages(
+        self, package_ids: Sequence[int], hard: bool = False
+    ) -> bool:
         all_ok = True
+        mode = "hard" if hard else "soft"
         for pkg_id in package_ids:
             with self.db.get_session() as session:
                 pkg = session.get(ETLPackage, pkg_id)
@@ -456,20 +469,23 @@ class ETLManager:
                 strategy = self._rollback_strategy(ds)
                 try:
                     counts = self._apply_rollback(
-                        session, strategy, package_id=pkg_id
+                        session, strategy, package_id=pkg_id, hard=hard
                     )
                     session.commit()
                     self.logger.log(
-                        f"Rollback ({strategy}) pkg={pkg_id}: "
+                        f"Rollback {mode} ({strategy}) pkg={pkg_id}: "
                         + ", ".join(f"{k}={v}" for k, v in counts.items()),
                         "INFO",
                     )
                 except Exception as e:
                     session.rollback()
                     self.logger.log(
-                        f"Rollback failed for package {pkg_id}: {e}", "ERROR"
+                        f"Rollback {mode} failed for package {pkg_id}: {e}",
+                        "ERROR",
                     )
                     all_ok = False
+        status = "concluido" if all_ok else "concluido com erros"
+        self.logger.footer(f"Rollback ({mode}) {status}")
         return all_ok
 
     def _rollback_strategy(self, ds: ETLDataSource) -> str:
@@ -486,15 +502,18 @@ class ETLManager:
         strategy: str,
         data_source_id: Optional[int] = None,
         package_id: Optional[int] = None,
+        hard: bool = False,
     ) -> dict[str, int]:
         """
         Execute rollback according to strategy.
 
-        deactivate  — master DTPs: set is_active=False on entities and aliases.
-                      Relationships from other sources stay intact.
+        deactivate  — master DTPs: set is_active=False on entities and aliases
+                      (or DELETE them when hard=True). Relationships from
+                      other sources stay intact in soft mode; in hard mode
+                      they cascade-delete via FK ondelete=CASCADE on entity_id.
         delete      — relationship DTPs: delete EntityRelationship rows.
                       Safe because relationships don't own entities.
-        mixed       — both: deactivate master data + delete relationships.
+        mixed       — both: deactivate/delete masters + delete relationships.
         """
         from igem_backend.modules.db.models.model_entities import EntityAlias
 
@@ -512,16 +531,28 @@ class ETLManager:
                 if by_pkg
                 else EntityAlias.data_source_id == data_source_id
             )
-            counts["entities_deactivated"] = (
-                session.query(Entity)
-                .filter(filt_e)
-                .update({"is_active": False}, synchronize_session=False)
-            )
-            counts["aliases_deactivated"] = (
-                session.query(EntityAlias)
-                .filter(filt_a)
-                .update({"is_active": False}, synchronize_session=False)
-            )
+            if hard:
+                counts["aliases_deleted"] = (
+                    session.query(EntityAlias)
+                    .filter(filt_a)
+                    .delete(synchronize_session=False)
+                )
+                counts["entities_deleted"] = (
+                    session.query(Entity)
+                    .filter(filt_e)
+                    .delete(synchronize_session=False)
+                )
+            else:
+                counts["entities_deactivated"] = (
+                    session.query(Entity)
+                    .filter(filt_e)
+                    .update({"is_active": False}, synchronize_session=False)
+                )
+                counts["aliases_deactivated"] = (
+                    session.query(EntityAlias)
+                    .filter(filt_a)
+                    .update({"is_active": False}, synchronize_session=False)
+                )
 
         if strategy in ("delete", "mixed"):
             filt_r = (
@@ -532,6 +563,22 @@ class ETLManager:
             counts["relationships_deleted"] = (
                 session.query(EntityRelationship)
                 .filter(filt_r)
+                .delete(synchronize_session=False)
+            )
+
+        # Hard rollback also removes the ETLPackage audit rows so that
+        # `etl status` reflects the cleared state. Must run AFTER entity/
+        # relationship deletes — deleting packages first triggers
+        # ondelete=SET NULL on child rows and would unhook the filters above.
+        if hard:
+            filt_p = (
+                ETLPackage.id == package_id
+                if package_id is not None
+                else ETLPackage.data_source_id == data_source_id
+            )
+            counts["packages_deleted"] = (
+                session.query(ETLPackage)
+                .filter(filt_p)
                 .delete(synchronize_session=False)
             )
 

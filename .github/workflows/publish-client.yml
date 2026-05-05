@@ -1,0 +1,71 @@
+name: Publish IGEM Client
+
+# Triggered by tags shaped like `client-v2.1.0`. Builds the client wheel
+# (no embedded extra — that's a deploy-time choice) and uploads to PyPI.
+
+on:
+  push:
+    tags:
+      - 'client-v*'
+
+jobs:
+  publish:
+    name: Build & publish igem client
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        id: tag
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/client-v}"
+          echo "version=$TAG_VERSION" >> "$GITHUB_OUTPUT"
+          echo "Tag version: $TAG_VERSION"
+
+      - name: Verify pyproject version matches tag
+        run: |
+          PROJECT_VERSION=$(grep '^version' client/pyproject.toml \
+            | head -1 | awk -F'"' '{print $2}')
+          if [ "${{ steps.tag.outputs.version }}" != "$PROJECT_VERSION" ]; then
+            echo "::error::Tag version ${{ steps.tag.outputs.version }} \
+              does not match client/pyproject.toml version $PROJECT_VERSION"
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Poetry
+        run: pip install poetry
+
+      - name: Build wheel + sdist
+        working-directory: client
+        run: poetry build
+
+      - name: Inspect built artefacts
+        working-directory: client
+        run: ls -la dist/
+
+      - name: Publish to PyPI
+        working-directory: client
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN_CLIENT }}
+        run: poetry publish
+
+      - name: Summary
+        run: |
+          echo "## Published 📦" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Package: \`igem\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Version: \`${{ steps.tag.outputs.version }}\`" \
+            >> "$GITHUB_STEP_SUMMARY"
+          echo "- PyPI: https://pypi.org/project/igem/${{ steps.tag.outputs.version }}/" \
+            >> "$GITHUB_STEP_SUMMARY"

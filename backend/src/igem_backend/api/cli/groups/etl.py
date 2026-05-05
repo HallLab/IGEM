@@ -7,6 +7,7 @@ from igem_backend.api.cli.common import (
     debug_option,
     require_db_uri,
 )
+from igem_backend.api.cli.groups.db import _refuse_if_read_only
 
 
 @click.group("etl")
@@ -57,6 +58,7 @@ def etl_run(
 
     uri = require_db_uri(ctx, db_uri)
     ge = GE(db_uri=uri, debug_mode=debug)
+    _refuse_if_read_only(ge, "etl run")
 
     step_list = [s.strip() for s in steps.split(",")]
     force_list = (
@@ -163,6 +165,15 @@ def etl_status(ctx: click.Context, db_uri: str | None, debug: bool):
     is_flag=True,
     help="Also delete downloaded/processed files.",
 )
+@click.option(
+    "--hard",
+    is_flag=True,
+    help=(
+        "Hard rollback: DELETE Entity/EntityAlias rows (cascades via FK) "
+        "instead of deactivating them. Use with care — cross-source "
+        "relationships pointing to deleted entities will cascade-delete."
+    ),
+)
 @debug_option
 @click.pass_context
 def etl_rollback(
@@ -171,6 +182,7 @@ def etl_rollback(
     sources: tuple[str, ...],
     package_ids: tuple[int, ...],
     delete_files: bool,
+    hard: bool,
     debug: bool,
 ):
     """Roll back ETL data for specified sources or package IDs."""
@@ -183,8 +195,10 @@ def etl_rollback(
 
     uri = require_db_uri(ctx, db_uri)
     ge = GE(db_uri=uri, debug_mode=debug)
+    _refuse_if_read_only(ge, "etl rollback")
     ge.etl.rollback(
         data_sources=list(sources) or None,
         package_ids=list(package_ids) or None,
         delete_files=delete_files,
+        hard=hard,
     )

@@ -70,6 +70,7 @@ class ETLComponent(BaseComponent):
         source_system: Optional[Sequence[str]] = None,
         package_ids: Optional[Sequence[int]] = None,
         delete_files: bool = False,
+        hard: bool = False,
     ) -> bool:
         """Rollback ETL data for given data sources or package IDs."""
         download_path, processed_path = self._paths()
@@ -80,6 +81,7 @@ class ETLComponent(BaseComponent):
             delete_files=delete_files,
             download_path=download_path,
             processed_path=processed_path,
+            hard=hard,
         )
 
     def status(self) -> list[dict]:

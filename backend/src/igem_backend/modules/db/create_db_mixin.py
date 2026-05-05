@@ -17,6 +17,7 @@ SEED_UNIQUE_KEYS: Dict[str, List[str]] = {
     "EntityType": ["name"],
     "EntityRelationshipType": ["id"],
     "GenomeAssembly": ["accession"],
+    "ChemicalGroup": ["name"],
 }
 
 
@@ -36,19 +37,29 @@ class CreateDBMixin:
         admin_url = url.set(database="postgres")
         admin_engine = create_engine(admin_url, future=True)
 
-        with admin_engine.connect().execution_options(isolation_level="AUTOCOMMIT") as conn:
+        options = {"isolation_level": "AUTOCOMMIT"}
+        with (
+            admin_engine.connect().execution_options(**options) as conn
+        ):
             exists = conn.execute(
                 text("SELECT 1 FROM pg_database WHERE datname = :db"),
                 {"db": target_db},
             ).scalar()
             if exists:
                 return False
-            conn.execute(text(f'CREATE DATABASE "{target_db}" OWNER "{url.username}"'))
+            conn.execute(
+                text(
+                    f'CREATE DATABASE "{target_db}"'
+                    f' OWNER "{url.username}"'
+                )
+            )
             return True
 
     def create_db(self, overwrite: bool = False) -> bool:
         if self.exists_db(new_db=True) and not overwrite:
-            self.logger.log(f"Database already exists at {self.db_uri}", "WARNING")
+            self.logger.log(
+                f"Database already exists at {self.db_uri}", "WARNING"
+            )
             return False
 
         if getattr(self, "db_uri", None):
@@ -57,9 +68,16 @@ class CreateDBMixin:
                 try:
                     created = self.ensure_postgres_database(self.db_uri)
                     if created:
-                        self.logger.log(f"Created PostgreSQL database '{url.database}'", "INFO")
+                        self.logger.log(
+                            f"Created PostgreSQL database"
+                            f" '{url.database}'",
+                            "INFO",
+                        )
                 except Exception as e:
-                    self.logger.log(f"Could not ensure PostgreSQL database: {e}", "ERROR")
+                    self.logger.log(
+                        f"Could not ensure PostgreSQL database: {e}",
+                        "ERROR",
+                    )
                     raise
 
         self.connect(check_exists=False)
@@ -67,6 +85,14 @@ class CreateDBMixin:
         try:
             self.logger.log("Bootstrapping models...", "INFO")
             bootstrap_models(self.engine)
+
+            if self.engine.dialect.name == "postgresql":
+                self.logger.log("Enabling pgvector extension...", "INFO")
+                with self.engine.connect() as conn:
+                    conn.execute(
+                        text("CREATE EXTENSION IF NOT EXISTS vector")
+                    )
+                    conn.commit()
 
             self.logger.log("Creating tables...", "INFO")
             Base.metadata.create_all(self.engine)
@@ -82,21 +108,62 @@ class CreateDBMixin:
             raise
 
     def upgrade_db(self) -> None:
-        """Re-apply seeds idempotently (safe to run repeatedly)."""
+        """Re-apply seeds and schema idempotently (safe to run repeatedly)."""
         self.connect(check_exists=True)
         bootstrap_models(self.engine)
+
+        if self.engine.dialect.name == "postgresql":
+            with self.engine.connect() as conn:
+                conn.execute(
+                    text("CREATE EXTENSION IF NOT EXISTS vector")
+                )
+                conn.commit()
+
+        Base.metadata.create_all(self.engine)
         self._seed_all()
         self.logger.footer("Database upgraded successfully")
 
     def _seed_all(self) -> None:
-        seed_dir = os.path.join(os.path.dirname(__file__), "seed")
         self._seed("initial_config.json", "model_config", "SystemConfig")
-        self._seed("initial_metadata.json", "model_config", "IgemMetadata")
-        self._seed("initial_source_systems.json", "model_etl", "ETLSourceSystem", key="source_systems")
-        self._seed("initial_data_sources.json", "model_etl", "ETLDataSource", key="data_sources")
-        self._seed("initial_entity_types.json", "model_entities", "EntityType", key="entity_types")
-        self._seed("initial_entity_relationship_types.json", "model_entities", "EntityRelationshipType", key="entity_relationship_types")
-        self._seed("initial_genome_assemblies.json", "model_config", "GenomeAssembly", key="genome_assemblies")
+        self._seed(
+            "initial_metadata.json", "model_config", "IgemMetadata"
+        )
+        self._seed(
+            "initial_source_systems.json",
+            "model_etl",
+            "ETLSourceSystem",
+            key="source_systems",
+        )
+        self._seed(
+            "initial_data_sources.json",
+            "model_etl",
+            "ETLDataSource",
+            key="data_sources",
+        )
+        self._seed(
+            "initial_entity_types.json",
+            "model_entities",
+            "EntityType",
+            key="entity_types",
+        )
+        self._seed(
+            "initial_entity_relationship_types.json",
+            "model_entities",
+            "EntityRelationshipType",
+            key="entity_relationship_types",
+        )
+        self._seed(
+            "initial_genome_assemblies.json",
+            "model_config",
+            "GenomeAssembly",
+            key="genome_assemblies",
+        )
+        self._seed(
+            "initial_chemical_groups.json",
+            "model_chemicals",
+            "ChemicalGroup",
+            key="chemical_groups",
+        )
 
     def _seed(
         self,
@@ -107,18 +174,24 @@ class CreateDBMixin:
     ) -> None:
         from importlib import import_module
 
-        model_module = import_module(f"igem_backend.modules.db.models.{module_name}")
+        model_module = import_module(
+            f"igem_backend.modules.db.models.{module_name}"
+        )
         model_class = getattr(model_module, model_name)
 
         seed_dir = os.path.join(os.path.dirname(__file__), "seed")
         json_path = os.path.join(seed_dir, filename)
         if not os.path.exists(json_path):
-            self.logger.log(f"Seed file not found: {json_path}", "WARNING")
+            self.logger.log(
+                f"Seed file not found: {json_path}", "WARNING"
+            )
             return
 
         unique_keys = SEED_UNIQUE_KEYS.get(model_name)
         if not unique_keys:
-            raise RuntimeError(f"No unique key config for seed model: {model_name}")
+            raise RuntimeError(
+                f"No unique key config for seed model: {model_name}"
+            )
 
         with self.get_session() as session:
             with open(json_path) as f:
@@ -127,13 +200,19 @@ class CreateDBMixin:
 
             created = updated = skipped = 0
             for item in records:
-                # Resolve source_system FK by name
                 if "source_system" in item:
-                    from igem_backend.modules.db.models.model_etl import ETLSourceSystem
+                    from igem_backend.modules.db.models.model_etl import (
+                        ETLSourceSystem,
+                    )
                     fk_name = item.pop("source_system")
-                    fk_obj = session.query(ETLSourceSystem).filter_by(name=fk_name).first()
+                    fk_obj = session.query(ETLSourceSystem).filter_by(
+                        name=fk_name
+                    ).first()
                     if not fk_obj:
-                        self.logger.log(f"ETLSourceSystem not found: {fk_name}", "WARNING")
+                        self.logger.log(
+                            f"ETLSourceSystem not found: {fk_name}",
+                            "WARNING",
+                        )
                         skipped += 1
                         continue
                     item["source_system_id"] = fk_obj.id
@@ -143,7 +222,11 @@ class CreateDBMixin:
                     skipped += 1
                     continue
 
-                existing = session.query(model_class).filter_by(**lookup).one_or_none()
+                existing = (
+                    session.query(model_class)
+                    .filter_by(**lookup)
+                    .one_or_none()
+                )
                 if existing is None:
                     session.add(model_class(**item))
                     created += 1
@@ -155,6 +238,7 @@ class CreateDBMixin:
 
             session.commit()
             self.logger.log(
-                f"Seeded {model_name}: created={created} updated={updated} skipped={skipped}",
+                f"Seeded {model_name}: "
+                f"created={created} updated={updated} skipped={skipped}",
                 "INFO",
             )

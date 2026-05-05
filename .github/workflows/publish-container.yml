@@ -1,0 +1,99 @@
+name: Publish IGEM Container
+
+# Triggered by tags shaped like `container-v1.0.0`. Builds the IGEM
+# embedded/snapshot container and pushes it to GitHub Container Registry
+# (ghcr.io). Container version is independent of client/server package
+# versions; the resolved versions are recorded as image labels.
+
+on:
+  push:
+    tags:
+      - 'container-v*'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository_owner }}/igem
+
+jobs:
+  publish:
+    name: Build & push container
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: read
+      packages: write   # required to push to ghcr.io
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract container version from tag
+        id: tag
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/container-v}"
+          echo "version=$TAG_VERSION" >> "$GITHUB_OUTPUT"
+          echo "Container version: $TAG_VERSION"
+
+      - name: Read embedded client + server versions
+        id: versions
+        run: |
+          CLIENT_VER=$(grep '^version' client/pyproject.toml \
+            | head -1 | awk -F'"' '{print $2}')
+          SERVER_VER=$(grep '^version' backend/pyproject.toml \
+            | head -1 | awk -F'"' '{print $2}')
+          echo "client=$CLIENT_VER" >> "$GITHUB_OUTPUT"
+          echo "server=$SERVER_VER" >> "$GITHUB_OUTPUT"
+          echo "Embedded client: $CLIENT_VER"
+          echo "Embedded server: $SERVER_VER"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push (multi-platform)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: docker/Dockerfile
+          push: true
+          # linux/amd64 covers most HPC clusters; arm64 covers
+          # Apple Silicon laptops for local testing.
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.version }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          labels: |
+            org.opencontainers.image.title=IGEM
+            org.opencontainers.image.description=IGEM HPC/snapshot container
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.version=${{ steps.tag.outputs.version }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.licenses=MIT
+            igem.client_version=${{ steps.versions.outputs.client }}
+            igem.server_version=${{ steps.versions.outputs.server }}
+          build-args: |
+            IGEM_CONTAINER_VERSION=${{ steps.tag.outputs.version }}
+            IGEM_CLIENT_VERSION=${{ steps.versions.outputs.client }}
+            IGEM_SERVER_VERSION=${{ steps.versions.outputs.server }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Summary
+        run: |
+          echo "## Container published 🐳" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Image: \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.version }}\`" \
+            >> "$GITHUB_STEP_SUMMARY"
+          echo "- Embedded client: \`${{ steps.versions.outputs.client }}\`" \
+            >> "$GITHUB_STEP_SUMMARY"
+          echo "- Embedded server: \`${{ steps.versions.outputs.server }}\`" \
+            >> "$GITHUB_STEP_SUMMARY"
+          echo "- Pull: \`docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.version }}\`" \
+            >> "$GITHUB_STEP_SUMMARY"

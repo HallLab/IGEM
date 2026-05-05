@@ -1,0 +1,57 @@
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Python build artefacts
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.egg-info/
+**/build/
+**/dist/
+.venv/
+*.venv/
+
+# Test / lint caches
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/htmlcov/
+**/.coverage
+
+# Heavy data (must NOT enter the image — mounted at runtime)
+igem_data/
+snapshots/
+**/igem_data/
+**/snapshots/
+
+# Local DB files
+*.db
+*.db-shm
+*.db-wal
+
+# Docs / notebooks (not needed in runtime image)
+docs/
+Caderno/
+*.ipynb
+
+# Editor / OS junk
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Local config (may contain secrets)
+.igem.toml
+.env
+*.log
+
+# Frontend build outputs (if any)
+node_modules/
+frontend/dist/
+
+# Docker itself (we keep docker/ — entrypoint.sh is COPY'd from it)
+.dockerignore
+Dockerfile*
+docker/README.md
