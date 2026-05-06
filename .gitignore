@@ -30,6 +30,10 @@ node_modules/
 frontend/dist/
 frontend/.env.local
 
+# Sphinx docs (built output served by Next.js)
+docs/sphinx/_build/
+frontend/public/docs/
+
 # IDE
 .vscode/
 .idea/
