@@ -114,6 +114,84 @@ def db_info(ctx: click.Context, db_uri: str | None, debug: bool):
     click.echo(f"Connected   : {info.get('connected', False)}")
 
 
+@db_group.command("snapshot-download")
+@click.option(
+    "--url",
+    default="https://geneexposure.org/downloads/latest/",
+    show_default=True,
+    help=(
+        "Base URL of the snapshot directory. Must serve "
+        "manifest.json at the root."
+    ),
+)
+@click.option(
+    "--output", "-o",
+    required=True,
+    type=click.Path(file_okay=False, dir_okay=True),
+    help="Local directory to write the snapshot to (created if missing).",
+)
+@click.option(
+    "--include-nlp",
+    is_flag=True,
+    default=False,
+    help=(
+        "Also download the pre-compiled NLP automaton cache "
+        "(~3.5 GB). Off by default — opt-in only."
+    ),
+)
+@click.option(
+    "--workers",
+    type=click.INT,
+    default=4,
+    show_default=True,
+    help="Concurrent downloads.",
+)
+@click.option(
+    "--overwrite",
+    is_flag=True,
+    help="Re-download files even if they already exist locally.",
+)
+@debug_option
+def db_snapshot_download(
+    url: str,
+    output: str,
+    include_nlp: bool,
+    workers: int,
+    overwrite: bool,
+    debug: bool,
+):
+    """
+    Download a Parquet snapshot from a remote HTTP endpoint.
+
+    The snapshot's manifest.json is fetched first to discover the file
+    list and integrity hashes; each table is then downloaded
+    concurrently and verified against the manifest's sha256.
+
+    Once complete, the local directory is a fully usable snapshot —
+    point IGEM-Server at it via `--db-uri <output>`, or bind-mount it
+    into an IGEM container at `/snapshot`.
+    """
+    from pathlib import Path
+
+    from igem_backend.modules.db.snapshot_download import download_snapshot
+    from igem_backend.utils.logger import Logger
+
+    log = Logger(log_level="DEBUG" if debug else "INFO")
+    manifest = download_snapshot(
+        url=url,
+        output_dir=Path(output),
+        include_nlp=include_nlp,
+        workers=workers,
+        overwrite=overwrite,
+        logger=log,
+    )
+
+    click.echo("")
+    click.echo(f"Snapshot version : {manifest.get('snapshot_version')}")
+    click.echo(f"Schema version   : {manifest.get('schema_version')}")
+    click.echo(f"Output dir       : {output}")
+
+
 @db_group.command("snapshot-nlp")
 @click.argument(
     "snapshot_dir",

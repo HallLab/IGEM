@@ -44,6 +44,19 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mt-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+            How IGEM works
+          </h2>
+          <Image
+            src="/overview.jpg"
+            alt="IGEM reduces ~billions of possible gene-exposure interactions to a focused set of biologically grounded hypotheses, using a curated biomedical knowledge graph as the filter."
+            width={1536}
+            height={1024}
+            className="mt-6 h-auto w-full rounded-lg"
+          />
+        </section>
+
         <section className="mt-20 grid gap-8 sm:grid-cols-3">
           <div>
             <h2 className="mb-2 font-semibold text-slate-900 dark:text-slate-100">

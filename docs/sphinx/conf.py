@@ -36,6 +36,10 @@ myst_enable_extensions = [
     "linkify",
 ]
 
+# Auto-generate anchors for h1–h3 headings so we can write
+# [link](#heading-slug) in markdown without explicit labels.
+myst_heading_anchors = 3
+
 source_suffix = {
     ".md": "markdown",
     ".rst": "restructuredtext",
@@ -61,6 +65,7 @@ html_theme_options = {
         "<em>v0.1.0</em> — IGEM is in early access. "
         "<a href='/docs/release-notes.html'>See release notes</a>."
     ),
+    "top_of_page_buttons": [],
     "light_css_variables": {
         "color-brand-primary": "#1e3a5f",
         "color-brand-content": "#2c8d8a",
@@ -79,9 +84,6 @@ html_theme_options = {
         "color-sidebar-background-border": "#1a2740",
         "color-sidebar-search-background": "#0a1020",
     },
-    "source_repository": "https://github.com/HallLab/IGEM",
-    "source_branch": "main",
-    "source_directory": "docs/sphinx/",
 }
 
 autodoc_member_order = "bysource"
