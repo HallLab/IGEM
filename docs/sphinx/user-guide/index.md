@@ -15,6 +15,15 @@ If you are looking for the **server-side** programmatic surface
 (driving the ETL, calling NLP, registering custom reports), see
 [User Guide — IGEM Server](../user-guide-server/index.md) instead.
 
+---
+
+All six modules at a glance:
+
+:::{thumbnail} ../_static/stack_igem_client.jpg
+:alt: IGEM Client — six capability modules (Load, Describe, Modify, Analyze, Plot, Report) with example functions, end-to-end workflow, and three execution modes
+:align: center
+:::
+
 ```{toctree}
 :maxdepth: 1
 

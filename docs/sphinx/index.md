@@ -108,6 +108,83 @@ mode:
 
 ---
 
+## What the client gives you
+
+The `igem` Python package is organised as **six capability modules**
+that compose into the end-to-end study workflow. Each module has its
+own reference page in the [User Guide — IGEM](user-guide/index.md);
+end-to-end recipes that combine them live in the
+[Cookbook](cookbook/index.md).
+
+:::{thumbnail} _static/stack_igem_client.jpg
+:alt: IGEM Client — six capability modules (Load, Describe, Modify, Analyze, Plot, Report) with example functions, end-to-end workflow, and three execution modes
+:align: center
+:::
+
+::::{grid} 1 2 3 3
+:gutter: 3
+:margin: 4 4 0 0
+
+:::{grid-item-card} 1 · `igem.data` — Loading
+:link: user-guide/loading-data
+:link-type: doc
+
+Read PLINK / VCF / Zarr genotypes (lazy), phenotype CSV / TSV / XPT
+with role metadata, generic tables, and GWAS sumstats from PLINK 2,
+REGENIE, BOLT-LMM, or GWAS Catalog into a canonical schema.
+:::
+
+:::{grid-item-card} 2 · `igem.describe` — Describing
+:link: user-guide/describing-data
+:link-type: doc
+
+Summary statistics, missingness, type inference, skewness,
+correlations, contingency tables, group-stratified summaries, and
+genotype QC metrics (call rate, MAF, HWE, het rate).
+:::
+
+:::{grid-item-card} 3 · `igem.modify` — Modifying
+:link: user-guide/modifying-data
+:link-type: doc
+
+Type harmonisation, value transformations (log, RINT, Box-Cox,
+z-score), outlier removal, structural filters, multi-frame assembly,
+and the standard genotype QC pipeline including LD pruning.
+:::
+
+:::{grid-item-card} 4 · `igem.analyze` — Analysing
+:link: user-guide/analyzing-data
+:link-type: doc
+
+Association studies (GWAS, EWAS, PheWAS), GxE / GxG interaction
+tests via likelihood-ratio (LRT), survey-aware modelling with
+weights, strata, and clusters, and built-in Bonferroni / FDR
+correction.
+:::
+
+:::{grid-item-card} 5 · `igem.plot` — Visualising
+:link: user-guide/plotting-data
+:link-type: doc
+
+Publication-ready figures for association and interaction studies:
+Manhattan plots (Bonferroni / FDR thresholds), QQ plots, top-hits
+dotplots, heatmaps, Miami plots, before / after comparisons.
+:::
+
+:::{grid-item-card} 6 · `igem.reports` — Knowledge-graph reports
+:link: user-guide/reporting-data
+:link-type: doc
+
+Annotate results with biological context from the IGEM knowledge
+graph: gene, GO, disease, pathway, protein, and ontology
+annotations, queried over HTTP or in embedded mode. See the
+[full report catalogue](user-guide/reports-catalog.md).
+:::
+
+::::
+
+---
+
 ## Lineage
 
 IGEM is the third generation of an integrated software line developed
