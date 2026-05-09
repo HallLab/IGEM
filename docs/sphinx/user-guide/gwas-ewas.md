@@ -1,3 +1,0 @@
-# GWAS / EWAS
-
-🚧 *In progress.*
