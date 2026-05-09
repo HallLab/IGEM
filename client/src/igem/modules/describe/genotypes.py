@@ -104,6 +104,73 @@ def sample_stats(geno: Genotypes) -> pd.DataFrame:
 
 
 # ----------------------------------------------------------------------
+# heterozygosity
+# ----------------------------------------------------------------------
+def heterozygosity(
+    geno: Genotypes,
+    *,
+    outlier_sd: float = 3.0,
+) -> pd.DataFrame:
+    """
+    Per-sample heterozygosity rate with outlier flag.
+
+    Returns columns:
+      ``sample_id``, ``n_called``, ``n_het``, ``het_rate``,
+      ``het_zscore``, ``is_outlier``.
+
+    ``het_rate`` is ``n_het / n_called`` per sample (NaN when the sample
+    has no called genotypes). The z-score uses the across-sample mean
+    and std of valid het rates; samples with ``|z| > outlier_sd`` are
+    flagged ``is_outlier=True``. Default ``outlier_sd=3.0`` matches the
+    PLINK convention.
+
+    Standard QC step downstream of call rate: extreme heterozygosity
+    can indicate sample contamination (high) or inbreeding /
+    population substructure (low).
+    """
+    if outlier_sd <= 0:
+        raise ValueError(
+            f"outlier_sd must be positive; got {outlier_sd}"
+        )
+
+    stats = sample_stats(geno)
+    n_called = stats["n_called"].to_numpy(dtype=float)
+    n_het = stats["n_het"].to_numpy(dtype=float)
+
+    with np.errstate(divide="ignore", invalid="ignore"):
+        het_rate = np.where(n_called > 0, n_het / n_called, np.nan)
+
+    valid = ~np.isnan(het_rate)
+    if valid.sum() >= 2:
+        mean = float(np.nanmean(het_rate))
+        std = float(np.nanstd(het_rate, ddof=1))
+    else:
+        mean = float("nan")
+        std = 0.0
+
+    if std > 0:
+        zscore = (het_rate - mean) / std
+    else:
+        zscore = np.full_like(het_rate, np.nan)
+
+    is_outlier = np.where(
+        np.isnan(zscore), False, np.abs(zscore) > outlier_sd
+    )
+
+    out = pd.DataFrame(
+        {
+            "sample_id": stats["sample_id"],
+            "n_called": stats["n_called"],
+            "n_het": stats["n_het"],
+            "het_rate": het_rate,
+            "het_zscore": zscore,
+            "is_outlier": is_outlier,
+        }
+    )
+    return out
+
+
+# ----------------------------------------------------------------------
 # genotype_summary
 # ----------------------------------------------------------------------
 def genotype_summary(geno: Genotypes) -> dict[str, Any]:

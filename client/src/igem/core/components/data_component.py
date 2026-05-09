@@ -16,7 +16,8 @@ PathLike = Union[str, Path]
 
 class DataComponent(BaseComponent):
     """
-    Local data loading: PLINK, VCF, Zarr, NHANES XPT, CSV/TSV.
+    Local data loading: PLINK, VCF, Zarr, NHANES XPT, CSV/TSV/Parquet,
+    GWAS / PheWAS summary statistics.
 
     Thin wrappers around :mod:`igem.modules.data` that emit a header /
     footer log so the user has a record of what was loaded into memory.
@@ -123,3 +124,38 @@ class DataComponent(BaseComponent):
             f"[data] loaded {phen.n_samples} NHANES samples"
         )
         return phen
+
+    # ------------------------------------------------------------------
+    # Generic tables / GWAS sumstats
+    # ------------------------------------------------------------------
+    def read_table(self, source: PathLike, **kwargs) -> "pd.DataFrame":
+        self.core.logger.log(f"[data] read_table({source})", "INFO")
+        df = _data.read_table(source, **kwargs)
+        self.core.logger.footer(
+            f"[data] loaded table with {len(df)} rows × "
+            f"{len(df.columns)} columns"
+        )
+        return df
+
+    def read_sumstats(
+        self,
+        source: PathLike,
+        *,
+        preset: Optional[str] = None,
+        schema: Optional[dict] = None,
+        **read_kwargs,
+    ) -> "pd.DataFrame":
+        self.core.logger.log(
+            f"[data] read_sumstats({source}, preset={preset!r})", "INFO"
+        )
+        df = _data.read_sumstats(
+            source,
+            preset=preset,
+            schema=schema,
+            **read_kwargs,
+        )
+        self.core.logger.footer(
+            f"[data] loaded {len(df)} variants from sumstats "
+            f"(columns: {list(df.columns)})"
+        )
+        return df

@@ -103,7 +103,7 @@ For batch analysis, CI jobs, and reproducible pipelines.
 from igem import IGEM
 
 with IGEM() as igem:
-    result = igem.reports.gene_annotations(
+    result = igem.report.gene_annotations(
         input_values=["TP53", "BRCA1", "APOE", "EGFR"],
         columns=["gene_symbol", "entrez_id", "chromosome",
                  "ensembl_id", "gene_locus_type"],

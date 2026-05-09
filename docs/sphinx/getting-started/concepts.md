@@ -17,9 +17,10 @@ a list of independent features.
 (client-server-snapshot-model)=
 ## The client / server / snapshot model
 
-```{figure} ../_static/igem_concepts.jpg
+```{thumbnail} ../_static/igem_concepts.jpg
 :alt: IGEM concepts — one platform, same workflow on laptop, cloud, and HPC
 :align: center
+:show_caption: True
 
 IGEM is a single platform with one workflow that runs against either
 a full PostgreSQL backend or a read-only DuckDB + Parquet snapshot,
@@ -47,7 +48,7 @@ over one of two transports:
   outbound network. No port is opened; the call is a local function
   call masquerading as an HTTP request.
 
-The same line of code (`igem.reports.gene_annotations(...)`) routes
+The same line of code (`igem.report.gene_annotations(...)`) routes
 through whichever transport is configured. Switching between them
 is a configuration change, not a code change.
 
@@ -108,7 +109,7 @@ with IGEM() as igem:
 ```
 
 For the practical recipes that exercise each transport, see
-[User Guide → Container and HPC workflows](../user-guide/hpc-workflows.md).
+[Cookbook → Container and HPC workflows](../cookbook/hpc-workflows.md).
 
 ---
 
@@ -211,7 +212,7 @@ in a pathway, genes annotated to a GO term, gene–chemical edges from
 CTD, exposures with a known link to a disease.
 
 ```python
-genes = igem.reports.pathway_annotations(
+genes = igem.report.pathway_annotations(
     input_values=["R-HSA-109581"]   # apoptosis
 ).df["gene_symbol"].tolist()
 ```

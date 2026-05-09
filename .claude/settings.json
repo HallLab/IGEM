@@ -96,7 +96,11 @@
       "Bash(/Users/andrerico/Works/Sys/IGEM/.venv/bin/python -m pytest -q --no-header)",
       "Bash(/Users/andrerico/Works/Sys/IGEM/.venv/bin/python -c \"import statsmodels.api as sm; from tqdm import tqdm; print\\('statsmodels', sm.__version__\\); print\\('tqdm ok'\\)\")",
       "Bash(/Users/andrerico/Works/Sys/IGEM/.venv/bin/python -c \"import statsmodels, tqdm; print\\('statsmodels:', statsmodels.__version__\\); print\\('tqdm:', tqdm.__version__\\)\")",
-      "Bash(/Users/andrerico/Works/Sys/IGEM/.venv/bin/python -m pytest tests/analyze/ -v --no-header)"
+      "Bash(/Users/andrerico/Works/Sys/IGEM/.venv/bin/python -m pytest tests/analyze/ -v --no-header)",
+      "Bash(git check-ignore *)",
+      "Bash(python3 /tmp/build_plot_notebook.py)",
+      "Bash(/Users/andrerico/.pyenv/versions/3.12.3/bin/python -c ' *)",
+      "Bash(.venv/bin/sphinx-build -b html -W -n . _build/html)"
     ]
   }
 }

@@ -5,7 +5,7 @@ from typing import Any
 
 import pandas as pd
 
-from igem.modules.reports.schemas import ReportInfo, ReportRunResponse
+from igem.modules.report.schemas import ReportInfo, ReportRunResponse
 
 
 class ReportResult:

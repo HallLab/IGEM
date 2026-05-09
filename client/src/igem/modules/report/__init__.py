@@ -1,6 +1,6 @@
-from igem.modules.reports.manager import ReportsManager
-from igem.modules.reports.result import ReportResult
-from igem.modules.reports.schemas import (
+from igem.modules.report.manager import ReportManager
+from igem.modules.report.result import ReportResult
+from igem.modules.report.schemas import (
     ReportExplainResponse,
     ReportInfo,
     ReportListResponse,
@@ -9,7 +9,7 @@ from igem.modules.reports.schemas import (
 )
 
 __all__ = [
-    "ReportsManager",
+    "ReportManager",
     "ReportResult",
     "ReportInfo",
     "ReportRunRequest",

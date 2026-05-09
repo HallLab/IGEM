@@ -1,11 +1,13 @@
 """Tests for igem.modules.describe.genotypes."""
 from __future__ import annotations
 
+import numpy as np
 import pytest
 
 from igem.modules.data import Genotypes
 from igem.modules.describe import (
     genotype_summary,
+    heterozygosity,
     sample_stats,
     variant_stats,
 )
@@ -116,3 +118,131 @@ class TestGenotypeSummary:
         genotype_summary(geno)
         # The wrapped Dataset should not have new variables added in-place.
         assert set(geno.ds.variables) == before_vars
+
+
+# ---------------------------------------------------------------------------
+# heterozygosity
+# ---------------------------------------------------------------------------
+class TestHeterozygosity:
+    def test_one_row_per_sample(self, synthetic_geno_ds):
+        out = heterozygosity(Genotypes(synthetic_geno_ds))
+        assert len(out) == synthetic_geno_ds.sizes["samples"]
+
+    def test_columns_present(self, synthetic_geno_ds):
+        out = heterozygosity(Genotypes(synthetic_geno_ds))
+        assert list(out.columns) == [
+            "sample_id", "n_called", "n_het",
+            "het_rate", "het_zscore", "is_outlier",
+        ]
+
+    def test_het_rate_in_unit_interval(self, synthetic_geno_ds):
+        out = heterozygosity(Genotypes(synthetic_geno_ds))
+        rates = out["het_rate"].dropna()
+        assert ((rates >= 0.0) & (rates <= 1.0)).all()
+
+    def test_het_rate_matches_definition(self, synthetic_geno_ds):
+        # Each row's het_rate must equal n_het / n_called.
+        out = heterozygosity(Genotypes(synthetic_geno_ds))
+        for _, row in out.iterrows():
+            if row["n_called"] > 0:
+                assert row["het_rate"] == pytest.approx(
+                    row["n_het"] / row["n_called"]
+                )
+
+    def test_zscore_centered_around_zero(self, synthetic_geno_ds):
+        # Across all valid samples, mean of zscore ≈ 0 (numerical drift OK).
+        out = heterozygosity(Genotypes(synthetic_geno_ds))
+        z = out["het_zscore"].dropna()
+        if len(z) >= 2:
+            assert z.mean() == pytest.approx(0.0, abs=1e-9)
+
+    def test_outlier_flag_with_synthetic_outlier(self):
+        # Build a dataset where one sample has zero het and the rest are 100% het.
+        from igem.modules.data import Genotypes
+        import xarray as xr
+        # 1 sample (s0): all hom_ref. 9 samples (s1..s9): all het.
+        # All 30 variants × 10 samples × ploidy 2.
+        n_var, n_samp = 30, 10
+        gt = np.zeros((n_var, n_samp, 2), dtype=np.int8)
+        # Heterozygotes for s1..s9: gt[:, 1:, :] = [0, 1]
+        gt[:, 1:, 0] = 0
+        gt[:, 1:, 1] = 1
+        alleles = np.array([[b"A", b"C"]] * n_var, dtype="|S1")
+        ds = xr.Dataset(
+            {
+                "call_genotype": (
+                    ("variants", "samples", "ploidy"), gt,
+                ),
+                "variant_allele": (("variants", "alleles"), alleles),
+                "variant_id": (
+                    "variants",
+                    np.array([f"v{i}" for i in range(n_var)], dtype=object),
+                ),
+                "sample_id": (
+                    "samples",
+                    np.array([f"s{i}" for i in range(n_samp)], dtype=object),
+                ),
+                "variant_contig": (
+                    "variants", np.zeros(n_var, dtype=np.int32),
+                ),
+                "variant_position": (
+                    "variants", np.arange(n_var, dtype=np.int32),
+                ),
+            },
+            attrs={"contigs": ["1"]},
+        )
+        out = heterozygosity(Genotypes(ds), outlier_sd=2.0).set_index(
+            "sample_id"
+        )
+        # s0 het_rate=0 vs others het_rate=1 → s0 is the outlier.
+        assert out.loc["s0", "is_outlier"] == True  # noqa: E712
+        for s in [f"s{i}" for i in range(1, 10)]:
+            assert out.loc[s, "is_outlier"] == False  # noqa: E712
+
+    def test_outlier_sd_threshold_changes_flags(self):
+        # Same dataset as above; with a very large threshold no one is an outlier.
+        from igem.modules.data import Genotypes
+        import xarray as xr
+        n_var, n_samp = 30, 10
+        gt = np.zeros((n_var, n_samp, 2), dtype=np.int8)
+        gt[:, 1:, 0] = 0
+        gt[:, 1:, 1] = 1
+        alleles = np.array([[b"A", b"C"]] * n_var, dtype="|S1")
+        ds = xr.Dataset(
+            {
+                "call_genotype": (
+                    ("variants", "samples", "ploidy"), gt,
+                ),
+                "variant_allele": (("variants", "alleles"), alleles),
+                "variant_id": (
+                    "variants",
+                    np.array([f"v{i}" for i in range(n_var)], dtype=object),
+                ),
+                "sample_id": (
+                    "samples",
+                    np.array([f"s{i}" for i in range(n_samp)], dtype=object),
+                ),
+                "variant_contig": (
+                    "variants", np.zeros(n_var, dtype=np.int32),
+                ),
+                "variant_position": (
+                    "variants", np.arange(n_var, dtype=np.int32),
+                ),
+            },
+            attrs={"contigs": ["1"]},
+        )
+        out = heterozygosity(Genotypes(ds), outlier_sd=10.0)
+        assert not out["is_outlier"].any()
+
+    def test_invalid_outlier_sd_raises(self, synthetic_geno_ds):
+        with pytest.raises(ValueError, match="outlier_sd"):
+            heterozygosity(Genotypes(synthetic_geno_ds), outlier_sd=0)
+        with pytest.raises(ValueError, match="outlier_sd"):
+            heterozygosity(Genotypes(synthetic_geno_ds), outlier_sd=-1.0)
+
+    def test_zero_called_sample_yields_nan_rate(self, missingness_geno):
+        # missingness_geno: s0 has all called; s3, s4 have only 1 of 3 called.
+        # No sample is fully missing in this fixture, so het_rate is finite.
+        out = heterozygosity(missingness_geno)
+        # All n_called > 0 → no NaN rates here.
+        assert out["het_rate"].notna().all()

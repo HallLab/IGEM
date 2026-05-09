@@ -4,4 +4,5 @@ myst-parser>=3.0
 linkify-it-py>=2.0
 sphinx-copybutton>=0.5.2
 sphinx-design>=0.6
+sphinxcontrib-images>=0.9.4
 sphinx-autobuild>=2024.4.16

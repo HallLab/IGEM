@@ -47,38 +47,37 @@ registered aliases. An input with no match returns a row with
 
 ---
 
-## CLI examples
+## CLI Usage
 
 ```bash
 # Single gene
-igem-server report run --name gene_annotations --input TP53
+igem report gene_annotations --input TP53
 
 # Multiple genes
-igem-server report run --name gene_annotations --input TP53 --input BRCA1 --input EGFR
+igem report gene_annotations --input TP53 --input BRCA1 --input EGFR
 
 # Save to CSV
-igem-server report run --name gene_annotations --input TP53 --output tp53.csv
+igem report gene_annotations --input TP53 --output tp53.csv
 
 # Subset of columns
-igem-server report run --name gene_annotations \
+igem report gene_annotations \
   --input TP53 \
   --columns gene_symbol,hgnc_id,ensembl_id,chromosome,start_position,end_position
 ```
 
-## Python API examples
+## Python API
 
 ```python
-from igem_backend.ge import GE
+from igem import IGEM
 
-ge = GE("sqlite:///igem.db")
+with IGEM() as igem:
+    result = igem.report.gene_annotations(
+        input_values=["TP53", "BRCA1", "EGFR"],
+        assembly="GRCh38.p14",
+    )
 
-# Run for a list of genes
-df = ge.report.run(
-    "gene_annotations",
-    input_values=["TP53", "BRCA1", "EGFR"],
-    assembly="GRCh38.p14",
-)
-
-# Inspect results
-print(df[["gene_symbol", "hgnc_id", "chromosome", "start_position", "end_position"]])
+print(result.df[[
+    "gene_symbol", "hgnc_id", "chromosome",
+    "start_position", "end_position",
+]])
 ```

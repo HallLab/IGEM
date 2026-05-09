@@ -11,7 +11,8 @@ from igem.core.components.analyze_component import AnalyzeComponent
 from igem.core.components.data_component import DataComponent
 from igem.core.components.describe_component import DescribeComponent
 from igem.core.components.modify_component import ModifyComponent
-from igem.core.components.reports_component import ReportsComponent
+from igem.core.components.plot_component import PlotComponent
+from igem.core.components.report_component import ReportComponent
 from igem.core.core import IGEMCore
 
 
@@ -48,7 +49,7 @@ class IGEM:
                                              outcomes=["GLUCOSE"])
 
             # server-side knowledge queries:
-            result = igem.reports.gene_annotations(input_values=["TP53"])
+            result = igem.report.gene_annotations(input_values=["TP53"])
 
     The ``server_url`` falls back to:
       1. constructor argument
@@ -87,7 +88,8 @@ class IGEM:
         self.modify = ModifyComponent(self.core)
         self.describe = DescribeComponent(self.core)
         self.analyze = AnalyzeComponent(self.core)
-        self.reports = ReportsComponent(self.core)
+        self.report = ReportComponent(self.core)
+        self.plot = PlotComponent(self.core)
 
     # ------------------------------------------------------------------
     # Top-level convenience

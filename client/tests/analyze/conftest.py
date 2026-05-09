@@ -200,8 +200,8 @@ def gwas_geno_and_phen() -> tuple[Genotypes, Phenotypes]:
     return geno, phen
 
 
-class FakeReports:
-    """Stand-in for ReportsComponent used by annotate tests."""
+class FakeReport:
+    """Stand-in for ReportComponent used by annotate tests."""
 
     def __init__(self, table: pd.DataFrame) -> None:
         self._table = table
@@ -225,7 +225,7 @@ class FakeReports:
 
 
 @pytest.fixture
-def fake_reports() -> "FakeReports":
+def fake_report() -> "FakeReport":
     """A two-row gene_annotations response covering rs00001 and TP53."""
     table = pd.DataFrame(
         [
@@ -251,7 +251,7 @@ def fake_reports() -> "FakeReports":
             },
         ]
     )
-    return FakeReports(table)
+    return FakeReport(table)
 
 
 @pytest.fixture

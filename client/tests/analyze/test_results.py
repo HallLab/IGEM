@@ -138,3 +138,79 @@ class TestSummary:
         out = _make_result().with_correction("bonferroni").summary()
         assert out["correction_method"] == "bonferroni"
         assert "n_passing_corrected_005" in out
+
+
+# ---------------------------------------------------------------------------
+# Block A — groupby correction + canonical schema auto-detect
+# ---------------------------------------------------------------------------
+def _make_phewas_result() -> RegressionResults:
+    """Multi-outcome result with the new schema (uses ``beta_pvalue``)."""
+    df = pd.DataFrame(
+        {
+            "outcome":   ["GLUCOSE", "GLUCOSE", "BMI", "BMI"],
+            "variable":  ["a",       "b",       "a",   "b"  ],
+            "beta":      [0.5,       0.1,       0.3,   0.05 ],
+            "se":        [0.1,       0.05,      0.05,  0.5  ],
+            "beta_pvalue": [0.0001,  0.04,      0.001, 0.95 ],
+        }
+    )
+    return RegressionResults(
+        df=df,
+        family="linear",
+        outcome="(multiple)",
+        covariates=["age"],
+        formula_template="{outcome} ~ {exposure} + age",
+        errors=pd.DataFrame(columns=["variable", "error"]),
+        metadata={},
+    )
+
+
+class TestWithCorrectionGroupby:
+    def test_groupby_outcome_corrects_per_outcome(self):
+        # Per-outcome Bonferroni: each outcome has 2 tests, so each
+        # p-value is multiplied by 2 (capped at 1).
+        res = _make_phewas_result().with_correction(
+            "bonferroni", groupby="outcome",
+        )
+        # GLUCOSE p-values 0.0001, 0.04 → corrected 0.0002, 0.08.
+        # BMI    p-values 0.001,  0.95 → corrected 0.002, 1.0.
+        glucose = res.df[res.df["outcome"] == "GLUCOSE"]
+        bmi = res.df[res.df["outcome"] == "BMI"]
+        assert set(glucose["p_corrected"].round(4)) == {0.0002, 0.08}
+        assert bmi["p_corrected"].round(4).tolist() == [0.002, 1.0]
+
+    def test_groupby_global_corrects_across_all(self):
+        # Default groupby=None: global Bonferroni on 4 tests.
+        res = _make_phewas_result().with_correction("bonferroni")
+        # Each p multiplied by 4 (capped at 1).
+        expected = [0.0004, 0.16, 0.004, 1.0]
+        assert res.df["p_corrected"].round(4).tolist() == expected
+
+    def test_groupby_unknown_column_raises(self):
+        with pytest.raises(ValueError, match="not in result columns"):
+            _make_phewas_result().with_correction(
+                "bonferroni", groupby="not_a_col",
+            )
+
+    def test_groupby_metadata_recorded(self):
+        res = _make_phewas_result().with_correction(
+            "bonferroni", groupby="outcome",
+        )
+        assert res.metadata["correction_method"] == "bonferroni"
+        assert res.metadata["correction_groupby"] == "outcome"
+
+
+class TestSchemaAutoDetect:
+    def test_with_correction_uses_beta_pvalue_when_present(self):
+        # New schema with beta_pvalue (no p_value column at all).
+        res = _make_phewas_result().with_correction("bonferroni")
+        assert "p_corrected" in res.df.columns
+
+    def test_passing_uses_beta_pvalue_when_present(self):
+        out = _make_phewas_result().passing(p=0.01)
+        assert set(out.df["variable"]) == {"a"}    # only the two p<0.01 rows
+        assert set(out.df["outcome"]) == {"GLUCOSE", "BMI"}
+
+    def test_top_uses_beta_pvalue_when_present(self):
+        out = _make_phewas_result().top(n=1)
+        assert out.df.iloc[0]["beta_pvalue"] == 0.0001

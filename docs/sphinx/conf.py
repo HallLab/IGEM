@@ -26,7 +26,15 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinxcontrib.images",
 ]
+
+# Make every {figure} / {image} clickable with a lightbox overlay.
+images_config = {
+    "override_image_directive": True,
+    "default_image_width": "100%",
+    "default_show_title": False,
+}
 
 myst_enable_extensions = [
     "colon_fence",
@@ -34,6 +42,8 @@ myst_enable_extensions = [
     "tasklist",
     "substitution",
     "linkify",
+    "dollarmath",
+    "amsmath",
 ]
 
 # Auto-generate anchors for h1–h3 headings so we can write

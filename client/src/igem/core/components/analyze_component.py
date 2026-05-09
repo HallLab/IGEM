@@ -1,9 +1,12 @@
 from __future__ import annotations
 
-from typing import Any, Iterable, Optional
+from typing import Any, Callable, Iterable, Literal, Optional, Union
+
+import pandas as pd
 
 from igem.core.components.base_component import BaseComponent
 from igem.modules import analyze as _analyze
+from igem.modules.analyze._engines import RegressionKind
 from igem.modules.analyze.results import RegressionResults
 from igem.modules.data import Genotypes, Phenotypes
 
@@ -105,5 +108,89 @@ class AnalyzeComponent(BaseComponent):
             f"[analyze] lrt: chi2={result['chi2']:.3f}, "
             f"df={result['df']}, p={result['p_value']:.3e}, "
             f"n={result['n']}"
+        )
+        return result
+
+    def association_study(
+        self,
+        phen: Phenotypes,
+        outcomes: Union[str, Iterable[str]],
+        regression_variables: Optional[Union[str, Iterable[str]]] = None,
+        *,
+        geno: Optional[Genotypes] = None,
+        covariates: Optional[Iterable[str]] = None,
+        family: Optional[str] = None,
+        regression_kind: RegressionKind = "auto",
+        encoding: str = "additive",
+        edge_encoding_info: Optional[pd.DataFrame] = None,
+        use_survey: bool = False,
+        min_n: int = 200,
+        n_jobs: int = 1,
+        standardize_data: bool = False,
+        report_categorical_betas: bool = False,
+        progress: bool = True,
+    ) -> RegressionResults:
+        n_outcomes = (
+            1 if isinstance(outcomes, str) else len(list(outcomes))
+        )
+        survey_tag = " survey=on" if use_survey else ""
+        self.core.logger.log(
+            f"[analyze] association_study(n_outcomes={n_outcomes}, "
+            f"regression_kind={regression_kind!r}){survey_tag}",
+            "INFO",
+        )
+        result = _analyze.association_study(
+            phen, outcomes, regression_variables,
+            geno=geno, covariates=covariates, family=family,
+            regression_kind=regression_kind,
+            encoding=encoding, edge_encoding_info=edge_encoding_info,
+            use_survey=use_survey, min_n=min_n, n_jobs=n_jobs,
+            standardize_data=standardize_data,
+            report_categorical_betas=report_categorical_betas,
+            progress=progress,
+        )
+        self.core.logger.footer(
+            f"[analyze] association_study: family={result.family}, "
+            f"tests={result.n_tests}, errors={result.n_errors}"
+        )
+        return result
+
+    def interaction_study(
+        self,
+        phen: Phenotypes,
+        outcomes: Union[str, Iterable[str]],
+        interactions: Optional[
+            Union[str, Iterable[tuple[str, str]]]
+        ] = None,
+        *,
+        covariates: Optional[Iterable[str]] = None,
+        family: Optional[str] = None,
+        regression_kind: RegressionKind = "auto",
+        use_survey: bool = False,
+        report_betas: bool = False,
+        min_n: int = 200,
+        max_pairs: int = 1000,
+        n_jobs: int = 1,
+        progress: bool = True,
+    ) -> RegressionResults:
+        n_outcomes = (
+            1 if isinstance(outcomes, str) else len(list(outcomes))
+        )
+        self.core.logger.log(
+            f"[analyze] interaction_study(n_outcomes={n_outcomes}, "
+            f"report_betas={report_betas})",
+            "INFO",
+        )
+        result = _analyze.interaction_study(
+            phen, outcomes, interactions,
+            covariates=covariates, family=family,
+            regression_kind=regression_kind,
+            use_survey=use_survey, report_betas=report_betas,
+            min_n=min_n, max_pairs=max_pairs, n_jobs=n_jobs,
+            progress=progress,
+        )
+        self.core.logger.footer(
+            f"[analyze] interaction_study: pairs_tested={result.n_tests}, "
+            f"errors={result.n_errors}"
         )
         return result

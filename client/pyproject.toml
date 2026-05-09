@@ -25,6 +25,7 @@ httpx = "^0.27.0"
 pydantic = "^2.7.0"
 click = "^8.1.0"
 pandas = "^2.2.0"
+scipy = "^1.13"
 sgkit = "^0.10.0"
 # Pinned to zarr-2 era to match sgkit 0.10's zarr<3 constraint.
 # Bump together with sgkit when 0.11 ships with zarr-3 support.
@@ -32,6 +33,7 @@ bio2zarr = { version = ">=0.1.0,<0.1.8", extras = ["vcf"] }
 bed-reader = "^1.0.0"
 statsmodels = "^0.14.0"
 tqdm = "^4.66.0"
+matplotlib = "^3.8.0"
 
 [tool.poetry.scripts]
 igem = "igem.api.cli.main:main"
@@ -55,6 +57,22 @@ optional = true
 
 [tool.poetry.group.embedded.dependencies]
 igem-server = { path = "../backend", develop = true }
+
+# R-survey backend for ``regression_kind="r_survey"`` in
+# :mod:`igem.modules.analyze`. Installs ``rpy2`` for the bridge
+# to R's ``survey`` package — required only for NHANES-style
+# stratified-cluster designs where R's Taylor-series variance
+# estimator is the canonical reference. Activate with::
+#
+#     poetry install --with r-survey
+#
+# A working R install with the ``survey`` package must also be
+# present on the host; ``rpy2`` is the Python-side glue.
+[tool.poetry.group.r-survey]
+optional = true
+
+[tool.poetry.group.r-survey.dependencies]
+rpy2 = ">=3.5"
 
 [build-system]
 requires = ["poetry-core"]

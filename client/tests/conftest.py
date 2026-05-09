@@ -168,6 +168,76 @@ def missingness_geno() -> Genotypes:
 
 
 @pytest.fixture
+def indel_geno() -> Genotypes:
+    """
+    3 variants × 4 samples with mixed SNV / indel alleles.
+
+      - ``v_snv``    : ref ``A``, alt ``C`` (single-base SNV)
+      - ``v_ins``    : ref ``A``, alt ``ACT`` (insertion)
+      - ``v_del``    : ref ``ATC``, alt ``A`` (deletion)
+    """
+    variant_allele = np.array(
+        [
+            [b"A", b"C"],
+            [b"A", b"ACT"],
+            [b"ATC", b"A"],
+        ],
+        dtype=object,
+    )
+    call_genotype = np.zeros((3, 4, 2), dtype=np.int8)
+    ds = xr.Dataset(
+        {
+            "variant_allele": (("variants", "alleles"), variant_allele),
+            "call_genotype": (
+                ("variants", "samples", "ploidy"),
+                call_genotype,
+            ),
+            "variant_id": (
+                "variants",
+                np.array(["v_snv", "v_ins", "v_del"], dtype=object),
+            ),
+            "sample_id": (
+                "samples",
+                np.array(["s0", "s1", "s2", "s3"], dtype=object),
+            ),
+            "variant_contig": (
+                "variants", np.zeros(3, dtype=np.int32),
+            ),
+            "variant_position": (
+                "variants", np.array([100, 200, 300], dtype=np.int32),
+            ),
+        },
+        attrs={"contigs": ["1"]},
+    )
+    return Genotypes(ds)
+
+
+@pytest.fixture
+def ld_geno() -> Genotypes:
+    """
+    4 variants × 30 samples with two perfectly correlated pairs:
+
+      - ``v0`` and ``v1`` have identical genotypes (r²=1)
+      - ``v2`` and ``v3`` have identical genotypes (r²=1)
+      - cross-pair correlation is low
+
+    LD pruning at any sensible threshold should drop one variant from
+    each pair (keep 2 of 4).
+    """
+    rng = np.random.default_rng(123)
+    n_samples = 30
+    base_a = rng.integers(0, 2, size=(n_samples, 2)).astype(np.int8)
+    base_b = rng.integers(0, 2, size=(n_samples, 2)).astype(np.int8)
+    # v0 == v1, v2 == v3
+    call_gt = np.stack([base_a, base_a, base_b, base_b])
+    return _build_biallelic_dataset(
+        call_gt,
+        variant_ids=["v0", "v1", "v2", "v3"],
+        sample_ids=[f"s{i:03d}" for i in range(n_samples)],
+    )
+
+
+@pytest.fixture
 def hwe_geno() -> Genotypes:
     """
     3 variants × 100 samples. ``v_ok_a`` and ``v_ok_b`` are drawn from

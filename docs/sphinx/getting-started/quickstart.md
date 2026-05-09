@@ -120,7 +120,7 @@ the CLI does is one method call away:
 from igem import IGEM
 
 with IGEM() as igem:
-    result = igem.reports.gene_annotations(
+    result = igem.report.gene_annotations(
         input_values=["BRCA1", "TP53", "MYC"],
         columns=["gene_symbol", "entrez_id", "chromosome",
                  "gene_locus_type"],
@@ -157,21 +157,21 @@ is documented:
 - **Quality control** — `igem.describe.*` for summaries, missingness
   reports, type inference, and skewness; `igem.modify.*` for
   recoding, outlier removal, categorisation, and column / row
-  filters. → [Phenotype analysis](../user-guide/phenotype-analysis.md)
+  filters. → [Describing data](../user-guide/describing-data.md) ·
+  [Modifying data](../user-guide/modifying-data.md)
 - **Single-feature analysis** — `igem.analyze.gwas` and
   `igem.analyze.ewas` for genome- and environment-wide association
-  scans, with built-in Bonferroni and FDR corrections. →
-  [GWAS / EWAS](../user-guide/gwas-ewas.md)
+  scans, with built-in Bonferroni and FDR corrections.
 - **Interaction analysis** — `igem.analyze.lrt` runs likelihood-ratio
   tests between nested and full models, the canonical mechanism for
-  GxG, GxE, and ExE interaction terms. →
-  [GWAS / EWAS](../user-guide/gwas-ewas.md)
-- **Knowledge-graph reports** — `igem.reports.*`: gene, GO, disease,
+  GxG, GxE, and ExE interaction terms.
+- **Knowledge-graph reports** — `igem.report.*`: gene, GO, disease,
   pathway, and protein annotations queried from the server (what
-  this Quickstart used). → [KG queries](../user-guide/kg-queries.md)
+  this Quickstart used). → [Reporting data](../user-guide/reporting-data.md)
+  · [Report catalogue](../user-guide/reports-catalog.md)
 - **HPC orchestration** — LSF / SLURM submission helpers and offline
   *embedded* mode against a Parquet snapshot. →
-  [HPC workflows](../user-guide/hpc-workflows.md)
+  [Container and HPC workflows](../cookbook/hpc-workflows.md)
 - **Visualisation** *(roadmap)* — Manhattan plots (with Bonferroni
   and FDR thresholds), top-results plots, and exposome distribution
   plots, ported from the CLARITE lineage.

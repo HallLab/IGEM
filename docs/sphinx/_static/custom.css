@@ -35,21 +35,31 @@
 }
 
 .sidebar-tree p.caption:nth-of-type(3) .caption-text::before {
+  -webkit-mask-image: url("icons/user-guide-server.svg");
+  mask-image: url("icons/user-guide-server.svg");
+}
+
+.sidebar-tree p.caption:nth-of-type(4) .caption-text::before {
   -webkit-mask-image: url("icons/operations.svg");
   mask-image: url("icons/operations.svg");
 }
 
-.sidebar-tree p.caption:nth-of-type(4) .caption-text::before {
+.sidebar-tree p.caption:nth-of-type(5) .caption-text::before {
+  -webkit-mask-image: url("icons/cookbook.svg");
+  mask-image: url("icons/cookbook.svg");
+}
+
+.sidebar-tree p.caption:nth-of-type(6) .caption-text::before {
   -webkit-mask-image: url("icons/api-reference.svg");
   mask-image: url("icons/api-reference.svg");
 }
 
-.sidebar-tree p.caption:nth-of-type(5) .caption-text::before {
+.sidebar-tree p.caption:nth-of-type(7) .caption-text::before {
   -webkit-mask-image: url("icons/development.svg");
   mask-image: url("icons/development.svg");
 }
 
-.sidebar-tree p.caption:nth-of-type(6) .caption-text::before {
+.sidebar-tree p.caption:nth-of-type(8) .caption-text::before {
   -webkit-mask-image: url("icons/release-notes.svg");
   mask-image: url("icons/release-notes.svg");
 }

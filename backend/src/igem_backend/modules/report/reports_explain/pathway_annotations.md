@@ -46,43 +46,44 @@ pathways in the database.
 
 ```bash
 # Look up specific pathways by ID
-igem report run --name pathway_annotations --input "R-HSA-109581,hsa04110"
+igem report pathway_annotations \
+    --input "R-HSA-109581" --input "hsa04110"
 
 # Look up by name (quoted)
-igem report run --name pathway_annotations --input "Cell Cycle"
+igem report pathway_annotations --input "Cell Cycle"
 
 # Export to CSV
-igem report run --name pathway_annotations --input "R-HSA-109581,R-HSA-1640170" \
+igem report pathway_annotations \
+    --input "R-HSA-109581" --input "R-HSA-1640170" \
     --output pathways.csv
 
 # Export all pathways (no --input)
-igem report run --name pathway_annotations --output all_pathways.csv
+igem report pathway_annotations --output all_pathways.csv
 ```
 
 ## Python API
 
 ```python
-from igem_backend.core import IGEM
+from igem import IGEM
 
-igem = IGEM()
+with IGEM() as igem:
+    # By Reactome ID
+    result = igem.report.pathway_annotations(
+        input_values=["R-HSA-109581", "R-HSA-1640170"],
+    )
 
-# By Reactome ID
-df = igem.report.run(
-    "pathway_annotations",
-    input_values=["R-HSA-109581", "R-HSA-1640170"],
-)
+    # By KEGG ID
+    result = igem.report.pathway_annotations(
+        input_values=["hsa04110", "hsa04151"],
+    )
 
-# By KEGG ID
-df = igem.report.run(
-    "pathway_annotations",
-    input_values=["hsa04110", "hsa04151"],
-)
+    # By name
+    result = igem.report.pathway_annotations(
+        input_values=["Cell Cycle", "PI3K-Akt signaling pathway"],
+    )
 
-# By name
-df = igem.report.run(
-    "pathway_annotations",
-    input_values=["Cell Cycle", "PI3K-Akt signaling pathway"],
-)
-
-print(df[["pathway_id", "pathway_name", "source_db", "entity_relationships_by_group"]])
+print(result.df[[
+    "pathway_id", "pathway_name", "source_db",
+    "entity_relationships_by_group",
+]])
 ```

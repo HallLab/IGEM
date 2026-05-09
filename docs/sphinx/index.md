@@ -101,7 +101,7 @@ connects analyst-side data to a curated knowledge graph backed by
 public sources, accessible from the CLI, Python, or in fully offline
 mode:
 
-:::{figure} _static/overview.jpg
+:::{thumbnail} _static/overview.jpg
 :alt: End-to-end IGEM pipeline — data inputs, client analysis, secure API, knowledge graph, public sources, and deployment modes
 :align: center
 :::
@@ -143,7 +143,15 @@ general-purpose platform applicable to any GxE / ExE study.
 :link-type: doc
 
 Load data, run phenotype analyses, GWAS / EWAS, query the graph,
-orchestrate jobs on LSF or SLURM.
+orchestrate jobs in containers and on HPC.
+:::
+
+:::{grid-item-card} Server developer
+:link: user-guide-server/index
+:link-type: doc
+
+Drive the `igem-server` programmatically — database lifecycle,
+ETL pipelines, NLP, and custom reports.
 :::
 
 :::{grid-item-card} Sysadmin / DevOps
@@ -154,20 +162,12 @@ Stand up the server, run the ETL, generate snapshots, deploy
 containers, monitor production.
 :::
 
-:::{grid-item-card} Developer / contributor
-:link: development/index
+:::{grid-item-card} Cookbook
+:link: cookbook/index
 :link-type: doc
 
-Repository layout, architecture deep-dive, release process, and how
-to add a new ETL data source.
-:::
-
-:::{grid-item-card} API reference
-:link: api-reference/index
-:link-type: doc
-
-Auto-generated reference for the `igem` and `igem-server` packages,
-including CLI commands and the entity glossary.
+End-to-end recipes that combine the client and server in realistic
+research workflows.
 :::
 
 ::::
@@ -217,11 +217,19 @@ getting-started/index
 ```
 
 ```{toctree}
-:caption: User Guide
+:caption: User Guide — IGEM
 :maxdepth: 2
 :hidden:
 
 user-guide/index
+```
+
+```{toctree}
+:caption: User Guide — IGEM Server
+:maxdepth: 2
+:hidden:
+
+user-guide-server/index
 ```
 
 ```{toctree}
@@ -230,6 +238,14 @@ user-guide/index
 :hidden:
 
 operations/index
+```
+
+```{toctree}
+:caption: Cookbook
+:maxdepth: 2
+:hidden:
+
+cookbook/index
 ```
 
 ```{toctree}

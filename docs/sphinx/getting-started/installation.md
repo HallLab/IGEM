@@ -111,8 +111,8 @@ pipelines, snapshot generation — is documented separately in
 analysts the public endpoint above is sufficient and no local
 server is needed.
 
-[gene_annotations]: ../user-guide/kg-queries.md
-[pathway_annotations]: ../user-guide/kg-queries.md
+[gene_annotations]: ../user-guide/reports-catalog.md#gene_annotations
+[pathway_annotations]: ../user-guide/reports-catalog.md#pathway_annotations
 
 ---
 
@@ -215,7 +215,7 @@ in-process, and routes the client to it via
 For LSF / SLURM clusters, Apptainer-based execution, job submission
 templates, and integration notes for **Anvil**, **DNAnexus**, and
 **All of Us**, see
-[User Guide → Container and HPC workflows](../user-guide/hpc-workflows.md).
+[Cookbook → Container and HPC workflows](../cookbook/hpc-workflows.md).
 The container is the same; only the runtime (Docker vs Apptainer)
 and the job scheduler change.
 

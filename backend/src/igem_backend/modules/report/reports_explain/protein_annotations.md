@@ -59,38 +59,42 @@ list returns all proteins in the database.
 
 ```bash
 # Look up specific proteins
-igem report run --name protein_annotations --input "P04637,P00533"
+igem report protein_annotations \
+    --input "P04637" --input "P00533"
 
 # With Pfam accession details
-igem report run --name protein_annotations --input "P04637" \
+igem report protein_annotations --input "P04637" \
+    --include-pfam-details \
     --columns "protein_id,pfam_total_count,pfam_count_by_type,pfam_ids_by_type"
 
 # Export to CSV
-igem report run --name protein_annotations --input "P04637,P00533,Q9Y6K9" \
+igem report protein_annotations \
+    --input "P04637" --input "P00533" --input "Q9Y6K9" \
     --output proteins.csv
 
 # Export all proteins (no --input)
-igem report run --name protein_annotations --output all_proteins.csv
+igem report protein_annotations --output all_proteins.csv
 ```
 
 ## Python API
 
 ```python
-from igem_backend.core import IGEM
+from igem import IGEM
 
-igem = IGEM()
+with IGEM() as igem:
+    result = igem.report.protein_annotations(
+        input_values=["P04637", "P00533"],
+        include_pfam_details=True,
+        max_pfam_ids_per_type=5,
+    )
 
-df = igem.report.run(
-    "protein_annotations",
-    input_values=["P04637", "P00533"],
-    include_pfam_details=True,
-    max_pfam_ids_per_type=5,
-)
+    # Isoform query
+    result = igem.report.protein_annotations(
+        input_values=["P04637-2"],
+    )
 
-# Isoform query
-df = igem.report.run(
-    "protein_annotations",
-    input_values=["P04637-2"],
-)
-print(df[["protein_id", "input_is_isoform", "input_isoform_accession", "canonical_entity_id"]])
+print(result.df[[
+    "protein_id", "input_is_isoform", "input_isoform_accession",
+    "canonical_entity_id",
+]])
 ```
