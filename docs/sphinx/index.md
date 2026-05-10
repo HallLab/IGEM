@@ -108,18 +108,26 @@ mode:
 
 ---
 
-## What the client gives you
+## A complete pipeline for association and interaction analyses
 
-The `igem` Python package is organised as **six capability modules**
-that compose into the end-to-end study workflow. Each module has its
-own reference page in the [User Guide — IGEM](user-guide/index.md);
-end-to-end recipes that combine them live in the
-[Cookbook](cookbook/index.md).
+IGEM covers every stage of an association or interaction study — from
+raw genomic and exposomic data all the way to publication-ready
+figures and biological interpretation — without forcing the analyst
+to glue together a chain of single-purpose tools. The same Python
+session handles loading, exploration, cleaning, statistical testing,
+multiple-testing correction, visualisation, and knowledge-graph
+annotation, with the same code path running on a laptop, in the
+cloud, or on an HPC node.
 
-:::{thumbnail} _static/stack_igem_client.jpg
+:::{thumbnail} _static/stack_igem_client_light_white.jpg
 :alt: IGEM Client — six capability modules (Load, Describe, Modify, Analyze, Plot, Report) with example functions, end-to-end workflow, and three execution modes
 :align: center
 :::
+
+The client is organised as **six capability modules**, each with its
+own reference page in the [User Guide — IGEM](user-guide/index.md);
+end-to-end recipes that combine them live in the
+[Cookbook](cookbook/index.md).
 
 ::::{grid} 1 2 3 3
 :gutter: 3

@@ -57,6 +57,33 @@ export default function Home() {
           />
         </section>
 
+        <section className="mt-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+            One pip install. Zero infrastructure to manage.
+          </h2>
+          <p className="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-slate-300">
+            IGEM ships as a single Python package — no database to
+            provision, no ETL to run, no graph to keep up to date.
+            Biological knowledge lives on a managed remote server (or,
+            for HPC, an offline Parquet snapshot via DuckDB), and your
+            cohort data stays on your machine. From loading PLINK
+            genotypes to producing biologically annotated Manhattan
+            plots, the entire pipeline runs in a single Python session.
+          </p>
+          <Image
+            src="/client-stack.jpg"
+            alt="IGEM Client stack: six capability modules (Load, Describe, Modify, Analyze, Plot, Report) wrapping an end-to-end workflow from raw genotypes and phenotypes to biological interpretation. The same workflow runs in remote, embedded snapshot, or containerised modes."
+            width={1536}
+            height={1024}
+            className="mt-6 h-auto w-full rounded-lg"
+          />
+          <p className="mt-3 text-sm text-slate-500 dark:text-slate-500">
+            Six capability modules cover the end-to-end workflow, with
+            the same code path running against a remote server, an
+            offline snapshot, or inside a container.
+          </p>
+        </section>
+
         <section className="mt-20 grid gap-8 sm:grid-cols-3">
           <div>
             <h2 className="mb-2 font-semibold text-slate-900 dark:text-slate-100">

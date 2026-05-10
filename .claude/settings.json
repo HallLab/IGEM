@@ -100,7 +100,10 @@
       "Bash(git check-ignore *)",
       "Bash(python3 /tmp/build_plot_notebook.py)",
       "Bash(/Users/andrerico/.pyenv/versions/3.12.3/bin/python -c ' *)",
-      "Bash(.venv/bin/sphinx-build -b html -W -n . _build/html)"
+      "Bash(.venv/bin/sphinx-build -b html -W -n . _build/html)",
+      "Bash(rm -rf ../../frontend/public/docs)",
+      "Bash(make html *)",
+      "Bash(npm run *)"
     ]
   }
 }
