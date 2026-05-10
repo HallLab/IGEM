@@ -15,9 +15,14 @@ import pytest
 from click.testing import CliRunner
 from sqlalchemy import create_engine, text
 
-from igem_backend.modules.db.migrate import get_status
+from igem_backend.modules.db.migrate import (
+    get_head_revision,
+    get_script_location,
+    get_status,
+)
 
-BASELINE_REV = "7a8b9c0d1e2f"
+# Head revision resolved at import time — auto-updates as new migrations land.
+HEAD_REV = get_head_revision(get_script_location())
 
 
 # ---------------------------------------------------------------------------
@@ -58,7 +63,7 @@ def test_db_create_produces_stamped_versioned_db(sqlite_uri):
         engine.dispose()
 
     assert st.is_versioned is True
-    assert st.current == BASELINE_REV
+    assert st.current == HEAD_REV
     assert st.is_up_to_date is True
 
 
@@ -72,7 +77,7 @@ def test_db_create_mirrors_revision_to_igem_metadata(sqlite_uri):
             ).scalar()
     finally:
         engine.dispose()
-    assert rev == BASELINE_REV
+    assert rev == HEAD_REV
 
 
 # ---------------------------------------------------------------------------
@@ -120,4 +125,4 @@ def test_cli_db_status_on_stamped_db(sqlite_uri, cli_main, runner):
     )
     assert result.exit_code == 0, result.output
     assert "up-to-date" in result.output.lower()
-    assert BASELINE_REV in result.output
+    assert HEAD_REV in result.output

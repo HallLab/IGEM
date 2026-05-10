@@ -4,10 +4,20 @@ import json
 import os
 from typing import Dict, List, Optional
 
-from igem_backend.modules.db.base import Base
-from igem_backend.utils.db_loader import bootstrap_models
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, inspect, text
 from sqlalchemy.engine.url import make_url
+
+from igem_backend.modules.db.base import Base
+from igem_backend.modules.db.core_ddl import (
+    CORE_PARTITIONED,
+    ddl_list_partitions,
+    ddl_variant_effect_predictions,
+    ddl_variant_gene_regulatory_evidence,
+    ddl_variant_masters,
+    ddl_variant_molecular_effects,
+    ddl_variant_regulatory_elements,
+)
+from igem_backend.utils.db_loader import bootstrap_models
 
 SEED_UNIQUE_KEYS: Dict[str, List[str]] = {
     "SystemConfig": ["key"],
@@ -95,7 +105,7 @@ class CreateDBMixin:
                     conn.commit()
 
             self.logger.log("Creating tables...", "INFO")
-            Base.metadata.create_all(self.engine)
+            self._create_tables()
 
             self.logger.log("Seeding initial data...", "INFO")
             self._seed_all()
@@ -121,6 +131,63 @@ class CreateDBMixin:
         except Exception as e:
             self.logger.log(f"Failed to create database: {e}", "ERROR")
             raise
+
+    def _create_tables(self) -> None:
+        """
+        Create all tables for the connected engine.
+
+        SQLite: a single ``create_all`` call — partitioned tables are
+        registered as plain ``Table`` objects with ``variant_id`` as the
+        autoincrement PK (no partitioning).
+
+        PostgreSQL: ``create_all`` for every non-partitioned table, then
+        raw DDL for the partitioned parents + their 25 chromosome
+        children. The partitioned parents cannot be created by
+        ``create_all`` because SQLAlchemy 2.x has no syntax for
+        ``PARTITION BY LIST``.
+        """
+        dialect = self.engine.dialect.name
+
+        if dialect != "postgresql":
+            # SQLite / other dev backends — plain create_all is enough.
+            Base.metadata.create_all(self.engine)
+            return
+
+        # PostgreSQL — split into non-partitioned (managed by metadata)
+        # and partitioned (managed by raw DDL).
+        non_partitioned = [
+            t for t in Base.metadata.sorted_tables
+            if t.name not in CORE_PARTITIONED
+        ]
+        Base.metadata.create_all(self.engine, tables=non_partitioned)
+
+        with self.engine.begin() as conn:
+            for ddl in (
+                ddl_variant_masters(),
+                ddl_variant_molecular_effects(),
+                ddl_variant_effect_predictions(),
+                ddl_variant_regulatory_elements(),
+                ddl_variant_gene_regulatory_evidence(),
+            ):
+                conn.execute(text(ddl))
+
+            for parent in CORE_PARTITIONED:
+                for ddl in ddl_list_partitions(
+                    parent_table=parent,
+                    part_prefix=parent,
+                    chrom_min=1,
+                    chrom_max=25,
+                ):
+                    conn.execute(text(ddl))
+
+        # Sanity check — all partitioned parents are now visible.
+        existing = set(inspect(self.engine).get_table_names())
+        missing = set(CORE_PARTITIONED) - existing
+        if missing:
+            raise RuntimeError(
+                f"Partitioned parent tables missing after DDL: "
+                f"{sorted(missing)}"
+            )
 
     def upgrade_db(self) -> None:
         """

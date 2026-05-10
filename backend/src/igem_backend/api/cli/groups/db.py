@@ -69,7 +69,23 @@ def db_create(
 @debug_option
 @click.pass_context
 def db_upgrade(ctx: click.Context, db_uri: str | None, debug: bool):
-    """Apply pending Alembic migrations and re-seed missing data."""
+    """
+    Apply pending Alembic migrations and re-seed missing data.
+
+    Idempotent: if the DB is already at head, no DDL runs and only
+    seed data (idempotent inserts) is re-applied. If the DB has no
+    `alembic_version` row, this command refuses — run `db stamp-head`
+    first to baseline an existing schema.
+
+    \b
+    Examples:
+      # Upgrade local Postgres dev DB
+      igem-server --db-uri postgresql://dev:dev@localhost/igem db upgrade
+
+    \b
+      # Upgrade via env var (typical in deploy scripts)
+      IGEM_DB_URI=postgresql://... igem-server db upgrade
+    """
     from igem_backend.ge import GE
 
     uri = require_db_uri(ctx, db_uri)
@@ -83,7 +99,22 @@ def db_upgrade(ctx: click.Context, db_uri: str | None, debug: bool):
 @debug_option
 @click.pass_context
 def db_status(ctx: click.Context, db_uri: str | None, debug: bool):
-    """Show Alembic schema revision status (current vs head)."""
+    """
+    Show Alembic schema revision status (current vs head).
+
+    Read-only: does not modify the database. Reports which Alembic
+    revision the DB is at, what the repo head is, and whether the
+    two match. Useful as a sanity check before/after deploys, or to
+    confirm a dev DB matches PROD before generating a new migration.
+
+    \b
+    Example:
+      igem-server --db-uri sqlite:///igem.db db status
+      # Repo head      : 7a8b9c0d1e2f
+      # DB revision    : 7a8b9c0d1e2f
+      # Versioned?     : True
+      # → up-to-date.
+    """
     from igem_backend.ge import GE
 
     uri = require_db_uri(ctx, db_uri)
@@ -111,9 +142,24 @@ def db_stamp_head(
     Mark the database as being at the current head revision WITHOUT
     running any DDL.
 
-    Use this exactly once to baseline an existing production database
-    that pre-dates Alembic in IGEM-Server. After stamping, `db upgrade`
-    becomes the regular migration path.
+    Use this once to baseline a database whose schema already matches
+    the running package but lacks an `alembic_version` row — typically
+    a pre-Alembic production DB or a SQL dump restored without the
+    version row.
+
+    Idempotent: refuses to overwrite an existing `alembic_version`
+    row. Pass --force to clear and re-stamp (only useful when the
+    existing row points at an unknown / corrupted revision; have a
+    backup ready).
+
+    \b
+    Examples:
+      # Baseline an existing PROD DB (one-time)
+      igem-server --db-uri postgresql://prd db stamp-head
+
+    \b
+      # Re-stamp after manually editing alembic_version (rare)
+      igem-server --db-uri postgresql://prd db stamp-head --force
     """
     from igem_backend.ge import GE
 
@@ -140,7 +186,28 @@ def db_migrate_dry_run(
     """
     Print the SQL that would be applied by `db upgrade` — no execution.
 
-    Useful for reviewing changes before applying them in production.
+    Uses Alembic's offline mode: generates the SQL statements without
+    running them against the DB. Useful for reviewing what a production
+    `db upgrade` will do, ideally piped to a file for diffing /
+    sharing.
+
+    Note: offline mode does not query the DB for the current revision,
+    so the SQL is rendered from the start of the migration graph.
+    Treat the output as a *preview of what migrations would run*,
+    not a literal statement-by-statement plan.
+
+    \b
+    Examples:
+      # Dry-run against PROD before deploy
+      igem-server --db-uri postgresql://prd db migrate-dry-run
+
+    \b
+      # Target a specific revision (e.g. for rollback review)
+      igem-server --db-uri postgresql://prd db migrate-dry-run --target 7a8b9c0d1e2f
+
+    \b
+      # Save to file for review
+      igem-server --db-uri postgresql://prd db migrate-dry-run > pending.sql
     """
     from igem_backend.ge import GE
 

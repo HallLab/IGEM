@@ -16,7 +16,7 @@ is the right guide.
 :maxdepth: 1
 
 ge-facade
-database
+database/index
 etl
 nlp
 reports

@@ -89,7 +89,16 @@ def _include_object(
          are rare and we manage them with hand-written migrations
          when needed.
 
-      2. PostgreSQL partition children for variants
+      2. Chromosome-partitioned parent tables (variant_masters,
+         variant_molecular_effects, variant_effect_predictions,
+         variant_regulatory_elements, variant_gene_regulatory_evidence).
+         These are created on PostgreSQL via raw DDL (PARTITION BY LIST
+         syntax cannot be expressed in SQLAlchemy 2.x metadata). Their
+         SQLAlchemy Table objects exist only for ORM/Core query usage;
+         autogenerate would otherwise see them as plain tables and
+         attempt to manage them, conflicting with the DDL ownership.
+
+      3. PostgreSQL partition children for variants
          (e.g. `variant_masters_chr_1`, `variant_snps_chr_X`). These
          are created via raw DDL inside their own migration, not by
          Alembic's table reflection.
@@ -101,7 +110,12 @@ def _include_object(
     if type_ == "column" and name == "embedding":
         return False
 
-    # 2. Future PostgreSQL partition children for variants
+    # 2. Chromosome-partitioned parents
+    from igem_backend.modules.db.core_ddl import CORE_PARTITIONED
+    if type_ == "table" and name in CORE_PARTITIONED:
+        return False
+
+    # 3. PostgreSQL partition children for variants
     #    Pattern: variant_<base>_chr_<chrom>
     if (
         type_ == "table"

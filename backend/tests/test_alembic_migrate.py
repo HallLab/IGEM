@@ -22,19 +22,38 @@ from igem_backend.modules.db.migrate import (
     run_migration,
 )
 
-# Baseline hash from
-# src/igem_backend/alembic/versions/7a8b9c0d1e2f_baseline_0_1_0.py.
-# Update this if the baseline ever changes.
+# The 0.1.0 baseline revision is a fixed point in history.
 BASELINE_REV = "7a8b9c0d1e2f"
+
+# The current head is resolved dynamically — it advances whenever a
+# new migration is added. Tests assert behaviour against `HEAD_REV`
+# rather than hardcoded strings so they keep passing through schema
+# evolution.
+HEAD_REV = get_head_revision(get_script_location())
 
 
 # ---------------------------------------------------------------------------
 # Helpers / sanity
 # ---------------------------------------------------------------------------
 
-def test_head_revision_matches_baseline():
-    """Repo head must be the well-known baseline revision."""
-    assert get_head_revision(get_script_location()) == BASELINE_REV
+def test_head_revision_is_non_empty_hex():
+    """Repo head must be a 12-char hex alembic revision."""
+    head = get_head_revision(get_script_location())
+    assert isinstance(head, str)
+    assert len(head) == 12
+    assert all(c in "0123456789abcdef" for c in head)
+
+
+def test_baseline_is_first_revision():
+    """The fixed 0.1.0 baseline must remain reachable in the migration graph."""
+    from alembic.config import Config
+    from alembic.script import ScriptDirectory
+
+    cfg = Config()
+    cfg.set_main_option("script_location", get_script_location())
+    script = ScriptDirectory.from_config(cfg)
+    all_revisions = {r.revision for r in script.walk_revisions()}
+    assert BASELINE_REV in all_revisions
 
 
 # ---------------------------------------------------------------------------
@@ -46,7 +65,7 @@ def test_status_on_empty_db(empty_engine):
     st = get_status(engine, uri)
     assert st.is_versioned is False
     assert st.current is None
-    assert st.head == BASELINE_REV
+    assert st.head == HEAD_REV
     assert st.is_up_to_date is False
 
 
@@ -64,7 +83,7 @@ def test_action_status_returns_true_and_prints(empty_engine, capsys):
     assert run_migration(engine=engine, db_uri=uri, action="status") is True
     out = capsys.readouterr().out
     assert "Alembic status" in out
-    assert BASELINE_REV in out
+    assert HEAD_REV in out
 
 
 # ---------------------------------------------------------------------------
@@ -77,7 +96,7 @@ def test_stamp_head_on_empty_db_creates_alembic_version(empty_engine):
 
     st = get_status(engine, uri)
     assert st.is_versioned is True
-    assert st.current == BASELINE_REV
+    assert st.current == HEAD_REV
     assert st.is_up_to_date is True
 
 
@@ -134,7 +153,7 @@ def test_stamp_head_with_force_overwrites_divergent_revision(empty_engine):
     )
 
     st = get_status(engine, uri)
-    assert st.current == BASELINE_REV
+    assert st.current == HEAD_REV
 
 
 # ---------------------------------------------------------------------------
