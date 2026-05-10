@@ -100,6 +100,21 @@ class CreateDBMixin:
             self.logger.log("Seeding initial data...", "INFO")
             self._seed_all()
 
+            # Stamp the new DB at the current head revision so future
+            # `db upgrade` calls run via Alembic without needing a
+            # manual `db stamp-head`. Done after seeds so that the
+            # IgemMetadata row exists and the schema_revision mirror
+            # populates in the same call.
+            from igem_backend.modules.db.migrate import run_migration
+
+            self.logger.log("Stamping schema revision...", "INFO")
+            run_migration(
+                engine=self.engine,
+                db_uri=self.db_uri,
+                session_factory=self.SessionLocal,
+                action="stamp-head",
+            )
+
             self.logger.footer(f"Database created at {self.db_uri}")
             return True
 
@@ -108,7 +123,19 @@ class CreateDBMixin:
             raise
 
     def upgrade_db(self) -> None:
-        """Re-apply seeds and schema idempotently (safe to run repeatedly)."""
+        """
+        Apply pending schema migrations via Alembic, then re-seed.
+
+        DDL is delegated to Alembic (`run_migration` against the head
+        revision); seeds remain idempotent and run after migrations so
+        any new seed rows appear in upgraded DBs.
+
+        For an unversioned DB (no `alembic_version` row), this raises
+        with a hint to run `db stamp-head` first — see
+        `docs/caderno/2026-05-10__001_*` for the rollout plan.
+        """
+        from igem_backend.modules.db.migrate import run_migration
+
         self.connect(check_exists=True)
         bootstrap_models(self.engine)
 
@@ -119,7 +146,14 @@ class CreateDBMixin:
                 )
                 conn.commit()
 
-        Base.metadata.create_all(self.engine)
+        run_migration(
+            engine=self.engine,
+            db_uri=self.db_uri,
+            session_factory=self.SessionLocal,
+            action="upgrade",
+            target="head",
+        )
+
         self._seed_all()
         self.logger.footer("Database upgraded successfully")
 

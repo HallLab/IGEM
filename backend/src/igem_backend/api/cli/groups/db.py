@@ -69,13 +69,85 @@ def db_create(
 @debug_option
 @click.pass_context
 def db_upgrade(ctx: click.Context, db_uri: str | None, debug: bool):
-    """Apply pending schema upgrades and re-seed missing data."""
+    """Apply pending Alembic migrations and re-seed missing data."""
     from igem_backend.ge import GE
 
     uri = require_db_uri(ctx, db_uri)
     ge = GE(db_uri=uri, debug_mode=debug)
     _refuse_if_read_only(ge, "db upgrade")
     ge.db.upgrade()
+
+
+@db_group.command("status")
+@db_uri_option
+@debug_option
+@click.pass_context
+def db_status(ctx: click.Context, db_uri: str | None, debug: bool):
+    """Show Alembic schema revision status (current vs head)."""
+    from igem_backend.ge import GE
+
+    uri = require_db_uri(ctx, db_uri)
+    ge = GE(db_uri=uri, debug_mode=debug)
+    _refuse_if_read_only(ge, "db status")
+    ge.db.migrate(action="status")
+
+
+@db_group.command("stamp-head")
+@db_uri_option
+@click.option(
+    "--force",
+    is_flag=True,
+    help=(
+        "Overwrite an existing alembic_version row. "
+        "DANGEROUS — only use if you know what you're doing."
+    ),
+)
+@debug_option
+@click.pass_context
+def db_stamp_head(
+    ctx: click.Context, db_uri: str | None, force: bool, debug: bool
+):
+    """
+    Mark the database as being at the current head revision WITHOUT
+    running any DDL.
+
+    Use this exactly once to baseline an existing production database
+    that pre-dates Alembic in IGEM-Server. After stamping, `db upgrade`
+    becomes the regular migration path.
+    """
+    from igem_backend.ge import GE
+
+    uri = require_db_uri(ctx, db_uri)
+    ge = GE(db_uri=uri, debug_mode=debug)
+    _refuse_if_read_only(ge, "db stamp-head")
+    ge.db.migrate(action="stamp-head", force=force)
+
+
+@db_group.command("migrate-dry-run")
+@db_uri_option
+@click.option(
+    "--target",
+    type=click.STRING,
+    default="head",
+    show_default=True,
+    help="Revision target (default: head).",
+)
+@debug_option
+@click.pass_context
+def db_migrate_dry_run(
+    ctx: click.Context, db_uri: str | None, target: str, debug: bool
+):
+    """
+    Print the SQL that would be applied by `db upgrade` — no execution.
+
+    Useful for reviewing changes before applying them in production.
+    """
+    from igem_backend.ge import GE
+
+    uri = require_db_uri(ctx, db_uri)
+    ge = GE(db_uri=uri, debug_mode=debug)
+    _refuse_if_read_only(ge, "db migrate-dry-run")
+    ge.db.migrate(action="dry-run", target=target)
 
 
 @db_group.command("info")

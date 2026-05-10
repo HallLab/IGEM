@@ -44,10 +44,42 @@ class DBComponent(BaseComponent):
         return True
 
     def upgrade(self) -> bool:
-        """Re-apply seeds idempotently against an existing database."""
+        """Apply pending Alembic migrations and re-seed idempotently."""
         db = self.require_db()
         db.upgrade_db()
         return True
+
+    def migrate(
+        self,
+        action: str,
+        target: str = "head",
+        force: bool = False,
+    ) -> bool:
+        """
+        Run a low-level Alembic action against the active database.
+
+        Wraps ``igem_backend.modules.db.migrate.run_migration``.
+
+        Parameters
+        ----------
+        action:
+            One of ``status``, ``upgrade``, ``stamp-head``, ``dry-run``.
+        target:
+            Revision target for ``upgrade`` / ``dry-run`` (default ``head``).
+        force:
+            Allow stamping a DB that already has an ``alembic_version`` row.
+        """
+        from igem_backend.modules.db.migrate import run_migration
+
+        db = self.require_db()
+        return run_migration(
+            engine=db.engine,
+            db_uri=db.db_uri,
+            session_factory=db.SessionLocal,
+            action=action,
+            target=target,
+            force=force,
+        )
 
     def get_session(self):
         """Convenience passthrough to the shared session context manager."""

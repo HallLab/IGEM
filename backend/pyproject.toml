@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "igem-server"
-version = "0.1.0"
+version = "0.2.0"
 description = "IGEM Server — bioinformatics knowledge graph backend (ETL + NLP + reports)"
 authors = ["Andre <andre.rico@gmail.com>"]
 license = "MIT"
