@@ -129,7 +129,9 @@
       "Bash(IGEM_DB_URI=postgresql://dev:dev@localhost/igem_phase4 poetry run igem-server db create --overwrite)",
       "Bash(IGEM_DB_URI=postgresql://dev:dev@localhost/igem_phase4 poetry run igem-server db status)",
       "Bash(IGEM_DB_URI=postgresql://dev:dev@localhost/igem_phase4 poetry run alembic revision --autogenerate -m \"phase4_pg_test\")",
-      "Bash(psql -d postgres -c \"DROP DATABASE igem_phase4;\")"
+      "Bash(psql -d postgres -c \"DROP DATABASE igem_phase4;\")",
+      "Bash(.venv/bin/sphinx-build -b html -W --keep-going . _build/html)",
+      "Bash(IGEM_DB_URI=sqlite:////tmp/igem_alembic_gen.db poetry run alembic revision -m \"variant_partitioning_m1\")"
     ]
   }
 }

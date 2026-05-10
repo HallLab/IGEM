@@ -34,6 +34,14 @@ export function SiteHeader() {
             </a>
           </li>
           <li>
+            <Link
+              href="/publications"
+              className="transition hover:text-brand"
+            >
+              Publications
+            </Link>
+          </li>
+          <li>
             <Link href="/downloads" className="transition hover:text-brand">
               Downloads
             </Link>
