@@ -233,6 +233,240 @@
       "format": "API",
       "dtp_script": "dtp_pubmed_nlp",
       "active": false
+    },
+    {
+      "name": "variant_gnomad_chr1",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr1.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr2",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr2.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr3",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr3.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr4",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr4.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr5",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr5.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr6",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr6.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr7",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr7.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr8",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr8.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr9",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr9.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr10",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr10.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr11",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr11.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr12",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr12.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr13",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr13.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr14",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr14.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr15",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr15.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr16",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr16.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr17",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr17.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr18",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr18.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr19",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr19.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr20",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr20.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr21",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr21.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chr22",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chr22.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chrx",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chrX.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_gnomad_chry",
+      "source_system": "gnomAD",
+      "data_type": "Variant",
+      "source_url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/gnomad.genomes.v4.1.sites.chrY.vcf.bgz",
+      "format": "VCF",
+      "dtp_script": "dtp_variant_gnomad",
+      "active": true
+    },
+    {
+      "name": "variant_alphamissense",
+      "source_system": "AlphaMissense",
+      "data_type": "Variant-Prediction",
+      "source_url": "https://storage.googleapis.com/dm_alphamissense/AlphaMissense_hg38.tsv.gz",
+      "format": "TSV",
+      "dtp_script": "dtp_variant_alphamissense",
+      "active": true
+    },
+    {
+      "name": "variant_gtex_eqtl",
+      "source_system": "GTEx",
+      "data_type": "Variant-eQTL",
+      "source_url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v10/single-tissue-cis-qtl/GTEx_Analysis_v10_eQTL.tar",
+      "format": "TAR",
+      "dtp_script": "dtp_variant_eqtl_gtex",
+      "active": true
     }
   ]
 }

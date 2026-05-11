@@ -22,6 +22,8 @@
     {"name": "NLP",           "description": "Relationships discovered by IGEM NLP pipeline", "homepage": null, "active": true},
     {"name": "HMDB",          "description": "Human Metabolome Database — comprehensive metabolite reference", "homepage": "https://hmdb.ca/", "active": true},
     {"name": "UniChem",       "description": "EMBL-EBI chemical cross-reference service — InChIKey-based identifier mapping across ~22 chemical databases", "homepage": "https://www.ebi.ac.uk/unichem/", "active": true},
-    {"name": "IGEM",          "description": "Internal IGEM classification and derivation pipelines (chemical group rules, etc.)", "homepage": null, "active": true}
+    {"name": "IGEM",          "description": "Internal IGEM classification and derivation pipelines (chemical group rules, etc.)", "homepage": null, "active": true},
+    {"name": "AlphaMissense", "description": "DeepMind AlphaMissense — missense variant pathogenicity predictor", "homepage": "https://alphamissense.hegelab.org/", "active": true},
+    {"name": "GTEx",          "description": "Genotype-Tissue Expression project — tissue-specific eQTL and sQTL catalog", "homepage": "https://gtexportal.org/", "active": true}
   ]
 }
