@@ -51,7 +51,7 @@ inserts. This is the command your deploy pipeline calls.
 igem-server db upgrade
 ```
 
-Behaviour by DB state (see [Alembic — Lifecycle states](alembic.md#lifecycle-states)):
+Behavior by DB state (see [Alembic — Lifecycle states](alembic.md#lifecycle-states)):
 - **At head** → no DDL runs, seeds re-applied idempotently
 - **Behind head** → migrations applied in order, then seeds
 - **Not versioned** → refuses with a clear error pointing to `db stamp-head`

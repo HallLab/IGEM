@@ -1,7 +1,7 @@
 # Modifying data
 
 The `modify` module applies pure transformations on `Phenotypes`
-and `Genotypes` wrappers. It covers type harmonisation (binary /
+and `Genotypes` wrappers. It covers type harmonization (binary /
 categorical / continuous coercion plus the CLARITE-style
 classifier), value-level operations (log / log1p / sqrt /
 rank-INT / Box-Cox / z-score / discretisation / value recoding /
@@ -32,7 +32,7 @@ form would only ever say *"new wrapper has N samples"* and exit. The
 
 By the end of this page you will know how to:
 
-- **Classify and harmonise variable types** — auto-detect kinds and
+- **Classify and harmonize variable types** — auto-detect kinds and
   coerce columns to binary / categorical / continuous.
 - **Transform** continuous variables — log, rank-INT, Box-Cox,
   z-score, custom callables.
@@ -359,7 +359,7 @@ phen = igem.modify.colfilter_percent_zero(phen, max_zero_pct=90.0)
 The default $90\%$ matches CLARITE. Useful for occupational-exposure
 ratings, physical-activity counters, and other measurements where a
 feature dominated by zeros carries little discriminative signal for
-modelling.
+modeling.
 
 ---
 

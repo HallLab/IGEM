@@ -53,12 +53,12 @@ have nothing meaningful to print. Use Python or a notebook; pass
 
 By the end of this page you will know how to:
 
-- Visualise an `analyze` result with **`from_results`** — Manhattan, QQ,
+- Visualize an `analyze` result with **`from_results`** — Manhattan, QQ,
   top-hits dotplot, and the FDR / Bonferroni Manhattan variants.
 - Generate **multi-page distributions** for QC with `from_describe`.
 - Compare **before / after** a `modify` operation with `from_modify`
   (works for both `Phenotypes` and `Genotypes`).
-- Visualise **GxG / GxE interactions** with `from_interaction` —
+- Visualize **GxG / GxE interactions** with `from_interaction` —
   pairwise heatmap or top-pairs dotplot.
 - **Discover the right plot for a result** with `suggest_plots(obj)`
   / `result.suggested_plots()`.
@@ -96,7 +96,7 @@ synthetic data already wired up.
 
 ---
 
-## 1. `from_results` — visualise association results
+## 1. `from_results` — visualize association results
 
 The bridge accepts a `RegressionResults` directly (the standard return
 type of `igem.analyze.association_study`, `igem.analyze.ewas`, and
@@ -482,7 +482,7 @@ The full set:
 `distribution` works on any single column. It auto-detects the kind
 (binary / categorical / continuous) using the same rule as
 `describe.summarize`. For continuous columns, `continuous_kind`
-selects the visualisation:
+selects the visualization:
 
 :::{figure} ../_static/plot_examples/primitives_distribution_grid.png
 :alt: BMI shown as histogram, box plot, violin, and QQ plot
@@ -520,7 +520,7 @@ sorted alphabetically.*
 The standard transform is `"neglog10"` (smaller p-value → brighter
 cell). When you also have a sign column (e.g. β from
 `interaction_study(report_betas=True)`), `transform="signed_neglog10"`
-combines magnitude with direction in a single colour:
+combines magnitude with direction in a single color:
 
 ```python
 igem.plot.heatmap(
@@ -622,7 +622,7 @@ roadmap (deferred — see `docs/caderno/2026-05-08__007_*.md`).
   [`docs/caderno/notebooks/plot_module_examples.ipynb`](https://github.com/andrerico/IGEM/blob/main/docs/caderno/notebooks/plot_module_examples.ipynb)
   walks through every primitive and bridge end-to-end with synthetic
   data — the figures on this page were rendered from it.
-- **Upstream**: [Analysing data](analyzing-data.md) (where `RegressionResults`
+- **Upstream**: [Analyzing data](analyzing-data.md) (where `RegressionResults`
   comes from), [Describing data](describing-data.md) (input to
   `from_describe`), [Modifying data](modifying-data.md) (the "before"
   side of `from_modify`).

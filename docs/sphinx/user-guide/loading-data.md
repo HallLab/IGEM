@@ -4,7 +4,7 @@ Every IGEM workflow starts here: getting genotypes, phenotypes, and
 summary statistics into memory in a form the analytical modules
 (`describe`, `modify`, `analyze`) can consume directly. The `data`
 module is intentionally *only* about I/O — wrappers, lazy loading,
-and schema normalisation. Anything that *computes* (means,
+and schema normalization. Anything that *computes* (means,
 correlations, GWAS) lives elsewhere.
 
 ```{tip}
@@ -320,7 +320,7 @@ Available presets:
 | `plink2`         | PLINK 2 `.glm.linear` / `.glm.logistic`         |                                        |
 | `regenie`        | REGENIE step 2                                  | Auto-converts `LOG10P` → plain p-value |
 | `bolt`           | BOLT-LMM                                        | No `n` column emitted by default       |
-| `gwas-catalog`   | GWAS Catalog harmonised TSV                     |                                        |
+| `gwas-catalog`   | GWAS Catalog harmonized TSV                     |                                        |
 
 ### By custom schema
 
@@ -363,7 +363,7 @@ sumstats = igem.data.read_sumstats(
 ```{note}
 **Default separator.** Sumstats files in the wild use tab-separated
 layout regardless of suffix (`.glm.linear`, `.regenie`, `.bolt`,
-…). For any suffix `read_table` does not recognise on its own,
+…). For any suffix `read_table` does not recognize on its own,
 `read_sumstats` defaults to `sep="\t"`. Pass an explicit `sep=` in
 `**read_kwargs` if your file is comma- or semicolon-separated.
 ```
@@ -407,4 +407,4 @@ With data in hand, the natural next stops are:
   pull biological annotations that drive the
   [filter-then-test loop](../getting-started/concepts.md#the-filter-then-test-loop).
 - [Cookbook](../cookbook/index.md) — end-to-end recipes that combine
-  loading with description, modelling, and HPC submission.
+  loading with description, modeling, and HPC submission.

@@ -117,7 +117,7 @@ For the practical recipes that exercise each transport, see
 
 IGEM is designed to cover the full lifecycle of an association or
 interaction study **inside a single Python session**. Loading,
-exploration, knowledge-graph lookup, modelling, multiple-testing
+exploration, knowledge-graph lookup, modeling, multiple-testing
 correction, and figure generation all happen against the same
 DataFrames, with no glue scripts and no format conversions between
 stages. The platform supplies the five stages below natively, in
@@ -138,7 +138,7 @@ compute.
 `igem.describe` returns correlations, frequency tables, missingness
 reports, skewness, and summary statistics out of the box.
 `igem.modify` covers the preparations you typically need before any
-model is fit: **automatic categorisation** of binary / categorical /
+model is fit: **automatic categorization** of binary / categorical /
 continuous variables, outlier removal (IQR or gaussian), z-score
 and inverse-rank transformations, recoding, and row / column filters
 based on missingness, zero-inflation, or category counts. Type
@@ -169,11 +169,11 @@ same parallel infrastructure runs both the main-effect scan and the
 interaction scan, so the framework does not change between
 association and interaction studies.
 
-### 5. Correct, visualise, publish
+### 5. Correct, visualize, publish
 
 Multiple-testing correction is a chained call on the result frame —
 `res.with_correction("fdr_bh").passing(p_corrected=0.05)` — covering
-Bonferroni, FDR, and group-wise corrections. Visualisation
+Bonferroni, FDR, and group-wise corrections. Visualization
 (Manhattan plots with optional Bonferroni / FDR thresholds,
 top-results plots, distribution plots) happens in the same session,
 against the same DataFrames, with no export step. The output is a
@@ -262,7 +262,7 @@ often the biologically interesting case.
 
 Every fact in the knowledge graph — a gene symbol, a chemical CAS
 number, a disease ICD code, a pathway, a phenotype, an environmental
-exposure — is represented as an **Entity**. Entities are organised
+exposure — is represented as an **Entity**. Entities are organized
 in a two-level taxonomy that lets the graph speak about gene–disease,
 chemical–pathway, and exposure–exposure relationships in a uniform
 way.
@@ -280,7 +280,7 @@ EntityDomain  ──→  EntityType  ──→  Entity  ──→  EntityAlias
 |---|---|---|
 | **Genomics** | Sequencing-derived: genes, variants, proteins, transcripts, epigenomic marks | Gene, Variant, Protein, Transcriptomics, Epigenomics |
 | **Exposome** | Environmental, chemical, and clinical: exposures, diseases, phenotypes, metabolites | Chemical, Disease, Phenotype, Exposome, Metabolomics |
-| **Knowledge** | Biological structures that organise other entities | Pathway, Gene Ontology |
+| **Knowledge** | Biological structures that organize other entities | Pathway, Gene Ontology |
 
 ### Aliases and resolution
 

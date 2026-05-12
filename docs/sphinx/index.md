@@ -73,15 +73,15 @@ together or separately.
 
 :::{grid-item-card} `igem` — analysis client
 Python package distributed on PyPI. Runs on a laptop or HPC node.
-Provides data loading (PLINK, VCF, phenotype CSV), descriptive
-statistics, GWAS/EWAS pipelines, and a transport-agnostic facade for
-knowledge-graph queries.
+Provides data loading (PLINK, VCF, Zarr, phenotype CSV, GWAS
+sumstats), descriptive statistics, GWAS / EWAS pipelines, and a
+transport-agnostic facade for knowledge-graph queries.
 :::
 
 :::{grid-item-card} `igem-server` — knowledge backend
 FastAPI service backed by PostgreSQL. Hosts the curated graph, the
 ETL pipelines that maintain it, an NLP module for entity
-normalisation, and the report endpoints consumed by the client.
+normalization, and the report endpoints consumed by the client.
 :::
 
 :::{grid-item-card} Snapshot — offline mode
@@ -93,8 +93,9 @@ full reproducibility of any analysis tied to a snapshot identifier.
 ::::
 
 A reference deployment ships as a Docker / Apptainer image on GHCR.
-See [Concepts](getting-started/concepts.md) for the deployment
-trade-offs.
+See [Concepts](getting-started/concepts.md) for the architectural
+model, or [Container deployment](operations/deployment.md) for the
+practical deployment guide.
 
 End-to-end, the three components sit inside a wider pipeline that
 connects analyst-side data to a curated knowledge graph backed by
@@ -115,7 +116,7 @@ raw genomic and exposomic data all the way to publication-ready
 figures and biological interpretation — without forcing the analyst
 to glue together a chain of single-purpose tools. The same Python
 session handles loading, exploration, cleaning, statistical testing,
-multiple-testing correction, visualisation, and knowledge-graph
+multiple-testing correction, visualization, and knowledge-graph
 annotation, with the same code path running on a laptop, in the
 cloud, or on an HPC node.
 
@@ -124,7 +125,7 @@ cloud, or on an HPC node.
 :align: center
 :::
 
-The client is organised as **six capability modules**, each with its
+The client is organized as **six capability modules**, each with its
 own reference page in the [User Guide — IGEM](user-guide/index.md);
 end-to-end recipes that combine them live in the
 [Cookbook](cookbook/index.md).
@@ -155,22 +156,22 @@ genotype QC metrics (call rate, MAF, HWE, het rate).
 :link: user-guide/modifying-data
 :link-type: doc
 
-Type harmonisation, value transformations (log, RINT, Box-Cox,
+Type harmonization, value transformations (log, RINT, Box-Cox,
 z-score), outlier removal, structural filters, multi-frame assembly,
 and the standard genotype QC pipeline including LD pruning.
 :::
 
-:::{grid-item-card} 4 · `igem.analyze` — Analysing
+:::{grid-item-card} 4 · `igem.analyze` — Analyzing
 :link: user-guide/analyzing-data
 :link-type: doc
 
 Association studies (GWAS, EWAS, PheWAS), GxE / GxG interaction
-tests via likelihood-ratio (LRT), survey-aware modelling with
+tests via likelihood-ratio (LRT), survey-aware modeling with
 weights, strata, and clusters, and built-in Bonferroni / FDR
 correction.
 :::
 
-:::{grid-item-card} 5 · `igem.plot` — Visualising
+:::{grid-item-card} 5 · `igem.plot` — Visualizing
 :link: user-guide/plotting-data
 :link-type: doc
 
@@ -184,9 +185,9 @@ dotplots, heatmaps, Miami plots, before / after comparisons.
 :link-type: doc
 
 Annotate results with biological context from the IGEM knowledge
-graph: gene, GO, disease, pathway, protein, and ontology
+graph: gene, disease, pathway, protein, and ontology (GO, HPO, EFO)
 annotations, queried over HTTP or in embedded mode. See the
-[full report catalogue](user-guide/reports-catalog.md).
+[full report catalog](user-guide/reports-catalog.md).
 :::
 
 ::::
@@ -272,8 +273,8 @@ with IGEM() as igem:
     print(igem.health())
 ```
 
-The five-minute tour — connecting to a server, loading PLINK data, and
-running a filtered GxE scan — is in the
+The five-minute tour — installing IGEM, connecting to the public
+server, and running your first knowledge-graph report — is in the
 [Quickstart](getting-started/quickstart.md).
 
 ---
@@ -282,13 +283,13 @@ running a filtered GxE scan — is in the
 
 ```{note}
 IGEM is in **early access**. The client (`igem` 2.1.0) is in beta and
-the server (`igem-server` 0.1.0) is in alpha; APIs may evolve before
+the server (`igem-server` 0.3.0) is in alpha; APIs may evolve before
 the 1.0 release. Authentication is intentionally disabled during this
 phase to keep the focus on the core analytical surface — production
 deployments should be placed behind a network boundary.
 ```
 
-IGEM is released under the **MIT licence**. Releases follow semantic
+IGEM is released under the **MIT license**. Releases follow semantic
 versioning per artefact; see the
 [Release process](development/release-process.md) for the tagging
 conventions and CI guarantees.

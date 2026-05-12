@@ -157,7 +157,7 @@ Two classes of objects are deliberately excluded from autogenerate
 via the `include_object` filter in `alembic/env.py`:
 
 1. **`entity_aliases.embedding`** — a `pgvector` `Vector(768)` column
-   that Alembic's type comparator does not recognise. Schema changes
+   that Alembic's type comparator does not recognize. Schema changes
    to this column are rare and managed via hand-written migrations.
 
 2. **Partition children** of variant tables (anything matching

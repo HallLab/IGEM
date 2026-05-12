@@ -1,4 +1,4 @@
-# Report catalogue
+# Report catalog
 
 The IGEM server ships a registry of curated **annotation reports**
 that resolve identifiers from external biological databases against
@@ -12,14 +12,14 @@ helpers, the `ReportResult` API, and the `igem report` CLI — see
 know the mechanics and just want to look up *what each report does*.
 
 ```{tip}
-The catalogue below mirrors the markdown returned by
+The catalog below mirrors the markdown returned by
 `igem.report.explain(name)`. Calling `explain` from a notebook is
 often the fastest way to confirm a parameter or a column name
 without leaving your session.
 ```
 
 ```{note}
-**The catalogue grows over time.** As new reports are added on the
+**The catalog grows over time.** As new reports are added on the
 server, this page is updated to keep parity with `igem.report.list()`
 on a current snapshot. If `list()` returns a name not described
 here, run `explain(name)` for the canonical contract — the server is
@@ -86,7 +86,7 @@ coordinates, and a relationship summary.
 | `input_values` | `list[str]` | *(all genes)* | Symbols, HGNC IDs, Ensembl IDs, Entrez IDs, or aliases. |
 | `assembly` | `str` | `"GRCh38.p14"` | Genome assembly name used for the coordinate columns. |
 
-Identifiers are normalised case-insensitively and matched against
+Identifiers are normalized case-insensitively and matched against
 all registered aliases. An input with no match emits a row with
 `status = "not_found"`.
 
@@ -181,7 +181,7 @@ result.df[["disease_id", "label", "mondo_id", "icd10"]]
 - Mixed identifier types in a single call are supported — the
   matcher resolves each input independently against the alias index.
 - `group_filter` is most useful in **all-mode** (no `input_values`)
-  for slicing the catalogue by therapeutic area.
+  for slicing the catalog by therapeutic area.
 
 ---
 

@@ -14,7 +14,7 @@ from skeleton code to fully wired into the client.
 
 For the analyst-facing perspective — *how to call* the reports —
 see [Reporting data](../user-guide/reporting-data.md) and the
-[Report catalogue](../user-guide/reports-catalog.md).
+[Report catalog](../user-guide/reports-catalog.md).
 
 ---
 
@@ -199,7 +199,7 @@ When adding a new report, work through these in order:
 ### 3. Documentation
 
 - Add a new section to the
-  [Report catalogue](../user-guide/reports-catalog.md) — parameters
+  [Report catalog](../user-guide/reports-catalog.md) — parameters
   table, output columns, example, notes.
 - If the report introduces a new analytical workflow (rather than
   just adding a row type), add a cookbook recipe under

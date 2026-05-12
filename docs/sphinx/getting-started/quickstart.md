@@ -156,7 +156,7 @@ is documented:
   TSV. → [Loading data](../user-guide/loading-data.md)
 - **Quality control** — `igem.describe.*` for summaries, missingness
   reports, type inference, and skewness; `igem.modify.*` for
-  recoding, outlier removal, categorisation, and column / row
+  recoding, outlier removal, categorization, and column / row
   filters. → [Describing data](../user-guide/describing-data.md) ·
   [Modifying data](../user-guide/modifying-data.md)
 - **Single-feature analysis** — `igem.analyze.gwas` and
@@ -168,11 +168,11 @@ is documented:
 - **Knowledge-graph reports** — `igem.report.*`: gene, GO, disease,
   pathway, and protein annotations queried from the server (what
   this Quickstart used). → [Reporting data](../user-guide/reporting-data.md)
-  · [Report catalogue](../user-guide/reports-catalog.md)
+  · [Report catalog](../user-guide/reports-catalog.md)
 - **HPC orchestration** — LSF / SLURM submission helpers and offline
   *embedded* mode against a Parquet snapshot. →
   [Container and HPC workflows](../cookbook/hpc-workflows.md)
-- **Visualisation** *(roadmap)* — Manhattan plots (with Bonferroni
+- **Visualization** *(roadmap)* — Manhattan plots (with Bonferroni
   and FDR thresholds), top-results plots, and exposome distribution
   plots, ported from the CLARITE lineage.
 
@@ -185,7 +185,7 @@ is documented:
   Reactome, GO, CTD, HMDB, PharmGKB, NHANES, and the other
   authoritative sources behind the graph. →
   [ETL pipeline](../operations/etl-pipeline.md)
-- **NLP** — `ge.nlp`: entity normalisation and synonym / alias
+- **NLP** — `ge.nlp`: entity normalization and synonym / alias
   resolution across the supported ontologies, used during ingestion
   and at query time.
 - **Reports** — `ge.report`: server-side report registry that

@@ -345,9 +345,9 @@ Optional flags follow `pandas.crosstab` conventions:
 
 | Flag                     | Effect                                          |
 | ------------------------ | ----------------------------------------------- |
-| `normalize="index"`      | Row-normalise (each row sums to 1)              |
-| `normalize="columns"`    | Column-normalise                                |
-| `normalize="all"`        | Grand-total normalise                           |
+| `normalize="index"`      | Row-normalize (each row sums to 1)              |
+| `normalize="columns"`    | Column-normalize                                |
+| `normalize="all"`        | Grand-total normalize                           |
 | `margins=True`           | Add an `All` row and column with totals         |
 
 For rare-cell detection, just compare the count crosstab to a
@@ -363,7 +363,7 @@ rare = counts < 5     # cells with N < 5 may be underpowered
 ## 6. Skewness
 
 For continuous variables, `skewness` returns the **third
-standardised moment** plus a z-score / p-value test of the null
+standardized moment** plus a z-score / p-value test of the null
 "skew is zero" — useful before deciding whether to log-transform,
 rank-INT, or leave as-is:
 
@@ -442,7 +442,7 @@ distribution differ by genotype?). For group-comparison **inference**
 
 The genotype side of `describe` wraps sgkit's variant- and
 sample-level statistics into pandas DataFrames suitable for QC
-filtering and visualisation. These methods log a header / footer
+filtering and visualization. These methods log a header / footer
 because the underlying sgkit ops can be expensive on biobank-scale
 inputs.
 
@@ -603,7 +603,7 @@ igem.describe.genotype_summary(geno)
 ## Related pages
 
 - [Modifying data](modifying-data.md) — pure transformations on
-  `Phenotypes` / `Genotypes`: type harmonisation, log / rank-INT /
+  `Phenotypes` / `Genotypes`: type harmonization, log / rank-INT /
   Box-Cox, outlier replacement, column / row filtering, multi-frame
   assembly, and the full genotype QC pipeline including LD pruning.
 - [Analyzing data](analyzing-data.md) — regression-based inference:
@@ -612,4 +612,4 @@ igem.describe.genotype_summary(geno)
 - [Reporting data](reporting-data.md) — biological annotation of
   variables and variants from the IGEM server.
 - [Cookbook](../cookbook/index.md) — recipes that combine
-  description with cleaning, modelling, and reporting.
+  description with cleaning, modeling, and reporting.

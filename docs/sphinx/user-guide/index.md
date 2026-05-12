@@ -1,10 +1,10 @@
 # User Guide — IGEM
 
 Reference for the **client-side modules** of the `igem` package:
-loading data, describing it, modifying / cleaning it, analysing it,
+loading data, describing it, modifying / cleaning it, analyzing it,
 plotting the results, and reporting biological annotations from the
 IGEM knowledge graph. Each page documents what one module does in
-depth, and the [report catalogue](reports-catalog.md) lists every
+depth, and the [report catalog](reports-catalog.md) lists every
 report available on the server.
 
 For end-to-end recipes that compose multiple modules together —

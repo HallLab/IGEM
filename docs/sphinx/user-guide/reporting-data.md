@@ -1,12 +1,12 @@
 # Reporting data
 
 The `reports` module is the client's gateway to the **IGEM knowledge
-graph** — a curated catalogue of genes, diseases, Gene Ontology
+graph** — a curated catalog of genes, diseases, Gene Ontology
 terms, pathways, and proteins, with the cross-references and
 relationships that connect them. Where `data` / `describe` / `modify`
 / `analyze` operate locally on your `Genotypes` and `Phenotypes`,
 `reports` operates remotely on the server: every call is an HTTP
-round-trip that resolves identifiers against the catalogue and
+round-trip that resolves identifiers against the catalog and
 returns a typed result.
 
 ```{tip}
@@ -22,7 +22,7 @@ two transport modes are configured.
 report run` produce useful terminal artefacts (a registry table; a
 CSV or printed DataFrame), so the CLI form is fully supported
 alongside the Python API. A separate [report
-catalogue](reports-catalog.md) page details every available report,
+catalog](reports-catalog.md) page details every available report,
 its inputs, output columns, and examples.
 ```
 
@@ -106,7 +106,7 @@ print(doc[:300])
 
 The returned string is server-side markdown — parameters, output
 columns, examples. The same content is reproduced in the
-[report catalogue](reports-catalog.md), where the per-report sections
+[report catalog](reports-catalog.md), where the per-report sections
 are formatted for browsing.
 
 ---
@@ -149,7 +149,7 @@ with IGEM() as igem:
 ```
 
 The full per-report signature — accepted parameters, output columns,
-notes — is in the [report catalogue](reports-catalog.md).
+notes — is in the [report catalog](reports-catalog.md).
 
 ### Generic `run` (works for any report)
 
@@ -163,7 +163,7 @@ with IGEM() as igem:
 ```
 
 `params` is a free-form dict whose accepted keys depend on the
-report — see the [report catalogue](reports-catalog.md) or call
+report — see the [report catalog](reports-catalog.md) or call
 `explain(name)` for the per-report contract. `columns` is universal:
 pass a subset to keep only those output columns (the server projects
 on its side, so it is also a bandwidth optimisation).
@@ -275,7 +275,7 @@ Keep in mind:
   (`gene_symbol`, `hgnc_id`, `ensembl_id`, `chromosome`,
   `start_position`, `end_position`). Pass `keep_columns=...` to
   customise.
-- Rows whose `input_col` value is not a recognised gene get NaN in
+- Rows whose `input_col` value is not a recognized gene get NaN in
   the annotation columns — they are **not** dropped from the result.
 - Filter (`with_correction`/`passing`/`top`) **before** `annotate` to
   minimise the server round-trip.
@@ -359,7 +359,7 @@ response logging.
 
 ## What's next
 
-- [Report catalogue](reports-catalog.md) — one section per
+- [Report catalog](reports-catalog.md) — one section per
   registered report: parameters, output columns, examples, gotchas.
 - [Analyzing data](analyzing-data.md) — `RegressionResults.annotate`
   is the natural downstream consumer of `gene_annotations`.

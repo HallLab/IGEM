@@ -36,7 +36,7 @@ igem --version
 The IGEM client is purpose-built for the **analyst side** of the
 pipeline: it is intentionally lightweight and does _not_ manage
 knowledge data itself. Knowledge curation — ETL pipelines, entity
-normalisation (NLP), smart queries, and the catalog of ingested data
+normalization (NLP), smart queries, and the catalog of ingested data
 — lives in the companion **`igem-server`** package, which is
 typically deployed once per institution and shared.
 
@@ -45,7 +45,7 @@ Many of IGEM's analytical functions **do not require a server
 connection**. Local-only operations include data loading, QC via
 `describe` and `modify`, single-feature association tests
 (`gwas` / `ewas`), interaction tests (`lrt`), multi-test correction
-(Bonferroni / FDR), and visualisation. Connecting to a server is
+(Bonferroni / FDR), and visualization. Connecting to a server is
 only required for knowledge-graph reports
 ([gene_annotations], [pathway_annotations], etc.) and for the
 filter-then-test workflows that consume them.
