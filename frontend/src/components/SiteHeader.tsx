@@ -6,7 +6,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-surface-border/60 bg-brand-tint/85 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link
-          href="/"
+          href="/igem"
           aria-label="IGEM home"
           className="flex items-center gap-2.5"
         >
