@@ -1,0 +1,675 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Quickstart" href="quickstart.html"><link rel="prev" title="Getting Started" href="index.html">
+        <link rel="prefetch" href="../_static/logo.png" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Installation - IGEM Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7065edd5" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1e3a5f;
+  --color-brand-content: #2c8d8a;
+  --color-announcement-background: #eaf3f8;
+  --color-announcement-text: #1e3a5f;
+  --color-sidebar-background: #eaf3f8;
+  --color-sidebar-background-border: #dbe6ee;
+  --color-sidebar-search-background: #ffffff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #6391c9;
+  --color-brand-content: #5cbab8;
+  --color-announcement-background: #101a30;
+  --color-announcement-text: #e6ecf2;
+  --color-sidebar-background: #101a30;
+  --color-sidebar-background-border: #1a2740;
+  --color-sidebar-search-background: #0a1020;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #6391c9;
+  --color-brand-content: #5cbab8;
+  --color-announcement-background: #101a30;
+  --color-announcement-text: #e6ecf2;
+  --color-sidebar-background: #101a30;
+  --color-sidebar-background-border: #1a2740;
+  --color-sidebar-search-background: #0a1020;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     <em>v0.1.0</em> — IGEM is in early access. <a href='/docs/release-notes.html'>See release notes</a>. 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">IGEM Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">IGEM Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Getting Started</a><input aria-label="Toggle navigation of Getting Started" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide — IGEM</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user-guide/index.html">User Guide — IGEM</a><input aria-label="Toggle navigation of User Guide — IGEM" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/loading-data.html">Loading data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/describing-data.html">Describing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/modifying-data.html">Modifying data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/analyzing-data.html">Analyzing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/plotting-data.html">Plotting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/reporting-data.html">Reporting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/reports-catalog.html">Report catalog</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide — IGEM Server</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user-guide-server/index.html">User Guide — IGEM Server</a><input aria-label="Toggle navigation of User Guide — IGEM Server" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/ge-facade.html">The GE facade</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../user-guide-server/database/index.html">Database</a><input aria-label="Toggle navigation of Database" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/alembic.html">Alembic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/commands.html">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/snapshots.html">Snapshots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/access.html">Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/models.html">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/backup.html">Backup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/etl.html">ETL pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/nlp.html">NLP and entity resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/reports.html">Server-side reports</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Operations</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../operations/index.html">Operations</a><input aria-label="Toggle navigation of Operations" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../operations/server-setup.html">Server setup (PostgreSQL backend)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/etl-pipeline.html">ETL pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/snapshot-generation.html">Snapshot generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/deployment.html">Container deployment (Docker / Apptainer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/monitoring.html">Monitoring &amp; maintenance</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cookbook</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cookbook/index.html">Cookbook</a><input aria-label="Toggle navigation of Cookbook" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/phenotype-analysis.html">Phenotype analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/filtered-ewas-nhanes.html">Filtered EWAS on NHANES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/gxe-pathway-prior.html">GxE interaction with a pathway prior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/custom-report-end-to-end.html">Building a custom report end-to-end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/hpc-workflows.html">Container and HPC workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/hpc-job-array.html">HPC job array recipe</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api-reference/index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/igem.html"><code class="docutils literal notranslate"><span class="pre">igem</span></code> (client)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/igem-server.html"><code class="docutils literal notranslate"><span class="pre">igem-server</span></code> (backend)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development/index.html">Development</a><input aria-label="Toggle navigation of Development" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/architecture.html">Architecture deep-dive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/release-process.html">Release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/adding-etl-source.html">Adding a new ETL data source</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>There are two supported ways to install IGEM, chosen by what you want
+to do with it:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>You want to…</p></th>
+<th class="head"><p>Install via</p></th>
+<th class="head"><p>When</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Run analyses against a remote knowledge graph</p></td>
+<td><p><strong>pip</strong></p></td>
+<td><p>Daily analyst workflow, laptop, notebook, CI</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run a self-contained, reproducible IGEM environment</p></td>
+<td><p><strong>image</strong></p></td>
+<td><p>HPC, network-restricted hosts, frozen-version reproducibility</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Both paths give you the same <code class="docutils literal notranslate"><span class="pre">igem</span></code> Python API and CLI. The
+difference is only <strong>where the knowledge graph lives</strong> — on a remote
+server you point at, or inside a container you run locally.</p>
+<hr class="docutils" />
+<section id="option-1-pip">
+<h2>Option 1 — pip<a class="headerlink" href="#option-1-pip" title="Link to this heading">¶</a></h2>
+<section id="install">
+<h3>Install<a class="headerlink" href="#install" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>igem
+</pre></div>
+</div>
+<p>Confirm the install:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>igem<span class="w"> </span>--version
+<span class="c1"># igem, version 2.1.0</span>
+</pre></div>
+</div>
+</section>
+<section id="connect-to-the-ge-knowledge-graph">
+<h3>Connect to the GE knowledge graph<a class="headerlink" href="#connect-to-the-ge-knowledge-graph" title="Link to this heading">¶</a></h3>
+<p>The IGEM client is purpose-built for the <strong>analyst side</strong> of the
+pipeline: it is intentionally lightweight and does <em>not</em> manage
+knowledge data itself. Knowledge curation — ETL pipelines, entity
+normalization (NLP), smart queries, and the catalog of ingested data
+— lives in the companion <strong><code class="docutils literal notranslate"><span class="pre">igem-server</span></code></strong> package, which is
+typically deployed once per institution and shared.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Many of IGEM’s analytical functions <strong>do not require a server
+connection</strong>. Local-only operations include data loading, QC via
+<code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">modify</span></code>, single-feature association tests
+(<code class="docutils literal notranslate"><span class="pre">gwas</span></code> / <code class="docutils literal notranslate"><span class="pre">ewas</span></code>), interaction tests (<code class="docutils literal notranslate"><span class="pre">lrt</span></code>), multi-test correction
+(Bonferroni / FDR), and visualization. Connecting to a server is
+only required for knowledge-graph reports
+(<a class="reference internal" href="../user-guide/reports-catalog.html#gene-annotations"><span class="std std-ref">gene_annotations</span></a>, <a class="reference internal" href="../user-guide/reports-catalog.html#pathway-annotations"><span class="std std-ref">pathway_annotations</span></a>, etc.) and for the
+filter-then-test workflows that consume them.</p>
+</div>
+<p>The Hall Lab maintains a public endpoint that anyone can use to
+explore the knowledge graph:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">https://geneexposure.org/api</span></code></p>
+</div></blockquote>
+<p>Point your client at it with <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">config</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>igem<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>server-url<span class="w"> </span>https://geneexposure.org/api
+<span class="c1"># set server-url = https://geneexposure.org/api</span>
+<span class="c1">#   → /your/cwd/.igem.toml</span>
+</pre></div>
+</div>
+<p>By default this writes a project-scoped <code class="docutils literal notranslate"><span class="pre">./.igem.toml</span></code> in the current
+directory. To set it user-globally (used from any directory), pass
+<code class="docutils literal notranslate"><span class="pre">--global</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>igem<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--global<span class="w"> </span>server-url<span class="w"> </span>https://geneexposure.org/api
+<span class="c1">#   → ~/.igem.toml</span>
+</pre></div>
+</div>
+<p>The resulting file is plain TOML:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[client]</span>
+<span class="n">server_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://geneexposure.org/api&quot;</span>
+</pre></div>
+</div>
+<p>Manage it through the CLI or by hand:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>igem<span class="w"> </span>config<span class="w"> </span>show<span class="w">           </span><span class="c1"># print the merged local + home config</span>
+igem<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>server-url<span class="w"> </span><span class="c1"># print just the resolved value</span>
+igem<span class="w"> </span>config<span class="w"> </span><span class="nb">unset</span><span class="w"> </span>server-url
+</pre></div>
+</div>
+<p>Resolution order is <strong>environment variable → local <code class="docutils literal notranslate"><span class="pre">./.igem.toml</span></code>
+(walking up from cwd) → home <code class="docutils literal notranslate"><span class="pre">~/.igem.toml</span></code></strong> — so a one-off
+<code class="docutils literal notranslate"><span class="pre">IGEM_URL=…</span></code> env var always wins for a single command.</p>
+</section>
+<section id="verify">
+<h3>Verify<a class="headerlink" href="#verify" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>igem<span class="w"> </span>health
+<span class="c1"># status: ok</span>
+</pre></div>
+</div>
+<p>If the call returns <code class="docutils literal notranslate"><span class="pre">ok</span></code>, the client is wired up correctly. From here
+the <a class="reference internal" href="quickstart.html"><span class="std std-doc">Quickstart</span></a> walks through running your first
+report.</p>
+</section>
+<section id="hosting-your-own-server">
+<h3>Hosting your own server<a class="headerlink" href="#hosting-your-own-server" title="Link to this heading">¶</a></h3>
+<p>Standing up an <code class="docutils literal notranslate"><span class="pre">igem-server</span></code> instance — Postgres backend, ETL
+pipelines, snapshot generation — is documented separately in
+<a class="reference internal" href="../operations/server-setup.html"><span class="std std-doc">Operations → Server setup</span></a>. For most
+analysts the public endpoint above is sufficient and no local
+server is needed.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="option-2-docker-image">
+<h2>Option 2 — Docker image<a class="headerlink" href="#option-2-docker-image" title="Link to this heading">¶</a></h2>
+<p>For HPC environments, network-restricted hosts, or any scenario where
+you want a frozen, reproducible IGEM stack, the project ships a
+single container image on GitHub Container Registry that bundles the
+client, the server (running in-process), and the full scientific
+Python stack. The container reads the knowledge graph from a
+<strong>Parquet snapshot</strong> mounted at <code class="docutils literal notranslate"><span class="pre">/snapshot</span></code>, with no external
+database connection involved.</p>
+<section id="pull-the-image">
+<h3>Pull the image<a class="headerlink" href="#pull-the-image" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/halllab/igem:latest
+</pre></div>
+</div>
+<p>The image is public — no authentication required. Equivalent
+Apptainer pull on HPC nodes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>pull<span class="w"> </span>igem.sif<span class="w"> </span>docker://ghcr.io/halllab/igem:latest
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">:latest</span></code> tag tracks the most recent stable release and is the
+right choice for everyday use. For <strong>scientific reproducibility</strong> —
+papers, regulatory submissions, re-analyses — pin a specific tag
+instead (for example <code class="docutils literal notranslate"><span class="pre">ghcr.io/halllab/igem:1.0.0</span></code>). All published
+tags are listed at
+<a class="reference external" href="https://github.com/HallLab/IGEM/pkgs/container/igem">https://github.com/HallLab/IGEM/pkgs/container/igem</a>. The container
+records the embedded client and server versions as image labels;
+inspect them with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>inspect<span class="w"> </span>ghcr.io/halllab/igem:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--format<span class="w"> </span><span class="s1">&#39;{{json .Config.Labels}}&#39;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="download-a-knowledge-graph-snapshot">
+<h3>Download a knowledge graph snapshot<a class="headerlink" href="#download-a-knowledge-graph-snapshot" title="Link to this heading">¶</a></h3>
+<p>The container ships with the <code class="docutils literal notranslate"><span class="pre">igem-server</span> <span class="pre">db</span> <span class="pre">snapshot-download</span></code>
+command, which fetches a versioned Parquet snapshot, verifies every
+file against a sha256 manifest, and writes them to a directory you
+choose:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/igem-snapshot
+
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="nv">$HOME</span>/igem-snapshot:/work<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/halllab/igem:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>igem-server<span class="w"> </span>db<span class="w"> </span>snapshot-download<span class="w"> </span>--output<span class="w"> </span>/work
+</pre></div>
+</div>
+<p>The default URL is <code class="docutils literal notranslate"><span class="pre">https://geneexposure.org/downloads/latest/</span></code>. To
+pin a specific version for reproducibility, pass <code class="docutils literal notranslate"><span class="pre">--url</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$HOME</span>/igem-snapshot:/work<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/halllab/igem:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>igem-server<span class="w"> </span>db<span class="w"> </span>snapshot-download<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--url<span class="w"> </span>https://geneexposure.org/downloads/2026-04-25/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span>/work
+</pre></div>
+</div>
+<p>Useful flags:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--workers</span> <span class="pre">N</span></code> — concurrent downloads (default 4).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--include-nlp</span></code> — also fetch the NLP automaton cache (~3.5 GB,
+saves ~70s on first NLP query).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--overwrite</span></code> — force re-download of every file. Without this
+flag, files whose sha256 already matches the manifest are
+skipped (<code class="docutils literal notranslate"><span class="pre">cached</span></code>), so re-running the command is safe and cheap.</p></li>
+</ul>
+</section>
+<section id="run-a-query">
+<h3>Run a query<a class="headerlink" href="#run-a-query" title="Link to this heading">¶</a></h3>
+<p>With the snapshot in place, mount it read-only and run any IGEM
+command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="nv">$HOME</span>/igem-snapshot:/snapshot:ro<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work<span class="w"> </span>-w<span class="w"> </span>/work<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/halllab/igem:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>igem<span class="w"> </span>report<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>gene_annotations<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--input<span class="w"> </span>BRCA1<span class="w"> </span>--input<span class="w"> </span>TP53<span class="w"> </span>--input<span class="w"> </span>MYC<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--columns<span class="w"> </span>gene_symbol,entrez_id,chromosome,gene_locus_type
+</pre></div>
+</div>
+<p>The container’s entrypoint validates the snapshot, starts the server
+in-process, and routes the client to it via
+<code class="docutils literal notranslate"><span class="pre">IGEM_URL=embedded:///snapshot</span></code> — no manual configuration required.</p>
+</section>
+<section id="hpc-and-cloud-platforms">
+<h3>HPC and cloud platforms<a class="headerlink" href="#hpc-and-cloud-platforms" title="Link to this heading">¶</a></h3>
+<p>For LSF / SLURM clusters, Apptainer-based execution, job submission
+templates, and integration notes for <strong>Anvil</strong>, <strong>DNAnexus</strong>, and
+<strong>All of Us</strong>, see
+<a class="reference internal" href="../cookbook/hpc-workflows.html"><span class="std std-doc">Cookbook → Container and HPC workflows</span></a>.
+The container is the same; only the runtime (Docker vs Apptainer)
+and the job scheduler change.</p>
+<p>That page also collects ready-to-copy recipes for the three common
+execution patterns: interactive shell, scripted runs, and hybrid
+setups that combine the container’s Python stack with the public
+remote knowledge graph.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">igem:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code></strong> — the install succeeded but the entry
+point is not on <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Activate the virtual environment, or invoke
+with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">igem.api.cli.main</span> <span class="pre">--version</span></code>.</p>
+<p><strong>SSL or proxy errors on <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">health</span></code></strong> — your network blocks
+outbound HTTPS to <code class="docutils literal notranslate"><span class="pre">geneexposure.org</span></code>. Either route through your
+institution’s proxy (<code class="docutils literal notranslate"><span class="pre">HTTPS_PROXY=…</span></code>), or move to the Docker image
+above with a downloaded snapshot — once the snapshot is local, no
+further network access is required.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">status:</span> <span class="pre">not</span> <span class="pre">ok</span></code> from <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">health</span></code></strong> — the server is reachable
+but reports an internal problem. Re-run with <code class="docutils literal notranslate"><span class="pre">--debug</span></code> to see the
+raw response and contact the maintainers if it persists.</p>
+<p><strong>Docker <code class="docutils literal notranslate"><span class="pre">pull</span></code> fails with <code class="docutils literal notranslate"><span class="pre">manifest</span> <span class="pre">unknown</span></code></strong> — the tag does not
+exist. List available tags at
+<a class="reference external" href="https://github.com/HallLab/IGEM/pkgs/container/igem">https://github.com/HallLab/IGEM/pkgs/container/igem</a>.</p>
+<p><strong>Container runs but <code class="docutils literal notranslate"><span class="pre">manifest.json</span> <span class="pre">missing</span></code></strong> — the snapshot bind
+mount is wrong. Confirm the host path contains a <code class="docutils literal notranslate"><span class="pre">manifest.json</span></code>
+file and that the bind syntax is <code class="docutils literal notranslate"><span class="pre">--volume</span> <span class="pre">HOST:/snapshot:ro</span></code> (note
+the colon between source and destination, and <code class="docutils literal notranslate"><span class="pre">:ro</span></code> for read-only).</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="quickstart.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Quickstart</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Getting Started</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Hall Lab
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#option-1-pip">Option 1 — pip</a><ul>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#connect-to-the-ge-knowledge-graph">Connect to the GE knowledge graph</a></li>
+<li><a class="reference internal" href="#verify">Verify</a></li>
+<li><a class="reference internal" href="#hosting-your-own-server">Hosting your own server</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#option-2-docker-image">Option 2 — Docker image</a><ul>
+<li><a class="reference internal" href="#pull-the-image">Pull the image</a></li>
+<li><a class="reference internal" href="#download-a-knowledge-graph-snapshot">Download a knowledge graph snapshot</a></li>
+<li><a class="reference internal" href="#run-a-query">Run a query</a></li>
+<li><a class="reference internal" href="#hpc-and-cloud-platforms">HPC and cloud platforms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    </body>
+</html>

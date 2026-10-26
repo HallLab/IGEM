@@ -1,0 +1,788 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Report catalog" href="reports-catalog.html"><link rel="prev" title="Plotting data" href="plotting-data.html">
+        <link rel="prefetch" href="../_static/logo.png" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Reporting data - IGEM Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7065edd5" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1e3a5f;
+  --color-brand-content: #2c8d8a;
+  --color-announcement-background: #eaf3f8;
+  --color-announcement-text: #1e3a5f;
+  --color-sidebar-background: #eaf3f8;
+  --color-sidebar-background-border: #dbe6ee;
+  --color-sidebar-search-background: #ffffff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #6391c9;
+  --color-brand-content: #5cbab8;
+  --color-announcement-background: #101a30;
+  --color-announcement-text: #e6ecf2;
+  --color-sidebar-background: #101a30;
+  --color-sidebar-background-border: #1a2740;
+  --color-sidebar-search-background: #0a1020;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #6391c9;
+  --color-brand-content: #5cbab8;
+  --color-announcement-background: #101a30;
+  --color-announcement-text: #e6ecf2;
+  --color-sidebar-background: #101a30;
+  --color-sidebar-background-border: #1a2740;
+  --color-sidebar-search-background: #0a1020;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+<div class="announcement">
+  <aside class="announcement-content">
+     <em>v0.1.0</em> — IGEM is in early access. <a href='/docs/release-notes.html'>See release notes</a>. 
+  </aside>
+</div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">IGEM Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">IGEM Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting-started/index.html">Getting Started</a><input aria-label="Toggle navigation of Getting Started" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/quickstart.html">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/concepts.html">Concepts</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide — IGEM</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">User Guide — IGEM</a><input aria-label="Toggle navigation of User Guide — IGEM" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="loading-data.html">Loading data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="describing-data.html">Describing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifying-data.html">Modifying data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzing-data.html">Analyzing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting-data.html">Plotting data</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Reporting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports-catalog.html">Report catalog</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide — IGEM Server</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user-guide-server/index.html">User Guide — IGEM Server</a><input aria-label="Toggle navigation of User Guide — IGEM Server" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/ge-facade.html">The GE facade</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../user-guide-server/database/index.html">Database</a><input aria-label="Toggle navigation of Database" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/alembic.html">Alembic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/commands.html">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/snapshots.html">Snapshots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/access.html">Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/models.html">Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide-server/database/backup.html">Backup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/etl.html">ETL pipelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/nlp.html">NLP and entity resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide-server/reports.html">Server-side reports</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Operations</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../operations/index.html">Operations</a><input aria-label="Toggle navigation of Operations" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../operations/server-setup.html">Server setup (PostgreSQL backend)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/etl-pipeline.html">ETL pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/snapshot-generation.html">Snapshot generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/deployment.html">Container deployment (Docker / Apptainer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operations/monitoring.html">Monitoring &amp; maintenance</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cookbook</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cookbook/index.html">Cookbook</a><input aria-label="Toggle navigation of Cookbook" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/phenotype-analysis.html">Phenotype analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/filtered-ewas-nhanes.html">Filtered EWAS on NHANES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/gxe-pathway-prior.html">GxE interaction with a pathway prior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/custom-report-end-to-end.html">Building a custom report end-to-end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/hpc-workflows.html">Container and HPC workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cookbook/hpc-job-array.html">HPC job array recipe</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api-reference/index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/igem.html"><code class="docutils literal notranslate"><span class="pre">igem</span></code> (client)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/igem-server.html"><code class="docutils literal notranslate"><span class="pre">igem-server</span></code> (backend)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api-reference/glossary.html">Glossary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../development/index.html">Development</a><input aria-label="Toggle navigation of Development" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/architecture.html">Architecture deep-dive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/release-process.html">Release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development/adding-etl-source.html">Adding a new ETL data source</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="reporting-data">
+<h1>Reporting data<a class="headerlink" href="#reporting-data" title="Link to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">reports</span></code> module is the client’s gateway to the <strong>IGEM knowledge
+graph</strong> — a curated catalog of genes, diseases, Gene Ontology
+terms, pathways, and proteins, with the cross-references and
+relationships that connect them. Where <code class="docutils literal notranslate"><span class="pre">data</span></code> / <code class="docutils literal notranslate"><span class="pre">describe</span></code> / <code class="docutils literal notranslate"><span class="pre">modify</span></code>
+/ <code class="docutils literal notranslate"><span class="pre">analyze</span></code> operate locally on your <code class="docutils literal notranslate"><span class="pre">Genotypes</span></code> and <code class="docutils literal notranslate"><span class="pre">Phenotypes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">reports</span></code> operates remotely on the server: every call is an HTTP
+round-trip that resolves identifiers against the catalog and
+returns a typed result.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Everything on this page is <strong>server-side</strong>. The <code class="docutils literal notranslate"><span class="pre">reports</span></code> module
+needs a reachable IGEM server — either over HTTP, or in
+<em>embedded</em> mode against a Parquet snapshot for HPC / offline use.
+See <a class="reference internal" href="../getting-started/installation.html"><span class="std std-doc">Installation</span></a> for how the
+two transport modes are configured.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>This module has CLI commands.</strong> <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">report</span> <span class="pre">list</span></code> and <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">report</span> <span class="pre">run</span></code> produce useful terminal artefacts (a registry table; a
+CSV or printed DataFrame), so the CLI form is fully supported
+alongside the Python API. A separate <a class="reference internal" href="reports-catalog.html"><span class="std std-doc">report
+catalog</span></a> page details every available report,
+its inputs, output columns, and examples.</p>
+</div>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/report_dataframe_enrichment.jpg"><img alt="IGEM reports — DataFrame enrichment workflow" src="../_images/report_dataframe_enrichment.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><em>Local statistical results gain biological context through the IGEM
+reports API: the same Python API works against a remote HTTP server
+or against an embedded Parquet snapshot for HPC / offline use.</em></span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>By the end of this page you will know how to:</p>
+<ul class="simple">
+<li><p><strong>Discover</strong> what reports are registered on the server with
+<code class="docutils literal notranslate"><span class="pre">list()</span></code> and <code class="docutils literal notranslate"><span class="pre">explain()</span></code>.</p></li>
+<li><p><strong>Run</strong> any report by name (generic <code class="docutils literal notranslate"><span class="pre">run</span></code>) or via a <strong>typed
+helper</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">gene_annotations</span></code>).</p></li>
+<li><p>Inspect a <code class="docutils literal notranslate"><span class="pre">ReportResult</span></code> — DataFrame, server log, execution
+stats — and <strong>save it to CSV</strong>.</p></li>
+<li><p><strong>Annotate</strong> a regression result with <code class="docutils literal notranslate"><span class="pre">gene_annotations</span></code> columns
+via <code class="docutils literal notranslate"><span class="pre">RegressionResults.annotate(igem)</span></code>.</p></li>
+<li><p>Drive the same operations from the <strong><code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">report</span></code> CLI</strong>.</p></li>
+</ul>
+<p>All operations are accessible from the <code class="docutils literal notranslate"><span class="pre">IGEM</span></code> facade. The <code class="docutils literal notranslate"><span class="pre">reports</span></code>
+module is HTTP-only — there is <strong>no plain free-function form</strong> like
+the local-only modules have, since every call needs the shared
+client owned by the <code class="docutils literal notranslate"><span class="pre">IGEM</span></code> instance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">igem</span><span class="w"> </span><span class="kn">import</span> <span class="n">IGEM</span>
+
+<span class="k">with</span> <span class="n">IGEM</span><span class="p">()</span> <span class="k">as</span> <span class="n">igem</span><span class="p">:</span>
+    <span class="n">available</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>                           <span class="c1"># discovery</span>
+    <span class="n">doc</span>       <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;gene_annotations&quot;</span><span class="p">)</span>      <span class="c1"># markdown</span>
+    <span class="n">result</span>    <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">gene_annotations</span><span class="p">(</span>                <span class="c1"># typed helper</span>
+        <span class="n">input_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TP53&quot;</span><span class="p">,</span> <span class="s2">&quot;BRCA1&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">df</span>                                                 <span class="c1"># pandas DataFrame</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="discovering-reports">
+<h2>1. Discovering reports<a class="headerlink" href="#discovering-reports" title="Link to this heading">¶</a></h2>
+<p>The two lookup operations — <code class="docutils literal notranslate"><span class="pre">list</span></code> and <code class="docutils literal notranslate"><span class="pre">explain</span></code> — are read-only and
+cheap. Use them to find out what is available before committing to a
+run.</p>
+<section id="list-registry-overview">
+<h3><code class="docutils literal notranslate"><span class="pre">list</span></code> — registry overview<a class="headerlink" href="#list-registry-overview" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">IGEM</span><span class="p">()</span> <span class="k">as</span> <span class="n">igem</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;25</span><span class="si">}</span><span class="s2"> v</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># gene_annotations          v1.0.0  Master gene annotation table: cross-references, ...</span>
+<span class="c1"># disease_annotations       v1.0.0  Master disease annotation table: cross-references ...</span>
+<span class="c1"># go_annotations            v1.0.0  Master GO term annotation table: namespace, name, ...</span>
+<span class="c1"># pathway_annotations       v1.0.0  Master pathway annotation table: source ID, name, ...</span>
+<span class="c1"># protein_annotations       v1.0.0  Master protein annotation table: UniProt ...</span>
+</pre></div>
+</div>
+<p>Each entry is a <code class="docutils literal notranslate"><span class="pre">ReportInfo</span></code> pydantic model with <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">version</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">description</span></code> fields.</p>
+</section>
+<section id="explain-full-documentation-for-one-report">
+<h3><code class="docutils literal notranslate"><span class="pre">explain</span></code> — full documentation for one report<a class="headerlink" href="#explain-full-documentation-for-one-report" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">IGEM</span><span class="p">()</span> <span class="k">as</span> <span class="n">igem</span><span class="p">:</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="s2">&quot;gene_annotations&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">[:</span><span class="mi">300</span><span class="p">])</span>
+<span class="c1"># # gene_annotations</span>
+<span class="c1">#</span>
+<span class="c1"># Master annotation report for human genes. Accepts a list of gene</span>
+<span class="c1"># identifiers and returns one row per matched entity with consolidated</span>
+<span class="c1"># cross-references, genomic coordinates, and relationship summary.</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>The returned string is server-side markdown — parameters, output
+columns, examples. The same content is reproduced in the
+<a class="reference internal" href="reports-catalog.html"><span class="std std-doc">report catalog</span></a>, where the per-report sections
+are formatted for browsing.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="running-a-report">
+<h2>2. Running a report<a class="headerlink" href="#running-a-report" title="Link to this heading">¶</a></h2>
+<p>There are two equivalent ways to run a report; the only difference
+is <strong>how the parameters are typed</strong>.</p>
+<section id="typed-helpers-preferred">
+<h3>Typed helpers (preferred)<a class="headerlink" href="#typed-helpers-preferred" title="Link to this heading">¶</a></h3>
+<p>Each registered report has a dedicated helper on the facade. You get
+named arguments, IDE auto-completion, and a one-line CSV write:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">IGEM</span><span class="p">()</span> <span class="k">as</span> <span class="n">igem</span><span class="p">:</span>
+    <span class="c1"># Genes</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">gene_annotations</span><span class="p">(</span>
+        <span class="n">input_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TP53&quot;</span><span class="p">,</span> <span class="s2">&quot;BRCA1&quot;</span><span class="p">,</span> <span class="s2">&quot;EGFR&quot;</span><span class="p">],</span>   <span class="c1"># or input_file=...</span>
+        <span class="n">assembly</span><span class="o">=</span><span class="s2">&quot;GRCh38.p14&quot;</span><span class="p">,</span>                    <span class="c1"># default</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span>                                 <span class="c1"># subset of available cols</span>
+            <span class="s2">&quot;gene_symbol&quot;</span><span class="p">,</span> <span class="s2">&quot;hgnc_id&quot;</span><span class="p">,</span> <span class="s2">&quot;ensembl_id&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;chromosome&quot;</span><span class="p">,</span> <span class="s2">&quot;start_position&quot;</span><span class="p">,</span> <span class="s2">&quot;end_position&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;genes.csv&quot;</span><span class="p">,</span>                  <span class="c1"># also writes CSV</span>
+    <span class="p">)</span>
+
+    <span class="c1"># GO terms — namespace filter is exposed as a typed kwarg</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">go_annotations</span><span class="p">(</span>
+        <span class="n">input_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GO:0007049&quot;</span><span class="p">,</span> <span class="s2">&quot;cell cycle&quot;</span><span class="p">],</span>
+        <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;BP&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Proteins — Pfam toggles are exposed as typed kwargs</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">protein_annotations</span><span class="p">(</span>
+        <span class="n">input_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P04637&quot;</span><span class="p">],</span>
+        <span class="n">include_pfam_details</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">max_pfam_ids_per_type</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The full per-report signature — accepted parameters, output columns,
+notes — is in the <a class="reference internal" href="reports-catalog.html"><span class="std std-doc">report catalog</span></a>.</p>
+</section>
+<section id="generic-run-works-for-any-report">
+<h3>Generic <code class="docutils literal notranslate"><span class="pre">run</span></code> (works for any report)<a class="headerlink" href="#generic-run-works-for-any-report" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">IGEM</span><span class="p">()</span> <span class="k">as</span> <span class="n">igem</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="s2">&quot;pathway_annotations&quot;</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input_values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;R-HSA-109581&quot;</span><span class="p">,</span> <span class="s2">&quot;hsa04110&quot;</span><span class="p">]},</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pathway_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pathway_name&quot;</span><span class="p">,</span> <span class="s2">&quot;source_db&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">params</span></code> is a free-form dict whose accepted keys depend on the
+report — see the <a class="reference internal" href="reports-catalog.html"><span class="std std-doc">report catalog</span></a> or call
+<code class="docutils literal notranslate"><span class="pre">explain(name)</span></code> for the per-report contract. <code class="docutils literal notranslate"><span class="pre">columns</span></code> is universal:
+pass a subset to keep only those output columns (the server projects
+on its side, so it is also a bandwidth optimisation).</p>
+<p>Use the generic form when you need a kwarg that is not yet exposed
+as a named parameter on the typed helper. The two forms are
+otherwise equivalent — the typed helper is just a thin wrapper that
+builds the same <code class="docutils literal notranslate"><span class="pre">params</span></code> dict for you.</p>
+</section>
+<section id="inputs-from-a-file">
+<h3>Inputs from a file<a class="headerlink" href="#inputs-from-a-file" title="Link to this heading">¶</a></h3>
+<p>Both forms accept a list of identifiers. For long lists — typically
+gene panels exported from another tool — read the list from a file
+with one identifier per line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">IGEM</span><span class="p">()</span> <span class="k">as</span> <span class="n">igem</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">gene_annotations</span><span class="p">(</span>
+        <span class="n">input_file</span><span class="o">=</span><span class="s2">&quot;my_genes.txt&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Blank lines and <code class="docutils literal notranslate"><span class="pre">#</span></code>-prefixed comments are ignored. Whitespace is
+trimmed. <code class="docutils literal notranslate"><span class="pre">input_values</span></code> and <code class="docutils literal notranslate"><span class="pre">input_file</span></code> can be combined; values
+from both are concatenated before being sent to the server.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="working-with-reportresult">
+<h2>3. Working with <code class="docutils literal notranslate"><span class="pre">ReportResult</span></code><a class="headerlink" href="#working-with-reportresult" title="Link to this heading">¶</a></h2>
+<p>Every run returns a <code class="docutils literal notranslate"><span class="pre">ReportResult</span></code> wrapping the DataFrame and the
+server’s execution log:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">gene_annotations</span><span class="p">(</span><span class="n">input_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TP53&quot;</span><span class="p">])</span>
+
+<span class="n">result</span><span class="o">.</span><span class="n">df</span>                <span class="c1"># pandas.DataFrame, one row per matched identifier</span>
+<span class="n">result</span><span class="o">.</span><span class="n">message</span>           <span class="c1"># multiline server-side execution log</span>
+<span class="n">result</span><span class="o">.</span><span class="n">elapsed_seconds</span>   <span class="c1"># server-side wall time (float)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">stats</span>             <span class="c1"># dict, e.g. {&#39;total_rows&#39;: 1, &#39;found&#39;: 1, &#39;not_found&#39;: 0}</span>
+<span class="n">result</span><span class="o">.</span><span class="n">report</span>            <span class="c1"># ReportInfo (name / version / description)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">df</span></code> is materialised eagerly from the response payload — there
+is no lazy loading. If you only need a column subset, pass <code class="docutils literal notranslate"><span class="pre">columns=</span></code>
+at call time so the server skips serialising the rest.</p>
+<section id="not-found-rows">
+<h3><code class="docutils literal notranslate"><span class="pre">not_found</span></code> rows<a class="headerlink" href="#not-found-rows" title="Link to this heading">¶</a></h3>
+<p>Reports that take an identifier list emit a row for <strong>every</strong> input,
+including the ones with no match. Unmatched rows have
+<code class="docutils literal notranslate"><span class="pre">status</span> <span class="pre">=</span> <span class="pre">&quot;not_found&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">note</span></code> set to a human-readable
+explanation. This is deliberate: it keeps the result aligned with
+your input list (no silent drops), and lets <code class="docutils literal notranslate"><span class="pre">analyze.annotate</span></code> join
+on the original input column without losing rows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">igem</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">gene_annotations</span><span class="p">(</span><span class="n">input_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;TP53&quot;</span><span class="p">,</span> <span class="s2">&quot;NOPE&quot;</span><span class="p">])</span>
+
+<span class="n">result</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="c1"># found        1</span>
+<span class="c1"># not_found    1</span>
+<span class="n">result</span><span class="o">.</span><span class="n">stats</span>
+<span class="c1"># {&#39;total_rows&#39;: 2, &#39;found&#39;: 1, &#39;not_found&#39;: 1}</span>
+</pre></div>
+</div>
+<p>To suppress <code class="docutils literal notranslate"><span class="pre">not_found</span></code> rows, pass <code class="docutils literal notranslate"><span class="pre">emit_not_found_rows=False</span></code> in
+<code class="docutils literal notranslate"><span class="pre">params</span></code> (supported by all annotation reports except
+<code class="docutils literal notranslate"><span class="pre">gene_annotations</span></code>).</p>
+</section>
+<section id="saving-to-csv">
+<h3>Saving to CSV<a class="headerlink" href="#saving-to-csv" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;output.csv&quot;</span><span class="p">)</span>              <span class="c1"># parents auto-created</span>
+</pre></div>
+</div>
+<p>Or pass <code class="docutils literal notranslate"><span class="pre">output_path=</span></code> directly to a typed helper to combine run +
+save in one call.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="integrating-with-analyze-annotation">
+<h2>4. Integrating with <code class="docutils literal notranslate"><span class="pre">analyze</span></code> — annotation<a class="headerlink" href="#integrating-with-analyze-annotation" title="Link to this heading">¶</a></h2>
+<p>The most common reason to run <code class="docutils literal notranslate"><span class="pre">gene_annotations</span></code> is to enrich an
+EWAS / PheWAS / GWAS result. <code class="docutils literal notranslate"><span class="pre">RegressionResults.annotate</span></code> does the
+join for you:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">IGEM</span><span class="p">()</span> <span class="k">as</span> <span class="n">igem</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">igem</span><span class="o">.</span><span class="n">analyze</span><span class="o">.</span><span class="n">association_study</span><span class="p">(</span>
+            <span class="n">phen</span><span class="p">,</span> <span class="n">regressors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;BMI&quot;</span><span class="p">,</span> <span class="s2">&quot;AGE&quot;</span><span class="p">,</span> <span class="s2">&quot;GLUCOSE&quot;</span><span class="p">],</span> <span class="n">outcomes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;LDL&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">with_correction</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;fdr&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">passing</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">igem</span><span class="p">)</span>                <span class="c1"># ← server round-trip happens here</span>
+        <span class="o">.</span><span class="n">top</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="c1"># Now `res.df` has gene_symbol / chromosome / start_position / ... columns</span>
+<span class="c1"># joined on `variable` (the regressor name).</span>
+</pre></div>
+</div>
+<p>Keep in mind:</p>
+<ul class="simple">
+<li><p>The default join column is <code class="docutils literal notranslate"><span class="pre">variable</span></code>. Override with
+<code class="docutils literal notranslate"><span class="pre">input_col=...</span></code> if your result frame uses a different name.</p></li>
+<li><p>The default annotation columns are a curated short list
+(<code class="docutils literal notranslate"><span class="pre">gene_symbol</span></code>, <code class="docutils literal notranslate"><span class="pre">hgnc_id</span></code>, <code class="docutils literal notranslate"><span class="pre">ensembl_id</span></code>, <code class="docutils literal notranslate"><span class="pre">chromosome</span></code>,
+<code class="docutils literal notranslate"><span class="pre">start_position</span></code>, <code class="docutils literal notranslate"><span class="pre">end_position</span></code>). Pass <code class="docutils literal notranslate"><span class="pre">keep_columns=...</span></code> to
+customise.</p></li>
+<li><p>Rows whose <code class="docutils literal notranslate"><span class="pre">input_col</span></code> value is not a recognized gene get NaN in
+the annotation columns — they are <strong>not</strong> dropped from the result.</p></li>
+<li><p>Filter (<code class="docutils literal notranslate"><span class="pre">with_correction</span></code>/<code class="docutils literal notranslate"><span class="pre">passing</span></code>/<code class="docutils literal notranslate"><span class="pre">top</span></code>) <strong>before</strong> <code class="docutils literal notranslate"><span class="pre">annotate</span></code> to
+minimise the server round-trip.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">annotate</span></code> is currently <code class="docutils literal notranslate"><span class="pre">gene_annotations</span></code>-only. Equivalents for
+disease / pathway / protein joining are on the roadmap.</p>
+</section>
+<hr class="docutils" />
+<section id="the-igem-report-cli">
+<h2>5. The <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">report</span></code> CLI<a class="headerlink" href="#the-igem-report-cli" title="Link to this heading">¶</a></h2>
+<p>The same operations are available from the terminal — useful for
+batch jobs, ad-hoc exploration, and HPC submission scripts. Each
+registered report is its own subcommand; report-specific kwargs
+become typed flags.</p>
+<section id="discovery">
+<h3>Discovery<a class="headerlink" href="#discovery" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>igem<span class="w"> </span>report<span class="w"> </span>list
+Name<span class="w">                       </span>Version<span class="w">    </span>Description
+------------------------------------------------------------
+disease_annotations<span class="w">        </span><span class="m">1</span>.0.0<span class="w">      </span>Master<span class="w"> </span>disease<span class="w"> </span>annotation<span class="w"> </span>table:<span class="w"> </span>...
+gene_annotations<span class="w">           </span><span class="m">1</span>.0.0<span class="w">      </span>Master<span class="w"> </span>gene<span class="w"> </span>annotation<span class="w"> </span>table:<span class="w"> </span>...
+go_annotations<span class="w">             </span><span class="m">1</span>.0.0<span class="w">      </span>Master<span class="w"> </span>GO<span class="w"> </span>term<span class="w"> </span>annotation<span class="w"> </span>table:<span class="w"> </span>...
+pathway_annotations<span class="w">        </span><span class="m">1</span>.0.0<span class="w">      </span>Master<span class="w"> </span>pathway<span class="w"> </span>annotation<span class="w"> </span>table:<span class="w"> </span>...
+protein_annotations<span class="w">        </span><span class="m">1</span>.0.0<span class="w">      </span>Master<span class="w"> </span>protein<span class="w"> </span>annotation<span class="w"> </span>table:<span class="w"> </span>...
+
+$<span class="w"> </span>igem<span class="w"> </span>report<span class="w"> </span>explain<span class="w"> </span>gene_annotations
+<span class="c1"># gene_annotations</span>
+...
+</pre></div>
+</div>
+</section>
+<section id="typed-subcommands">
+<h3>Typed subcommands<a class="headerlink" href="#typed-subcommands" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genes — printed to stdout</span>
+igem<span class="w"> </span>report<span class="w"> </span>gene_annotations<span class="w"> </span>--input<span class="w"> </span>TP53<span class="w"> </span>--input<span class="w"> </span>BRCA1<span class="w"> </span>--input<span class="w"> </span>EGFR
+
+<span class="c1"># Inputs from a file, restricted columns, saved to CSV</span>
+igem<span class="w"> </span>report<span class="w"> </span>gene_annotations<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input-file<span class="w"> </span>my_genes.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--columns<span class="w"> </span>gene_symbol,hgnc_id,chromosome,start_position,end_position<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output<span class="w"> </span>annotated.csv
+
+<span class="c1"># Diseases with a group filter</span>
+igem<span class="w"> </span>report<span class="w"> </span>disease_annotations<span class="w"> </span>--input<span class="w"> </span><span class="s2">&quot;MONDO:0005301&quot;</span><span class="w"> </span>--group-filter<span class="w"> </span>autoimmune
+
+<span class="c1"># GO terms restricted to Biological Process</span>
+igem<span class="w"> </span>report<span class="w"> </span>go_annotations<span class="w"> </span>--input<span class="w"> </span><span class="s2">&quot;GO:0007049&quot;</span><span class="w"> </span>--namespace<span class="w"> </span>BP
+
+<span class="c1"># Proteins with Pfam accession details</span>
+igem<span class="w"> </span>report<span class="w"> </span>protein_annotations<span class="w"> </span>--input<span class="w"> </span>P04637<span class="w"> </span>--include-pfam-details
+</pre></div>
+</div>
+<p>Each subcommand exposes the same <code class="docutils literal notranslate"><span class="pre">--input</span></code> / <code class="docutils literal notranslate"><span class="pre">--input-file</span></code> /
+<code class="docutils literal notranslate"><span class="pre">--columns</span></code> / <code class="docutils literal notranslate"><span class="pre">--output</span></code> flags as the others, plus the kwargs
+specific to that report. Run <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">report</span> <span class="pre">&lt;name&gt;</span> <span class="pre">--help</span></code> for the
+full list.</p>
+</section>
+<section id="generic-fallback">
+<h3>Generic fallback<a class="headerlink" href="#generic-fallback" title="Link to this heading">¶</a></h3>
+<p>For reports that don’t yet have a typed subcommand on the client
+(typically because they are newly added on the server), there is a
+generic form:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>igem<span class="w"> </span>report<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>&lt;report_name&gt;<span class="w"> </span>--input<span class="w"> </span>...<span class="w"> </span>--columns<span class="w"> </span>...<span class="w"> </span>--output<span class="w"> </span>...
+</pre></div>
+</div>
+<p>It accepts only the universal kwargs — <code class="docutils literal notranslate"><span class="pre">--input</span></code>, <code class="docutils literal notranslate"><span class="pre">--input-file</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--columns</span></code>, <code class="docutils literal notranslate"><span class="pre">--output</span></code>. Any report-specific kwargs are reachable
+only via the typed subcommand or the Python API.</p>
+<p>The CLI emits the server’s <code class="docutils literal notranslate"><span class="pre">message</span></code> log, <code class="docutils literal notranslate"><span class="pre">elapsed</span></code>, and <code class="docutils literal notranslate"><span class="pre">stats</span></code>
+on stdout, then either prints the DataFrame (<code class="docutils literal notranslate"><span class="pre">--output</span></code> not given)
+or notes the saved path. Pass <code class="docutils literal notranslate"><span class="pre">--debug</span></code> for verbose request /
+response logging.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="what-s-next">
+<h2>What’s next<a class="headerlink" href="#what-s-next" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="reports-catalog.html"><span class="std std-doc">Report catalog</span></a> — one section per
+registered report: parameters, output columns, examples, gotchas.</p></li>
+<li><p><a class="reference internal" href="analyzing-data.html"><span class="std std-doc">Analyzing data</span></a> — <code class="docutils literal notranslate"><span class="pre">RegressionResults.annotate</span></code>
+is the natural downstream consumer of <code class="docutils literal notranslate"><span class="pre">gene_annotations</span></code>.</p></li>
+<li><p><a class="reference internal" href="../cookbook/index.html"><span class="std std-doc">Cookbook</span></a> — end-to-end recipes that mix
+local analysis with knowledge-graph annotation.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="reports-catalog.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Report catalog</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="plotting-data.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Plotting data</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Hall Lab
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Reporting data</a><ul>
+<li><a class="reference internal" href="#discovering-reports">1. Discovering reports</a><ul>
+<li><a class="reference internal" href="#list-registry-overview"><code class="docutils literal notranslate"><span class="pre">list</span></code> — registry overview</a></li>
+<li><a class="reference internal" href="#explain-full-documentation-for-one-report"><code class="docutils literal notranslate"><span class="pre">explain</span></code> — full documentation for one report</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-a-report">2. Running a report</a><ul>
+<li><a class="reference internal" href="#typed-helpers-preferred">Typed helpers (preferred)</a></li>
+<li><a class="reference internal" href="#generic-run-works-for-any-report">Generic <code class="docutils literal notranslate"><span class="pre">run</span></code> (works for any report)</a></li>
+<li><a class="reference internal" href="#inputs-from-a-file">Inputs from a file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-with-reportresult">3. Working with <code class="docutils literal notranslate"><span class="pre">ReportResult</span></code></a><ul>
+<li><a class="reference internal" href="#not-found-rows"><code class="docutils literal notranslate"><span class="pre">not_found</span></code> rows</a></li>
+<li><a class="reference internal" href="#saving-to-csv">Saving to CSV</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#integrating-with-analyze-annotation">4. Integrating with <code class="docutils literal notranslate"><span class="pre">analyze</span></code> — annotation</a></li>
+<li><a class="reference internal" href="#the-igem-report-cli">5. The <code class="docutils literal notranslate"><span class="pre">igem</span> <span class="pre">report</span></code> CLI</a><ul>
+<li><a class="reference internal" href="#discovery">Discovery</a></li>
+<li><a class="reference internal" href="#typed-subcommands">Typed subcommands</a></li>
+<li><a class="reference internal" href="#generic-fallback">Generic fallback</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-s-next">What’s next</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    </body>
+</html>

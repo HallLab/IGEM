@@ -32,7 +32,7 @@ frontend/.env.local
 
 # Sphinx docs (built output served by Next.js)
 docs/sphinx/_build/
-frontend/public/docs/
+# frontend/public/docs/
 
 # IDE
 .vscode/
