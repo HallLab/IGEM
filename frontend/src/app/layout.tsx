@@ -13,7 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Site under construction",
+  title: "IGEM",
+  description:
+    "Biologically-informed interaction filtering for GxG and GxE analyses",
 };
 
 export default function RootLayout({
